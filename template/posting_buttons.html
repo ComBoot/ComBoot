@@ -70,24 +70,24 @@
 </div>
 
 <div id="format-buttons">
-	<input type="button" class="button2" accesskey="b" name="addbbcode0" value=" B " style="font-weight:bold; width: 30px" onclick="bbstyle(0)" title="{L_BBCODE_B_HELP}" />
-	<input type="button" class="button2" accesskey="i" name="addbbcode2" value=" i " style="font-style:italic; width: 30px" onclick="bbstyle(2)" title="{L_BBCODE_I_HELP}" />
-	<input type="button" class="button2" accesskey="u" name="addbbcode4" value=" u " style="text-decoration: underline; width: 30px" onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" />
+	<input type="button" class="btn" accesskey="b" name="addbbcode0" value=" B " style="font-weight:bold; " onclick="bbstyle(0)" title="{L_BBCODE_B_HELP}" />
+	<input type="button" class="btn" accesskey="i" name="addbbcode2" value=" i " style="font-style:italic; " onclick="bbstyle(2)" title="{L_BBCODE_I_HELP}" />
+	<input type="button" class="btn" accesskey="u" name="addbbcode4" value=" u " style="text-decoration: underline; " onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" />
 	<!-- IF S_BBCODE_QUOTE -->
-		<input type="button" class="button2" accesskey="q" name="addbbcode6" value="Quote" style="width: 50px" onclick="bbstyle(6)" title="{L_BBCODE_Q_HELP}" />
+		<input type="button" class="btn" accesskey="q" name="addbbcode6" value="Quote"  onclick="bbstyle(6)" title="{L_BBCODE_Q_HELP}" />
 	<!-- ENDIF -->
-	<input type="button" class="button2" accesskey="c" name="addbbcode8" value="Code" style="width: 40px" onclick="bbstyle(8)" title="{L_BBCODE_C_HELP}" />
-	<input type="button" class="button2" accesskey="l" name="addbbcode10" value="List" style="width: 40px" onclick="bbstyle(10)" title="{L_BBCODE_L_HELP}" />
-	<input type="button" class="button2" accesskey="o" name="addbbcode12" value="List=" style="width: 40px" onclick="bbstyle(12)" title="{L_BBCODE_O_HELP}" />
-	<input type="button" class="button2" accesskey="y" name="addlistitem" value="[*]" style="width: 40px" onclick="bbstyle(-1)" title="{L_BBCODE_LISTITEM_HELP}" />
+	<input type="button" class="btn" accesskey="c" name="addbbcode8" value="Code"  onclick="bbstyle(8)" title="{L_BBCODE_C_HELP}" />
+	<input type="button" class="btn" accesskey="l" name="addbbcode10" value="List"  onclick="bbstyle(10)" title="{L_BBCODE_L_HELP}" />
+	<input type="button" class="btn" accesskey="o" name="addbbcode12" value="List=" onclick="bbstyle(12)" title="{L_BBCODE_O_HELP}" />
+	<input type="button" class="btn" accesskey="y" name="addlistitem" value="[*]" onclick="bbstyle(-1)" title="{L_BBCODE_LISTITEM_HELP}" />
 	<!-- IF S_BBCODE_IMG -->
-		<input type="button" class="button2" accesskey="p" name="addbbcode14" value="Img" style="width: 40px" onclick="bbstyle(14)" title="{L_BBCODE_P_HELP}" />
+		<input type="button" class="btn" accesskey="p" name="addbbcode14" value="Img"  onclick="bbstyle(14)" title="{L_BBCODE_P_HELP}" />
 	<!-- ENDIF -->
 	<!-- IF S_LINKS_ALLOWED -->
-		<input type="button" class="button2" accesskey="w" name="addbbcode16" value="URL" style="text-decoration: underline; width: 40px" onclick="bbstyle(16)" title="{L_BBCODE_W_HELP}" />
+		<input type="button" class="btn" accesskey="w" name="addbbcode16" value="URL" style="text-decoration: underline; " onclick="bbstyle(16)" title="{L_BBCODE_W_HELP}" />
 	<!-- ENDIF -->
 	<!-- IF S_BBCODE_FLASH -->
-		<input type="button" class="button2" accesskey="d" name="addbbcode18" value="Flash" onclick="bbstyle(18)" title="{L_BBCODE_D_HELP}" />
+		<input type="button" class="btn" accesskey="d" name="addbbcode18" value="Flash" onclick="bbstyle(18)" title="{L_BBCODE_D_HELP}" />
 	<!-- ENDIF -->
 	<select name="addbbcode20" onchange="bbfontstyle('[size=' + this.form.addbbcode20.options[this.form.addbbcode20.selectedIndex].value + ']', '[/size]');this.form.addbbcode20.selectedIndex = 2;" title="{L_BBCODE_F_HELP}">
 		<option value="50">{L_FONT_TINY}</option>
@@ -100,9 +100,9 @@
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 	</select>
-	<input type="button" class="button2" name="bbpalette" id="bbpalette" value="{L_FONT_COLOR}" onclick="change_palette();" title="{L_BBCODE_S_HELP}" />
+	<input type="button" class="btn" name="bbpalette" id="bbpalette" value="{L_FONT_COLOR}" onclick="change_palette();" title="{L_BBCODE_S_HELP}" />
 	<!-- BEGIN custom_tags -->
-		<input type="button" class="button2" name="addbbcode{custom_tags.BBCODE_ID}" value="{custom_tags.BBCODE_TAG}" onclick="bbstyle({custom_tags.BBCODE_ID})" title="{custom_tags.BBCODE_HELPLINE}" />
+		<input type="button" class="btn" name="addbbcode{custom_tags.BBCODE_ID}" value="{custom_tags.BBCODE_TAG}" onclick="bbstyle({custom_tags.BBCODE_ID})" title="{custom_tags.BBCODE_HELPLINE}" />
 	<!-- END custom_tags -->
 </div>
 <!-- ENDIF -->
