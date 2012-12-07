@@ -1514,7 +1514,8 @@ table {
 }
 
 .table th {
-  font-weight: bold;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .table thead th {
@@ -5080,6 +5081,7 @@ h3.heading {
 	color: #999999;
 	font-size: 13px;
 	padding: 3px 8px;
+	font-weight: normal;
 }
 .heading > a {
 	color: #999999;
@@ -5125,7 +5127,9 @@ border-color: #eed3d7;
 }
 
 .box-heading {
-	font-weight: 200;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 27px;
   text-align: center;
    vertical-align: middle;
     background-color: #2c2c2c;

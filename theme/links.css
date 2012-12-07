@@ -42,14 +42,14 @@ a.forumtitle {
 	font-family: "Trebuchet MS", Helvetica, Arial, Sans-serif;
 	
 	font-weight: bold;
-	color: #898989;
+	
 	text-decoration: none;
 }
 
 /* a.forumtitle:visited { color: #898989; } */
 
 a.forumtitle:hover {
-	color: #bcbcbc;
+	
 	text-decoration: underline;
 }
 
@@ -61,14 +61,14 @@ a.topictitle {
 	font-family: "Trebuchet MS", Helvetica, Arial, Sans-serif;
 	
 	font-weight: bold;
-	color: #898989;
+	
 	text-decoration: none;
 }
 
 /* a.topictitle:visited { color: #d2d2d2; } */
 
 a.topictitle:hover {
-	color: #bcbcbc;
+	
 	text-decoration: underline;
 }
 

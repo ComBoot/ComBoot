@@ -236,34 +236,6 @@ Colours and backgrounds for links.css
 	color: #C8E6FF;
 }
 
-/* Links for forum/topic lists */
-a.forumtitle {
-	color: #105289;
-}
-
-/* a.forumtitle:visited { color: #105289; } */
-
-a.forumtitle:hover {
-	color: #BC2A4D;
-}
-
-a.forumtitle:active {
-	color: #105289;
-}
-
-a.topictitle {
-	color: #105289;
-}
-
-/* a.topictitle:visited { color: #368AD2; } */
-
-a.topictitle:hover {
-	color: #BC2A4D;
-}
-
-a.topictitle:active {
-	color: #105289;
-}
 
 /* Post body links */
 .postlink {
