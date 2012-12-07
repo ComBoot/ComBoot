@@ -37,6 +37,7 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+      background: #f8f8f8 url(images/bg.png) repeat;
 }
 
 a:focus {
@@ -3991,8 +3992,8 @@ input[type="submit"].btn.btn-mini {
 }
 
 .pagination {
-  height: 36px;
-  margin: 18px 0;
+  height: auto;
+  margin: 0;
 }
 
 .pagination ul {
@@ -5151,6 +5152,14 @@ padding: 1px;
 margin: -20px -20px 20px -20px;
 border-top-left-radius: 3px;
 border-top-right-radius: 3px;
+}
+
+.pcon {
+	float: left;
+width: 27px;
+height: 27px;
+margin-right: 5px;
+margin-top: 5px;
 }
 
 /* Tweak navbar brand link to be super sleek

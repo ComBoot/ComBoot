@@ -36,42 +36,46 @@
 	<!-- IF .searchresults -->
 	<div class="forumbg">
 
-		<div class="inner"><span class="corners-top"><span></span></span>
-		<ul class="topiclist">
-			<li class="header">
-				<dl class="icon">
-					<dt>{L_TOPICS}</dt>
-					<dd class="posts">{L_REPLIES}</dd>
-					<dd class="views">{L_VIEWS}</dd>
-					<dd class="lastpost"><span>{L_LAST_POST}</span></dd>
-				</dl>
-			</li>
-		</ul>
-		<ul class="topiclist topics">
+		<div class="inner">
+		<table class="table table-bordered table-striped">
+		
+		<thead class="topiclist">
+			
+				<tr class="icon">
+					<th>{L_TOPICS}</th>
+					<th class="posts">{L_REPLIES}</th>
+					<th class="views">{L_VIEWS}</th>
+					<th class="lastpost"><span>{L_LAST_POST}</span></th>
+				</tr>
+			
+		</thead>
+		<tbody class="topiclist topics">
 
 		<!-- BEGIN searchresults -->
-			<li class="row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl class="icon {searchresults.TOPIC_IMG_STYLE}">
-					<dt <!-- IF searchresults.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
+			
+				<tr>
+					
+					<td <!-- IF searchresults.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
+					<i class="pcon {searchresults.TOPIC_IMG_STYLE}"></i>
 						<!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
 						<a href="{searchresults.U_VIEW_TOPIC}" class="topictitle">{searchresults.TOPIC_TITLE}</a> {searchresults.ATTACH_ICON_IMG}
 						<!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
-						<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --><br />
-						<!-- IF searchresults.PAGINATION --><strong class="pagination"><span>{searchresults.PAGINATION}</span></strong><!-- ENDIF -->
+						<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF --><br />
+						<!-- IF searchresults.PAGINATION --><strong class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></strong><!-- ENDIF -->
 						{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL} &raquo; {searchresults.FIRST_POST_TIME} &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a>
-					</dt>
-					<dd class="posts">{searchresults.TOPIC_REPLIES}</dd>
-					<dd class="views">{searchresults.TOPIC_VIEWS}</dd>
-					<dd class="lastpost"><span>
+					</td>
+					<td class="posts">{searchresults.TOPIC_REPLIES}</td>
+					<td class="views">{searchresults.TOPIC_VIEWS}</td>
+					<td class="lastpost"><span>
 						{L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
 						<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{searchresults.LAST_POST_TIME}<br /> </span>
-					</dd>
-				</dl>
-			</li>
+					</td>
+				</tr>
+			
 		<!-- END searchresults -->
-		</ul>
-
-		<span class="corners-bottom"><span></span></span></div>
+		</tbody>
+		</table>
+		</div>
 	</div>
 	<!-- ELSE -->
 		<div class="panel">

@@ -5,8 +5,8 @@
 <!-- IF FORUM_DESC --><div style="display: none !important;">{FORUM_DESC}<br /></div><!-- ENDIF -->
 
 <!-- IF S_FORUM_RULES -->
-	<div class="rules">
-		<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="rules row-fluid">
+		<div class="well">
 
 		<!-- IF U_FORUM_RULES -->
 			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
@@ -15,7 +15,7 @@
 			{FORUM_RULES}
 		<!-- ENDIF -->
 
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 <!-- ENDIF -->
 
@@ -24,14 +24,14 @@
 	<div class="span4">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 	
-		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF --></a>
+		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
 	<!-- ENDIF -->
 	</div>
 
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 		<div class="span4 p-pagination">
-			<center><!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a class="btn btn-mini" href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="label label-info">{TOTAL_POSTS}</span>
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> <span class="label label-info">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF --></center>
+			<center><!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a class="btn btn-mini" href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="label ">{TOTAL_POSTS}</span>
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF --></center>
 		</div>
 	<!-- ENDIF -->
 	
@@ -171,12 +171,12 @@
 				<!-- IF postrow.POSTER_AVATAR -->
 					<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF --><br />
 				<!-- ENDIF -->
-				<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong><!-- ELSE -->{postrow.POST_AUTHOR_FULL}<!-- ENDIF -->
+				<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong> <span class="label <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> label-success<!-- ELSE --> label-danger<!-- ENDIF -->"><!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ELSE --> offline<!-- ENDIF --></span><!-- ELSE -->{postrow.POST_AUTHOR_FULL} <span class="label <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> label-success<!-- ELSE --> label-danger<!-- ENDIF -->"><!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ELSE --> offline<!-- ENDIF --></span><!-- ENDIF -->
 			</dt>
 
 			<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd>{postrow.RANK_TITLE}<!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</dd><!-- ENDIF -->
 
-		<dd>&nbsp;<br><span class="label <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> label-success<!-- ELSE --> label-danger<!-- ENDIF -->"><!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ELSE --> offline<!-- ENDIF --></span><br></dd>
+		<dd>&nbsp;</dd>
 
 		<!-- IF postrow.POSTER_POSTS != '' --><dd><strong>{L_POSTS}:</strong> {postrow.POSTER_POSTS}</dd><!-- ENDIF -->
 		<!-- IF postrow.POSTER_JOINED --><dd><strong>{L_JOINED}:</strong> {postrow.POSTER_JOINED}</dd><!-- ENDIF -->
@@ -251,14 +251,14 @@
 	
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 	<div class="span4">
-		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF --></a></div>
+		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a></div>
 	<!-- ENDIF -->
 	
 
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 		<div class="span4 p-pagination">
-			<center><!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a class="btn btn-mini" href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="label label-info">{TOTAL_POSTS}</span>
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> <span class="label label-info">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF --></center>
+			<center><!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a class="btn btn-mini" href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="label ">{TOTAL_POSTS}</span>
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF --></center>
 		</div>
 	<!-- ENDIF -->
 	
