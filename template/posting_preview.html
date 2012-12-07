@@ -1,5 +1,5 @@
-<div class="post <!-- IF S_PRIVMSGS -->pm<!-- ELSE -->bg2<!-- ENDIF -->" id="preview">
-	<div class="inner"><span class="corners-top"><span></span></span>
+<div class="row-fluid" id="preview">
+	<div class="well">
 
 <!-- IF S_HAS_POLL_OPTIONS -->
 	<div class="content">
@@ -16,18 +16,20 @@
 		</fieldset>
 	</div>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
-<div class="post bg2">
-	<div class="inner"><span class="corners-top"><span></span></span>
+<div class="row-fluid">
+	<div class="well">
 
 <!-- ENDIF -->
 
-	<div class="postbody">
-		<h3>{L_PREVIEW}: {PREVIEW_SUBJECT}</h3>
+	
+		<h3 class="box-heading">{L_PREVIEW}</h3>
 
-		<div class="content">{PREVIEW_MESSAGE}</div>
+		<div class="content">
+		<h3>{PREVIEW_SUBJECT}</h3>
+		<p>{PREVIEW_MESSAGE}</p></div>
 
 		<!-- IF .attachment -->
 		<dl class="attachbox">
@@ -41,7 +43,7 @@
 		<!-- IF PREVIEW_SIGNATURE --><div class="signature">{PREVIEW_SIGNATURE}</div><!-- ENDIF -->
 	</div>
 
-	<span class="corners-bottom"><span></span></span></div>
+	
 </div>
 
-<hr />
+<hr class="dashed" />

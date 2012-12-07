@@ -3,40 +3,42 @@
 <h2><!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --><!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 <!-- IF IGNORED_WORDS --> <p>{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
 
-<!-- IF SEARCH_TOPIC -->
-	<p><a class="{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a></p>
-<!-- ELSE -->
-	<p><a class="{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a></p>
-<!-- ENDIF -->
+
 
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
-	<form method="post" action="{S_SEARCH_ACTION}">
+<div class="row-fluid">
+	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin">
 
 	<div class="topic-actions">
 
 	<!-- IF SEARCH_MATCHES -->
 		<div class="search-box">
 			<!-- IF SEARCH_IN_RESULTS -->
-				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="inputbox narrow" /></label>
-				<input class="button2" type="submit" name="submit" value="{L_SEARCH}" />
+				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
+				<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
+				
 			<!-- ENDIF -->
+			<!-- IF SEARCH_TOPIC -->
+	<a class="btn" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
+<!-- ELSE -->
+	<a class="btn" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a>
+<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
 
-		<div class="rightside pagination">
-			{SEARCH_MATCHES}<!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF -->
+		<div class="pull-right p-pagination">
+			<span class="label">{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
 		</div>
 	</div>
 
 	</form>
+</div>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_TOPICS -->
 
 	<!-- IF .searchresults -->
-	<div class="forumbg">
-
-		<div class="inner">
+	
 		<table class="table table-bordered table-striped">
 		
 		<thead class="topiclist">
@@ -75,21 +77,20 @@
 		<!-- END searchresults -->
 		</tbody>
 		</table>
-		</div>
-	</div>
+	
 	<!-- ELSE -->
-		<div class="panel">
-			<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="row-fluid">
+			<div class="well">
 			<strong>{L_NO_SEARCH_RESULTS}</strong>
-			<span class="corners-bottom"><span></span></span></div>
+			</div>
 		</div>
 	<!-- ENDIF -->
 
 <!-- ELSE -->
 
 	<!-- BEGIN searchresults -->
-		<div class="search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
-			<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="row-fluid search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
+			<div class="well">
 
 	<!-- IF searchresults.S_IGNORE_POST -->
 		<div class="postbody">
@@ -118,40 +119,58 @@
 		</ul>
 	<!-- ENDIF -->
 
-			<span class="corners-bottom"><span></span></span></div>
+			</div>
 		</div>
 	<!-- BEGINELSE -->
-		<div class="panel">
-			<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="row-fluid">
+			<div class="well">
 			<strong>{L_NO_SEARCH_RESULTS}</strong>
-			<span class="corners-bottom"><span></span></span></div>
+			</div>
 		</div>
 	<!-- END searchresults -->
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
-	<form method="post" action="{S_SEARCH_ACTION}">
+	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline">
 
 	<fieldset class="display-options">
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<!-- IF S_SELECT_SORT_DAYS or S_SELECT_SORT_KEY -->
 			<label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn" /></label>
 		<!-- ENDIF -->
 	</fieldset>
 
 	</form>
 
-	<hr />
+	
 <!-- ENDIF -->
 
-<!-- IF PAGINATION or .searchresults or PAGE_NUMBER -->
-	<ul class="linklist">
-		<li class="rightside pagination">
-			{SEARCH_MATCHES}<!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF -->
-		</li>
-	</ul>
+<!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
+<div class="row-fluid">
+	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin">
+
+	<div class="topic-actions">
+
+	<!-- IF SEARCH_MATCHES -->
+		<div class="search-box">
+			<!-- IF SEARCH_IN_RESULTS -->
+				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
+				<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
+				
+			<!-- ENDIF -->
+			
+		</div>
+	<!-- ENDIF -->
+
+		<div class="pull-right p-pagination">
+			<span class="label">{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
+		</div>
+	</div>
+
+	</form>
+</div>
 <!-- ENDIF -->
 
 <!-- INCLUDE jumpbox.html -->
