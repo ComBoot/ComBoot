@@ -45,7 +45,7 @@
 	
 	<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
 	<!-- ELSE -->
-	<a class="btn btn-success" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file"></i> {L_POST_TOPIC}</a>
+	<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file"></i> {L_POST_TOPIC}</a>
 	<!-- ENDIF -->
 	</div>
 	<!-- ENDIF -->
@@ -54,9 +54,9 @@
 	
 	<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 		<div class="p-pagination span4">
-			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --><span class="label label-success">{TOTAL_TOPICS}</span><!-- ENDIF -->
+			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a><!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label label-success">{TOTAL_TOPICS}</span><!-- ENDIF -->
 			<!-- IF PAGE_NUMBER -->
-				<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label label-info">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> <span class="label label-info">{PAGE_NUMBER}</span><!-- ENDIF -->
+				<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="label label-info">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; <span class="label label-info">{PAGE_NUMBER}</span><!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
@@ -93,8 +93,8 @@
 
 		<form action="{S_LOGIN_ACTION}" method="post">
 
-		<div class="panel">
-			<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="row-fluid">
+			<div class="well">
 
 			<div class="content">
 				<h3><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
@@ -112,13 +112,13 @@
 				</dl>
 				<dl>
 					<dt>&nbsp;</dt>
-					<dd><input type="submit" name="login" tabindex="5" value="{L_LOGIN}" class="button1" /></dd>
+					<dd><input type="submit" name="login" tabindex="5" value="{L_LOGIN}" class="btn" /></dd>
 				</dl>
 				{S_LOGIN_REDIRECT}
 				</fieldset>
 			</div>
 
-			<span class="corners-bottom"><span></span></span></div>
+			</div>
 		</div>
 
 		</form>
@@ -219,7 +219,7 @@
 	
 	<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
 	<!-- ELSE -->
-	<a class="btn btn-success" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file"></i> {L_POST_TOPIC}</a>
+	<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file"></i> {L_POST_TOPIC}</a>
 	<!-- ENDIF -->
 	</div>
 	<!-- ENDIF -->
@@ -228,9 +228,9 @@
 	
 	<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 		<div class="p-pagination span4">
-			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --><span class="label label-success">{TOTAL_TOPICS}</span><!-- ENDIF -->
+			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label label-success">{TOTAL_TOPICS}</span><!-- ENDIF -->
 			<!-- IF PAGE_NUMBER -->
-				<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label label-info">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> <span class="label label-info">{PAGE_NUMBER}</span><!-- ENDIF -->
+				<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="label label-info">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; <span class="label label-info">{PAGE_NUMBER}</span><!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->

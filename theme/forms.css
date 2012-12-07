@@ -5,8 +5,7 @@
 ----------------------------------------*/
 fieldset {
 	border-width: 0;
-	font-family: Verdana, Helvetica, Arial, sans-serif;
-	font-size: 1.1em;
+
 }
 
 input {
@@ -126,7 +125,7 @@ dd label {
 }
 
 dd input, dd textarea {
-	margin-right: 3px;
+	margin-right: 0;
 }
 
 dd select {
@@ -178,12 +177,13 @@ fieldset.quick-login label {
 /* Display options on viewtopic/viewforum pages  */
 fieldset.display-options {
 	text-align: center;
-	margin: 3px 0 5px 0;
+	
 }
 
 fieldset.display-options label {
 	white-space: nowrap;
 	padding-right: 2px;
+	margin-bottom: 0;
 }
 
 fieldset.display-options a {
@@ -250,7 +250,7 @@ fieldset.submit-buttons input {
 
 /* Buttons used in the editor */
 #format-buttons {
-	margin: 15px 0 2px 0;
+	margin: 15px 0;
 }
 
 #format-buttons input, #format-buttons select {

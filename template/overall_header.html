@@ -115,12 +115,12 @@
 				<div class="container-fluid">
 				<a class="brand" href="{U_INDEX}">{SITENAME}</a>
 				<div class="btn-group pull-right">
-  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+  <a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#">
     {S_USERNAME}
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu">
-    <!-- dropdown menu links -->
+    <!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
     
     	<!-- IF S_DISPLAY_PM --> 
 				
@@ -136,8 +136,12 @@
     <li class="picon-ucp">
 					<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-wrench "></i> {L_PROFILE}</a>
 					</li>
-	<li class="divider"></li>				
-	<li class="picon-logout pull-right"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-minus-sign "></i> {L_LOGIN_LOGOUT}</a></li>
+	<li class="divider"></li>
+	<!-- ENDIF -->				
+	<li class="picon-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-minus-sign "></i> {L_LOGIN_LOGOUT}</a></li>
+	<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+					
+					<li class="picon-register"><a href="{U_REGISTER}"><i class="icon-user "></i> {L_REGISTER}</a></li><!-- ENDIF -->
   </ul>
 </div>
 			<ul class="linklist nav">
@@ -167,9 +171,7 @@
 					<!-- IF S_DISPLAY_MEMBERLIST -->
 					<li class="divider-vertical"></li>
 					<li class="picon-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-user "></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
-					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-					<li class="divider-vertical"></li>
-					<li class="picon-register"><a href="{U_REGISTER}"><i class="icon-user "></i> {L_REGISTER}</a></li><!-- ENDIF -->
+					
 					
 					
 					
@@ -182,13 +184,14 @@
 					<!-- ENDIF -->
 				</li>
 			
+					<!-- ENDIF -->
+			
 			<!-- ENDIF -->
-			
 				
-				
+			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+					<li class="divider-vertical"></li>
+					<li class="picon-register"><a href="{U_REGISTER}"><i class="icon-user "></i> {L_REGISTER}</a></li><!-- ENDIF -->
 					
-				<!-- ENDIF -->
-			
 			</ul>
 				</div>
 
@@ -206,8 +209,8 @@
 		</li>
 	</ul>
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
-		<div id="information" class="rules">
-			<div class="inner">
+		<div id="information" class=" row-fluid rules">
+			<div class="well">
 				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
 			</div>
 		</div>
