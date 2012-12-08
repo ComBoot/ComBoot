@@ -20,10 +20,10 @@
 
 <form method="post" action="{S_UCP_ACTION}" id="register">
 
-<div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+<div class="row-fluid panel">
+	<div class="well">
 
-	<h2>{SITENAME} - {L_REGISTRATION}</h2>
+	<h3 class="box-heading">{SITENAME} - {L_REGISTRATION}</h3>
 
 	<fieldset class="fields2">
 	<!-- IF ERROR --><dl><dd class="error">{ERROR}</dd></dl><!-- ENDIF -->
@@ -47,7 +47,7 @@
 		<dd><input type="password"  tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_PASSWORD}" /></dd>
 	</dl>
 
-	<hr />
+	<hr class="dashed" />
 
 	<dl>
 		<dt><label for="lang">{L_LANGUAGE}:</label></dt>
@@ -72,38 +72,35 @@
 	<!-- ENDIF -->
 
 	</fieldset>
-	<span class="corners-bottom"><span></span></span></div>
-</div>
-<!-- IF CAPTCHA_TEMPLATE -->
+	<!-- IF CAPTCHA_TEMPLATE -->
 	<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
+	<hr class="dashed" />
 	<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 <!-- ENDIF -->
+	</div>
+</div>
+
 
 <!-- IF S_COPPA -->
 
 
-<div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+<div class="panel row-fluid">
+	<div class="well alert-warning">
 
-	<h4>{L_COPPA_COMPLIANCE}</h4>
+	<h3 class="box-heading">{L_COPPA_COMPLIANCE}</h3>
 
 	<p>{L_COPPA_EXPLAIN}</p>
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 <!-- ENDIF -->
 
-<div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
-
 	<fieldset class="submit-buttons">
 		{S_HIDDEN_FIELDS}
-		<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
-		<input type="submit" tabindex="9" name="submit" id="submit" value="{L_SUBMIT}" class="button1 default-submit-action" />
+		<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp;
+		<input type="submit" tabindex="9" name="submit" id="submit" value="{L_SUBMIT}" class="btn btn-primary default-submit-action" />
 		{S_FORM_TOKEN}
 	</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
-</div>
 </form>
 
 <!-- INCLUDE overall_footer.html -->

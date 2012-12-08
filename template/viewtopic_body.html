@@ -24,7 +24,7 @@
 	<div class="span4">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 	
-		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
+		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
 	<!-- ENDIF -->
 	</div>
 
@@ -161,6 +161,7 @@
 
 			<!-- IF postrow.BUMPED_MESSAGE --><div class="notice"><br /><br />{postrow.BUMPED_MESSAGE}</div><!-- ENDIF -->
 			<!-- IF postrow.SIGNATURE --><div id="sig{postrow.POST_ID}" class="signature">{postrow.SIGNATURE}</div><!-- ENDIF -->
+			
 		<!-- ENDIF -->
 
 		</div>
@@ -168,15 +169,15 @@
 		<!-- IF not postrow.S_IGNORE_POST -->
 			<dl class="postprofile span3" id="profile{postrow.POST_ID}">
 			<dt>
-				<!-- IF postrow.POSTER_AVATAR -->
-					<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF --><br />
-				<!-- ENDIF -->
+				
 				<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong> <span class="label <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> label-success<!-- ELSE --> label-danger<!-- ENDIF -->"><!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ELSE --> offline<!-- ENDIF --></span><!-- ELSE -->{postrow.POST_AUTHOR_FULL} <span class="label <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> label-success<!-- ELSE --> label-danger<!-- ENDIF -->"><!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ELSE --> offline<!-- ENDIF --></span><!-- ENDIF -->
 			</dt>
 
 			<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd>{postrow.RANK_TITLE}<!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</dd><!-- ENDIF -->
 
-		<dd>&nbsp;</dd>
+		<dd><!-- IF postrow.POSTER_AVATAR -->
+					<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF --><br />
+				<!-- ENDIF --></dd>
 
 		<!-- IF postrow.POSTER_POSTS != '' --><dd><strong>{L_POSTS}:</strong> {postrow.POSTER_POSTS}</dd><!-- ENDIF -->
 		<!-- IF postrow.POSTER_JOINED --><dd><strong>{L_JOINED}:</strong> {postrow.POSTER_JOINED}</dd><!-- ENDIF -->
@@ -231,15 +232,30 @@
 <!-- IF S_QUICK_REPLY -->
 	<!-- INCLUDE quickreply_editor.html -->
 <!-- ENDIF -->
+
+<!-- IF S_TOPIC_MOD -->
+<div class="row-fluid">
+	<div class="span12 well">
+	<h3 class="box-heading">{L_QUICK_MOD}</h3>
+	<form method="post" action="{S_MOD_ACTION}" class="form-inline alert-danger">
+	<fieldset class="quickmod">
+		{S_TOPIC_MOD} <input type="submit" value="{L_GO}" class="btn" />
+		{S_FORM_TOKEN}
+	</fieldset>
+	</form>
+	</div>
+</div>
+<!-- ENDIF -->
+
 <!-- IF S_NUM_POSTS > 1 or PREVIOUS_PAGE -->
-	<form id="viewtopic" method="post" action="{S_TOPIC_ACTION}">
+	<form id="viewtopic" method="post" action="{S_TOPIC_ACTION}" class="well form-inline">
 
 	<fieldset class="display-options" style="margin-top: 0; ">
-		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
-		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
+		<!-- IF PREVIOUS_PAGE --><a class="btn btn-inverse pull-left" href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}"><i class="icon-chevron-left icon-white"></i> {L_PREVIOUS}</a><!-- ENDIF -->
+		<!-- IF NEXT_PAGE --><a class="btn btn-inverse pull-right" href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT} <i class="icon-chevron-right icon-white"></i></a><!-- ENDIF -->
 		<!-- IF not S_IS_BOT -->
 		<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
-		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label> <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label> <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn" /></label>
 		<!-- ENDIF -->
 	</fieldset>
 
@@ -247,28 +263,21 @@
 
 <!-- ENDIF -->
 
-<!-- IF S_TOPIC_MOD -->
-	<form method="post" action="{S_MOD_ACTION}" class="well form-inline">
-	<fieldset class="quickmod">
-		<label for="quick-mod-select">{L_QUICK_MOD}:</label> {S_TOPIC_MOD} <input type="submit" value="{L_GO}" class="btn" />
-		{S_FORM_TOKEN}
-	</fieldset>
-	</form>
-<!-- ENDIF -->
+
 
 <div class="row-fluid topic-actions">
 
 	
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 	<div class="span4">
-		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a></div>
+		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a></div>
 	<!-- ENDIF -->
 	
 
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 		<div class="span4 p-pagination">
 			<center><!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a class="btn btn-mini" href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="label ">{TOTAL_POSTS}</span>
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF --></center>
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF --></center>
 		</div>
 	<!-- ENDIF -->
 	

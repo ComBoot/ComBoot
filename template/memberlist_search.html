@@ -40,12 +40,12 @@ function insert_single(user)
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 <!-- ENDIF -->
 
-<h2 class="solo">{L_FIND_USERNAME}</h2>
+
 
 <form method="post" action="{S_MODE_ACTION}" id="search_memberlist">
-<div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
-
+<div class="row-fluid panel">
+	<div class="well">
+		<h3 class="box-heading">{L_FIND_USERNAME}</h3>
 	<p>{L_FIND_USERNAME_EXPLAIN}</p>
 
 	<fieldset class="fields1 column1">
@@ -113,12 +113,12 @@ function insert_single(user)
 	<hr />
 
 	<fieldset class="submit-buttons">
-		<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
-		<input type="submit" name="submit" value="{L_SEARCH}" class="button1" />
+		<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp;
+		<input type="submit" name="submit" value="{L_SEARCH}" class="btn btn-primary" />
 		{S_FORM_TOKEN}
 	</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 </form>

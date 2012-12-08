@@ -1,13 +1,13 @@
 <!-- INCLUDE simple_header.html -->
 
 <!-- MSNM info from http://www.cdolive.net/ - doesn't seem to work with MSN Messenger -->
-<h2 class="solo">{L_SEND_IM}</h2>
+
 
 <form method="post" action="{S_IM_ACTION}">
 
-<div class="panel bg2">
-	<div class="inner"><span class="corners-top"><span></span></span>
-
+<div class="panel row-fluid">
+	<div class="well">
+		<h3 class="box-heading">{L_SEND_IM}</h3>
 	<p>{L_SEND_IM_EXPLAIN}</p>
 
 	<fieldset>
@@ -27,7 +27,7 @@
 		</dl>
 		<dl class="fields2">
 			<dt>&nbsp;</dt>
-			<dd><input class="button1" name="submit" type="submit" value="{L_IM_SEND}" /></dd>
+			<dd><input class="btn btn-primary" name="submit" type="submit" value="{L_IM_SEND}" /></dd>
 		</dl>
 		<input type="hidden" name="fromemail" value="{EMAIL}" />
 		<input type="hidden" name="subject" value="{SITENAME}" />
@@ -37,9 +37,9 @@
 	<!-- IF S_SEND_AIM -->
 		<dl class="fields2">
 			<dt>&nbsp;</dt>
-			<dd><a href="{U_AIM_CONTACT}">{L_IM_ADD_CONTACT}</a></dd>
-			<dd><a href="{U_AIM_MESSAGE}">{L_IM_SEND_MESSAGE}</a></dd>
-			<dd><a href="http://www.aim.com">{L_IM_DOWNLOAD_APP}</a> | <a href="http://www.aim.com/products/express">{L_IM_AIM_EXPRESS}</a></dd>
+			<dd><a class="btn" href="{U_AIM_CONTACT}">{L_IM_ADD_CONTACT}</a></dd>
+			<dd><a class="btn" href="{U_AIM_MESSAGE}">{L_IM_SEND_MESSAGE}</a></dd>
+			<dd><a class="btn" href="http://www.aim.com">{L_IM_DOWNLOAD_APP}</a> | <a href="http://www.aim.com/products/express">{L_IM_AIM_EXPRESS}</a></dd>
 		</dl>
 	<!-- ENDIF -->
 
@@ -47,8 +47,8 @@
 		<dl class="fields2">
 			<dt>&nbsp;</dt>
 			<dd><object classid="clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28" codetype="application/x-oleobject" id="objMessengerApp" width="0" height="0"></object></dd>
-			<dd><a href="#" onclick="add_contact('{A_IM_CONTACT}'); return false;">{L_IM_ADD_CONTACT}</a></dd>
-			<dd><a href="#" onclick="im_contact('{A_IM_CONTACT}'); return false;">{L_IM_SEND_MESSAGE}</a></dd>
+			<dd><a class="btn" href="#" onclick="add_contact('{A_IM_CONTACT}'); return false;">{L_IM_ADD_CONTACT}</a></dd>
+			<dd><a class="btn" href="#" onclick="im_contact('{A_IM_CONTACT}'); return false;">{L_IM_SEND_MESSAGE}</a></dd>
 		</dl>
 	<!-- ENDIF -->
 
@@ -59,14 +59,14 @@
 		</dl>
 		<dl class="fields2">
 			<dt>&nbsp;</dt>
-			<dd><input class="button1" name="submit" type="submit" value="{L_IM_SEND}" /></dd>
+			<dd><input class="btn btn-primary" name="submit" type="submit" value="{L_IM_SEND}" /></dd>
 		</dl>
 	<!-- ENDIF -->
 
 	<!-- IF S_NO_SEND_JABBER -->
 		<dl class="fields2">
-			<dt>&nbsp;</dt>
-			<dd>{L_IM_NO_JABBER}</dd>
+			
+			<dt class="alert">{L_IM_NO_JABBER}</dt>
 		</dl>
 	<!-- ENDIF -->
 
@@ -79,11 +79,11 @@
 	{S_FORM_TOKEN}
 	</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 </form>
 
-<a href="#" onclick="window.close(); return false;">{L_CLOSE_WINDOW}</a>
+<a class="btn btn-danger" href="#" onclick="window.close(); return false;"><i class="icon-remove"></i> {L_CLOSE_WINDOW}</a>
 
 <script type="text/javascript">
 // <![CDATA[

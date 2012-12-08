@@ -669,7 +669,7 @@ fieldset.polls dd div {
 	margin: 5px 0 10px 0;
 	min-height: 80px;
 	color: #666666;
-	border-left: 1px solid #FFFFFF;
+	border-left: 1px solid #ddd;
 	width: 22%;
 	float: right;
 	display: inline;
@@ -681,6 +681,7 @@ fieldset.polls dd div {
 .postprofile dd, .postprofile dt {
 	line-height: 1.2em;
 	margin-left: 8px;
+	margin-bottom: 5px;
 }
 
 .postprofile strong {

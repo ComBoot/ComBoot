@@ -565,21 +565,25 @@ fieldset.polls dd div {
 ----------------------------------------*/
 .postprofile {
 	color: #666666;
-	border-left-color: #FFFFFF;
+	border-left-color: #ddd;
+	border-left-style: dashed;
 }
 
 .rtl .postprofile {
-	border-right-color: #FFFFFF;
+	border-right-color: #ddd;
 	border-left-color: transparent;
+	border-right-style: dashed;
 }
 
 .pm .postprofile {
 	border-left-color: #DDDDDD;
+	border-left-style: dashed;
 }
 
 .rtl .pm .postprofile {
 	border-right-color: #DDDDDD;
 	border-left-color: transparent;
+	border-right-style: dashed;
 }
 
 .postprofile strong {
