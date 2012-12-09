@@ -2,10 +2,10 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
-<h2>{L_TITLE}</h2>
+<h3 class="box-heading">{L_TITLE}</h3>
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 
 	<p>{L_BOOKMARKS_EXPLAIN}</p>
 
@@ -60,13 +60,13 @@
 
 <!-- ENDIF -->
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <!-- IF .topicrow and not S_NO_DISPLAY_BOOKMARKS -->
 	<fieldset class="display-actions">
-		<input type="submit" name="unbookmark" value="{L_REMOVE_BOOKMARK_MARKED}" class="button2" />
-		<div><a href="#" onclick="marklist('ucp', '', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('ucp', '', false); return false;">{L_UNMARK_ALL}</a></div>
+		<input type="submit" name="unbookmark" value="{L_REMOVE_BOOKMARK_MARKED}" class="btn" />
+		<div><a class="btn btn-small" href="#" onclick="marklist('ucp', '', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-small" href="#" onclick="marklist('ucp', '', false); return false;">{L_UNMARK_ALL}</a></div>
 		{S_FORM_TOKEN}
 	</fieldset>
 <!-- ENDIF -->

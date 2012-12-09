@@ -2,9 +2,9 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
-<h2>{L_TITLE}</h2>
+<h3 class="box-heading">{L_TITLE}</h3>
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 
 	<p>{L_WATCHED_EXPLAIN}</p>
 
@@ -38,52 +38,56 @@
 <!-- ENDIF -->
 
 <!-- IF .topicrow -->
-	<ul class="topiclist">
-		<li class="header">
-			<dl class="icon">
-				<dt>{L_WATCHED_TOPICS}</dt>
-				<dd class="lastpost">{L_LAST_POST}</dd>
-				<dd class="mark">{L_MARK}</dd>
-			</dl>
+<hr class="dashed">
+<ul class="linklist">
+		<li class="rightside p-pagination">
+			<!-- IF TOTAL_TOPICS --> <span class="label">{TOTAL_TOPICS}</span> <!-- ENDIF -->
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
 		</li>
 	</ul>
-	<ul class="topiclist cplist">
+<table class="table table-striped">
+	<thead style="background:none;">
+		<tr>
+			
+				<th>{L_WATCHED_TOPICS}</th>
+				<th class="lastpost">{L_LAST_POST}</th>
+				<th class="mark">{L_MARK}</th>
+			
+		</tr>
+	</thead>
+	<tbody class="topiclist cplist">
 
 	<!-- BEGIN topicrow -->
-		<li class="row<!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ELSEIF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<dl class="icon {topicrow.TOPIC_IMG_STYLE}">
-				<dt<!-- IF topicrow.TOPIC_ICON_IMG --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
-					<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
+		<tr>
+			
+				<td<!-- IF topicrow.TOPIC_ICON_IMG --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+					<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><i class="pcon {topicrow.TOPIC_IMG_STYLE}"></i><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
 					<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
 					<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --><br />
 					<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
 					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
-				</dt>
-				<dd class="lastpost"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+				</td>
+				<td class="lastpost"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
 					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
-				</dd>
-				<dd class="mark"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></dd>
-			</dl>
-		</li>
+				</td>
+				<td class="mark"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></td>
+			
+		</tr>
 	<!-- END topicrow -->
-	</ul>
-	<ul class="linklist">
-		<li class="rightside pagination">
-			<!-- IF TOTAL_TOPICS --> {TOTAL_TOPICS} <!-- ENDIF -->
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
-		</li>
-	</ul>
+	</tbody>
+	</table>
+	
 <!-- ELSEIF S_TOPIC_NOTIFY -->
 	<p><strong>{L_NO_WATCHED_TOPICS}</strong></p>
 <!-- ENDIF -->
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <!-- IF .topicrow or .forumrow -->
-	<fieldset class="display-actions">
-		<input type="submit" name="unwatch" value="{L_UNWATCH_MARKED}" class="button2" />
-		<div><a href="#" onclick="marklist('ucp', 't', true); marklist('ucp', 'f', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('ucp', 't', false); marklist('ucp', 'f', false); return false;">{L_UNMARK_ALL}</a></div>
+	<fieldset class="row-fluid display-actions">
+		<input type="submit" name="unwatch" value="{L_UNWATCH_MARKED}" class="btn btn-primary" /> &bull;
+		<a class="btn btn-small" href="#" onclick="marklist('ucp', 't', true); marklist('ucp', 'f', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-small" href="#" onclick="marklist('ucp', 't', false); marklist('ucp', 'f', false); return false;">{L_UNMARK_ALL}</a>
 		{S_FORM_TOKEN}
 	</fieldset>
 <!-- ENDIF -->

@@ -1,16 +1,31 @@
+
+<!-- IF S_VIEWTOPIC -->
 <div class="row-fluid">
 <div class="span6">
-<!-- IF S_VIEWTOPIC -->
-
 	<div class="span6"><a href="{U_VIEW_FORUM}" class="btn" accesskey="r">{L_RETURN_TO} {FORUM_NAME}</a></div>
-<!-- ELSEIF S_VIEWFORUM -->
-	<div class="span6"><a href="{U_INDEX}" class="btn" accesskey="r">{L_RETURN_TO} {L_INDEX}</a></div>
-<!-- ELSEIF SEARCH_TOPIC -->
-	<div class="span6"><a class="btn" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a></div>
-<!-- ELSEIF S_SEARCH_ACTION -->
-	<div class="span6"><a class="btn" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a></div>
-<!-- ENDIF -->
 </div>
+<!-- ELSEIF S_VIEWFORUM -->
+<div class="row-fluid">
+<div class="span6">
+	<div class="span6"><a href="{U_INDEX}" class="btn" accesskey="r">{L_RETURN_TO} {L_INDEX}</a></div>
+	</div>
+<!-- ELSEIF SEARCH_TOPIC -->
+<div class="row-fluid">
+<div class="span6">
+	<div class="span6"><a class="btn" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a></div>
+	</div>
+<!-- ELSEIF S_SEARCH_ACTION -->
+<div class="row-fluid">
+<div class="span6">
+	<div class="span6"><a class="btn" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a></div>
+	</div>
+	<!-- ELSE -->
+	<div class="row-fluid">
+<div class="span6">
+	<div class="span6">&nbsp;</div>
+	</div>
+<!-- ENDIF -->
+
 
 
 <!-- IF S_DISPLAY_JUMPBOX -->
@@ -34,7 +49,7 @@
 	</form>
 </div>
 <!-- ELSE -->
-	<br /><br />
+	
 <!-- ENDIF -->
 
 

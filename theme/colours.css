@@ -61,8 +61,8 @@ hr.dashed {
 }
 
 .bg1	{ background-color: #ECF3F7; }
-.bg2	{ background-color: #e1ebf2;  }
-.bg3	{ background-color: #cadceb; }
+.bg2	{ background-color: #f5f5f5;  }
+.bg3	{ background-color: #f9f9f9; }
 
 .ucprowbg {
 	background-color: #DCDEE2;
@@ -780,24 +780,23 @@ ul.cplist {
 /* Link styles for the sub-section links */
 #navigation a {
 	color: #333;
-	background-color: #B2C2CF;
-	background-image: url("./images/bg_menu.gif");
+	background-color: #ddd;
+	border: 1px solid #ddd;
 }
 
 .rtl #navigation a {
-	background-image: url("./images/bg_menu_rtl.gif");
-	background-position: 0 100%;
-}
+	
+	}
 
 #navigation a:hover {
 	background-image: none;
-	background-color: #aabac6;
-	color: #BC2A4D;
+	background-color: #fff;
+	color: #000;
 }
 
 #navigation #active-subsection a {
 	color: #D31141;
-	background-color: #F9F9F9;
+	background-color: #f5f5f5;
 	background-image: none;
 }
 
@@ -812,7 +811,7 @@ ul.cplist {
 }
 
 #cp-main .panel {
-	background-color: #F9F9F9;
+	background-color: none;
 }
 
 #cp-main .pm {

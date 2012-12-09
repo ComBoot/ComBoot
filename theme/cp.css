@@ -6,18 +6,22 @@
 ----------------------------------------*/
 #cp-menu {
 	float:left;
-	width: 19%;
+	
 	margin-top: 1em;
 	margin-bottom: 5px;
 }
 
 #cp-main {
 	float: left;
-	width: 81%;
+	
 }
 
 #cp-main .content {
 	padding: 0;
+}
+
+#cp-main h3 {
+	font-size: 1em;
 }
 
 #cp-main h3, #cp-main hr, #cp-menu hr {
@@ -25,12 +29,12 @@
 }
 
 #cp-main .panel p {
-	font-size: 1.1em;
+	font-size: 1em;
 }
 
 #cp-main .panel ol {
 	margin-left: 2em;
-	font-size: 1.1em;
+	font-size: 1em;
 }
 
 #cp-main .panel li.row {
@@ -220,7 +224,7 @@ ul.cplist {
 /* Container for sub-navigation list */
 #navigation {
 	width: 100%;
-	padding-top: 36px;
+	padding-top: 15px;
 }
 
 #navigation ul {
@@ -239,7 +243,7 @@ ul.cplist {
 #navigation a {
 	display: block;
 	padding: 5px;
-	margin: 1px 0;
+	margin: 0 0 5px 0;
 	text-decoration: none;
 	font-weight: bold;
 	color: #333;
@@ -274,7 +278,8 @@ ul.cplist {
 }
 
 #cp-main .panel {
-	background-color: #F9F9F9;
+	background-color: none;
+	
 }
 
 #cp-main .pm {

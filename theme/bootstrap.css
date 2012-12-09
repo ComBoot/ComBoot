@@ -5163,6 +5163,11 @@ margin-right: 5px;
 margin-top: 5px;
 }
 
+.c-menu {
+	margin-left: 0;
+	margin-right: -16%;
+}
+
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
 .navbar-fixed-top .brand {

@@ -2,10 +2,10 @@
 
 <h2>{L_UCP}</h2>
 
-<div id="tabs">
-	<ul>
+<div id="p-tabs" class="row-fluid">
+	<ul class="nav nav-pills pull-right">
 		<!-- BEGIN t_block1 -->
-		<li <!-- IF t_block1.S_SELECTED -->class="activetab"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
+		<li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
 		<!-- END t_block1 -->
 	</ul>
 </div>
@@ -14,18 +14,18 @@
 <form id="postform" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
 <!-- ENDIF -->
 
-<div class="panel bg3">
-	<div class="inner"><span class="corners-top"><span></span></span>
+<div class="panel">
+	<div class="inner">
 
-	<div style="width: 100%;">
+	<div class="row-fluid">
 
-	<div id="cp-menu">
+	<div id="cp-menu" class="span2">
 		<div id="navigation">
 
 		<!-- IF S_PRIVMSGS -->
 			<!-- BEGIN t_block2 -->
 				<!-- IF S_PRIVMSGS and not t_block2.S_LAST_ROW -->
-				<ul>
+				<ul class="c-menu">
 					<!-- IF t_block2.S_SELECTED -->
 						<li id="active-subsection"><a href="{t_block2.U_TITLE}"><span>{t_block2.L_TITLE}</span></a></li>
 					<!-- ELSE -->
@@ -48,7 +48,7 @@
 			<hr />
 		<!-- ENDIF -->
 
-			<ul>
+			<ul class="c-menu">
 		<!-- BEGIN t_block2 -->
 			<!-- IF (S_PRIVMSGS and t_block2.S_LAST_ROW) or not S_PRIVMSGS -->
 				<!-- IF t_block2.S_SELECTED -->
@@ -63,7 +63,7 @@
 
 		<!-- IF .friends_online or .friends_offline -->
 		<div class="cp-mini">
-			<div class="inner"><span class="corners-top"><span></span></span>
+			<div class="inner">
 
 			<dl class="mini">
 				<dt>{L_FRIENDS}</dt>
@@ -77,13 +77,13 @@
 				<!-- END friends_offline -->
 			</dl>
 
-			<span class="corners-bottom"><span></span></span></div>
+			</div>
 		</div>
 		<!-- ENDIF -->
 
 		<!-- IF S_SHOW_COLOUR_LEGEND -->
 		<div class="cp-mini">
-			<div class="inner"><span class="corners-top"><span></span></span>
+			<div class="inner">
 
 			<dl class="mini">
 				<dt>{L_MESSAGE_COLOURS}</dt>
@@ -92,10 +92,10 @@
 				<!-- END pm_colour_info -->
 			</dl>
 
-			<span class="corners-bottom"><span></span></span></div>
+			</div>
 		</div>
 		<!-- ENDIF -->
 
 	</div>
 
-	<div id="cp-main" class="ucp-main">
+	<div id="cp-main" class="ucp-main span10 well" style="min-height: 300px;">

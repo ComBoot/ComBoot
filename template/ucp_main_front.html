@@ -1,31 +1,31 @@
 <!-- INCLUDE ucp_header.html -->
 
-<h2>{L_TITLE}</h2>
+<h3 class="box-heading">{L_TITLE}</h3>
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 
 	<p>{L_UCP_WELCOME}</p>
 
 <!-- IF .topicrow -->
 	<h3>{L_IMPORTANT_NEWS}</h3>
 
-	<ul class="topiclist cplist">
+	<table class="topiclist cplist table table-striped">
 	<!-- BEGIN topicrow -->
-		<li class="row<!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<dl class="icon {topicrow.TOPIC_IMG_STYLE}">
-				<dt <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
-					<!-- IF topicrow.S_UNREAD --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
+		<tbody>
+			<tr>
+				<td <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
+					<!-- IF topicrow.S_UNREAD --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><i class="pcon {topicrow.TOPIC_IMG_STYLE}"></i><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
 					<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
 					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
-				</dt>
-				<dd class="lastpost"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+				</td>
+				<td class="lastpost"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
 					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
-				</dd>
-			</dl>
-		</li>
+				</td>
+			</tr>
+		</tbody>
 	<!-- END topicrow -->
-	</ul>
+	</table>
 <!-- ENDIF -->
 
 	<h3>{L_YOUR_DETAILS}</h3>
@@ -39,7 +39,7 @@
 		<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
 	</dl>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <!-- INCLUDE ucp_footer.html -->
