@@ -706,9 +706,6 @@ Colours and backgrounds for cp.css
 /* Main CP box
 ----------------------------------------*/
 
-#cp-main h3, #cp-main hr, #cp-menu hr {
-	border-color: #A4B3BF;
-}
 
 #cp-main .panel li.row {
 	border-bottom-color: #B5C1CB;

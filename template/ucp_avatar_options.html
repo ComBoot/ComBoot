@@ -1,6 +1,6 @@
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 	<!-- IF not S_AVATARS_ENABLED -->
 		<p>{L_AVATAR_FEATURES_DISABLED}</p>
 	<!-- ENDIF -->
@@ -35,26 +35,27 @@
 		<dl>
 			<dt><label for="width">{L_LINK_REMOTE_SIZE}:</label><br /><span>{L_LINK_REMOTE_SIZE_EXPLAIN}</span></dt>
 			<dd>
-				<label for="width"><input type="text" name="width" id="width" size="3" value="{AVATAR_WIDTH}" class="inputbox autowidth" /> {L_PIXEL}</label> &times;&nbsp; 
-				<label for="height"><input type="text" name="height" id="height" size="3" value="{AVATAR_HEIGHT}" class="inputbox autowidth" /> {L_PIXEL}</label>
+				<label for="width"><div class="input-prepend input-append"><span class="add-on">Width</span><input type="text" name="width" id="width" size="3" value="{AVATAR_WIDTH}" class="input-small autowidth" /><span class="add-on">{L_PIXEL}</span></div>&nbsp; </label>
+				
+				<label for="height"><div class="input-prepend input-append "><span class="add-on">Height</span><input type="text" name="height" id="height" size="3" value="{AVATAR_HEIGHT}" class="input-small autowidth" /><span class="add-on">{L_PIXEL}</span></label>
 			</dd>
 		</dl>
 	<!-- ENDIF -->
 	</fieldset>
 
 	<!-- IF S_IN_AVATAR_GALLERY -->
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 
 		<h3>{L_AVATAR_GALLERY}</h3>
 
 		<fieldset>
 			<label for="category">{L_AVATAR_CATEGORY}: <select name="category" id="category">{S_CAT_OPTIONS}</select></label>
-			<input type="submit" value="{L_GO}" name="display_gallery" class="button2" />
-			<input type="submit" name="cancel" value="{L_CANCEL}" class="button2" />
+			<input type="submit" value="{L_GO}" name="display_gallery" class="btn btn-small" />
+			<input type="submit" name="cancel" value="{L_CANCEL}" class="btn btn-small" />
 		</fieldset>
 
 		<div id="gallery">
@@ -66,5 +67,5 @@
 
 	<!-- ENDIF -->
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>

@@ -2,10 +2,10 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
-<h2>{L_TITLE}</h2>
+<h3 class="box-heading">{L_TITLE}</h3>
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 
 		<fieldset>
 		<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
@@ -53,7 +53,7 @@
 				</dd>
 			</dl>
 		<!-- ENDIF -->
-		<hr />
+		<hr class="dashed" />
 		<dl>
 			<dt><label>{L_VIEW_TOPICS_DAYS}:</label></dt>
 			<dd>{S_TOPIC_SORT_DAYS}</dd>
@@ -66,7 +66,7 @@
 			<dt><label>{L_VIEW_TOPICS_DIR}:</label></dt>
 			<dd>{S_TOPIC_SORT_DIR}</dd>
 		</dl>
-		<hr />
+		<hr class="dashed"/>
 		<dl>
 			<dt><label>{L_VIEW_POSTS_DAYS}:</label></dt>
 			<dd>{S_POST_SORT_DAYS}</dd>
@@ -81,12 +81,12 @@
 		</dl>
 		</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <fieldset class="submit-buttons">
-	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp; 
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
 	{S_FORM_TOKEN}
 </fieldset>
 </form>

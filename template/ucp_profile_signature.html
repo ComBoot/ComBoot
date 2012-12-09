@@ -2,21 +2,21 @@
 
 <form id="postform" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
-<h2>{L_TITLE}</h2>
+<h3 class="box-heading">{L_TITLE}</h3>
 
 <!-- IF SIGNATURE_PREVIEW != '' -->
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 		<h3>{L_SIGNATURE_PREVIEW}</h3>
 		<div class="postbody">
 			<div class="signature" style="border-top:none; margin-top: 0; ">{SIGNATURE_PREVIEW}</div>
 		</div>
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 <!-- ENDIF -->
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 
 	<p>{L_SIGNATURE_EXPLAIN}</p>
 
@@ -36,14 +36,14 @@
 
 	</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <fieldset class="submit-buttons">
 	{S_HIDDEN_FIELDS}
-	<input type="reset" name="reset" value="{L_RESET}" class="button2" />&nbsp;
-	<input type="submit" name="preview" value="{L_PREVIEW}" class="button2" />&nbsp;
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+	<input type="reset" name="reset" value="{L_RESET}" class="btn" />&nbsp;
+	<input type="submit" name="preview" value="{L_PREVIEW}" class="btn" />&nbsp;
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
 	{S_FORM_TOKEN}
 </fieldset>
 </form>

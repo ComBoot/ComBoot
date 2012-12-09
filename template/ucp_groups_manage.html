@@ -1,11 +1,11 @@
 <!-- INCLUDE ucp_header.html -->
 
-<h2<!-- IF GROUP_COLOR --> style="color:#{GROUP_COLOR};"<!-- ENDIF -->>{L_USERGROUPS}<!-- IF GROUP_NAME --> :: {GROUP_NAME}<!-- ENDIF --></h2>
+<h3 class="box-heading"<!-- IF GROUP_COLOR --> style="color:#{GROUP_COLOR};"<!-- ENDIF -->>{L_USERGROUPS}<!-- IF GROUP_NAME --> :: {GROUP_NAME}<!-- ENDIF --></h3>
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 	
 	<p>{L_GROUPS_EXPLAIN}</p>
 
@@ -45,17 +45,17 @@
 		<!-- ENDIF -->
 		</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 	<h3>{L_GROUP_SETTINGS_SAVE}</h3>
 
 	<fieldset>
 	<dl>
 		<dt><label for="group_colour">{L_GROUP_COLOR}:</label><br /><span>{L_GROUP_COLOR_EXPLAIN}</span></dt>
-		<dd><input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="7" maxlength="7" class="inputbox narrow" /> <span style="background-color: {GROUP_COLOUR};">&nbsp;&nbsp;&nbsp;</span> [ <a href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;">{L_COLOUR_SWATCH}</a> ]</dd>
+		<dd><div class="input-append"><input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="7" maxlength="7" class="input-small" style="background-color: #{GROUP_COLOUR};" /><a class="btn" type="button" href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;">{L_COLOUR_SWATCH}</a></div></dd>
 	</dl>
 	<dl>
 		<dt><label for="group_rank">{L_GROUP_RANK}:</label></dt>
@@ -63,25 +63,25 @@
 	</dl>
 	</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <!-- INCLUDE ucp_avatar_options.html -->
 
 <fieldset class="submit-buttons">
 	{S_HIDDEN_FIELDS}
-	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="button2" />&nbsp; <!-- ENDIF -->
-	<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="button2" />&nbsp; <!-- ELSE -->
-	<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; <!-- ENDIF -->
-	<input type="submit" name="update" value="{L_SUBMIT}" class="button1" />
+	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn btn-success" />&nbsp; <!-- ENDIF -->
+	<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="btn" />&nbsp; <!-- ELSE -->
+	<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp; <!-- ENDIF -->
+	<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-primary" />
 	{S_FORM_TOKEN}
 </fieldset>
 
 <!-- ELSEIF S_LIST -->
 
 	<!-- IF .leader -->
-	<table class="table1" cellspacing="1">
-	<thead>
+	<table class="table table-striped">
+	<thead style="background: none;">
 	<tr>
 		<th class="name">{L_GROUP_LEAD}</th>
 		<th class="info">{L_GROUP_DEFAULT}</th>
@@ -92,7 +92,7 @@
 	</thead>
 	<tbody>
 	<!-- BEGIN leader -->
-		<tr class="<!-- IF leader.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+		<tr>
 			<td class="name">{leader.USERNAME_FULL}</td>
 			<td><!-- IF leader.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
 			<td class="posts">{leader.USER_POSTS}</td>
@@ -106,8 +106,8 @@
 
 	<!-- BEGIN member -->
 		<!-- IF member.S_PENDING -->
-			<table class="table1" cellspacing="1">
-			<thead>
+			<table class="table table-striped">
+			<thead style="background: none;">
 			<tr>
 				<th class="name">{L_GROUP_PENDING}</th>
 				<th class="info">{L_GROUP_DEFAULT}</th>
@@ -122,8 +122,8 @@
 				</tbody>
 				</table>
 			<!-- ENDIF -->
-			<table class="table1" cellspacing="1">
-			<thead>
+			<table class="table table-striped">
+			<thead style="background: none;">
 			<tr>
 				<th class="name">{L_GROUP_APPROVED}</th>
 				<th class="info">{L_GROUP_DEFAULT}</th>
@@ -134,7 +134,7 @@
 			</thead>
 			<tbody>
 		<!-- ELSE -->
-			<tr class="<!-- IF member.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+			<tr>
 				<td class="name">{member.USERNAME_FULL}</td>
 				<td><!-- IF member.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
 				<td class="posts">{member.USER_POSTS}</td>
@@ -143,8 +143,8 @@
 			</tr>
 		<!-- ENDIF -->
 	<!-- BEGINELSE -->
-		<table class="table1" cellspacing="1">
-		<thead>
+		<table class="table table-striped">
+		<thead style="background: none;">
 		<tr>
 			<th class="name">{L_MEMBERS}</th>
 		</tr>
@@ -163,17 +163,17 @@
 		</li>
 	</ul>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <fieldset class="display-actions">	
 	<select name="action"><option value="">{L_SELECT_OPTION}</option>{S_ACTION_OPTIONS}</select>
-	<input class="button2" type="submit" name="update" value="{L_SUBMIT}" />
-	<div><a href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
+	<input class="btn btn-primary" type="submit" name="update" value="{L_SUBMIT}" />
+	<div><a class="btn btn-small" href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-small" href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
 </fieldset>
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 
 	<h3>{L_ADD_USERS}</h3>
 
@@ -190,47 +190,49 @@
 	<dl>
 		<dt><label for="usernames">{L_USERNAME}:</label><br /><span>{L_USERNAMES_EXPLAIN}</span></dt>
 		<dd><textarea name="usernames" id="usernames" rows="3" cols="30" class="inputbox"></textarea></dd>
-		<dd><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
+		<dd><strong><a class="btn btn-small btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
 	</dl>
 	</fieldset>
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <fieldset class="submit-buttons">
-	<input class="button1" type="submit" name="addusers" value="{L_SUBMIT}" />
+	<input class="btn btn-primary" type="submit" name="addusers" value="{L_SUBMIT}" />
 	{S_FORM_TOKEN}
 </fieldset>
 
 <!-- ELSE -->
 
 	<!-- IF .leader -->
-		<ul class="topiclist">
-			<li class="header">
-				<dl>
-					<dt>{L_GROUP_LEADER}</dt>
-					<dd class="info"><span>{L_OPTIONS}</span></dd>
-				</dl>
-			</li>
-		</ul>
-		<ul class="topiclist cplist">
+	<table class="table table-striped">
+		<thead style="background: none;" class="topiclist">
+			<tr class="header">
+				
+					<th>{L_GROUP_LEADER}</th>
+					<th class="info"><span>{L_OPTIONS}</span></th>
+				
+			</tr>
+		</thead>
+		<tbody class="topiclist cplist">
 
 		<!-- BEGIN leader -->
-		<li class="row<!-- IF attachrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<dl>
-				<dt><a href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
-					<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF --></dt>
-				<dd class="option"><span><a href="{leader.U_EDIT}" >{L_EDIT}</a></span></dd>
-				<dd class="option"><span><a href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></dd>
-			</dl>
-		</li>
+		
+			<tr>
+				<td><a href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
+					<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
+				</td>
+				<td class="option"><span><a class="btn btn-mini" href="{leader.U_EDIT}" >{L_EDIT}</a></span> <span><a class="btn btn-mini" href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></td>
+			</tr>
+		
 		<!-- END leader -->
-		</ul>
+		</tbody>
+		</table>
 	<!-- ELSE -->
 		<p><strong>{L_NO_LEADERS}</strong></p>
 	<!-- ENDIF -->
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <!-- ENDIF -->

@@ -9,30 +9,32 @@
 	<p>{L_WATCHED_EXPLAIN}</p>
 
 <!-- IF .forumrow -->
-	<ul class="topiclist">
-		<li class="header">
-			<dl class="icon">
-				<dt>{L_WATCHED_FORUMS}</dt>
-				<dd class="lastpost">{L_LAST_POST}</dd>
-				<dd class="mark">{L_MARK}</dd>
-			</dl>
-		</li>
-	</ul>
-	<ul class="topiclist cplist">
+<table class="table table-striped">
+	<thead style="background:none;">
+		<tr>
+			
+				<th>{L_WATCHED_FORUMS}</th>
+				<th class="lastpost">{L_LAST_POST}</th>
+				<th class="mark">{L_MARK}</th>
+			
+		</tr>
+	</thead>
+	<tbody class="topiclist cplist">
 
 	<!-- BEGIN forumrow -->
-		<li class="row<!-- IF forumrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<dl class="icon {forumrow.FORUM_IMG_STYLE}">
-				<dt><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />{forumrow.FORUM_DESC}</dt>
-				<dd class="lastpost"><!-- IF forumrow.LAST_POST_TIME --><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {forumrow.LAST_POST_AUTHOR_FULL}
+		<tr>
+			
+				<td><i class="pcon {forumrow.FORUM_IMG_STYLE}"></i><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />{forumrow.FORUM_DESC}</td>
+				<td class="lastpost"><!-- IF forumrow.LAST_POST_TIME --><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {forumrow.LAST_POST_AUTHOR_FULL}
 					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{forumrow.LAST_POST_TIME}</span>
 					<!-- ELSE -->{L_NO_POSTS}<br />&nbsp;<!-- ENDIF -->
-				</dd>
-				<dd class="mark"><input type="checkbox" name="f[{forumrow.FORUM_ID}]" id="f{forumrow.FORUM_ID}" /></dd>
-			</dl>
-		</li>
+				</td>
+				<td class="mark"><center><input type="checkbox" name="f[{forumrow.FORUM_ID}]" id="f{forumrow.FORUM_ID}" /></center></td>
+			
+		</tr>
 	<!-- END forumrow -->
-	</ul>
+	</tbody>
+</table>
 <!-- ELSEIF S_FORUM_NOTIFY -->
 	<p><strong>{L_NO_WATCHED_FORUMS}</strong></p>
 <!-- ENDIF -->
@@ -70,7 +72,7 @@
 				<td class="lastpost"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
 					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
 				</td>
-				<td class="mark"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></td>
+				<td class="mark"><center><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></center></td>
 			
 		</tr>
 	<!-- END topicrow -->

@@ -2,7 +2,7 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
-<h2>{L_TITLE}</h2>
+<h3 class="box-heading">{L_TITLE}</h3>
 
 <div class="panel">
 	<div class="inner"><span class="corners-top"><span></span></span>
@@ -24,7 +24,7 @@
 	<dl>
 		<dt><label for="add">{L_ADD_FOES}:</label><br /><span>{L_ADD_FOES_EXPLAIN}</span></dt>
 		<dd><textarea name="add" id="add" rows="3" cols="30" class="inputbox">{USERNAMES}</textarea></dd>
-		<dd><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
+		<dd><strong><a class="btn btn-small btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
 	</dl>
 	</fieldset>
 
@@ -32,8 +32,8 @@
 </div>
 
 <fieldset class="submit-buttons">
-	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp; 
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
 	{S_FORM_TOKEN}
 </fieldset>
 </form>
