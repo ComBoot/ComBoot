@@ -7,7 +7,7 @@ phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framewor
 
 **Style Version:** *In Development*
 
-**phpBB version:** phpBB 3.1.0
+**phpBB version:** phpBB 3.0.x-3.1.0
 
 **Demo:** *Coming soon*
 
