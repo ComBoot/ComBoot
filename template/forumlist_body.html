@@ -47,7 +47,7 @@
 					<td class="posts"><center><span class="badge">{forumrow.POSTS}</span></center></td>
 					<td class="lastpost"><span>
 						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
-						<!-- IF forumrow.LAST_POST_TIME --><def><a href="{forumrow.U_LAST_POST}">{forumrow.LAST_POST_SUBJECT}</a></def> {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
+						<!-- IF forumrow.LAST_POST_TIME --><span class="hidden-phone"><def><a href="{forumrow.U_LAST_POST}">{forumrow.LAST_POST_SUBJECT}</a></def> {L_POST_BY_AUTHOR} </span>{forumrow.LAST_POSTER_FULL}
 						<!-- IF not S_IS_BOT --><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{forumrow.LAST_POST_TIME}<!-- ELSE -->{L_NO_POSTS}<br />&nbsp;<!-- ENDIF --></span>
 					</td>
 				<!-- ENDIF -->

@@ -99,7 +99,7 @@
 			
 
 			<div id="site-description">
-				<a href="{U_INDEX}" title="{L_INDEX}" id="logo">{SITE_LOGO_IMG}</a>
+				<a href="{U_INDEX}" title="{L_INDEX}" id="logo" class="visible-desktop">{SITE_LOGO_IMG}</a>
 				<h1>{SITENAME}</h1>
 				<p>{SITE_DESCRIPTION}</p>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
@@ -113,7 +113,7 @@
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container-fluid">
-				<a class="brand" href="{U_INDEX}">{SITENAME}</a>
+				
 				<div class="btn-group pull-right">
   <a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#">
     {S_USERNAME}
@@ -145,15 +145,23 @@
 					
 					<!-- ENDIF -->
   </ul>
-</div>
-			<ul class="linklist nav">
+</div>			
+				
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+				<a class="brand visible-desktop" href="{U_INDEX}">{SITENAME}</a>
 				
 				
-				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-				<li class="divider-vertical"></li>
-				<a class="pull-left" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="icon-plus-sign"></i>&nbsp;</a>
+			
+				
+<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+				
+				
 				<form action="{U_SEARCH}" method="get" id="search" class="navbar-search ">
-				
+				<a class="pull-left" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">&nbsp;<i class="icon-plus-sign"></i>&nbsp;</a>
 				<fieldset>
 				
 					<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
@@ -162,16 +170,21 @@
 				</form>
 				
 		<!-- ENDIF -->
+
+<div class="nav-collapse">
+			<ul class="nav">
 				
+				
+								
 							
 
 			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-			<li class="divider-vertical"></li>
+			
 				
-				<li class="picon-faq"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-question-sign "></i> {L_FAQ}</a></li>
+				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-question-sign"></i> {L_FAQ}</a></li>
 				<!-- IF not S_IS_BOT -->
 					<!-- IF S_DISPLAY_MEMBERLIST -->
-					<li class="divider-vertical"></li>
+					
 					<li class="picon-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-user "></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
 					
 					
@@ -181,7 +194,7 @@
 						
 					
 					<!-- IF U_RESTORE_PERMISSIONS -->
-					<li class="divider-vertical"></li>
+					
 					<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
 					<!-- ENDIF -->
 				</li>
@@ -191,15 +204,19 @@
 			<!-- ENDIF -->
 				
 			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-					<li class="divider-vertical"></li>
+					
 					<li class="picon-register"><a href="{U_REGISTER}"><i class="icon-user "></i> {L_REGISTER}</a></li>
-					<li class="divider-vertical"></li>
+					
 					<li class="picon-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-minus-sign "></i> {L_LOGIN_LOGOUT}</a></li>
 <!-- ENDIF -->
 					
 			</ul>
-				</div>
-
+				</div> <!-- con -->
+				
+				
+	
+				
+			</div>
 			</div>
 		</div>
 
