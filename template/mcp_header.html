@@ -4,28 +4,28 @@
 
 <!-- IF U_MCP -->
 	<p class="linkmcp">
-		[ <a href="{U_MCP}">{L_MCP}</a><!-- IF U_MCP_FORUM --> | <a href="{U_MCP_FORUM}">{L_MODERATE_FORUM}</a><!-- ENDIF -->
-		<!-- IF U_MCP_TOPIC --> | <a href="{U_MCP_TOPIC}">{L_MODERATE_TOPIC}</a><!-- ENDIF -->
-		<!-- IF U_MCP_POST --> | <a href="{U_MCP_POST}">{L_MODERATE_POST}</a><!-- ENDIF --> ]
+		<a class="btn" href="{U_MCP}">{L_MCP}</a><!-- IF U_MCP_FORUM --> | <a class="btn" href="{U_MCP_FORUM}">{L_MODERATE_FORUM}</a><!-- ENDIF -->
+		<!-- IF U_MCP_TOPIC --> |  <a class="btn" href="{U_MCP_TOPIC}">{L_MODERATE_TOPIC}</a><!-- ENDIF -->
+		<!-- IF U_MCP_POST --> | <a class="btn" href="{U_MCP_POST}">{L_MODERATE_POST}</a><!-- ENDIF -->
 	</p>
 <!-- ENDIF -->
 
-<div id="tabs">
-	<ul>
+<div id="p-tabs" class="row-fluid">
+	<ul class="nav nav-pills pull-right">
 		<!-- BEGIN l_block1 -->
-		<li<!-- IF l_block1.S_SELECTED --> class="activetab"<!-- ENDIF -->><a href="{l_block1.U_TITLE}"><span>{l_block1.L_TITLE}</span></a></li>
+		<li<!-- IF l_block1.S_SELECTED --> class="active"<!-- ENDIF -->><a href="{l_block1.U_TITLE}"><span>{l_block1.L_TITLE}</span></a></li>
 		<!-- END l_block1 -->
 	</ul>
 </div>
 
-<div class="panel bg3">
-	<div class="inner"><span class="corners-top"><span></span></span>
+<div class="panel">
+	<div class="inner">
 
-	<div style="width: 100%;">
+	<div class="row-fluid">
 
-	<div id="cp-menu">
+	<div id="cp-menu" class="span2">
 		<div id="navigation">
-			<ul>
+			<ul class="c-menu">
 			<!-- BEGIN l_block1 -->
 			<!-- IF l_block1.S_SELECTED -->
 				<!-- BEGIN l_block2 -->
@@ -41,7 +41,7 @@
 		</div>
 	</div>
 
-	<div id="cp-main" class="mcp-main">
+	<div id="cp-main" class="mcp-main span10 well" style="min-height: 300px;">
 		<!-- IF MESSAGE -->
 		<div class="content">
 			<h2>{L_MESSAGE}</h2>

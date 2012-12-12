@@ -1,16 +1,19 @@
 <!-- INCLUDE mcp_header.html -->
 
 <!-- DEFINE $CUSTOM_FIELDSET_CLASS = 'forum-selection2' -->
+
+
+<h3 class="box-heading"><a href="{U_VIEW_FORUM}">{L_FORUM}: {FORUM_NAME}</a></h3>
+
 <!-- INCLUDE jumpbox.html -->
 
-<h2><a href="{U_VIEW_FORUM}">{L_FORUM}: {FORUM_NAME}</a></h2>
-
-<form method="post" id="mcp" action="{S_MCP_ACTION}">
+<form method="post" id="mcp" action="{S_MCP_ACTION}" class="form-inline">
 
 <div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 
 	<!-- IF PAGINATION or TOTAL_TOPICS -->
+	
 		<ul class="linklist">
 			<li class="rightside pagination">
 				<!-- IF TOTAL_TOPICS --> {TOTAL_TOPICS}<!-- ENDIF -->
@@ -20,42 +23,44 @@
 	<!-- ENDIF -->
 
 	<!-- IF .topicrow -->
-		<ul class="topiclist">
-			<li class="header">
-				<dl class="icon">
-					<dt>{L_TOPICS}</dt>
-					<dd class="posts">{L_REPLIES}</dd>
-					<dd class="lastpost"><span>{L_LAST_POST}</span></dd>
-					<!-- IF not S_MERGE_SELECT --><dd class="mark">{L_MARK}</dd><!-- ENDIF -->
-				</dl>
-			</li>
-		</ul>
-		<ul class="topiclist cplist">
+	<table class="table table-striped">
+		<thead style="background:none;">
+			
+				<tr class="icon">
+					<th>{L_TOPICS}</th>
+					<th class="posts">{L_REPLIES}</th>
+					<th class="lastpost"><span>{L_LAST_POST}</span></th>
+					<!-- IF not S_MERGE_SELECT --><th class="mark">{L_MARK}</th><!-- ENDIF -->
+				</tr>
+			
+		</thead>
+		<tbody class="topiclist cplist">
 
 		<!-- BEGIN topicrow -->
-		<li class="row<!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
-			<dl class="icon {topicrow.TOPIC_IMG_STYLE}">
-				<dt <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
+		
+			<tr>
+				<td <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
 					<!-- IF topicrow.S_SELECT_TOPIC --><a href="{topicrow.U_SELECT_TOPIC}" class="topictitle">[ {L_SELECT_MERGE} ]</a>&nbsp;&nbsp; <!-- ENDIF -->
-					<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
+					<i class="pcon {topicrow.TOPIC_IMG_STYLE}"></i><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
 					<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
 					<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF -->
 					<!-- IF topicrow.S_MOVED_TOPIC and S_CAN_DELETE -->&nbsp;<a href="{topicrow.U_DELETE_TOPIC}" class="topictitle">[ {L_DELETE_SHADOW_TOPIC} ]</a><!-- ENDIF -->
 					<br />
 					<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
-					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME} </dt>
-				<dd class="posts">{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></dd>
-				<dd class="lastpost"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}<br />{topicrow.LAST_POST_TIME}</span>
-				</dd>
+					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME} </td>
+				<td class="posts">{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></td>
+				<td class="lastpost"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}<br />{topicrow.LAST_POST_TIME}</span>
+				</td>
 				<!-- IF not S_MERGE_SELECT -->
-				<dd class="mark">
+				<td class="mark">
 					<!-- IF not topicrow.S_MOVED_TOPIC --><input type="checkbox" name="topic_id_list[]" value="{topicrow.TOPIC_ID}"<!-- IF topicrow.S_TOPIC_CHECKED --> checked="checked"<!-- ENDIF --> /><!-- ELSE -->&nbsp;<!-- ENDIF -->
-				</dd>
+				</td>
 				<!-- ENDIF -->
-			</dl>
-		</li>
+			</tr>
+		
 		<!-- END topicrow -->
-		</ul>
+		</tbody>
+		</table>
 	<!-- ELSE -->
 		<ul class="topiclist">
 			<li><p class="notopics">{L_NO_TOPICS}</p></li>
@@ -67,7 +72,7 @@
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 		<label>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</label>
 		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-		<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+		<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-small" /></label>
 	</fieldset>
 
 	<hr />
@@ -81,7 +86,7 @@
 		</ul>
 	<!-- ENDIF -->
 
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <fieldset class="display-actions">
@@ -101,7 +106,7 @@
 			<option value="make_global">{L_MAKE_GLOBAL}</option>
 		<!-- ENDIF -->
 	</select>
-	<input class="button2" type="submit" value="{L_SUBMIT}" />
+	<input class="btn" type="submit" value="{L_SUBMIT}" />
 	<div><a href="#" onclick="marklist('mcp', 'topic_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'topic_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
 	<!-- ENDIF -->
 	{S_FORM_TOKEN}

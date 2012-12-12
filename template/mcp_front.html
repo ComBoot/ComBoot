@@ -1,56 +1,55 @@
 <!-- INCLUDE mcp_header.html -->
 
-<h2>{PAGE_TITLE}</h2>
+<h3 class="box-heading">{PAGE_TITLE}</h3>
 
 <!-- IF S_SHOW_UNAPPROVED -->
 
 	<form id="mcp_queue" method="post" action="{S_MCP_QUEUE_ACTION}">
 
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
-
+		<div class="inner">
 		<h3>{L_LATEST_UNAPPROVED}</h3>
 		<p>{L_UNAPPROVED_TOTAL}</p>
 
 		<!-- IF .unapproved -->
-			<ul class="topiclist">
-				<li class="header">
-					<dl>
-						<dt>{L_VIEW_DETAILS}</dt>
-						<dd class="moderation"><span>{L_TOPIC} &amp; {L_FORUM}</span></dd>
-					</dl>
-				</li>
-			</ul>
-			<ul class="topiclist cplist">
+		<table class="table table-striped">
+			<thead style="background:none;">
+				
+					<tr>
+						<th>{L_VIEW_DETAILS}</th>
+						<th class="moderation"><span>{L_TOPIC} &amp; {L_FORUM}</span></th>
+					</tr>
+			</thead>
+			<tbody class="topiclist cplist">
 
 			<!-- BEGIN unapproved -->
-			<li class="row<!-- IF unapproved.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl>
-					<dt>
+			
+				<tr>
+					<td>
 						<a href="{unapproved.U_POST_DETAILS}" class="topictitle">{unapproved.SUBJECT}</a> {unapproved.ATTACH_ICON_IMG}<br />
 						{L_POSTED} {L_POST_BY_AUTHOR} {unapproved.AUTHOR_FULL} &raquo; {unapproved.POST_TIME}
-					</dt>
-					<dd class="moderation"><span>
+					</td>
+					<td class="moderation"><span>
 						{L_TOPIC}: <a href="{unapproved.U_TOPIC}">{unapproved.TOPIC_TITLE}</a> [<a href="{unapproved.U_MCP_TOPIC}">{L_MODERATE}</a>]<br />
 						{L_FORUM}: <!-- IF unapproved.U_FORUM --><a href="{unapproved.U_FORUM}">{unapproved.FORUM_NAME}</a><!-- ELSE -->{unapproved.FORUM_NAME}<!-- ENDIF --><!-- IF unapproved.U_MCP_FORUM --> [<a href="{unapproved.U_MCP_FORUM}">{L_MODERATE}</a>]<!-- ENDIF --></span>
-					</dd>
+					</td>
 
-			 		<dd class="mark"><input type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}" /></dd>
-				</dl>
-			</li>
+			 		<td class="mark"><input type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}" /></td>
+				</tr>
 			<!-- END unapproved -->
-			</ul>
+			</tbody>
+		</table>
 		<!-- ENDIF -->
 
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	{S_FORM_TOKEN}
 	</div>
 
 	<!-- IF .unapproved -->
 	<fieldset class="display-actions">
 		{S_HIDDEN_FIELDS}
-		<input class="button2" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
-		<input class="button1" type="submit" name="action[approve]" value="{L_APPROVE}" />
+		<input class="btn btn-danger" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
+		<input class="btn btn-primary" type="submit" name="action[approve]" value="{L_APPROVE}" />
 		<div><a href="#" onclick="marklist('mcp_queue', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp_queue', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
 	</fieldset>
 	<!-- ENDIF -->
@@ -59,90 +58,92 @@
 
 <!-- IF S_SHOW_REPORTS -->
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 
 		<h3>{L_LATEST_REPORTED}</h3>
 		<p>{L_REPORTS_TOTAL}</p>
 
 		<!-- IF .report -->
-			<ul class="topiclist">
-				<li class="header">
-					<dl>
-						<dt>{L_VIEW_DETAILS}</dt>
-						<dd class="moderation"><span>{L_REPORTER} &amp; {L_FORUM}</span></dd>
-					</dl>
-				</li>
-			</ul>
-			<ul class="topiclist cplist">
+		<table class="table table-striped">
+			<thead style="background:none;">
+				
+					<tr>
+						<th>{L_VIEW_DETAILS}</th>
+						<th class="moderation"><span>{L_REPORTER} &amp; {L_FORUM}</span></th>
+					</tr>
+			</thead>
+			<tbody class="topiclist cplist">
 
 			<!-- BEGIN report -->
-			<li class="row<!-- IF report.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl>
-					<dt>
+			
+				<tr>
+					<td>
 						<a href="{report.U_POST_DETAILS}#reports" class="topictitle">{report.SUBJECT}</a> {report.ATTACH_ICON_IMG}<br />
 						<span>{L_POSTED} {L_POST_BY_AUTHOR} {report.AUTHOR_FULL} &raquo; {report.POST_TIME}</span>
-					</dt>
-					<dd class="moderation">
+					</td>
+					<td class="moderation">
 						<span>{L_REPORTED} {L_POST_BY_AUTHOR} {report.REPORTER_FULL} {L_REPORTED_ON_DATE} {report.REPORT_TIME}<br />
 						{L_FORUM}: <a href="{report.U_FORUM}">{report.FORUM_NAME}</a></span>
-					</dd>
-				</dl>
-			</li>
+					</td>
+				</tr>
+
 			<!-- END report -->
-			</ul>
+			</tbody>
+		</table>
 		<!-- ENDIF -->
 
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_PM_REPORTS -->
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 
 		<h3>{L_LATEST_REPORTED_PMS}</h3>
 		<p>{L_PM_REPORTS_TOTAL}</p>
 
 		<!-- IF .pm_report -->
-			<ul class="topiclist">
-				<li class="header">
+		<table class="table table-striped">
+			<thead style="background:none;">
+				
 					<dl>
 						<dt>{L_VIEW_DETAILS}</dt>
 						<dd class="moderation"><span>{L_REPORTER}</span></dd>
 					</dl>
-				</li>
-			</ul>
-			<ul class="topiclist cplist">
+				
+			</thead>
+			<tbody class="topiclist cplist">
 
 			<!-- BEGIN pm_report -->
-			<li class="row<!-- IF report.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl>
-					<dt>
+			
+				<tr>
+					<td>
 						<a href="{pm_report.U_PM_DETAILS}" class="topictitle">{pm_report.PM_SUBJECT}</a> {pm_report.ATTACH_ICON_IMG}<br />
 						<span>{L_MESSAGE_BY_AUTHOR} {pm_report.PM_AUTHOR_FULL} &raquo; {pm_report.PM_TIME}</span><br />
 						<span>{L_MESSAGE_TO} {pm_report.RECIPIENTS}</span>
-					</dt>
-					<dd class="moderation">
+					</td>
+					<td class="moderation">
 						<span>{L_REPORTED} {L_POST_BY_AUTHOR} {pm_report.REPORTER_FULL} {L_REPORTED_ON_DATE} {pm_report.REPORT_TIME}</span>
-					</dd>
-				</dl>
-			</li>
+					</td>
+				</tr>
+			
 			<!-- END pm_report -->
-			</ul>
+			</tbody>
 		<!-- ENDIF -->
 
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_LOGS -->
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 
 		<h3>{L_LATEST_LOGS}</h3>
 
-		<table class="table1" cellspacing="0">
-		<thead>
+		<table class="table table-striped table-condensed">
+		<thead style="background:none;">
 		<tr>
 			<th class="name">{L_ACTION}</th>
 			<th class="name">{L_USERNAME}</th>
@@ -154,7 +155,7 @@
 		</thead>
 		<tbody>
 	<!-- BEGIN log -->
-		<tr class="<!-- IF log.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+		<tr>
 			<td>{log.ACTION}</td>
 			<td><span>{log.USERNAME}</span></td>
 			<td><span>{log.IP}</span></td>
@@ -170,7 +171,7 @@
 		</tbody>
 		</table>
 
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 <!-- ENDIF -->
 
