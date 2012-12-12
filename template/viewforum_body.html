@@ -169,7 +169,7 @@
 				</td>
 				<td class="posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><center><span class="badge">{topicrow.REPLIES}</span></center></td>
 				<td class="views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><center><span class="badge">{topicrow.VIEWS}</span></center></td>
-				<td class="lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+				<td class="lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span><def><a href="{topicrow.U_LAST_POST}">{topicrow.LAST_POST_SUBJECT}</a> </def>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
 					<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{topicrow.LAST_POST_TIME}</span>
 				</td>
 			
