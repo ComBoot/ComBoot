@@ -5,9 +5,9 @@ phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framewor
 
 **Base style:** proSilver
 
-**Style Version:** *In Development*
+**Style Version:** 2.0
 
-**phpBB version:** phpBB 3.0.x-3.1.0
+**phpBB version:** phpBB 3.0.11
 
 **Demo:** *Coming soon*
 
