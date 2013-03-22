@@ -783,7 +783,7 @@ select,
   width: 210px;
   height: 18px;
   padding: 4px;
-  margin-bottom: 9px;
+  
   font-size: 13px;
   line-height: 18px;
   color: #555555;
@@ -1604,11 +1604,14 @@ table {
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
+  transition: background .15s ease-in-out;
+   -moz-transition: background .15s ease-in-out;
+   -webkit-transition: background .15s ease-in-out;
 }
 
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-  background-color: #f5f5f5;
+  background-color: #ddd;
 }
 
 table .span1 {
@@ -2566,7 +2569,7 @@ button.close {
   display: inline-block;
   *display: inline;
   padding: 4px 10px 4px;
-  margin-bottom: 0;
+  
   *margin-left: .3em;
   font-size: 13px;
   line-height: 18px;
@@ -3772,8 +3775,6 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li {
   display: block;
   float: left;
-  margin-right: 5px;
-margin-top: 10px;
 }
 
 .navbar .nav > li > a {
@@ -3783,7 +3784,7 @@ margin-top: 10px;
   color: #999999;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  }
+}
 
 .navbar .btn {
   display: inline-block;
@@ -3958,7 +3959,7 @@ margin-top: 10px;
 
 .breadcrumb {
   padding: 7px 14px;
-  margin: 0 0 18px;
+  margin: 0 0 5px;
   list-style: none;
   background-color: #fbfbfb;
   background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
@@ -5167,7 +5168,7 @@ margin-top: 5px;
 
 .c-menu {
 	margin-left: 0;
-	margin-right: -20%;
+	margin-right: -19%;
 }
 
 /* Tweak navbar brand link to be super sleek

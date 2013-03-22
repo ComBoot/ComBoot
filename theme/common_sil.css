@@ -43,13 +43,16 @@ h2 {
 	margin: 0.8em 0 0.2em 0;
 }
 
+h2.solo {
+	margin-bottom: 1em;
+}
 
 h3 {
 	/* Sub-headers (also used as post headers, but defined later) */
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
-	
+	border-bottom: 1px solid #CCCCCC;
 	margin-bottom: 3px;
 	padding-bottom: 2px;
 	font-size: 1.05em;
@@ -166,13 +169,10 @@ a#logo:hover {
 	vertical-align: middle;
 	margin-right: 3px;
 }
-#adv-search {
-	margin-top: 10px;
-}
 
 /* Site description and logo */
 #site-description {
-	
+	float: left;
 	width: 70%;
 }
 
@@ -183,28 +183,40 @@ a#logo:hover {
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 .headerbar {
-	margin-bottom: 40px;
-	padding-top: 20px;
-	}
+	background: #ebebeb none repeat-x 0 0;
+	color: #FFFFFF;
+	margin-bottom: 4px;
+	padding: 0 5px;
+}
+
+.navbar {
+	background-color: #ebebeb;
+	padding: 0 10px;
+}
 
 .forabg {
-	
-	margin-top: 10px;
+	background: #b1b1b1 none repeat-x 0 0;
 	margin-bottom: 4px;
-	
+	padding: 0 5px;
 	clear: both;
 }
 
 .forumbg {
-	
+	background: #ebebeb none repeat-x 0 0;
 	margin-bottom: 4px;
-		clear: both;
+	padding: 0 5px;
+	clear: both;
 }
 
-
+.panel {
+	margin-bottom: 4px;
+	padding: 0 10px;
+	background-color: #f3f3f3;
+	color: #3f3f3f;
+}
 
 .post {
-
+	padding: 0 10px;
 	margin-bottom: 4px;
 	background-repeat: no-repeat;
 	background-position: 100% 0;
@@ -282,8 +294,6 @@ span.corners-bottom span {
 	margin: 5px -10px 0 -10px;
 }
 
-
-
 /* Horizontal lists
 ----------------------------------------*/
 ul.linklist {
@@ -297,7 +307,8 @@ ul.linklist li {
 	float: left;
 	width: auto;
 	margin-right: 5px;
-	margin-top: 10px;
+	font-size: 1.1em;
+	line-height: 2.2em;
 }
 
 ul.linklist li.rightside, p.rightside {
@@ -310,7 +321,7 @@ ul.linklist li.rightside, p.rightside {
 ul.navlinks {
 	padding-bottom: 1px;
 	margin-bottom: 1px;
-	
+	border-bottom: 1px solid #FFFFFF;
 	font-weight: bold;
 }
 
@@ -453,7 +464,7 @@ table.info tbody th {
 
 dl.details {
 	/*font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;*/
-	font-size: 1em;
+	font-size: 1.1em;
 }
 
 dl.details dt {

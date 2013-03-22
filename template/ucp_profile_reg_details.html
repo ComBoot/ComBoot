@@ -20,6 +20,12 @@
 		<dt><label for="email">{L_EMAIL_ADDRESS}:</label></dt>
 		<dd><!-- IF S_CHANGE_EMAIL --><input type="text" name="email" id="email" maxlength="100" value="{EMAIL}" class="inputbox" title="{L_EMAIL_ADDRESS}" /><!-- ELSE --><strong>{EMAIL}</strong><!-- ENDIF --></dd>
 	</dl>
+	<!-- IF S_CHANGE_EMAIL -->
+		<dl>
+			<dt><label for="email_confirm">{L_CONFIRM_EMAIL}:</label><br /><span>{L_CONFIRM_EMAIL_EXPLAIN}</span></dt>
+			<dd><input type="text" name="email_confirm" id="email_confirm" maxlength="100" value="{CONFIRM_EMAIL}" class="inputbox" title="{L_CONFIRM_EMAIL}" /></dd>
+		</dl>
+	<!-- ENDIF -->
 	<!-- IF S_CHANGE_PASSWORD -->
 		<dl>
 			<dt><label for="new_password">{L_NEW_PASSWORD}:</label><br /><span>{L_CHANGE_PASSWORD_EXPLAIN}</span></dt>
@@ -39,7 +45,7 @@
 
 	<fieldset>
 	<dl>
-		<dt><label for="cur_password">{L_CURRENT_PASSWORD}:</label><br /><span>{L_CURRENT_PASSWORD_EXPLAIN}</span></dt>
+		<dt><label for="cur_password">{L_CURRENT_PASSWORD}:</label><br /><span><!-- IF S_CHANGE_PASSWORD -->{L_CURRENT_CHANGE_PASSWORD_EXPLAIN}<!-- ELSE -->{L_CURRENT_PASSWORD_EXPLAIN}<!-- ENDIF --></span></dt>
 		<dd><input type="password" name="cur_password" id="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="inputbox" title="{L_CURRENT_PASSWORD}" /></dd>
 	</dl>
 	</fieldset>
@@ -48,8 +54,8 @@
 </div>
 
 <fieldset class="submit-buttons">
-	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp; 
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp;
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn" />
 	{S_FORM_TOKEN}
 </fieldset>
 </form>
