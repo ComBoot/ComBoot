@@ -40,33 +40,35 @@
 </div>
 <!-- ENDIF -->
 </div>
-
-
-	<div class="navbar navbar-fixed-bottom visible-desktop">
-		<div class="navbar-inner">
-		<div class="container-fluid">
-		<ul class="linklist nav">
-			<li class="picon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a>  &bull; </li>
-				<!-- IF not S_IS_BOT -->
-					<!-- IF S_WATCH_FORUM_LINK --><li <!-- IF S_WATCHING_FORUM -->class="picon-unsubscribe"<!-- ELSE -->class="picon-subscribe"<!-- ENDIF -->><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a>  &bull; </li> <!-- ENDIF -->
-					<!-- IF U_WATCH_TOPIC --><li <!-- IF S_WATCHING_TOPIC -->class="picon-unsubscribe"<!-- ELSE -->class="picon-subscribe"<!-- ENDIF -->><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a>  &bull; </li><!-- ENDIF -->
-					<!-- IF U_BOOKMARK_TOPIC --><li class="picon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a>  &bull; </li><!-- ENDIF -->
-					<!-- IF U_BUMP_TOPIC --><li class="picon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
-				<!-- ENDIF -->
-			<li class="rightside"><!-- IF U_TEAM --><a href="{U_TEAM}">{L_THE_TEAM}</a> &bull; <!-- ENDIF --><!-- IF not S_IS_BOT --><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> &bull; <!-- ENDIF -->{S_TIMEZONE}</li>
-		</ul>
-			</div>
-		</div>
-	</div>
-
-	<div class="copyright"><br>Powered by <a href="http://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+	
+	<div class="copyright">{CREDIT_LINE}
 		<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
 		<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
 		
 	</div>
+
+	
 </div>
 
 </div>
+
+<div class="navbar navbar-fixed-bottom hidden-phone">
+		<div class="navbar-inner">
+		<div class="container-fluid">
+		<ul class="linklist nav">
+			<li><a href="{U_INDEX}" accesskey="h"><i class="icon-home"></i></a></li>
+			<li class="divider-vertical"></li>
+				<!-- IF not S_IS_BOT -->
+					<!-- IF S_WATCH_FORUM_LINK --><li><i <!-- IF S_WATCHING_FORUM -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->></i><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a> </li><li class="divider-vertical"></li> <!-- ENDIF -->
+					<!-- IF U_WATCH_TOPIC --><li><i <!-- IF S_WATCHING_TOPIC -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->></i><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a>  </li><li class="divider-vertical"></li><!-- ENDIF -->
+					<!-- IF U_BOOKMARK_TOPIC --><li><i class="icon-bookmark"></i><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a>  </li><li class="divider-vertical"></li><!-- ENDIF -->
+					<!-- IF U_BUMP_TOPIC --><li><i class="icon-bump"></i><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><li class="divider-vertical"></li><!-- ENDIF -->
+				<!-- ENDIF -->
+			<li><!-- IF U_TEAM --><a href="{U_TEAM}">{L_THE_TEAM}</a> </li><li class="divider-vertical"></li> <!-- ENDIF --><!-- IF not S_IS_BOT --><li><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> </li><li class="divider-vertical"></li> <!-- ENDIF --><li>{S_TIMEZONE}</li>
+		</ul>
+			</div>
+		</div>
+	</div>
 
 <div>
 	<a id="bottom" accesskey="z"></a>
@@ -74,9 +76,8 @@
 </div>
 
 
-<!-- Dev mode
-script type="text/javascript" src="{T_ASSETS_PATH}/javascript/jquery.js" type="text/javascript"></script> 
--->
+<!-- Dev mode -->
+<script type="text/javascript" src="{T_THEME_PATH}/jquery.js" type="text/javascript"></script> 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="{T_THEME_PATH}/bootstrap.min.js"></script>
 </body>

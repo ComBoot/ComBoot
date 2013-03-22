@@ -3,16 +3,13 @@
 			<div class="well">
 					<h3 class="box-heading">{L_QUICKREPLY}</h3>
 					<fieldset class="fields1">
-					
-						<tr style="clear: left;">
-							<td><label for="subject">{L_SUBJECT}:</label></td>
-							<td><input type="text" name="subject" id="subject-ns" size="45" maxlength="64" tabindex="2" value="{SUBJECT}" class="input-large" /></td>
-						</tr>
-					
-					<tr id="message-box-ns">
-						<td colspan="2"><textarea style="height: 9em;" name="message" rows="7" cols="76" tabindex="3" class="inputbox"></textarea></td>
-					</tr>
-					
+						<dl style="clear: left;">
+							<dt><label for="subject">{L_SUBJECT}:</label></dt>
+							<dd><input type="text" name="subject" id="subject-ns" size="45" maxlength="64" tabindex="2" value="{SUBJECT}" class="inputbox autowidth" /></dd>
+						</dl>
+					<div id="message-box-ns">
+						<textarea style="height: 9em;" name="message" rows="7" cols="76" tabindex="3" class="inputbox"></textarea>
+					</div>
 					</fieldset>
 					<fieldset class="submit-buttons">
 						{S_FORM_TOKEN}
