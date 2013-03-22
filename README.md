@@ -9,7 +9,7 @@ phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framewor
 
 **phpBB version:** phpBB 3.0.11
 
-**Demo:** *Coming soon*
+**Demo:** [http://cegtechforum.com/forum/](http://cegtechforum.com/forum/)
 
 **Download:** [http://shibulijack.github.com/proBoot/](http://shibulijack.github.com/proBoot/)
 
