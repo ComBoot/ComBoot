@@ -135,8 +135,10 @@
 							<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
 						<!-- ENDIF -->
 					<!-- ENDIF -->
-					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-						<li class="bb-register"><a href="{U_REGISTER}"><i class="fa fa-user"></i> {L_REGISTER}</a></li>
+					<!-- IF not S_USER_LOGGED_IN and not (S_SHOW_COPPA or S_REGISTRATION) -->
+						<!-- IF S_REGISTER_ENABLED -->
+							<li class="bb-register"><a href="{U_REGISTER}"><i class="fa fa-user"></i> {L_REGISTER}</a></li>
+						<!-- ENDIF -->
 						<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-unlock-alt"></i> {L_LOGIN_LOGOUT}</a></li>
 					<!-- ENDIF -->
 					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
