@@ -29,7 +29,7 @@ About
 
 **Style Version:** 1.0
 
-**phpBB version:** phpBB 3.0.11
+**phpBB version:** phpBB 3.0.12
 
 **Demo:** `Not available yet`
 
