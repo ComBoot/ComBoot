@@ -31,6 +31,6 @@ About
 
 **phpBB version:** phpBB 3.0.12
 
-**Demo:** `Not available yet`
+**Demo:** http://demo.zoker.me/proBoot3/
 
-**Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot)
+**Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
