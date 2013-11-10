@@ -3,7 +3,7 @@ proBoot3 (Based on Bootstrap 3)
 
 phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framework.
 
-**Author:** [http://www.florian-gareis.de] Webdesigner Florian Gareis
+**Author:** [Florian Gareis] (http://www.florian-gareis.de)
 
 **Base style:** proSilver
 
