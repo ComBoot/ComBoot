@@ -37,52 +37,47 @@
 
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 	<div class="topic-actions" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 2em;"<!-- ENDIF -->>
+		<div class="row">
+			<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
+			<div class="col-md-4">
+				<!-- IF S_IS_LOCKED -->
+					<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+				<!-- ELSE -->
+					<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
+				<!-- ENDIF -->
+			</div>
+			<!-- ENDIF -->
+			
+			<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
+				<div class="col-md-4">
+					<div class="btn-group">
+						<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a><!-- ENDIF --><!-- IF TOTAL_TOPICS --> <span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+						<!-- IF PAGE_NUMBER -->
+							<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span>{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+						<!-- ENDIF -->
+					</div>
+				</div>
+			<!-- ENDIF -->
 
-	<div class="row-fluid">
-	
-	<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-	<div class="span4">
-	<!-- IF S_IS_LOCKED -->
-	
-	<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
-	<!-- ELSE -->
-	<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
-	<!-- ENDIF -->
-	</div>
-	<!-- ENDIF -->
-	
-	<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-		<div class="pagination span4">
-			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-primary btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a><!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label">{TOTAL_TOPICS}</span><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER -->
-				<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="label">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
+			<!-- IF S_DISPLAY_SEARCHBOX -->
+				<div class="col-md-4">
+					<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">	
+						<fieldset>
+							<input class="input-medium search" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+							<button type="submit" class="btn">{L_SEARCH}</button>
+							{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+						</fieldset>
+					</form>
+				</div>
 			<!-- ENDIF -->
 		</div>
-	<!-- ENDIF -->
-
-<!-- IF S_DISPLAY_SEARCHBOX -->
-	<div class="span4">	
-		<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">
-				
-				<fieldset>
-				
-					<input class="input-medium search" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
-				<button type="submit" class="btn">{L_SEARCH}</button>
-				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
-
-				</fieldset>
-				</form>
 	</div>
-	<!-- ENDIF -->
-
-	</div>
-
-</div>
+	<br/>
 <!-- ENDIF -->
 
 <!-- IF S_NO_READ_ACCESS -->
 
-	<div class="row-fluid">
+	<div class="row">
 		<div class="well">
 		<strong>{L_NO_READ_ACCESS}</strong>
 		</div>
@@ -92,8 +87,8 @@
 
 		<form action="{S_LOGIN_ACTION}" method="post">
 
-		<div class="row-fluid">
-			<div class="well">
+		<div class="row">
+			<div class="well well-sm">
 					<h3 class="box-heading"><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
 			<div class="content">
 				
@@ -193,7 +188,7 @@
 <!-- END topicrow -->
 
 <!-- IF S_SELECT_SORT_DAYS and not S_DISPLAY_ACTIVE -->
-	<form method="post" action="{S_FORUM_ACTION}" class="well form-inline">
+	<form method="post" action="{S_FORUM_ACTION}" class="well well-sm form-inline">
 		<fieldset class="display-options">
 			<!-- IF PREVIOUS_PAGE --><a class="btn btn-inverse" href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 			<!-- IF NEXT_PAGE --><a class="btn btn-inverse" href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
@@ -208,9 +203,9 @@
 <!-- ENDIF -->
 
 <!-- IF .topicrow and not S_DISPLAY_ACTIVE -->
-	<div class="row-fluid">
+	<div class="row">
 		<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-			<div class="span4">
+			<div class="col-md-4">
 				<!-- IF S_IS_LOCKED -->
 					<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
 				<!-- ELSE -->
@@ -219,28 +214,32 @@
 			</div>
 		<!-- ENDIF -->
 		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-			<div class="p-pagination span4">
-				<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label">{TOTAL_TOPICS}</span><!-- ENDIF -->
-				<!-- IF PAGE_NUMBER -->
-					<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="label label-info">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
-				<!-- ENDIF -->
+			<div class="col-md-4">
+				<div class="btn-group">
+					<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --> <span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+					<!-- IF PAGE_NUMBER -->
+						<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span>{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+					<!-- ENDIF -->
+				</div>
 			</div>
 		<!-- ENDIF -->
 		<!-- IF S_DISPLAY_SEARCHBOX -->
-			<div class="span4">
-				<form class="form-search pull-right"method="get" id="forum-search" action="./search.php" action="{S_SEARCHBOX_ACTION}">
-					<div class="form-group">
-						<input name="keywords" id="keywords" type="text" maxlength="128" title="Suche nach Wörtern" class="form-control" value="{L_SEARCH_FORUM}" onclick="if(this.value=='Suche…')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_FORUM}';">
-					</div>
-					<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}">
-					{S_SEARCH_LOCAL_HIDDEN_FIELDS}
-				</form>
-			</div>
+			<div class="col-md-4">
+					<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">	
+						<fieldset>
+							<input class="input-medium search" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+							<button type="submit" class="btn">{L_SEARCH}</button>
+							{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+						</fieldset>
+					</form>
+				</div>
 		<!-- ENDIF -->
 	</div>
 <!-- ENDIF -->
 
+<br/>
 <!-- INCLUDE jumpbox.html -->
+<br/>
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
 	<div class="panel panel-default">
