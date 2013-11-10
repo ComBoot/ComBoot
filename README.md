@@ -6,10 +6,13 @@ The color scheme is the simple bootstrap color, also used here @git.
 
 Features
 =
-*Based on the most awesome framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
-*Beautiful desing (like git)
-*Integration of [Fontawesome](http://fontawesome.io/)
-*Simple theme change (see wiki)
+• Based on the most awesome framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
+
+• Beautiful light desing (like git)
+
+• Integration of [Fontawesome](http://fontawesome.io/)
+
+• Simple theme change (see wiki)
 
 
 Quick Start
