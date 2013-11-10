@@ -1,7 +1,15 @@
-proBoot3 (Based on Bootstrap 3)
+[proBoot3] (http://thezoker.github.io/proBoot) (Based on Bootstrap 3)
 =======
 
-phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framework.
+A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
+The color scheme is the simple bootstrap color, also used here @git.
+
+Quick Start
+=
+**Wiki:** [https://github.com/TheZoker/proBoot3/wiki/] (https://github.com/TheZoker/proBoot3/wiki/)
+
+About
+=
 
 **Author:** [Florian Gareis] (http://www.florian-gareis.de)
 
@@ -13,6 +21,6 @@ phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framewor
 
 **phpBB version:** phpBB 3.0.11
 
-**Demo:** Not available yet
+**Demo:** `Not available yet`
 
 **Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot)
