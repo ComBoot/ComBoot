@@ -267,20 +267,20 @@
 
 	
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
-	<div class="span4">
+	<div class="col-md-4">
 		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a></div>
 	<!-- ENDIF -->
 	
 
 	<!-- IF PAGINATION or TOTAL_POSTS -->
-		<div class="span4 p-pagination">
+		<div class="col-md-4 p-pagination">
 			<center><!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a class="btn btn-mini" href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="label ">{TOTAL_POSTS}</span>
 			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF --></center>
 		</div>
 	<!-- ENDIF -->
 	
 	<!-- IF S_DISPLAY_SEARCHBOX -->
-		<div class="span4">
+		<div class="col-md-4">
 			<form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}" class="form-search pull-right" style="margin:0;">
 			<fieldset>
 				<input class="input-medium"  type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_TOPIC}" onclick="if(this.value=='{LA_SEARCH_TOPIC}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_TOPIC}';" />

@@ -230,7 +230,7 @@ a:hover {
   width: 380px;
 }
 
-.span4 {
+.col-md-4 {
   width: 300px;
 }
 
@@ -368,7 +368,7 @@ a:hover {
   *width: 40.3723404216383%;
 }
 
-.row .span4 {
+.row .col-md-4 {
   width: 31.914893614%;
   *width: 31.8617021246383%;
 }
@@ -1044,9 +1044,9 @@ textarea.span5,
   width: 370px;
 }
 
-input.span4,
-textarea.span4,
-.uneditable-input.span4 {
+input.col-md-4,
+textarea.col-md-4,
+.uneditable-input.col-md-4 {
   width: 290px;
 }
 
@@ -1632,7 +1632,7 @@ table .span3 {
   margin-left: 0;
 }
 
-table .span4 {
+table .col-md-4 {
   float: none;
   width: 284px;
   margin-left: 0;
