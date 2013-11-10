@@ -6,7 +6,7 @@
 
 
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
-<div class="row-fluid">
+<div class="row">
 	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin">
 
 	<div class="topic-actions">
@@ -79,7 +79,7 @@
 		</table>
 	
 	<!-- ELSE -->
-		<div class="row-fluid">
+		<div class="row">
 			<div class="well">
 			<strong>{L_NO_SEARCH_RESULTS}</strong>
 			</div>
@@ -89,7 +89,7 @@
 <!-- ELSE -->
 
 	<!-- BEGIN searchresults -->
-		<div class="row-fluid search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
+		<div class="row search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
 			<div class="well">
 
 	<!-- IF searchresults.S_IGNORE_POST -->
@@ -122,7 +122,7 @@
 			</div>
 		</div>
 	<!-- BEGINELSE -->
-		<div class="row-fluid">
+		<div class="row">
 			<div class="well">
 			<strong>{L_NO_SEARCH_RESULTS}</strong>
 			</div>
@@ -131,7 +131,7 @@
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
-<div class="row-fluid">
+<div class="row">
 	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline">
 
 	<fieldset class="display-options">
@@ -149,7 +149,7 @@
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
-<div class="row-fluid">
+<div class="row">
 	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin">
 
 	<div class="topic-actions">

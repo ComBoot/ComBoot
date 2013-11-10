@@ -294,24 +294,24 @@ a:hover {
   margin-left: 100px;
 }
 
-.row-fluid {
+.row {
   width: 100%;
   *zoom: 1;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.row-fluid:before,
-.row-fluid:after {
+.row:before,
+.row:after {
   display: table;
   content: "";
 }
 
-.row-fluid:after {
+.row:after {
   clear: both;
 }
 
-.row-fluid [class*="span"] {
+.row [class*="span"] {
   display: block;
   float: left;
   width: 100%;
@@ -324,66 +324,66 @@ a:hover {
           box-sizing: border-box;
 }
 
-.row-fluid [class*="span"]:first-child {
+.row [class*="span"]:first-child {
   margin-left: 0;
 }
 
-.row-fluid .span12 {
+.row .span12 {
   width: 99.99999998999999%;
   *width: 99.94680850063828%;
 }
 
-.row-fluid .span11 {
+.row .span11 {
   width: 91.489361693%;
   *width: 91.4361702036383%;
 }
 
-.row-fluid .span10 {
+.row .span10 {
   width: 82.97872339599999%;
   *width: 82.92553190663828%;
 }
 
-.row-fluid .span9 {
+.row .span9 {
   width: 74.468085099%;
   *width: 74.4148936096383%;
 }
 
-.row-fluid .span8 {
+.row .span8 {
   width: 65.95744680199999%;
   *width: 65.90425531263828%;
 }
 
-.row-fluid .span7 {
+.row .span7 {
   width: 57.446808505%;
   *width: 57.3936170156383%;
 }
 
-.row-fluid .span6 {
+.row .span6 {
   width: 48.93617020799999%;
   *width: 48.88297871863829%;
 }
 
-.row-fluid .span5 {
+.row .span5 {
   width: 40.425531911%;
   *width: 40.3723404216383%;
 }
 
-.row-fluid .span4 {
+.row .span4 {
   width: 31.914893614%;
   *width: 31.8617021246383%;
 }
 
-.row-fluid .span3 {
+.row .span3 {
   width: 23.404255317%;
   *width: 23.3510638276383%;
 }
 
-.row-fluid .span2 {
+.row .span2 {
   width: 14.89361702%;
   *width: 14.8404255306383%;
 }
 
-.row-fluid .span1 {
+.row .span1 {
   width: 6.382978723%;
   *width: 6.329787233638298%;
 }
@@ -982,10 +982,10 @@ input[class*="span"],
 select[class*="span"],
 textarea[class*="span"],
 .uneditable-input[class*="span"],
-.row-fluid input[class*="span"],
-.row-fluid select[class*="span"],
-.row-fluid textarea[class*="span"],
-.row-fluid .uneditable-input[class*="span"] {
+.row input[class*="span"],
+.row select[class*="span"],
+.row textarea[class*="span"],
+.row .uneditable-input[class*="span"] {
   float: none;
   margin-left: 0;
 }
@@ -4453,7 +4453,7 @@ input[type="submit"].btn.btn-mini {
   clear: both;
 }
 
-.row-fluid .thumbnails {
+.row .thumbnails {
   margin-left: 0;
 }
 
