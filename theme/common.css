@@ -619,6 +619,21 @@ p.rules a {
 	clear: both;
 }
 
+/* Start Mod Breizh Ajax Checks */
+#ajaxfrom {
+	display: none;
+}
+
+.checks_details {
+	display: bloc;
+	margin-top: 8px;
+}
+
+.checks_print {
+	margin: 1em 0 0 17em;
+}
+/* END Mod Breizh Ajax Checks */
+
 #top {
 	position: absolute;
 	top: -20px;

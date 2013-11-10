@@ -1,16 +1,16 @@
-proBoot
+proBoot3 (Based on Bootstrap 3)
 =======
 
 phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framework.
 
+**Author: [http://www.florian-gareis.de}] Florian Gareis
+
 **Base style:** proSilver
 
-**Style Version:** 2.0
+**Style Version:** 1.0
 
 **phpBB version:** phpBB 3.0.11
 
-**Demo:** [http://cegtechforum.com/forum/](http://cegtechforum.com/forum/)
+**Demo:** Not available yet
 
-**Download:** [http://shibulijack.github.com/proBoot/](http://shibulijack.github.com/proBoot/)
-
-**Blog post:** [http://shibulijack.wordpress.com/2012/12/06/proboot-bootstrap-theme-for-phpbb3](http://shibulijack.wordpress.com/2012/12/06/proboot-bootstrap-theme-for-phpbb3)
+**Download:** [https://github.com/TheZoker/proBoot/archive/master.zip](https://github.com/TheZoker/proBoot/archive/master.zip)

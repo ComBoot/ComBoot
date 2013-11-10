@@ -218,8 +218,8 @@ Colours and backgrounds for links.css
 -------------------------------------------------------------- */
 
 
-
 /* Links on gradient backgrounds */
+/*
 #search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
 	color: #FFFFFF;
 }
@@ -235,6 +235,7 @@ Colours and backgrounds for links.css
 #search-box a:active, .navbg a:active, .forumbg .header a:active, .forabg .header a:active, th a:active {
 	color: #C8E6FF;
 }
+*/
 
 
 /* Post body links */
@@ -564,9 +565,7 @@ fieldset.polls dd div {
 /* Poster profile block
 ----------------------------------------*/
 .postprofile {
-	color: #666666;
-	border-left-color: #ddd;
-	border-left-style: dashed;
+
 }
 
 .rtl .postprofile {

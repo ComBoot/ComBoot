@@ -1,6 +1,7 @@
 <!-- INCLUDE overall_header.html -->
-
-<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
+<div class="page-header">
+	<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
+</div>
 
 <!-- IF FORUM_DESC or MODERATORS or U_MCP -->
 <div>
@@ -49,12 +50,10 @@
 	<!-- ENDIF -->
 	</div>
 	<!-- ENDIF -->
-
-	
 	
 	<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-		<div class="p-pagination span4">
-			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a><!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label">{TOTAL_TOPICS}</span><!-- ENDIF -->
+		<div class="pagination span4">
+			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-primary btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a><!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label">{TOTAL_TOPICS}</span><!-- ENDIF -->
 			<!-- IF PAGE_NUMBER -->
 				<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="label">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
 			<!-- ENDIF -->
@@ -209,68 +208,60 @@
 <!-- ENDIF -->
 
 <!-- IF .topicrow and not S_DISPLAY_ACTIVE -->
-
-	
 	<div class="row-fluid">
-	
-	<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-	<div class="span4">
-	<!-- IF S_IS_LOCKED -->
-	
-	<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
-	<!-- ELSE -->
-	<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
-	<!-- ENDIF -->
-	</div>
-	<!-- ENDIF -->
-
-	
-	
-	<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-		<div class="p-pagination span4">
-			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label">{TOTAL_TOPICS}</span><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER -->
-				<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="label label-info">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
-			<!-- ENDIF -->
-		</div>
-	<!-- ENDIF -->
-
-<!-- IF S_DISPLAY_SEARCHBOX -->
-	<div class="span4">	
-		<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">
-				
-				<fieldset>
-				
-					<input class="input-medium search" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
-				<button type="submit" class="btn">{L_SEARCH}</button>
-				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
-
-				</fieldset>
+		<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
+			<div class="span4">
+				<!-- IF S_IS_LOCKED -->
+					<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+				<!-- ELSE -->
+					<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
+				<!-- ENDIF -->
+			</div>
+		<!-- ENDIF -->
+		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
+			<div class="p-pagination span4">
+				<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-mini" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --> &bull; <span class="label">{TOTAL_TOPICS}</span><!-- ENDIF -->
+				<!-- IF PAGE_NUMBER -->
+					<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="label label-info">{PAGE_NUMBER}</span></a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
+				<!-- ENDIF -->
+			</div>
+		<!-- ENDIF -->
+		<!-- IF S_DISPLAY_SEARCHBOX -->
+			<div class="span4">
+				<form class="form-search pull-right"method="get" id="forum-search" action="./search.php" action="{S_SEARCHBOX_ACTION}">
+					<div class="form-group">
+						<input name="keywords" id="keywords" type="text" maxlength="128" title="Suche nach Wörtern" class="form-control" value="{L_SEARCH_FORUM}" onclick="if(this.value=='Suche…')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_FORUM}';">
+					</div>
+					<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}">
+					{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 				</form>
+			</div>
+		<!-- ENDIF -->
 	</div>
-	<!-- ENDIF -->
-
-	</div>
-
-</div>
 <!-- ENDIF -->
 
 <!-- INCLUDE jumpbox.html -->
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
-<div class="row-fluid box">
-	<h3 class="heading"><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
-	<p>{LOGGED_IN_USER_LIST}</p>
-</div>
-
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
+		</div>
+		<div class="panel-body">
+			<p>{LOGGED_IN_USER_LIST}</p>
+		</div>
+	</div>
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_POST_INFO -->
-<div class="row-fluid box">
-	<h3 class="heading">{L_FORUM_PERMISSIONS}</h3>
-	<p><!-- BEGIN rules -->{rules.RULE}<br /><!-- END rules --></p>
-</div>
-
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{L_FORUM_PERMISSIONS}</h3>
+		</div>
+		<div class="panel-body">
+			<p><!-- BEGIN rules -->{rules.RULE}<br /><!-- END rules --></p>
+		</div>
+	</div>
 <!-- ENDIF -->
 
 <!-- INCLUDE overall_footer.html -->

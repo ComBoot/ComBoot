@@ -230,7 +230,7 @@ div[class].topic-actions {
 	line-height: 1.48em;
 	color: #333333;
 	width: 76%;
-	float: left;
+	float: right;
 	clear: both;
 }
 
@@ -669,13 +669,13 @@ fieldset.polls dd div {
 	margin: 5px 0 10px 0;
 	min-height: 80px;
 	color: #666666;
-	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 	width: 22%;
-	float: right;
+	float: left;
 	display: inline;
 }
 .pm .postprofile {
-	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
 }
 
 .postprofile dd, .postprofile dt {

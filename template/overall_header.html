@@ -86,142 +86,102 @@
 <link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
 <link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css" rel="stylesheet" />
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js" type="text/javascript"></script>
+
 <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
 	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
 <!-- ENDIF -->
 
 </head>
 
-<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" style="padding-top: 0px;">
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding-bottom: 40px;">
 	<a id="top" accesskey="t"></a>
-	<div id="page-header">
-		<div class="headerbar ">
-			<div class="row-fluid">
-			
-
-			<div id="site-description">
-				<a href="{U_INDEX}" title="{L_INDEX}" id="logo">{SITE_LOGO_IMG}</a>
-				<h1>{SITENAME}</h1>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{U_INDEX}">{SITENAME}</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+					<ul class="nav navbar-nav">
+						<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-question"></i> {L_FAQ}</a></li>
+						<li><a href="#"><i class="fa fa-code"></i> Pastebin</a></li>
+						<!-- IF S_DISPLAY_MEMBERLIST -->
+							<li class="bb-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-user"></i> {L_MEMBERLIST}</a></li>
+						<!-- ENDIF -->
+					</ul>
+				<!-- ENDIF -->
+				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+					<form class="navbar-form navbar-left" method="get" id="search" action="{U_SEARCH}">
+						<div class="form-group">
+							<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="form-control" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+						</div>
+						<input class="btn btn-default" type="submit" name="submit" value="Suchen">
+					</form>
+				<!-- ENDIF -->
+				<ul class="nav navbar-nav navbar-right">
+					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+						<!-- IF U_RESTORE_PERMISSIONS -->
+							<li class="divider-vertical"></li>
+							<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
+						<!-- ENDIF -->
+					<!-- ENDIF -->
+					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+						<li class="bb-register"><a href="{U_REGISTER}"><i class="fa fa-user"></i> {L_REGISTER}</a></li>
+						<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-unlock-alt"></i> {L_LOGIN_LOGOUT}</a></li>
+					<!-- ENDIF -->
+					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">{S_USERNAME} <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+								<!-- IF S_DISPLAY_PM -->
+									<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i> {PRIVATE_MESSAGE_INFO}
+										<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
+											, {PRIVATE_MESSAGE_INFO_UNREAD}
+										<!-- ENDIF -->
+										</a>
+									</li>
+								<!-- ENDIF -->
+								<!-- IF S_DISPLAY_SEARCH -->
+									<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
+									<li class="divider"></li>
+								<!-- ENDIF -->
+								<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
+							<!-- ENDIF -->
+							<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-minus-circle"></i> {L_LOGIN_LOGOUT}</a></li>
+						</ul>
+					</li>
+					<!-- ENDIF -->
+				</ul>
+			</div>
+		</nav>
+		<div class="jumbotron">
+			<center class="container">
+				<br/><a href="{U_INDEX}" title="{L_INDEX}">{SITE_LOGO_IMG}</a><h1>{SITENAME}</h1>
 				<p>{SITE_DESCRIPTION}</p>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-			</div>
-			
-		
-
-			
-		</div>
-
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container-fluid">
-				<a class="brand" href="{U_INDEX}">{SITENAME}</a>
-				<ul class="linklist nav" style="width: 50%;">
-				
-				
-				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-				<li class="divider-vertical"></li>
-				<a class="pull-left" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><i class="icon-plus-sign"></i>&nbsp;</a>
-				<form action="{U_SEARCH}" method="get" id="search" class="navbar-search ">
-				
-				<fieldset>
-				
-					<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
-					 {S_SEARCH_HIDDEN_FIELDS}
-				</fieldset>
-				</form>
-				
-		<!-- ENDIF -->
-				
-							
-
-			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-			<li class="divider-vertical"></li>
-				
-				<li class="bb-faq"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-question-sign "></i> {L_FAQ}</a></li>
-				<!-- IF not S_IS_BOT -->
-					<!-- IF S_DISPLAY_MEMBERLIST -->
-					<li class="divider-vertical"></li>
-					<li class="bb-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-user "></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
-					
-					
-					
-					
-					
-						
-					
-					<!-- IF U_RESTORE_PERMISSIONS -->
-					<li class="divider-vertical"></li>
-					<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
-					<!-- ENDIF -->
-				</li>
-			
-					<!-- ENDIF -->
-			
-			<!-- ENDIF -->
-				
-			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-					<li class="divider-vertical"></li>
-					<li class="bb-register"><a href="{U_REGISTER}"><i class="icon-user "></i> {L_REGISTER}</a></li>
-					<li class="divider-vertical"></li>
-					<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-minus-sign "></i> {L_LOGIN_LOGOUT}</a></li>
-<!-- ENDIF -->
-					
-			</ul><!-- ul -->
-			
-			<div class="btn-group pull-right">
-  <a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#">
-    {S_USERNAME}
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-    <!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-    
-    	<!-- IF S_DISPLAY_PM --> 
-				
-				<li>		
-						<a href="{U_PRIVATEMSGS}"><i class="icon-envelope "></i> <span class="label label-important">{PRIVATE_MESSAGE_INFO}</span><!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></li><!-- ENDIF -->
-
-    <!-- IF S_DISPLAY_SEARCH --> 
-					
-					<li>
-					<a href="{U_SEARCH_SELF}"><i class="icon-file "></i> {L_SEARCH_SELF}</a>
-					</li>
-					<!-- ENDIF -->
-    <li class="bb-ucp">
-					<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-wrench "></i> {L_PROFILE}</a>
-					</li>
-	<li class="divider"></li>
-	<!-- ENDIF -->				
-	<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-minus-sign "></i> {L_LOGIN_LOGOUT}</a></li>
-	<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-					
-					<li class="bb-register"><a href="{U_REGISTER}"><i class="icon-user "></i> {L_REGISTER}</a></li>
-					
-					<!-- ENDIF -->
-  </ul>
-</div><!--btn group-->
-
+			</center>
+		</div>	
+		<a id="start_here"></a>
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> <strong>/</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></li>
+			</ul>
+			<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+				<div class="alert alert-danger row-fluid rules">
+					<div class="well">
+						<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
+					</div>
 				</div>
-
-			</div>
-		</div>
-
-	</div>
-
-	<a id="start_here"></a>
-	<div id="page-body">
-	
-	<ul class="breadcrumb">
-		<li>
-	<a href="{U_INDEX}">{L_INDEX}</a><!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks -->
-		</li>
-	</ul>
-		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
-		<div id="information" class=" row-fluid rules">
-			<div class="well">
-				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
-			</div>
-		</div>
-		<!-- ENDIF -->
+			<!-- ENDIF -->

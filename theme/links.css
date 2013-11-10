@@ -17,6 +17,7 @@ a {
 }
 
 /* Links on gradient backgrounds */
+/*
 #search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
 	color: #FFFFFF;
 	text-decoration: none;
@@ -36,6 +37,7 @@ a {
 	color: #ffffff;
 	text-decoration: none;
 }
+*/
 
 /* Links for forum/topic lists */
 a.forumtitle {

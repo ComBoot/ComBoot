@@ -169,7 +169,7 @@
 <fieldset class="display-actions">	
 	<select name="action"><option value="">{L_SELECT_OPTION}</option>{S_ACTION_OPTIONS}</select>
 	<input class="btn btn-primary" type="submit" name="update" value="{L_SUBMIT}" />
-	<div><a class="btn btn-small" href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-small" href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
+	<div><a class="btn btn-default btn-sm" href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-default btn-sm" href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
 </fieldset>
 
 <div class="panel">
@@ -190,7 +190,7 @@
 	<dl>
 		<dt><label for="usernames">{L_USERNAME}:</label><br /><span>{L_USERNAMES_EXPLAIN}</span></dt>
 		<dd><textarea name="usernames" id="usernames" rows="3" cols="30" class="inputbox"></textarea></dd>
-		<dd><strong><a class="btn btn-small btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
+		<dd><strong><a class="btn btn-default btn-sm btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
 	</dl>
 	</fieldset>
 
