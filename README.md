@@ -5,6 +5,8 @@ phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framewor
 
 **Author:** [Florian Gareis] (http://www.florian-gareis.de)
 
+**Original Auhtor:** [Shibu Lijack] (https://github.com/shibulijack)
+
 **Base style:** proSilver
 
 **Style Version:** 1.0
@@ -13,4 +15,4 @@ phpBB3 theme based on [Bootstrap](http://twitter.github.com/bootstrap/) framewor
 
 **Demo:** Not available yet
 
-**Download:** [https://github.com/TheZoker/proBoot/archive/master.zip](https://github.com/TheZoker/proBoot/archive/master.zip)
+**Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot)
