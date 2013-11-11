@@ -8,29 +8,28 @@
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
 <div class="row">
 	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin">
-
-	<div class="topic-actions">
-
-	<!-- IF SEARCH_MATCHES -->
-		<div class="search-box">
-			<!-- IF SEARCH_IN_RESULTS -->
-				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
-				<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
-				
+		<div class="topic-actions">
+			<!-- IF SEARCH_MATCHES -->
+				<div class="col-md-6">
+					<div class="search-box">
+						<!-- IF SEARCH_IN_RESULTS -->
+							<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
+							<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
+						<!-- ENDIF -->
+						<!-- IF SEARCH_TOPIC -->
+							<a class="btn btn-default" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
+						<!-- ELSE -->
+							<a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a>
+						<!-- ENDIF -->
+					</div>
+				</div>
 			<!-- ENDIF -->
-			<!-- IF SEARCH_TOPIC -->
-	<a class="btn" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
-<!-- ELSE -->
-	<a class="btn" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a>
-<!-- ENDIF -->
+			<div class="col-md-6">
+				<div class="btn-group">
+					<span class="btn btn-default btn-sm" disabled="disabled">{SEARCH_MATCHES}</span><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+				</div>
+			</div>
 		</div>
-	<!-- ENDIF -->
-
-		<div class="pull-right p-pagination">
-			<span class="label">{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
-		</div>
-	</div>
-
 	</form>
 </div>
 <!-- ENDIF -->
