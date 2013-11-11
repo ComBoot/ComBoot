@@ -4,11 +4,13 @@
 	<!-- INCLUDE overall_header.html -->
 <!-- ENDIF -->
 
-<div class="row panel" id="message">
-	<div class="well">
-	<h3 class="box-heading">{MESSAGE_TITLE}</h3>
-	<p>{MESSAGE_TEXT}</p>
-	<!-- IF SCRIPT_NAME == "search" and not S_BOARD_DISABLED and not S_NO_SEARCH and L_RETURN_TO_SEARCH_ADV --><p><a href="{U_SEARCH}" class="{S_CONTENT_FLOW_BEGIN}">{L_RETURN_TO_SEARCH_ADV}</a></p><!-- ENDIF -->
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">{MESSAGE_TITLE}</h3>
+	</div>
+	<div class="panel-body">
+		<p>{MESSAGE_TEXT}</p>
+		<!-- IF SCRIPT_NAME == "search" and not S_BOARD_DISABLED and not S_NO_SEARCH and L_RETURN_TO_SEARCH_ADV --><p><a href="{U_SEARCH}" class="{S_CONTENT_FLOW_BEGIN}">{L_RETURN_TO_SEARCH_ADV}</a></p><!-- ENDIF -->
 	</div>
 </div>
 
