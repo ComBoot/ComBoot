@@ -128,62 +128,60 @@
 						<input class="btn btn-default" type="submit" name="submit" value="Suchen">
 					</form>
 				<!-- ENDIF -->
-				<ul class="nav navbar-nav navbar-right">
-					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-						<!-- IF U_RESTORE_PERMISSIONS -->
-							<li class="divider-vertical"></li>
-							<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
-						<!-- ENDIF -->
-					<!-- ENDIF -->
-					<!-- IF not S_USER_LOGGED_IN and not (S_SHOW_COPPA or S_REGISTRATION) -->
-						<!-- IF S_REGISTER_ENABLED -->
-							<li class="bb-register"><a href="{U_REGISTER}"><i class="fa fa-user"></i> {L_REGISTER}</a></li>
-						<!-- ENDIF -->
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sign-in"></i> {L_LOGIN_LOGOUT} <b class="caret"></b></a>
-							<div class="dropdown-menu">
-								<form method="post" action="./ucp.php?mode=login" accept-charset="UTF-8">
-									<fieldset>
-										<div class="input-prepend input-large"><span class="add-on"><i class="icon-user"></i></span><input type="text" name="username" id="username" size="10" class="inputbox" placeholder="Username" title="Username" clickev="true"></div>
-										<div class="input-prepend input-large"><span class="add-on"><i class="icon-key"></i></span><input type="password" name="password" id="password" size="10" class="inputbox" placeholder="Password" title="Password" clickev="true"></div>
-										<label for="autologin" class="checkbox" style="font-size: 12px;line-height: 12px;"> <input type="checkbox" name="autologin" id="autologin"> Log me on automatically each visit</label>
-										<input type="submit" name="login" value="Login" class="btn btn-primary btn-block">
-										<input type="hidden" name="redirect" value="./ucp.php?mode=login">
-									</fieldset>
-								</form>
-							</div>
-							<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"> </a>
-						</li>
-					<!-- ENDIF -->
-					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">{S_USERNAME} <b class="caret"></b></a>
+					<div id="nav-profile-dropdown" class="btn-group navbar-right">
+						<button data-toggle="dropdown" class="btn btn-primary navbar-btn dropdown-toggle" type="button">
+							<i class="glyphicon glyphicon-user"></i><span class="caret"></span>
+						</button>
 						<ul class="dropdown-menu">
-							<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-								<!-- IF S_DISPLAY_PM -->
-									<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i> {PRIVATE_MESSAGE_INFO}
-										<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
-											, {PRIVATE_MESSAGE_INFO_UNREAD}
+							<!-- IF not S_USER_LOGGED_IN and not (S_SHOW_COPPA or S_REGISTRATION) -->							
+								<li>
+									<form method="post" action="/wp-login.php" id="navloginform" name="loginform">
+										<input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" class="form-control" placeholder="{L_USERNAME}" required="required" autofocus/>
+										<input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" class="form-control" placeholder="{L_PASSWORD}" required="required"/>
+										<!-- IF S_DISPLAY_FULL_LOGIN -->
+											<div class="checkbox">
+												<!-- IF S_AUTOLOGIN_ENABLED --><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label><!-- ENDIF -->
+												<br><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label>
+											</div>
 										<!-- ENDIF -->
-										</a>
-									</li>
-								<!-- ENDIF -->
-								<!-- IF S_DISPLAY_SEARCH -->
-									<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
+										<center>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-primary" /></center>
+									</form>       
+								</li>
+								<!-- IF S_REGISTER_ENABLED -->
 									<li class="divider"></li>
+									<li class="bb-register"><a href="{U_REGISTER}"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</a></li>
+								<!-- ELSE -->
+									<li class="divider"></li>
+									<li class="disabled"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</li>
 								<!-- ENDIF -->
-								<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
 							<!-- ENDIF -->
-							<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-minus-circle"></i> {L_LOGIN_LOGOUT}</a></li>
+							<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+								<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+									<li><a href="{ROOT_PATH}/memberlist.php?mode=viewprofile&un={S_USERNAME}">{S_USERNAME}</a></li>
+									<li class="divider"></li>
+									<!-- IF S_DISPLAY_PM -->
+										<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i> {PRIVATE_MESSAGE_INFO}
+											<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
+												, {PRIVATE_MESSAGE_INFO_UNREAD}
+											<!-- ENDIF -->
+											</a>
+										</li>
+									<!-- ENDIF -->
+									<!-- IF S_DISPLAY_SEARCH -->
+										<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
+										<li class="divider"></li>
+									<!-- ENDIF -->
+									<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
+								<!-- ENDIF -->
+								<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</a></li>
+							<!-- ENDIF -->
 						</ul>
-					</li>
-					<!-- ENDIF -->
-				</ul>
+					</div>
 			</div>
 		</nav>
 		<div class="jumbotron">
 			<center class="container">
-				<br/><a href="{U_INDEX}" title="{L_INDEX}">{SITE_LOGO_IMG}</a><h1>{SITENAME}</h1>
+				<br/><a href="{U_INDEX}" title="{L_INDEX}">{SITE_LOGO_IMG}</a><!--<h1>{SITENAME}</h1>-->
 				<p>{SITE_DESCRIPTION}</p>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 			</center>

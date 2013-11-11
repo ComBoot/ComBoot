@@ -1,6 +1,13 @@
 /* Content Styles
 ---------------------------------------- */
 
+.row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 ul.topiclist {
 	display: block;
 	list-style-type: none;
