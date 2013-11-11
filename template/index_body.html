@@ -3,7 +3,18 @@
 <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 <ul class="linklist">
 	<!-- IF S_DISPLAY_SEARCH -->
-		<li><a href="{U_SEARCH_UNANSWERED}" class="btn btn-default btn-sm">{L_SEARCH_UNANSWERED}</a><!-- IF S_LOAD_UNREADS --> &bull; <a href="{U_SEARCH_UNREAD}" class="btn btn-default btn-sm">{L_SEARCH_UNREAD}</a><!-- ENDIF --><!-- IF S_USER_LOGGED_IN --> &bull; <a href="{U_SEARCH_NEW}" class="btn btn-default btn-sm">{L_SEARCH_NEW}</a><!-- ENDIF --> &bull; <a href="{U_SEARCH_ACTIVE_TOPICS}" class="btn btn-default btn-sm">{L_SEARCH_ACTIVE_TOPICS}</a></li>
+		<li>
+			<div class="btn-group">
+				<a href="{U_SEARCH_UNANSWERED}" class="btn btn-default btn-sm">{L_SEARCH_UNANSWERED}</a>
+				<!-- IF S_LOAD_UNREADS -->
+					<a href="{U_SEARCH_UNREAD}" class="btn btn-default btn-sm">{L_SEARCH_UNREAD}</a>
+				<!-- ENDIF -->
+				<!-- IF S_USER_LOGGED_IN -->
+					<a href="{U_SEARCH_NEW}" class="btn btn-default btn-sm">{L_SEARCH_NEW}</a>
+				<!-- ENDIF -->
+				<a href="{U_SEARCH_ACTIVE_TOPICS}" class="btn btn-default btn-sm">{L_SEARCH_ACTIVE_TOPICS}</a>
+			</div>
+		</li>
 	<!-- ENDIF -->
 	<!-- IF not S_IS_BOT and U_MARK_FORUMS --><li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m" class="btn btn-default btn-sm">{L_MARK_FORUMS_READ}</a></li><!-- ENDIF -->
 </ul>

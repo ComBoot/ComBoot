@@ -1,20 +1,29 @@
 <!-- INCLUDE overall_header.html -->
-
-<h2><!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --><!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
+<div class="page-header">
+	<h2>
+		<!-- IF SEARCH_TITLE -->
+			{SEARCH_TITLE}
+		<!-- ELSE -->
+			{SEARCH_MATCHES}
+		<!-- ENDIF -->
+		<!-- IF SEARCH_WORDS -->
+			: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a>
+		<!-- ENDIF -->
+	</h2>
+</div>
 <!-- IF IGNORED_WORDS --> <p>{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
 
 
 
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
-<div class="row">
-	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin">
+	<form method="post" action="{S_SEARCH_ACTION}">
 		<div class="topic-actions">
 			<!-- IF SEARCH_MATCHES -->
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="search-box">
 						<!-- IF SEARCH_IN_RESULTS -->
 							<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
-							<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
+							<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}" />
 						<!-- ENDIF -->
 						<!-- IF SEARCH_TOPIC -->
 							<a class="btn btn-default" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
@@ -24,14 +33,14 @@
 					</div>
 				</div>
 			<!-- ENDIF -->
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div class="btn-group">
 					<span class="btn btn-default btn-sm" disabled="disabled">{SEARCH_MATCHES}</span><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
 				</div>
 			</div>
 		</div>
 	</form>
-</div>
+<br/>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_TOPICS -->
@@ -130,15 +139,15 @@
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
-<div class="row">
-	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline">
+<div class="well well-sm">
+	<form method="post" action="{S_SEARCH_ACTION}">
 
 	<fieldset class="display-options">
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<!-- IF S_SELECT_SORT_DAYS or S_SELECT_SORT_KEY -->
 			<label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn" /></label>
+			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
 		<!-- ENDIF -->
 	</fieldset>
 
@@ -148,29 +157,25 @@
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
-<div class="row">
-	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin">
-
-	<div class="topic-actions">
-
-	<!-- IF SEARCH_MATCHES -->
-		<div class="search-box">
-			<!-- IF SEARCH_IN_RESULTS -->
-				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
-				<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
-				
+	<form method="post" action="{S_SEARCH_ACTION}" class="form-inline no-margin">
+		<div class="topic-actions">
+			<!-- IF SEARCH_MATCHES -->
+				<div class="col-md-4">
+					<div class="search-box">
+						<!-- IF SEARCH_IN_RESULTS -->
+							<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
+							<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}" />
+						<!-- ENDIF -->
+					</div>
+				</div>
 			<!-- ENDIF -->
-			
+			<div class="col-md-4">
+				<div class="btn-group">
+					<span class="btn btn-default btn-sm" disabled="disabled">{SEARCH_MATCHES}</span><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+				</div>
+			</div>
 		</div>
-	<!-- ENDIF -->
-
-		<div class="pull-right p-pagination">
-			<span class="label">{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF -->
-		</div>
-	</div>
-
 	</form>
-</div>
 <!-- ENDIF -->
 
 <!-- INCLUDE jumpbox.html -->

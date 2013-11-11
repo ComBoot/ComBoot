@@ -1,29 +1,29 @@
 
 <!-- IF S_VIEWTOPIC -->
-<div class="row">
-<div class="col-md-6">
-	<div class="col-md-6"><a href="{U_VIEW_FORUM}" class="btn" accesskey="r">{L_RETURN_TO} {FORUM_NAME}</a></div>
-</div>
-<!-- ELSEIF S_VIEWFORUM -->
-<div class="row">
-<div class="col-md-6">
-	<div class="col-md-6"><a href="{U_INDEX}" class="btn" accesskey="r">{L_RETURN_TO} {L_INDEX}</a></div>
-	</div>
-<!-- ELSEIF SEARCH_TOPIC -->
-<div class="row">
-<div class="col-md-6">
-	<div class="col-md-6"><a class="btn" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a></div>
-	</div>
-<!-- ELSEIF S_SEARCH_ACTION -->
-<div class="row">
-<div class="col-md-6">
-	<div class="col-md-6"><a class="btn" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a></div>
-	</div>
-	<!-- ELSE -->
 	<div class="row">
-<div class="col-md-6">
-	<div class="col-md-6"><span class="label">{LAST_VISIT_DATE}</span></div>
-	</div>
+		<div class="col-md-6">
+			<div class="col-md-6"><a href="{U_VIEW_FORUM}" class="btn btn-default" accesskey="r">{L_RETURN_TO} {FORUM_NAME}</a></div>
+		</div>
+<!-- ELSEIF S_VIEWFORUM -->
+	<div class="row">
+		<div class="col-md-6">
+			<div class="col-md-6"><a href="{U_INDEX}" class="btn btn-default" accesskey="r">{L_RETURN_TO} {L_INDEX}</a></div>
+		</div>
+<!-- ELSEIF SEARCH_TOPIC -->
+	<div class="row">
+		<div class="col-md-6">
+			<div class="col-md-6"><a class="btn btn-default" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a></div>
+		</div>
+<!-- ELSEIF S_SEARCH_ACTION -->
+	<div class="row">
+		<div class="col-md-6">
+			<div class="col-md-6"><a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a></div>
+		</div>
+<!-- ELSE -->
+	<div class="row">
+		<div class="col-md-6">
+			<div class="col-md-6"><span class="btn btn-default" disabled="disabled">{LAST_VISIT_DATE}</span></div>
+		</div>
 <!-- ENDIF -->
 
 
@@ -44,7 +44,7 @@
 				<option value="{jumpbox_forums.FORUM_ID}"{jumpbox_forums.SELECTED}><!-- BEGIN level -->&nbsp; &nbsp;<!-- END level -->{jumpbox_forums.FORUM_NAME}</option>
 			<!-- END jumpbox_forums -->
 			</select>
-			<input class="btn" type="submit" value="{L_GO}" />
+			<input class="btn btn-default" type="submit" value="{L_GO}" />
 		</fieldset>
 	</form>
 </div>

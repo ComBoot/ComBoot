@@ -62,7 +62,7 @@
 				<!-- ENDIF -->
 
 				<!-- IF not S_EDIT_POST -->
-				<dd><input class="inputbox" type="text" name="username_list" id="username_list" size="20" value="" /> <input type="submit" name="add_to" value="{L_ADD}" class="btn" /></dd>
+				<dd><input class="inputbox" type="text" name="username_list" id="username_list" size="20" value="" /> <input type="submit" name="add_to" value="{L_ADD}" class="btn btn-default" /></dd>
 				<!-- ENDIF -->
 			</dl>
 		<!-- ENDIF -->
@@ -171,8 +171,8 @@
 				<dd><textarea name="comment_list[{attach_row.ASSOC_INDEX}]" id="comment_list_{attach_row.ASSOC_INDEX}" rows="1" cols="35" class="inputbox">{attach_row.FILE_COMMENT}</textarea></dd>
 				<dd><a href="{attach_row.U_VIEW_ATTACHMENT}" class="{S_CONTENT_FLOW_END}">{attach_row.FILENAME}</a></dd>
 				<dd style="margin-top: 5px;">
-					<!-- IF S_INLINE_ATTACHMENT_OPTIONS --><input type="button" value="{L_PLACE_INLINE}" onclick="attach_inline({attach_row.ASSOC_INDEX}, '{attach_row.A_FILENAME}');" class="btn" />&nbsp; <!-- ENDIF -->
-					<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="btn" />
+					<!-- IF S_INLINE_ATTACHMENT_OPTIONS --><input type="button" value="{L_PLACE_INLINE}" onclick="attach_inline({attach_row.ASSOC_INDEX}, '{attach_row.A_FILENAME}');" class="btn btn-default" />&nbsp; <!-- ENDIF -->
+					<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="btn btn-default" />
 				</dd>
 			</dl>
 			{attach_row.S_HIDDEN}
@@ -191,9 +191,9 @@
 		<fieldset class="submit-buttons">
 			{S_HIDDEN_ADDRESS_FIELD}
 			{S_HIDDEN_FIELDS}
-			<!-- IF S_HAS_DRAFTS --><input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="btn" onclick="load_draft = true;" />&nbsp; <!-- ENDIF -->
+			<!-- IF S_HAS_DRAFTS --><input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="btn btn-default" onclick="load_draft = true;" />&nbsp; <!-- ENDIF -->
 			<!-- IF S_SAVE_ALLOWED --><input type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE_DRAFT}" class="btn " />&nbsp; <!-- ENDIF -->
-			<input type="submit" tabindex="5" name="preview" value="{L_PREVIEW}" class="btn"<!-- IF not S_PRIVMSGS --> onclick="document.getElementById('postform').action += '#preview';"<!-- ENDIF --> />&nbsp;
+			<input type="submit" tabindex="5" name="preview" value="{L_PREVIEW}" class="btn btn-default"<!-- IF not S_PRIVMSGS --> onclick="document.getElementById('postform').action += '#preview';"<!-- ENDIF --> />&nbsp;
 			<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-primary default-submit-action" />&nbsp;
 
 		</fieldset>
@@ -206,8 +206,8 @@
 		<div id="opt_tabs">
 			<ul class="nav nav-tabs" style="margin:0;">
 				<li id="options-panel-tab" class="activetab active"><a class="btn " href="#tabs" onclick="subPanels('options-panel'); return false;"><span>{L_OPTIONS}</span></a></li>
-				<!-- IF S_SHOW_ATTACH_BOX --><li id="attach-panel-tab"><a class="btn" href="#tabs" onclick="subPanels('attach-panel'); return false;"><span>{L_ADD_ATTACHMENT}</span></a></li><!-- ENDIF -->
-				<!-- IF S_SHOW_POLL_BOX || S_POLL_DELETE --><li id="poll-panel-tab"><a class="btn" href="#tabs" onclick="subPanels('poll-panel'); return false;"><span>{L_ADD_POLL}</span></a></li><!-- ENDIF -->
+				<!-- IF S_SHOW_ATTACH_BOX --><li id="attach-panel-tab"><a class="btn btn-default" href="#tabs" onclick="subPanels('attach-panel'); return false;"><span>{L_ADD_ATTACHMENT}</span></a></li><!-- ENDIF -->
+				<!-- IF S_SHOW_POLL_BOX || S_POLL_DELETE --><li id="poll-panel-tab"><a class="btn btn-default" href="#tabs" onclick="subPanels('poll-panel'); return false;"><span>{L_ADD_POLL}</span></a></li><!-- ENDIF -->
 			</ul>
 		</div>
 	<!-- ENDIF -->
