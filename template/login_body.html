@@ -18,11 +18,11 @@
 						<!-- IF LOGIN_ERROR --><div class="alert alert-danger">{LOGIN_ERROR}</div><!-- ENDIF -->
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user"></i></span>
-							<input type="text" placeholder="{L_USERNAME}" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="10" class="form-control" title="{L_USERNAME}" value="{USERNAME}" required="required" autofocus/>
+							<input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" class="form-control" placeholder="{L_USERNAME}" required="required" autofocus/>
 						</div>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-key"></i></span>
-							<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}" required="required"/>
+							<input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" class="form-control" placeholder="{L_PASSWORD}" required="required"/>
 						</div>
 						<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
 							<div class="btn-group">
