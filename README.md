@@ -8,9 +8,11 @@ Features
 =
 • Based on the most awesome framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
 
+• Integration of [Fontawesome](http://fontawesome.io/)
+
 • Beautiful light desing (like git)
 
-• Integration of [Fontawesome](http://fontawesome.io/)
+• Full HTML5 registration and login form 
 
 • Simple theme change (see wiki)
 
