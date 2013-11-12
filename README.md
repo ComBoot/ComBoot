@@ -21,6 +21,9 @@ Status
 
 > To do
 - Changing UCP and MCP site
+- Fix for post page
+- Fixing form for Bootstrap 3
+- much more!
 
 
 Features
