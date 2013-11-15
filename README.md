@@ -1,4 +1,4 @@
-__BETA__!! [proBoot3] (http://thezoker.github.io/proBoot) (Based on Bootstrap 3)
+__BETA__ [proBoot3] (http://thezoker.github.io/proBoot) (Based on Bootstrap 3)
 =======
 
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
@@ -23,6 +23,7 @@ Status
 - Changing UCP and MCP site
 - Fix for post page
 - Fixing form for Bootstrap 3
+- Mobile device optimisation
 - much more!
 
 
