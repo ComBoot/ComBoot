@@ -14,23 +14,23 @@
 <!-- IF S_FORUM_RULES -->
 	<div class="rules">
 		<div class="inner">
-
-		<!-- IF U_FORUM_RULES -->
-			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
-		<!-- ELSE -->
-			<strong>{L_FORUM_RULES}</strong><br />
-			{FORUM_RULES}
-		<!-- ENDIF -->
-
+			<!-- IF U_FORUM_RULES -->
+				<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
+			<!-- ELSE -->
+				<strong>{L_FORUM_RULES}</strong><br />
+				{FORUM_RULES}
+			<!-- ENDIF -->
 		</div>
 	</div>
 <!-- ENDIF -->
 
 <!-- IF S_HAS_SUBFORUM -->
 <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-<ul class="linklist">
-	<li class="rightside"><a href="{U_MARK_FORUMS}">{L_MARK_SUBFORUMS_READ}</a></li>
-</ul>
+<div class="row">
+	<ul class="linklist">
+		<li class="rightside"><a href="{U_MARK_FORUMS}" class="btn btn-default btn-sm">{L_MARK_SUBFORUMS_READ}</a></li>
+	</ul>
+</div>
 <!-- ENDIF -->
 	<!-- INCLUDE forumlist_body.html -->
 <!-- ENDIF -->
@@ -45,6 +45,7 @@
 					<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
 				<!-- ENDIF -->
 			</div>
+<<<<<<< HEAD
 		<!-- ENDIF -->
 		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 			<div class="col-md-4">
@@ -53,6 +54,30 @@
 					<!-- IF PAGE_NUMBER -->
 						<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> &bull; <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span>{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
 					<!-- ENDIF -->
+=======
+			<!-- ENDIF -->
+			
+			<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
+				<div class="col-md-4">
+					<div class="btn-group">
+						<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a href="{U_MARK_TOPICS}" accesskey="m" class="btn btn-default btn-sm"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a><!-- ENDIF --><!-- IF TOTAL_TOPICS --> <span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+						<!-- IF PAGE_NUMBER -->
+							<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span>{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+						<!-- ENDIF -->
+					</div>
+				</div>
+			<!-- ENDIF -->
+
+			<!-- IF S_DISPLAY_SEARCHBOX -->
+				<div class="col-md-4">
+					<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">	
+						<fieldset>
+							<input class="input-medium search" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+							<button type="submit" class="btn">{L_SEARCH}</button>
+							{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+						</fieldset>
+					</form>
+>>>>>>> 2422188a4d1f57801f249601bc30ee95c835d7e6
 				</div>
 			</div>
 		<!-- ENDIF -->
@@ -216,6 +241,7 @@
 					<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span>{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
 				<!-- ENDIF -->
 			</div>
+<<<<<<< HEAD
 		</div>
 	<!-- ENDIF -->
 	<!-- IF S_DISPLAY_SEARCHBOX -->
@@ -227,6 +253,17 @@
 						{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 					</fieldset>
 				</form>
+=======
+		<!-- ENDIF -->
+		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
+			<div class="col-md-4">
+				<div class="btn-group">
+					<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a href="{U_MARK_TOPICS}" accesskey="m" class="btn btn-default btn-sm"><i class="icon-check"></i> {L_MARK_TOPICS_READ}</a> <!-- ENDIF --><!-- IF TOTAL_TOPICS --> <span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+					<!-- IF PAGE_NUMBER -->
+						<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span>{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+					<!-- ENDIF -->
+				</div>
+>>>>>>> 2422188a4d1f57801f249601bc30ee95c835d7e6
 			</div>
 	<!-- ENDIF -->
 	<br/>
