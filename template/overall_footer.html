@@ -4,17 +4,19 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
-			<div class="btn-group">
-				<!-- IF U_MCP -->
-				<a class="btn btn-primary" href="{U_MCP}" style=" display: block; ">{L_MCP}</a>
-				<!-- ENDIF -->
-				<!-- IF U_ACP -->
-				<a class="btn btn-primary" href="{U_ACP}" style=" display: block; ">{L_ACP}</a>
-				<!-- ENDIF -->
+		<!-- IF U_MCP or U_ACP -->
+			<div class="<!-- IF U_MCP -->col-md-4 col-md-offset-4<!-- ELSE -->col-md-3 col-md-offset-5<!-- ENDIF -->">
+				<div class="btn-group">
+					<!-- IF U_MCP -->
+					<a class="btn btn-primary" href="{U_MCP}" style=" display: block; ">{L_MCP}</a>
+					<!-- ENDIF -->
+					<!-- IF U_ACP -->
+					<a class="btn btn-primary" href="{U_ACP}" style=" display: block; ">{L_ACP}</a>
+					<!-- ENDIF -->
+				</div>
 			</div>
-		</div>
-		<div class="col-md-4">
+		<!-- ENDIF -->
+		<div class="col-md-2 col-md-offset-2">
 			<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 			<div class="btn-group dropup pull-right">
 				<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#" style=" display: block; ">
