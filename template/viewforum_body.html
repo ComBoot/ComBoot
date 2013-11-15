@@ -71,11 +71,13 @@
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 				<div class="col-md-4">
 					<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">	
-						<fieldset>
-							<input class="input-medium search" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
-							<button type="submit" class="btn">{L_SEARCH}</button>
-							{S_SEARCH_LOCAL_HIDDEN_FIELDS}
-						</fieldset>
+						<div class="input-group">
+							<input class="input-medium search form-control" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+							<span class="input-group-btn">
+								{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+								<button type="submit" class="btn">{L_SEARCH}</button>
+							</span>
+						</div>
 					</form>
 >>>>>>> 2422188a4d1f57801f249601bc30ee95c835d7e6
 				</div>
