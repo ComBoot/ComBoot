@@ -25,10 +25,10 @@
 <!-- ENDIF -->
 
 <!--
-	phpBB style name: prosilver
+	phpBB style name: proBoot3
 	Based on style:   prosilver (this is the default phpBB3 style)
 	Original author:  Tom Beddard ( http://www.subBlue.com/ )
-	Modified by:
+	Modified by: Florian Gareis (http://www.florian-gareis.de)
 -->
 
 <script type="text/javascript">
@@ -122,59 +122,58 @@
 					</ul>
 				<!-- ENDIF -->
 				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-					<form class="navbar-form navbar-left" method="get" id="search" action="{U_SEARCH}">
-						<div class="form-group">
-							<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="form-control" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+					<form class="navbar-form navbar-left" method="get" id="search" action="{U_SEARCH}" style="width: 300px">
+						<div class="input-group">
+							<input class="input-medium search form-control" maxlength="128" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+							<span class="input-group-btn">
+								{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+								<button type="submit" class="btn btn-default">{L_SEARCH}</button>
+							</span>
 						</div>
-						<input class="btn btn-default" type="submit" name="submit" value="Suchen">
 					</form>
 				<!-- ENDIF -->
-					<div id="nav-profile-dropdown" class="btn-group navbar-right">
+					<div class="btn-group navbar-right navbar-collapse dropdown">
 						<button data-toggle="dropdown" class="btn btn-primary navbar-btn dropdown-toggle" type="button">
-							<i class="glyphicon glyphicon-user"></i><span class="caret"></span>
+							<i class="glyphicon glyphicon-user"></i> <!-- IF not S_IS_BOT and S_USER_LOGGED_IN --> {S_USERNAME} <!-- ENDIF --><span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
 							<!-- IF not S_USER_LOGGED_IN and not (S_SHOW_COPPA or S_REGISTRATION) -->							
 								<li>
-									<form method="post" action="/wp-login.php" id="navloginform" name="loginform">
-										<input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" class="form-control" placeholder="{L_USERNAME}" required="required" autofocus/>
-										<input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" class="form-control" placeholder="{L_PASSWORD}" required="required"/>
+									<form method="post" id="navloginform" name="loginform">
+										<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}"/>	
+										<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}"/>
 										<!-- IF S_DISPLAY_FULL_LOGIN -->
 											<div class="checkbox">
 												<!-- IF S_AUTOLOGIN_ENABLED --><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label><!-- ENDIF -->
 												<br><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label>
 											</div>
 										<!-- ENDIF -->
-										<center>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-primary" /></center>
+										{S_HIDDEN_FIELDS}{S_LOGIN_REDIRECT}<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
 									</form>       
 								</li>
 								<!-- IF S_REGISTER_ENABLED -->
 									<li class="divider"></li>
-									<li class="bb-register"><a href="{U_REGISTER}"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</a></li>
+									<li><a href="{U_REGISTER}" class="btn btn-primary"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</a></li>
 								<!-- ELSE -->
 									<li class="divider"></li>
-									<li class="disabled"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</li>
+									<li><a href="#" class="btn btn-primary" disabled="disabled"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</a></li>
 								<!-- ENDIF -->
 							<!-- ENDIF -->
 							<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-								<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-									<li><a href="{ROOT_PATH}/memberlist.php?mode=viewprofile&un={S_USERNAME}">{S_USERNAME}</a></li>
-									<li class="divider"></li>
-									<!-- IF S_DISPLAY_PM -->
-										<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i> {PRIVATE_MESSAGE_INFO}
-											<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
-												, {PRIVATE_MESSAGE_INFO_UNREAD}
-											<!-- ENDIF -->
-											</a>
-										</li>
-									<!-- ENDIF -->
-									<!-- IF S_DISPLAY_SEARCH -->
-										<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
-										<li class="divider"></li>
-									<!-- ENDIF -->
-									<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
+								<!-- IF S_DISPLAY_PM -->
+									<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i> {PRIVATE_MESSAGE_INFO}
+										<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
+											, {PRIVATE_MESSAGE_INFO_UNREAD}
+										<!-- ENDIF -->
+										</a>
+									</li>
 								<!-- ENDIF -->
-								<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</a></li>
+								<!-- IF S_DISPLAY_SEARCH -->
+									<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
+									<li class="divider"></li>
+								<!-- ENDIF -->
+								<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
+								<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" class="btn btn-danger"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</a></li>
 							<!-- ENDIF -->
 						</ul>
 					</div>

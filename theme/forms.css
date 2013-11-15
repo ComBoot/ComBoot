@@ -10,9 +10,7 @@ fieldset {
 
 input {
 	font-weight: normal;
-	cursor: pointer;
 	vertical-align: middle;
-	padding: 0 3px;
 	font-size: 1em;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 }
@@ -383,11 +381,9 @@ input.search {
 	background-image: none;
 	background-repeat: no-repeat;
 	background-position: left 1px;
-	padding-left: 17px;
 }
 
 .full { width: 95%; }
 .medium { width: 50%;}
 .narrow { width: 25%;}
 .tiny { width: 10%;}
-

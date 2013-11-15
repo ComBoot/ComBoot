@@ -150,3 +150,18 @@ ul.profile-icons li.edit-icon	{ margin: 0 0 0 3px; }
 ul.profile-icons li.quote-icon	{ margin: 0 0 0 10px; }
 ul.profile-icons li.info-icon, ul.profile-icons li.report-icon	{ margin: 0 3px 0 0; }
 
+.navbar-right .dropdown-menu {
+	padding: 10px;
+	min-width:240px;
+}
+
+.navbar-right .dropdown-menu input.form-control {
+	margin-bottom:.5em
+}
+
+.navbar-right .dropdown-menu .btn{
+	margin-top:.75em;
+	width: 100%;
+	height: 32px; 
+	font-size: 13px;
+}
