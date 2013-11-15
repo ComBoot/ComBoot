@@ -1,46 +1,6 @@
 <!-- INCLUDE overall_header.html -->
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile">
-<<<<<<< HEAD
-<div class="panel row">
-	<div class=" span12 well<!-- IF S_ONLINE --> alert-success<!-- ENDIF -->">
-		<h3 class="box-heading">{PAGE_TITLE} <!-- IF S_ONLINE --> <span class="label label-success">ONLINE</span><!-- ENDIF --></h3>
-	<!-- IF AVATAR_IMG -->
-		<dl class="left-box">
-			<dt>{AVATAR_IMG}</dt>
-			<!-- IF RANK_TITLE --><dd style="text-align: center;"><span class="label">{RANK_TITLE}</span></dd><!-- ENDIF -->
-			<!-- IF RANK_IMG --><dd style="text-align: center;">{RANK_IMG}</dd><!-- ENDIF -->
-		</dl>
-	<!-- ENDIF -->
-
-	<dl class="left-box details" style="width: 80%;">
-		<dt>{L_USERNAME}:</dt>
-		<dd>
-			<!-- IF USER_COLOR --><span style="color: {USER_COLOR}; font-weight: bold;"><!-- ELSE --><span><!-- ENDIF -->{USERNAME}</span>
-			<!-- IF U_USER_ADMIN --> [ <a href="{U_USER_ADMIN}">{L_USER_ADMIN}</a> ]<!-- ENDIF -->
-			<!-- IF U_USER_BAN --> [ <a href="{U_USER_BAN}">{L_USER_BAN}</a> ]<!-- ENDIF -->
-			<!-- IF U_SWITCH_PERMISSIONS --> [ <a href="{U_SWITCH_PERMISSIONS}">{L_USE_PERMISSIONS}</a> ]<!-- ENDIF -->
-		</dd>
-		<!-- IF not AVATAR_IMG -->
-			<!-- IF RANK_TITLE --><dt>{L_RANK}:</dt> <dd>{RANK_TITLE}</dd><!-- ENDIF -->
-			<!-- IF RANK_IMG --><dt><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}:<!-- ENDIF --></dt> <dd>{RANK_IMG}</dd><!-- ENDIF -->
-		<!-- ENDIF -->
-		<!-- IF S_USER_INACTIVE --><dt>{L_USER_IS_INACTIVE}:</dt> <dd>{USER_INACTIVE_REASON}</dd><!-- ENDIF -->
-		<!-- IF LOCATION --><dt>{L_LOCATION}:</dt> <dd>{LOCATION}</dd><!-- ENDIF -->
-		<!-- IF AGE !== '' --><dt>{L_AGE}:</dt> <dd>{AGE}</dd><!-- ENDIF -->
-		<!-- IF OCCUPATION --><dt>{L_OCCUPATION}:</dt> <dd>{OCCUPATION}</dd><!-- ENDIF -->
-		<!-- IF INTERESTS --><dt>{L_INTERESTS}:</dt> <dd>{INTERESTS}</dd><!-- ENDIF -->
-		<!-- IF S_GROUP_OPTIONS --><dt>{L_USERGROUPS}:</dt> <dd><select name="g" class="no-margin">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="btn btn-default" /></dd><!-- ENDIF -->
-		<!-- BEGIN custom_fields --><dt>{custom_fields.PROFILE_FIELD_NAME}:</dt> <dd>{custom_fields.PROFILE_FIELD_VALUE}</dd><!-- END custom_fields -->
-		<!-- IF S_USER_LOGGED_IN and S_ZEBRA -->
-			<!-- IF U_REMOVE_FRIEND -->
-				<dt>&nbsp;</dt> <dd><a href="{U_REMOVE_FRIEND}"><strong>{L_REMOVE_FRIEND}</strong></a></dd>
-			<!-- ELSEIF U_REMOVE_FOE -->
-				<dt>&nbsp;</dt> <dd><a href="{U_REMOVE_FOE}"><strong>{L_REMOVE_FOE}</strong></a></dd>
-			<!-- ELSE -->
-				<!-- IF U_ADD_FRIEND -->
-					<dt>&nbsp;</dt> <dd><a href="{U_ADD_FRIEND}"><strong>{L_ADD_FRIEND}</strong></a></dd>
-=======
 	<div class=" span12<!-- IF S_ONLINE --> alert-success<!-- ENDIF -->">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -53,7 +13,6 @@
 						<!-- IF RANK_TITLE --><dd style="text-align: center;"><span class="label">{RANK_TITLE}</span></dd><!-- ENDIF -->
 						<!-- IF RANK_IMG --><dd style="text-align: center;">{RANK_IMG}</dd><!-- ENDIF -->
 					</dl>
->>>>>>> 2422188a4d1f57801f249601bc30ee95c835d7e6
 				<!-- ENDIF -->
 					<dl class="left-box details" style="width: 80%;">
 					<dt>{L_USERNAME}:</dt>
