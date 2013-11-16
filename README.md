@@ -28,6 +28,7 @@ Status
 - Fix for post page
 - Fixing form for Bootstrap 3
 - Mobile device optimisation
+- Update breadchrumbs to be shown on every site
 - much more!
 
 
