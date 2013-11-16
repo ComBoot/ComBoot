@@ -125,10 +125,19 @@
 					<form class="navbar-form navbar-left" method="get" id="search" action="{U_SEARCH}" style="width: 300px">
 						<div class="input-group">
 							<input class="input-medium search form-control" maxlength="128" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
-							<span class="input-group-btn">
+							<div class="input-group-btn">
 								{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 								<button type="submit" class="btn btn-default">{L_SEARCH}</button>
-							</span>
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+									<span class="caret"></span>
+									<span class="sr-only">Toggle Dropdown</span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Forum</a></li>
+									<li><a href="#">Mitglieder</a></li>
+									<li><a href="#">Beitrag</a></li>
+								</ul>
+							</div>
 						</div>
 					</form>
 				<!-- ENDIF -->
