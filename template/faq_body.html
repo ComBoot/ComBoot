@@ -1,39 +1,36 @@
 <!-- INCLUDE overall_header.html -->
 
-<h2>{L_FAQ_TITLE}</h2>
+<div class="page-header">
+	<h2>{L_FAQ_TITLE}</h2>
+</div>
 
-
-<div class="panel row" id="faqlinks">
-	<div class="span12 well">
-		<div class="col-md-6">
-		<!-- BEGIN faq_block -->
-			<!-- IF faq_block.SWITCH_COLUMN or (SWITCH_COLUMN_MANUALLY and faq_block.S_ROW_COUNT == 4) -->
-				</div>
-
-				<div class="col-md-6">
+<div class="panel panel-default" id="faqlinks">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-6">
+			<!-- BEGIN faq_block -->
+				<!-- IF faq_block.SWITCH_COLUMN or (SWITCH_COLUMN_MANUALLY and faq_block.S_ROW_COUNT == 4) -->
+			</div>
+			<div class="col-md-6">
 			<!-- ENDIF -->
-
-			<dl class="faq">
-				<dt><strong>{faq_block.BLOCK_TITLE}</strong></dt>
-				<!-- BEGIN faq_row -->
-					<dd><a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</a></dd>
-				<!-- END faq_row -->
-			</dl>
-		<!-- END faq_block -->
+				<dl class="faq">
+					<dt><strong>{faq_block.BLOCK_TITLE}</strong></dt>
+					<!-- BEGIN faq_row -->
+						<dd><a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</a></dd>
+					<!-- END faq_row -->
+				</dl>
+			<!-- END faq_block -->
+			</div>
 		</div>
 	</div>
 </div>
-
-
-
 <div class="clear"></div>
-
 <!-- BEGIN faq_block -->
-	<div class="panel row">
-		<div class="well">
-				<h2 class="box-heading">{faq_block.BLOCK_TITLE}</h2>
-		<div class="content">
-			
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">{faq_block.BLOCK_TITLE}</h2>
+		</div>
+		<div class="panel-body">
 			<!-- BEGIN faq_row -->
 				<dl class="faq">
 					<dt id="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}"><strong>{faq_block.faq_row.FAQ_QUESTION}</strong></dt>
@@ -43,10 +40,7 @@
 				<!-- IF not faq_block.faq_row.S_LAST_ROW --><hr class="dashed" /><!-- ENDIF -->
 			<!-- END faq_row -->
 		</div>
-
-		</div>
 	</div>
 <!-- END faq_block -->
 
-<!-- INCLUDE jumpbox.html -->
 <!-- INCLUDE overall_footer.html -->
