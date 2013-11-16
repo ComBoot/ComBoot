@@ -173,7 +173,7 @@
 										<!-- IF U_PRINT_PM --><li class="rightside"><a class="btn btn-default" href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print"><i class="fa fa-print"></i></a></li></a></li><!-- ENDIF -->
 
 										<!-- IF postrow.U_EDIT --><li class="edit"><a class="btn btn-default" href="{postrow.U_EDIT}" title="{L_EDIT_POST}"><i class="fa fa-pencil"></i></a></li><!-- ENDIF -->
-										<!-- IF postrow.U_DELETE --><li class="delete"><a class="btn btn-default" href="{postrow.U_DELETE}" title="{L_DELETE_POST}"><i class="fa fa-times"></i></a></li><!-- ENDIF -->
+										<!-- IF postrow.U_DELETE --><li class="delete"><a class="btn btn-default" href="{postrow.U_DELETE}" title="{L_DELETE_POST}"><i class="fa fa-trash-o"></i></a></li><!-- ENDIF -->
 										<!-- IF postrow.U_REPORT --><li class="report"><a class="btn btn-default" href="{postrow.U_REPORT}" title="{L_REPORT_POST}"><i class="fa fa-exclamation"></i></a></li><!-- ENDIF -->
 										<!-- IF postrow.U_WARN --><li class="warn"><a class="btn btn-default" href="{postrow.U_WARN}" title="{L_WARN_USER}"><i class="fa fa-minus"></i></a></li><!-- ENDIF -->
 										<!-- IF postrow.U_INFO --><li class="info"><a class="btn btn-default" href="{postrow.U_INFO}" title="{L_INFORMATION}"><i class="fa fa-info"></i></a></li><!-- ENDIF -->
@@ -232,11 +232,19 @@
 		<!-- IF PAGINATION or TOTAL_POSTS -->
 			<div class="col-md-5 col-md-offset-1">
 				<div class="btn-group">
-					<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> <!-- ENDIF --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_POSTS}</span>
-					<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+					<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> <!-- ENDIF --><span class="btn btn-default btn-sm" <!-- IF not U_VIEW_UNREAD_POST and not S_IS_BOT -->disabled="disabled"<!-- ENDIF -->>{TOTAL_POSTS}</span>
+					<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><!-- ENDIF --><span class="btn btn-default btn-sm">{PAGE_NUMBER}</span><!-- IF PAGINATION --></a><!-- ENDIF --><!-- ENDIF -->
 				</div>
 			</div>
-	<!-- ENDIF -->
+		<!-- ENDIF -->
+		
+		<!-- IF PAGINATION-->
+		<div class="col-md-5 col-md-offset-1">
+			<ul class="pagination">
+				{PAGINATION}
+			</ul>
+		</div>
+		<!-- ENDIF -->
 	
 	<!-- IF S_DISPLAY_SEARCHBOX -->
 		<div class="col-md-3">
@@ -275,8 +283,10 @@
 	<div class="well well-sm">
 		<form id="viewtopic" method="post" action="{S_TOPIC_ACTION}" class="form-inline">
 			<fieldset class="display-options" style="margin-top: 0; ">
-				<!-- IF PREVIOUS_PAGE --><a class="btn btn-inverse pull-left" href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}"><i class="icon-chevron-left icon-white"></i> {L_PREVIOUS}</a><!-- ENDIF -->
-				<!-- IF NEXT_PAGE --><a class="btn btn-inverse pull-right" href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT} <i class="icon-chevron-right icon-white"></i></a><!-- ENDIF -->
+				<ul class="pager">
+					<!-- IF PREVIOUS_PAGE --><li class="previous"><a href="{PREVIOUS_PAGE}"><i class="fa fa-chevron-left"></i> {L_PREVIOUS}</a></li><!-- ENDIF -->
+					<!-- IF NEXT_PAGE --><li class="next"><a href="{NEXT_PAGE}">{L_NEXT} <i class="fa fa-chevron-right"></i></a></li><!-- ENDIF -->
+				</ul>
 				<!-- IF not S_IS_BOT -->
 				<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
 				<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label> <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
@@ -284,6 +294,26 @@
 			</fieldset>
 		</form>
 	</div>
+<!-- ENDIF -->
+
+<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">{L_LOGIN_LOGOUT}</h3>
+	</div>	
+	<div class="panel-body">
+		<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
+			<div class="input-group">
+				<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}" style="width: 117px;"/>	
+				<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}" style="width: 117px;"/>
+				<span class="input-group-btn" style="width: 0px;">
+					{S_LOGIN_REDIRECT}
+					<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
+				</span>	
+			</div>
+		</form>
+	</div>
+</div>
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
