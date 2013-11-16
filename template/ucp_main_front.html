@@ -1,44 +1,39 @@
 <!-- INCLUDE ucp_header.html -->
 
-<h3 class="box-heading">{L_TITLE}</h3>
-
-<div class="panel">
-	<div class="inner">
-
-	<p>{L_UCP_WELCOME}</p>
-
-<!-- IF .topicrow -->
-	<h3>{L_IMPORTANT_NEWS}</h3>
-
-	<table class="topiclist cplist table table-striped">
-	<!-- BEGIN topicrow -->
-		<tbody>
-			<tr>
-				<td <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
-					<!-- IF topicrow.S_UNREAD --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><i class="pcon {topicrow.TOPIC_IMG_STYLE}"></i><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
-					<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
-					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
-				</td>
-				<td class="lastpost"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
-					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
-				</td>
-			</tr>
-		</tbody>
-	<!-- END topicrow -->
-	</table>
-<!-- ENDIF -->
-
-	<h3>{L_YOUR_DETAILS}</h3>
-
-	<dl class="details">
-		<dt>{L_JOINED}:</dt> <dd>{JOINED}</dd>
-		<dt>{L_VISITED}:</dt> <dd>{LAST_VISIT_YOU}</dd>
-		<dt>{L_TOTAL_POSTS}:</dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>
-		<!-- IF ACTIVE_FORUM != '' --><dt>{L_ACTIVE_IN_FORUM}:</dt> <dd><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</dd><!-- ENDIF -->
-		<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
-		<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
-	</dl>
-
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">{L_TITLE}</h3>
+	</div>
+	<div class="panel-body">
+		<p>{L_UCP_WELCOME}</p>
+		<!-- IF .topicrow -->
+			<h3>{L_IMPORTANT_NEWS}</h3>
+			<table class="topiclist cplist table table-hover">
+				<!-- BEGIN topicrow -->
+					<tbody>
+						<tr>
+							<td <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
+								<!-- IF topicrow.S_UNREAD --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><i class="pcon {topicrow.TOPIC_IMG_STYLE}"></i><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
+								<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
+								<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
+							</td>
+							<td class="lastpost"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+								<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
+							</td>
+						</tr>
+					</tbody>
+				<!-- END topicrow -->
+			</table>
+		<!-- ENDIF -->
+		<h3>{L_YOUR_DETAILS}</h3>
+		<dl class="details">
+			<dt>{L_JOINED}:</dt> <dd>{JOINED}</dd>
+			<dt>{L_VISITED}:</dt> <dd>{LAST_VISIT_YOU}</dd>
+			<dt>{L_TOTAL_POSTS}:</dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>
+			<!-- IF ACTIVE_FORUM != '' --><dt>{L_ACTIVE_IN_FORUM}:</dt> <dd><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</dd><!-- ENDIF -->
+			<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
+			<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
+		</dl>
 	</div>
 </div>
 
