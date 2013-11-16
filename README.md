@@ -18,6 +18,10 @@ Status
 - Buttons for Bootstrap 3
 - Panels to Bootstrap 3 panels
 - Row class padding
+- FAQ site
+- Membersite search
+- Nice code (well tabbed)
+- Search forms
 
 > To do
 - Changing UCP and MCP site
