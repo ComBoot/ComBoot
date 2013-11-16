@@ -25,7 +25,7 @@
 <!-- INCLUDE forumlist_body.html -->
 
 <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-<div class="panel panel-default">
+<div class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title">{L_LOGIN_LOGOUT}</h3>
 	</div>	
@@ -45,7 +45,7 @@
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
-<div class="panel panel-default">
+<div class="panel panel-info">
 	<div class="panel-heading">
 		<!-- IF U_VIEWONLINE -->
 			<h3 class="panel-title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3 class="panel-title">{L_WHO_IS_ONLINE}</h3>
@@ -59,7 +59,7 @@
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
-<div class="panel panel-default">
+<div class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title">{L_BIRTHDAYS}</h3>
 	</div>
@@ -70,12 +70,13 @@
 <!-- ENDIF -->
 
 <!-- IF NEWEST_USER -->
-<div class="panel panel-default">
+<div class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title">{L_STATISTICS}</h3>
 	</div>
 	<div class="panel-body">
 		<p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
+		<hr/>
 		<p class="{S_CONTENT_FLOW_END}<!-- IF S_USER_LOGGED_IN --> rightside<!-- ENDIF -->"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></p>
 		<!-- IF U_MCP --><p>{CURRENT_TIME} <br />[&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ELSEIF S_USER_LOGGED_IN --><p>{CURRENT_TIME}</p><!-- ENDIF -->
 	</div>

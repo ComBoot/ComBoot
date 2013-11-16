@@ -15,7 +15,6 @@
 <!-- ENDIF -->
 
 	<!-- IF S_SHOW_GROUP -->
-
 		<h2<!-- IF GROUP_COLOR --> style="color:#{GROUP_COLOR};"<!-- ENDIF -->>{GROUP_NAME}</h2>
 		<p>{GROUP_DESC} {GROUP_TYPE}</p>
 		<p>
@@ -25,44 +24,32 @@
 		</p>
 
 	<!-- ELSE -->
-		<h2 class="solo">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
+		<div class="page-header">
+			<h2 class="solo">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
+		</div>
 
 		<div class="row">
-			
-			<ul class="linklist">
-				<li>
-
-				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><a href="{U_FIND_MEMBER}" class="btn btn-success" type="button">{L_FIND_USERNAME}</a> <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><a href="{U_HIDE_FIND_MEMBER}" class="btn btn-default" type="button">{L_HIDE_MEMBER_SEARCH}</a> <!-- ENDIF -->
-				<strong style="font-size: 0.95em;">
+			<ul class="pagination pagination-sm">
+				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><li><a href="{U_FIND_MEMBER}">{L_FIND_USERNAME}</a></li> <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><li><a href="{U_HIDE_FIND_MEMBER}">{L_HIDE_MEMBER_SEARCH}</a></li><!-- ENDIF -->
 				<!-- BEGIN first_char -->
-					<a href="{first_char.U_SORT}" class="btn btn-default" type="button">{first_char.DESC}</a>&nbsp; 
+					<li><a href="{first_char.U_SORT}">{first_char.DESC}</a></li>
 				<!-- END first_char -->
-				</strong>
-				</li>
-				<li class="m-pagination">
-					<span class="badge">{TOTAL_USERS}</span>  
-					<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> &bull; <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
-				</li>
 			</ul>
-
-			
 		</div>
 	<!-- ENDIF -->
 	<!-- IF S_LEADERS_SET or not S_SHOW_GROUP or not .memberrow -->
 	<div class="forumbg forumbg-table">
-		
-
 		<table class="table table-bordered table-striped" id="memberlist">
-		<thead>
-		<tr>
-			<th class="name"><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP and .memberrow -->{L_GROUP_LEADER}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
-			<th class="rank"><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
-			<th class="posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
-			<th class="info"><a href="{U_SORT_WEBSITE}#memberlist">{L_WEBSITE}</a>{L_COMMA_SEPARATOR}<a href="{U_SORT_LOCATION}">{L_LOCATION}</a></th>
-			<th class="joined"><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
-			<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
-		</tr>
-		</thead>
+			<thead>
+				<tr>
+					<th class="name"><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP and .memberrow -->{L_GROUP_LEADER}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
+					<th class="rank"><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
+					<th class="posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
+					<th class="info"><a href="{U_SORT_WEBSITE}#memberlist">{L_WEBSITE}</a>{L_COMMA_SEPARATOR}<a href="{U_SORT_LOCATION}">{L_LOCATION}</a></th>
+					<th class="joined"><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
+					<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
+				</tr>
+			</thead>
 		<tbody>
 	<!-- ENDIF -->
 		<!-- BEGIN memberrow -->
@@ -148,18 +135,15 @@
 
 </form>
 
-<ul class="linklist">
-				
-				<li class="m-pagination">
-					<span class="badge">{TOTAL_USERS}</span>  
-					<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> &bull; <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
-				</li>
-			</ul>
-
+<div class="row">
+	<div class="col-md-2 col-md-offset-5">  
+		<span class="badge">{TOTAL_USERS}</span>  
+		<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> &bull; <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
+	</div>
+</div>
 
 <!-- IF S_IN_SEARCH_POPUP -->
 	<!-- INCLUDE simple_footer.html -->
 <!-- ELSE -->
-	<!-- INCLUDE jumpbox.html -->
 	<!-- INCLUDE overall_footer.html -->
 <!-- ENDIF -->

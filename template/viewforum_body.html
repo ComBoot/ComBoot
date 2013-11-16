@@ -196,22 +196,22 @@
 
 <!-- IF S_SELECT_SORT_DAYS and not S_DISPLAY_ACTIVE -->
 	<div class="well well-sm">
-	 <form method="post" action="{S_FORUM_ACTION}" class="form-inline">
-            <fieldset class="display-options">
-                <!-- IF PREVIOUS_PAGE --><a class="btn btn-inverse" href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
-                <!-- IF NEXT_PAGE --><a class="btn btn-inverse" href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
-        <!-- IF not S_IS_BOT -->
-                <label>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</label>
-                <label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-                <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
-        <!-- ENDIF -->
-            </fieldset>
-        </form>
+		<form method="post" action="{S_FORUM_ACTION}" class="form-inline">
+			<fieldset class="display-options">
+				<!-- IF PREVIOUS_PAGE --><a class="btn btn-inverse" href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
+				<!-- IF NEXT_PAGE --><a class="btn btn-inverse" href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
+				<!-- IF not S_IS_BOT -->
+					<label>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</label>
+					<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
+					<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
+				<!-- ENDIF -->
+			</fieldset>
+		</form>
 	</div>
 <!-- ENDIF -->
 
 <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-<div class="panel panel-default">
+<div class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title">{L_LOGIN_LOGOUT}</h3>
 	</div>	
@@ -231,7 +231,7 @@
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
-	<div class="panel panel-default">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<h3 class="panel-title"><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
 		</div>
@@ -242,7 +242,7 @@
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_POST_INFO -->
-	<div class="panel panel-default">
+	<div class="panel panel-info">
 		<div class="panel-heading">
 			<h3 class="panel-title">{L_FORUM_PERMISSIONS}</h3>
 		</div>
