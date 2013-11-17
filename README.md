@@ -69,7 +69,7 @@ Themes
 =
 
 ***Amelia***
-![Amelia] http://bootswatch.com/amelia/thumbnail.png
+![Amelia] (http://bootswatch.com/amelia/thumbnail.png)
 
 ***Cerulean***
-![Cerulean] http://bootswatch.com/cerulean/thumbnail.png
+![Cerulean] (http://bootswatch.com/cerulean/thumbnail.png)
