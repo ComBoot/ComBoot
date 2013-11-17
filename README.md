@@ -72,4 +72,31 @@ Themes
 [![Amelia] (http://bootswatch.com/amelia/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=amelia)
 
 ###Cerulean
-![Cerulean] (http://bootswatch.com/cerlean/thumbnail.png)
+[![Cerulean] (http://bootswatch.com/cerulean/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cerulean)
+
+###Cosmo
+[![Cosmo] (http://bootswatch.com/cosmo/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cosmo)
+
+###Cyborg
+[![Cyborg] (http://bootswatch.com/cyborg/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cyborg)
+
+###Flatly
+[![Flatly] (http://bootswatch.com/flatly/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=flatly)
+
+###Journal
+[![Journal] (http://bootswatch.com/journal/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=journal)
+
+###Readable
+[![Readable] (http://bootswatch.com/readable/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=readable)
+
+###Simplex
+[![Simplex] (http://bootswatch.com/simplex/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=simplex)
+
+###Slate
+[![Slate] (http://bootswatch.com/slate/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=slate)
+
+###Spacelab
+[![Spacelab] (http://bootswatch.com/spacelab/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=spacelab)
+
+###United
+[![united] (http://bootswatch.com/united/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=united)
