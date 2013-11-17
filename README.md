@@ -22,6 +22,7 @@ Status
 - Membersite search
 - Nice code (well tabbed)
 - Search forms
+- Complete UCP Panel
 
 > To do
 - Changing UCP and MCP site
