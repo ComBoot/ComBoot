@@ -104,7 +104,7 @@
 	<a id="top" accesskey="t"></a>
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -112,7 +112,7 @@
 				</button>
 				<a class="navbar-brand" href="{U_INDEX}">{SITENAME}</a>
 			</div>
-			<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse" id="main-menu">
 				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
 					<ul class="nav navbar-nav">
 						<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-question"></i> {L_FAQ}</a></li>
@@ -141,10 +141,9 @@
 						</div>
 					</form>
 				<!-- ENDIF -->
-					<div class="btn-group navbar-right navbar-collapse dropdown">
-						<button data-toggle="dropdown" class="btn btn-primary navbar-btn dropdown-toggle" type="button">
-							<i class="glyphicon glyphicon-user"></i> <!-- IF not S_IS_BOT and S_USER_LOGGED_IN --> {S_USERNAME} <!-- ENDIF --><span class="caret"></span>
-						</button>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<button type="button" class="btn btn-primary navbar-btn dropdown-toggle" data-toggle="dropdown" ><i class="glyphicon glyphicon-user"></i> <!-- IF not S_IS_BOT and S_USER_LOGGED_IN --> {S_USERNAME} <!-- ENDIF --><span class="caret"></span></button>
 						<ul class="dropdown-menu">
 							<!-- IF not S_USER_LOGGED_IN and not (S_SHOW_COPPA or S_REGISTRATION) -->							
 								<li>
@@ -185,7 +184,8 @@
 								<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" class="btn btn-danger"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</a></li>
 							<!-- ENDIF -->
 						</ul>
-					</div>
+					</li>
+				</ul>
 			</div>
 		</nav>
 		<div class="jumbotron">
