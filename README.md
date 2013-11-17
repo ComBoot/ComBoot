@@ -64,3 +64,12 @@ About
 **Demo:** http://demo.zoker.me/proBoot3/
 
 **Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
+
+Themes
+=
+
+***Amelia***
+![Amelia] http://bootswatch.com/amelia/thumbnail.png
+
+***Cerulean***
+![Cerulean] http://bootswatch.com/cerulean/thumbnail.png
