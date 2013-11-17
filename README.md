@@ -40,6 +40,7 @@ Status
 - Update breadchrumbs to be shown on every site
 - much more!
 
+All changes: https://github.com/TheZoker/proBoot3/compare/master%40%7B1384113359%7D...master
 
 Features
 =
