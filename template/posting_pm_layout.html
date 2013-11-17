@@ -15,21 +15,17 @@
 
 <!-- IF S_DISPLAY_PREVIEW --><!-- INCLUDE posting_preview.html --><!-- ENDIF -->
 
-<h2>{L_TITLE}</h2>
-
-<div class="row" id="postingbox">
-	<div class="well">
-
-	<!-- DEFINE $EXTRA_POSTING_OPTIONS = 1 -->
-	<!-- INCLUDE posting_editor.html -->
-
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">{L_TITLE}</h3>
+	</div>
+	<div class="panel-body" id="postingbox">
+		<!-- DEFINE $EXTRA_POSTING_OPTIONS = 1 -->
+		<!-- INCLUDE posting_editor.html -->
+		<!-- IF S_SHOW_ATTACH_BOX --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->
+		<!-- IF S_DISPLAY_REVIEW --><!-- INCLUDE posting_topic_review.html --><!-- ENDIF -->
+		<!-- IF S_DISPLAY_HISTORY --><!-- INCLUDE ucp_pm_history.html --><!-- ENDIF -->
 	</div>
 </div>
-
-<!-- IF S_SHOW_ATTACH_BOX --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->
-
-<!-- IF S_DISPLAY_REVIEW --><!-- INCLUDE posting_topic_review.html --><!-- ENDIF -->
-
-<!-- IF S_DISPLAY_HISTORY --><!-- INCLUDE ucp_pm_history.html --><!-- ENDIF -->
 
 <!-- INCLUDE ucp_footer.html -->

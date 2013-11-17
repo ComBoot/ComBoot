@@ -5,30 +5,32 @@
 <!-- ENDIF -->
 
 <!-- IF PROMPT -->
-	<h2>{L_EXPORT_AS_CSV}</h2>
 	<form id="viewfolder" method="post" action="{S_PM_ACTION}">
-	<div class="panel">
-		<div class="inner">
-		<h3>{L_OPTIONS}</h3>
-		<fieldset>
-			<dl>
-				<dt><label for="delimiter">{L_DELIMITER}:</label></dt>
-				<dd><input class="inputbox" type="text" id="delimiter" name="delimiter" value="," /></dd>
-			</dl>
-			<dl>
-				<dt><label for="enclosure">{L_ENCLOSURE}:</label></dt>
-				<dd><input class="inputbox" type="text" id="enclosure" name="enclosure" value="&#034;" /></dd>
-			</dl>
-		</fieldset>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{L_EXPORT_AS_CSV}</h3>
+			</div>
+		<div class="panel-body">
+			<h3>{L_OPTIONS}</h3>
+			<fieldset>
+				<dl>
+					<dt><label for="delimiter">{L_DELIMITER}:</label></dt>
+					<dd><input class="inputbox" type="text" id="delimiter" name="delimiter" value="," /></dd>
+				</dl>
+				<dl>
+					<dt><label for="enclosure">{L_ENCLOSURE}:</label></dt>
+					<dd><input class="inputbox" type="text" id="enclosure" name="enclosure" value="&#034;" /></dd>
+				</dl>
+			</fieldset>
+			<fieldset class="submit-buttons">
+				<input type="hidden" name="export_option" value="CSV" />
+				<input class="btn btn-default" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
+				<input class="btn btn-default" type="reset" value="Reset" name="reset" />&nbsp;
+				{S_FORM_TOKEN}
+			</fieldset>
 		</div>
 	</div>
-	<fieldset class="submit-buttons">
-		<input type="hidden" name="export_option" value="CSV" />
-		<input class="btn btn-default" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
-		<input class="btn btn-default" type="reset" value="Reset" name="reset" />&nbsp;
-		{S_FORM_TOKEN}
-	</fieldset>
-	</form>
+</form>
 
 <!-- ELSE -->
 

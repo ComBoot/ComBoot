@@ -1,10 +1,14 @@
 <!-- INCLUDE overall_header.html -->
 
 <!-- IF TOPIC_TITLE -->
-	<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a> <span class="label">{L_POST_A}</span></h2>
+	<div class="page-header">
+		<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a> <span class="label">{L_POST_A}</span></h2>
+	</div>
 <!-- ELSE -->
-	<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a> <span class="label">{L_POST_A}</span></h2>
- <!-- ENDIF -->
+	<div class="page-header">
+		<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a> <span class="label">{L_POST_A}</span></h2>
+	</div>
+<!-- ENDIF -->
 
 <!-- IF S_FORUM_RULES -->
 	<div class="rules">
