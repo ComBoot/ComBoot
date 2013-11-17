@@ -68,8 +68,8 @@ About
 Themes
 =
 
-***Amelia***
+###Amelia
 ![Amelia] (http://bootswatch.com/amelia/thumbnail.png)
 
-***Cerulean***
+###Cerulean
 ![Cerulean] (http://bootswatch.com/cerulean/thumbnail.png)
