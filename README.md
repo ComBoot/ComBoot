@@ -4,6 +4,12 @@ __BETA__ [proBoot3] (http://thezoker.github.io/proBoot3) (Based on Bootstrap 3)
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
 The color scheme is the simple bootstrap color, also used here @git.
 
+- [Status] (#status)
+- [Features] (#features)
+- [Quick Start] (#quick-start)
+- [About] (#about)
+- [Themes] (#themes)
+
 Status
 =
 > Added
