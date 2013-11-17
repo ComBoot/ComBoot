@@ -10,6 +10,8 @@ The color scheme is the simple bootstrap color, also used here @git.
 - [About] (#about)
 - [Themes] (#themes)
 
+If you found any bug or have a feature request, just create a ticket: https://github.com/TheZoker/proBoot3/issues/new
+
 Status
 =
 > Added
