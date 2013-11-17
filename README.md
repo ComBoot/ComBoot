@@ -33,7 +33,7 @@ Status
 - Complete UCP Panel
 
 > To do
-- Changing UCP and MCP site
+- Changing MCP site
 - Fix for post page
 - Fixing form for Bootstrap 3
 - Mobile device optimisation
