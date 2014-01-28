@@ -1,67 +1,68 @@
 <!-- INCLUDE overall_header.html -->
 
-<h2>{L_MCP}</h2>
+<div class="page-header">
+	<h2>{L_MCP}</h2>
+</div>
 
 <!-- IF U_MCP -->
-	<p class="linkmcp">
-		<a class="btn btn-default" href="{U_MCP}">{L_MCP}</a><!-- IF U_MCP_FORUM --> | <a class="btn btn-default" href="{U_MCP_FORUM}">{L_MODERATE_FORUM}</a><!-- ENDIF -->
-		<!-- IF U_MCP_TOPIC --> |  <a class="btn btn-default" href="{U_MCP_TOPIC}">{L_MODERATE_TOPIC}</a><!-- ENDIF -->
-		<!-- IF U_MCP_POST --> | <a class="btn btn-default" href="{U_MCP_POST}">{L_MODERATE_POST}</a><!-- ENDIF -->
-	</p>
+	<div class="btn-group">
+		<a class="btn btn-default" href="{U_MCP}">{L_MCP}</a><!-- IF U_MCP_FORUM --><a class="btn btn-default" href="{U_MCP_FORUM}">{L_MODERATE_FORUM}</a><!-- ENDIF -->
+		<!-- IF U_MCP_TOPIC --><a class="btn btn-default" href="{U_MCP_TOPIC}">{L_MODERATE_TOPIC}</a><!-- ENDIF -->
+		<!-- IF U_MCP_POST --><a class="btn btn-default" href="{U_MCP_POST}">{L_MODERATE_POST}</a><!-- ENDIF -->
+	</div>
 <!-- ENDIF -->
 
-<div id="p-tabs" class="row">
-	<ul class="nav nav-pills pull-right">
+<div>
+	<ul class="nav nav-pills nav-justified">
 		<!-- BEGIN l_block1 -->
-		<li<!-- IF l_block1.S_SELECTED --> class="active"<!-- ENDIF -->><a href="{l_block1.U_TITLE}"><span>{l_block1.L_TITLE}</span></a></li>
+			<li<!-- IF l_block1.S_SELECTED --> class="active"<!-- ENDIF -->><a href="{l_block1.U_TITLE}"><span>{l_block1.L_TITLE}</span></a></li>
 		<!-- END l_block1 -->
 	</ul>
 </div>
 
-<div class="panel">
-	<div class="inner">
-
-	<div class="row">
-
-	<div id="cp-menu" class="span2">
-		<div id="navigation">
-			<ul class="c-menu">
+<div class="row">
+	<div class="col-md-2">
+		<div class="list-group">
 			<!-- BEGIN l_block1 -->
-			<!-- IF l_block1.S_SELECTED -->
-				<!-- BEGIN l_block2 -->
-				<!-- IF l_block1.l_block2.S_SELECTED -->
-				<li id="active-subsection"><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
-				<!-- ELSE -->
-				<li><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
+				<!-- IF l_block1.S_SELECTED -->
+					<!-- BEGIN l_block2 -->
+						<!-- IF l_block1.l_block2.S_SELECTED -->
+							<a href="{l_block1.l_block2.U_TITLE}" class="list-group-item active"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a>
+						<!-- ELSE -->
+							<a href="{l_block1.l_block2.U_TITLE}" class="list-group-item"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a>
+						<!-- ENDIF -->
+					<!-- END l_block2 -->
 				<!-- ENDIF -->
-				<!-- END l_block2 -->
-			<!-- ENDIF -->
 			<!-- END l_block1 -->
-			</ul>
 		</div>
 	</div>
 
-	<div id="cp-main" class="mcp-main span10 well" style="min-height: 300px;">
+	<div class="col-md-10" style="min-height: 300px;">
 		<!-- IF MESSAGE -->
-		<div class="content">
-			<h2>{L_MESSAGE}</h2>
-			<p class="error">{MESSAGE}</p>
-			<p><!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links --></p>
-		</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{L_MESSAGE}</h3>
+				</div>
+				<div class="panel-body">
+					<p class="alert alert-danger">{MESSAGE}</p>
+					<p><!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links --></p>
+				</div>
+			</div>
 		<!-- ENDIF -->
 
 		<!-- IF CONFIRM_MESSAGE -->
 			<form id="confirm" method="post" action="{S_CONFIRM_ACTION}"{S_FORM_ENCTYPE}>
-
-			<div class="content">
-				<h2>{L_PLEASE_CONFIRM}</h2>
-				<p>{CONFIRM_MESSAGE}</p>
-			
-				<fieldset class="submit-buttons">
-					{S_HIDDEN_FIELDS}<input class="button1" type="submit" name="submit" value="{L_YES}" />&nbsp; 
-					<input class="button2" type="cancel" value="{L_NO}" />
-				</fieldset>
-			</div>
-
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">{L_PLEASE_CONFIRM}</h3>
+					</div>
+					<div class="panel-body">
+						<p>{CONFIRM_MESSAGE}</p>
+						<fieldset class="submit-buttons">
+							{S_HIDDEN_FIELDS}<input class="button1" type="submit" name="submit" value="{L_YES}" />&nbsp; 
+							<input class="button2" type="cancel" value="{L_NO}" />
+						</fieldset>
+					</div>
+				</div>
 			</form>
 		<!-- ENDIF -->
