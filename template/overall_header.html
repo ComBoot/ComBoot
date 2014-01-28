@@ -11,6 +11,7 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="copyright" content="Florian Gareis" />
 {META}
 <title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
 
@@ -145,7 +146,7 @@
 					<li class="dropdown">
 						<button type="button" class="btn btn-primary navbar-btn dropdown-toggle" data-toggle="dropdown" ><i class="glyphicon glyphicon-user"></i> <!-- IF not S_IS_BOT and S_USER_LOGGED_IN --> {S_USERNAME} <!-- ENDIF --><span class="caret"></span></button>
 						<ul class="dropdown-menu">
-							<!-- IF not S_USER_LOGGED_IN and not (S_SHOW_COPPA or S_REGISTRATION) -->							
+							<!-- IF not S_USER_LOGGED_IN -->							
 								<li>
 									<form method="post" id="navloginform" name="loginform">
 										<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}"/>	
@@ -156,12 +157,13 @@
 												<br><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label>
 											</div>
 										<!-- ENDIF -->
-										{S_HIDDEN_FIELDS}{S_LOGIN_REDIRECT}<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
+										{S_LOGIN_REDIRECT}
+											<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
 									</form>       
 								</li>
 								<!-- IF S_REGISTER_ENABLED -->
 									<li class="divider"></li>
-									<li><a href="{U_REGISTER}" class="btn btn-primary"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</a></li>
+									<li><a href="{U_REGISTER}" style="padding:0px;display:inline"><button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</button></a></li>
 								<!-- ELSE -->
 									<li class="divider"></li>
 									<li><a href="#" class="btn btn-primary" disabled="disabled"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</a></li>
@@ -190,7 +192,7 @@
 		</nav>
 		<div class="jumbotron">
 			<center class="container">
-				<br/><a href="{U_INDEX}" title="{L_INDEX}">{SITE_LOGO_IMG}</a><!--<h1>{SITENAME}</h1>-->
+				<div id="logo-fix"><a href="{U_INDEX}" title="{L_INDEX}">{SITE_LOGO_IMG}</a><!--<h1>{SITENAME}</h1>--></div>
 				<p>{SITE_DESCRIPTION}</p>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 			</center>
