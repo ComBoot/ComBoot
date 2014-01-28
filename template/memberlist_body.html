@@ -28,7 +28,7 @@
 			<h2 class="solo">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 		</div>
 
-		<div class="row">
+		<div class="text-center">
 			<ul class="pagination pagination-sm">
 				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><li><a href="{U_FIND_MEMBER}">{L_FIND_USERNAME}</a></li> <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><li><a href="{U_HIDE_FIND_MEMBER}">{L_HIDE_MEMBER_SEARCH}</a></li><!-- ENDIF -->
 				<!-- BEGIN first_char -->
@@ -135,11 +135,9 @@
 
 </form>
 
-<div class="row">
-	<div class="col-md-2 col-md-offset-5">  
-		<span class="badge">{TOTAL_USERS}</span>  
-		<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> &bull; <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
-	</div>
+<div class="text-center" style="margin-bottom: 15px;">
+	<span class="badge">{TOTAL_USERS}</span>  
+	<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> &bull; <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
 </div>
 
 <!-- IF S_IN_SEARCH_POPUP -->
