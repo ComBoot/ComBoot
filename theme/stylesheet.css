@@ -1,10 +1,10 @@
 /*  phpBB3 Style Sheet
     --------------------------------------------------------------
-	Style name:			proBoot by Shibu Lijack
+	Style name:			proBoot3 by Zoker
 	Based on style:		
 	Original author:	Tom Beddard ( http://www.subblue.com/ )
 	Modified by:		phpBB Group ( http://www.phpbb.com/ )
-	Customised by:		Shibu Lijack
+	Customised by:		Florian Gareis ( http://www.florian-gareis.de/ )
     --------------------------------------------------------------
 */
 
@@ -17,3 +17,4 @@
 @import url("tweaks.css");
 @import url("colours.css");
 @import url("imageset.css");
+@import url("proBoot3.css");

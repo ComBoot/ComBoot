@@ -1,0 +1,13 @@
+#logo-fix {
+	margin-bottom: 20px; 
+	margin-top: 20px;
+}
+
+.navbar-nav.navbar-right:last-child {
+	margin-right: 5px !important;
+}
+
+.reg-button {
+	padding:0px;
+	display:inline
+}
