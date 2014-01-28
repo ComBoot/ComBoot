@@ -16,7 +16,7 @@
 	</div>
 <!-- ENDIF -->
 
-<div class="row topic-actions">
+<div class="row">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 		<div class="col-md-3">
 			<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
@@ -24,10 +24,10 @@
 	<!-- ENDIF -->
 	
 	<!-- IF PAGINATION or TOTAL_POSTS -->
-		<div class="col-md-5 col-md-offset-1">
+		<div class="col-md-6 text-center">
 			<div class="btn-group">
-				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_POSTS}</span>
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span></a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_POSTS}</span>
+				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
 			</div>
 		</div>
 	<!-- ENDIF -->
@@ -100,7 +100,7 @@
 
 <!-- BEGIN postrow -->
 	<!-- IF postrow.S_FIRST_UNREAD --><a id="unread"></a><!-- ENDIF -->
-	<div id="p{postrow.POST_ID}" class="row">
+	<div id="p{postrow.POST_ID}">
 		<div class="panel panel-primary<!-- IF postrow.S_UNREAD_POST --> alert-info<!-- ENDIF --><!-- IF postrow.S_POST_REPORTED --> alert-danger<!-- ENDIF -->">
 			<div class="panel-heading">
 				<h3 class="panel-title<!-- IF postrow.S_FIRST_ROW --> first<!-- ENDIF -->"><!-- IF postrow.POST_ICON_IMG --><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="" /> <!-- ENDIF --><a href="#p{postrow.POST_ID}">{postrow.POST_SUBJECT}</a></h3>
@@ -108,7 +108,7 @@
 			<div class="panel-body">
 				<div class="row">
 				<!-- IF not postrow.S_IGNORE_POST -->
-					<div class="col-md-3">
+					<div class="col-md-3" style="border-right: 1px solid #eee;">
 					<dl class="postprofil" id="profile{postrow.POST_ID}">
 						<dt>
 							<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong> <span class="label <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> label-success<!-- ELSE --> label-danger<!-- ENDIF -->"><!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ELSE --> offline<!-- ENDIF --></span><!-- ELSE -->{postrow.POST_AUTHOR_FULL} <span class="label <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> label-success<!-- ELSE --> label-danger<!-- ENDIF -->"><!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST --> online<!-- ELSE --> offline<!-- ENDIF --></span><!-- ENDIF -->
@@ -159,11 +159,15 @@
 					</dl>
 					</div>
 				<!-- ENDIF -->
-				<div class="postbody col-md-8">
+				<div class="col-md-8">
 					<!-- IF postrow.S_IGNORE_POST -->
 						<div class="ignore">{postrow.L_IGNORE_POST}</div>
 					<!-- ELSE -->
-						<div class="row">
+						<div class="row" style="border-bottom: 1px solid #eee">
+							<div class="col-md-6">
+								<!-- IF S_IS_BOT -->{postrow.MINI_POST_IMG}<!-- ELSE --><a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a><!-- ENDIF -->{L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong> &raquo; {postrow.POST_DATE}
+							</div>
+							<div class="col-md-6">
 							<!-- IF not S_IS_BOT -->
 								<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
 									<ul class="profile-icons">
@@ -181,8 +185,7 @@
 									</ul>
 								<!-- ENDIF -->
 							<!-- ENDIF -->
-							<p class="author"><!-- IF S_IS_BOT -->{postrow.MINI_POST_IMG}<!-- ELSE --><a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a><!-- ENDIF -->{L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong> &raquo; {postrow.POST_DATE} </p>
-							<hr/>
+							</div>
 						</div>
 						<!-- IF postrow.S_POST_UNAPPROVED or postrow.S_POST_REPORTED -->
 							<p class="rules">
@@ -222,29 +225,21 @@
 	<!-- INCLUDE quickreply_editor.html -->
 <!-- ENDIF -->
 
-<div class="row topic-actions">
+<div class="row">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
-			<div class="col-md-3">
-				<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
-			</div>
-		<!-- ENDIF -->
-		
-		<!-- IF PAGINATION or TOTAL_POSTS -->
-			<div class="col-md-5 col-md-offset-1">
-				<div class="btn-group">
-					<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> <!-- ENDIF --><span class="btn btn-default btn-sm" <!-- IF not U_VIEW_UNREAD_POST and not S_IS_BOT -->disabled="disabled"<!-- ENDIF -->>{TOTAL_POSTS}</span>
-					<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><!-- ENDIF --><span class="btn btn-default btn-sm">{PAGE_NUMBER}</span><!-- IF PAGINATION --></a><!-- ENDIF --><!-- ENDIF -->
-				</div>
-			</div>
-		<!-- ENDIF -->
-		
-		<!-- IF PAGINATION-->
-		<div class="col-md-5 col-md-offset-1">
-			<ul class="pagination">
-				{PAGINATION}
-			</ul>
+		<div class="col-md-3">
+			<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
 		</div>
-		<!-- ENDIF -->
+	<!-- ENDIF -->
+		
+	<!-- IF PAGINATION or TOTAL_POSTS -->
+		<div class="col-md-6 text-center">
+			<div class="btn-group">
+				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_POSTS}</span>
+				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+			</div>
+		</div>
+	<!-- ENDIF -->
 	
 	<!-- IF S_DISPLAY_SEARCHBOX -->
 		<div class="col-md-3">
@@ -262,19 +257,17 @@
 </div>
 
 <!-- IF S_TOPIC_MOD -->
-	<div class="row">
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h3 class="panel-title">{L_QUICK_MOD}</h3>
-			</div>
-			<div class="panel-body">
-				<form method="post" action="{S_MOD_ACTION}" class="form-inline alert-danger">
-					<fieldset class="quickmod">
-						{S_TOPIC_MOD} <input type="submit" value="{L_GO}" class="btn btn-default" />
-						{S_FORM_TOKEN}
-					</fieldset>
-				</form>
-			</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">{L_QUICK_MOD}</h3>
+		</div>
+		<div class="panel-body">
+			<form method="post" action="{S_MOD_ACTION}" class="form-inline alert-danger">
+				<fieldset class="quickmod">
+					{S_TOPIC_MOD} <input type="submit" value="{L_GO}" class="btn btn-default" />
+					{S_FORM_TOKEN}
+				</fieldset>
+			</form>
 		</div>
 	</div>
 <!-- ENDIF -->
