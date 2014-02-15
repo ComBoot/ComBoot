@@ -74,6 +74,8 @@ About
 
 **phpBB version:** phpBB 3.0.12
 
+**Bootstrap version:** 3.1.1
+
 **Demo:** http://zoker.me/demo/proBoot3/
 
 **Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
