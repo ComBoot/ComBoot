@@ -55,32 +55,27 @@
 							<!-- END to_recipient -->
 						</dd>
 					<!-- ENDIF -->
-
 					<!-- IF not S_EDIT_POST -->
 						<dd><input class="inputbox" type="text" name="username_list" id="username_list" size="20" value="" /> <input type="submit" name="add_to" value="{L_ADD}" class="btn btn-default" /></dd>
 					<!-- ENDIF -->
 				</dl>
 			<!-- ENDIF -->
 		</div>
-		
 		<!-- IF S_GROUP_OPTIONS -->
 			<div class="column2">
 				<dl>
 					<dd><label for="group_list">{L_USERGROUPS}:</label> <select name="group_list[]" id="group_list" multiple="multiple" size="4" class="inputbox">{S_GROUP_OPTIONS}</select></dd>
 				</dl>
 			</div>
-		
 		<!-- ENDIF -->
 		<div class="clear"></div>
 	<!-- ENDIF -->
-
 	<!-- IF S_DELETE_ALLOWED -->
 		<dl>
 			<dt><label for="delete">{L_DELETE_POST}:</label></dt>
 			<dd><label for="delete"><input type="checkbox" name="delete" id="delete" /> {L_DELETE_POST_WARN}</label></dd>
 		</dl>
 	<!-- ENDIF -->
-
 	<!-- IF S_SHOW_TOPIC_ICONS or S_SHOW_PM_ICONS -->
 		<dl>
 			<dt><label for="icon">{L_ICON}:</label></dt>
@@ -90,14 +85,12 @@
 			</dd>
 		</dl>
 	<!-- ENDIF -->
-
 	<!-- IF not S_PRIVMSGS and S_DISPLAY_USERNAME -->
 		<dl style="clear: left;">
 			<dt><label for="username">{L_USERNAME}:</label></dt>
 			<dd><input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox autowidth" /></dd>
 		</dl>
 	<!-- ENDIF -->
-
 	<!-- IF S_POST_ACTION or S_PRIVMSGS or S_EDIT_DRAFT -->
 		<dl style="clear: left;">
 			<dt><label for="subject">{L_SUBJECT}:</label></dt>
@@ -108,9 +101,7 @@
 			<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 		<!-- ENDIF -->
 	<!-- ENDIF -->
-
 	<!-- INCLUDE posting_buttons.html -->
-
 	<div id="smiley-box">
 		<!-- IF S_SMILIES_ALLOWED and .smiley -->
 			<strong>{L_SMILIES}</strong><br />
@@ -121,7 +112,6 @@
 		<!-- IF S_SHOW_SMILEY_LINK and S_SMILIES_ALLOWED-->
 			<br /><a href="{U_MORE_SMILIES}" onclick="popup(this.href, 300, 350, '_phpbbsmilies'); return false;">{L_MORE_SMILIES}</a>
 		<!-- ENDIF -->
-
 		<!-- IF BBCODE_STATUS -->
 			<!-- IF .smiley --><hr /><!-- ENDIF -->
 			{BBCODE_STATUS}<br />
@@ -138,58 +128,45 @@
 			<!-- IF S_DISPLAY_REVIEW --><strong><a href="#review">{L_TOPIC_REVIEW}</a></strong><!-- ENDIF -->
 		<!-- ENDIF -->
 	</div>
-	
 	<div id="message-box">
 		<textarea <!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->name="signature" id="signature" style="height: 9em;"<!-- ELSE -->name="message" id="message"<!-- ENDIF --> rows="15" cols="76" tabindex="4" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="form-control">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
 	</div>
 </fieldset>
 <!-- IF $EXTRA_POSTING_OPTIONS eq 1 -->
-
 	<!-- IF S_HAS_ATTACHMENTS -->
-		<div class="row">
-			<div class="well">
+		<div class="row well">
 			<h3>{L_POSTED_ATTACHMENTS}</h3>
-
 			<fieldset class="fields2">
-
-			<!-- BEGIN attach_row -->
-			<dl>
-
-				<dt><label for="comment_list_{attach_row.ASSOC_INDEX}">{L_FILE_COMMENT}:</label></dt>
-				<dd><textarea name="comment_list[{attach_row.ASSOC_INDEX}]" id="comment_list_{attach_row.ASSOC_INDEX}" rows="1" cols="35" class="inputbox">{attach_row.FILE_COMMENT}</textarea></dd>
-				<dd><a href="{attach_row.U_VIEW_ATTACHMENT}" class="{S_CONTENT_FLOW_END}">{attach_row.FILENAME}</a></dd>
-				<dd style="margin-top: 5px;">
-					<!-- IF S_INLINE_ATTACHMENT_OPTIONS --><input type="button" value="{L_PLACE_INLINE}" onclick="attach_inline({attach_row.ASSOC_INDEX}, '{attach_row.A_FILENAME}');" class="btn btn-default" />&nbsp; <!-- ENDIF -->
-					<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="btn btn-default" />
-				</dd>
-			</dl>
-			{attach_row.S_HIDDEN}
-				<!-- IF not attach_row.S_LAST_ROW --><hr class="dashed" /><!-- ENDIF -->
-			<!-- END attach_row -->
-
+				<!-- BEGIN attach_row -->
+					<dl>
+						<dt><label for="comment_list_{attach_row.ASSOC_INDEX}">{L_FILE_COMMENT}:</label></dt>
+						<dd><textarea name="comment_list[{attach_row.ASSOC_INDEX}]" id="comment_list_{attach_row.ASSOC_INDEX}" rows="1" cols="35" class="inputbox">{attach_row.FILE_COMMENT}</textarea></dd>
+						<dd><a href="{attach_row.U_VIEW_ATTACHMENT}" class="{S_CONTENT_FLOW_END}">{attach_row.FILENAME}</a></dd>
+						<dd style="margin-top: 5px;">
+							<!-- IF S_INLINE_ATTACHMENT_OPTIONS --><input type="button" value="{L_PLACE_INLINE}" onclick="attach_inline({attach_row.ASSOC_INDEX}, '{attach_row.A_FILENAME}');" class="btn btn-default" />&nbsp; <!-- ENDIF -->
+							<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="btn btn-default" />
+						</dd>
+					</dl>
+					{attach_row.S_HIDDEN}
+					<!-- IF not attach_row.S_LAST_ROW --><hr class="dashed" /><!-- ENDIF -->
+				<!-- END attach_row -->
 			</fieldset>
-
+		</div>
+	<!-- ENDIF -->
+	<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
+		<div class="row">
+			<div id="submit">
+			<fieldset class="submit-buttons">
+				{S_HIDDEN_ADDRESS_FIELD}
+				{S_HIDDEN_FIELDS}
+				<!-- IF S_HAS_DRAFTS --><input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="btn btn-warning" onclick="load_draft = true;" />&nbsp; <!-- ENDIF -->
+				<!-- IF S_SAVE_ALLOWED --><input type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE_DRAFT}" class="btn btn-warning" />&nbsp; <!-- ENDIF -->
+				<input type="submit" tabindex="5" name="preview" value="{L_PREVIEW}" class="btn btn-default"<!-- IF not S_PRIVMSGS --> onclick="document.getElementById('postform').action += '#preview';"<!-- ENDIF --> />&nbsp;
+				<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-primary default-submit-action" />&nbsp;
+			</fieldset>
 			</div>
 		</div>
 	<!-- ENDIF -->
-
-	<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
-	<div class="row">
-		<div id="submit">
-		<fieldset class="submit-buttons">
-			{S_HIDDEN_ADDRESS_FIELD}
-			{S_HIDDEN_FIELDS}
-			<!-- IF S_HAS_DRAFTS --><input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="btn btn-warning" onclick="load_draft = true;" />&nbsp; <!-- ENDIF -->
-			<!-- IF S_SAVE_ALLOWED --><input type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE_DRAFT}" class="btn btn-warning" />&nbsp; <!-- ENDIF -->
-			<input type="submit" tabindex="5" name="preview" value="{L_PREVIEW}" class="btn btn-default"<!-- IF not S_PRIVMSGS --> onclick="document.getElementById('postform').action += '#preview';"<!-- ENDIF --> />&nbsp;
-			<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-primary default-submit-action" />&nbsp;
-
-		</fieldset>
-
-		</div>
-	</div>
-	<!-- ENDIF -->
-
 	<!-- IF not S_PRIVMSGS and not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
 		<div id="opt_tabs">
 			<ul class="nav nav-tabs" style="margin:0;">
@@ -199,11 +176,8 @@
 			</ul>
 		</div>
 	<!-- ENDIF -->
-
 	<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
-	<div class="row no-margin" id="options-panel">
-		<div class="well">
-
+	<div class="row no-margin well" id="options-panel">
 		<fieldset class="fields1">
 			<!-- IF S_BBCODE_ALLOWED -->
 				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
@@ -226,38 +200,31 @@
 			<!-- IF S_LOCK_POST_ALLOWED -->
 				<div><label for="lock_post"><input type="checkbox" name="lock_post" id="lock_post"{S_LOCK_POST_CHECKED} /> {L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</label></div>
 			<!-- ENDIF -->
-
 			<!-- IF S_TYPE_TOGGLE or S_TOPIC_TYPE_ANNOUNCE or S_TOPIC_TYPE_STICKY -->
-			<hr class="dashed" />
+				<hr class="dashed" />
 			<!-- ENDIF -->
-
 			<!-- IF S_TYPE_TOGGLE -->
-			<dl>
-				<dt><label for="topic_type-0"><!-- IF S_EDIT_POST -->{L_CHANGE_TOPIC_TO}<!-- ELSE -->{L_POST_TOPIC_AS}<!-- ENDIF -->:</label></dt>
-				<dd><!-- BEGIN topic_type --><label for="topic_type-{topic_type.VALUE}"><input type="radio" name="topic_type" id="topic_type-{topic_type.VALUE}" value="{topic_type.VALUE}"{topic_type.S_CHECKED} /> {topic_type.L_TOPIC_TYPE}</label> <!-- END topic_type --></dd>
-			</dl>
+				<dl>
+					<dt><label for="topic_type-0"><!-- IF S_EDIT_POST -->{L_CHANGE_TOPIC_TO}<!-- ELSE -->{L_POST_TOPIC_AS}<!-- ENDIF -->:</label></dt>
+					<dd><!-- BEGIN topic_type --><label for="topic_type-{topic_type.VALUE}"><input type="radio" name="topic_type" id="topic_type-{topic_type.VALUE}" value="{topic_type.VALUE}"{topic_type.S_CHECKED} /> {topic_type.L_TOPIC_TYPE}</label> <!-- END topic_type --></dd>
+				</dl>
 			<!-- ENDIF -->
-
 			<!-- IF S_TOPIC_TYPE_ANNOUNCE or S_TOPIC_TYPE_STICKY -->
-			<dl>
-				<dt><label for="topic_time_limit">{L_STICK_TOPIC_FOR}:</label></dt>
-				<dd><label for="topic_time_limit"><div class="input-append"><input type="text" name="topic_time_limit" id="topic_time_limit" size="3" maxlength="3" value="{TOPIC_TIME_LIMIT}" class="input-mini" /><span class="add-on">{L_DAYS}</span></div></label></dd>
-				<dd><p>{L_STICK_TOPIC_FOR_EXPLAIN}</p></dd>
-			</dl>
+				<dl>
+					<dt><label for="topic_time_limit">{L_STICK_TOPIC_FOR}:</label></dt>
+					<dd><label for="topic_time_limit"><div class="input-append"><input type="text" name="topic_time_limit" id="topic_time_limit" size="3" maxlength="3" value="{TOPIC_TIME_LIMIT}" class="input-mini" /><span class="add-on">{L_DAYS}</span></div></label></dd>
+					<dd><p>{L_STICK_TOPIC_FOR_EXPLAIN}</p></dd>
+				</dl>
 			<!-- ENDIF -->
-
 			<!-- IF S_EDIT_REASON -->
-			<dl>
-				<dt><label for="edit_reason">{L_EDIT_REASON}:</label></dt>
-				<dd><input type="text" name="edit_reason" id="edit_reason" value="{EDIT_REASON}" class="inputbox" /></dd>
-			</dl>
+				<dl>
+					<dt><label for="edit_reason">{L_EDIT_REASON}:</label></dt>
+					<dd><input type="text" name="edit_reason" id="edit_reason" value="{EDIT_REASON}" class="inputbox" /></dd>
+				</dl>
 			<!-- ENDIF -->
 		</fieldset>
 		<!-- ENDIF -->
-
-<!-- ENDIF -->
+	<!-- ENDIF -->
 
 <!-- IF not S_SHOW_DRAFTS -->
-		</div>
-	</div>
 <!-- ENDIF -->
