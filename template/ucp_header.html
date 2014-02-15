@@ -4,22 +4,19 @@
 	<h2>{L_UCP}</h2>
 </div>
 
-<div id="p-tabs">
-	<ul class="nav nav-pills nav-justified">
-		<!-- BEGIN t_block1 -->
-		<li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
-		<!-- END t_block1 -->
-	</ul>
-</div>
+<ul class="nav nav-tabs nav-justified">
+	<!-- BEGIN t_block1 -->
+	<li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
+	<!-- END t_block1 -->
+</ul>
 
 	<!-- IF S_COMPOSE_PM -->
-	<form id="postform" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
+		<form id="postform" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
 	<!-- ENDIF -->
-
-	<div class="row well">
+	<div class="well" id="ucp-nav">
 		<div class="col-md-2">
-			<div class="list-group">
-				<!-- IF S_PRIVMSGS -->
+			<!-- IF S_PRIVMSGS -->
+				<div class="list-group">
 					<!-- BEGIN t_block2 -->
 						<!-- IF S_PRIVMSGS and not t_block2.S_LAST_ROW -->
 							<!-- IF t_block2.S_SELECTED -->
@@ -29,8 +26,8 @@
 							<!-- ENDIF -->
 						<!-- ENDIF -->
 					<!-- END t_block2 -->
-			</div><div class="list-group">
-
+				</div>
+				<div class="list-group">
 					<!-- BEGIN folder -->
 						<!-- IF folder.S_CUR_FOLDER -->
 							<a href="{folder.U_FOLDER}" class="list-group-item active"><!-- IF folder.UNREAD_MESSAGES > 0 --><strong>{folder.FOLDER_NAME} ({folder.UNREAD_MESSAGES})</strong><!-- ELSE -->{folder.FOLDER_NAME}<!-- ENDIF --></a>
@@ -38,9 +35,9 @@
 							<a href="{folder.U_FOLDER}" class="list-group-item"><span><!-- IF folder.UNREAD_MESSAGES > 0 --><strong>{folder.FOLDER_NAME} ({folder.UNREAD_MESSAGES})</strong><!-- ELSE -->{folder.FOLDER_NAME}<!-- ENDIF --></span></a>
 						<!-- ENDIF -->
 					<!-- END folder -->
-					</div><div class="list-group">
-				<!-- ENDIF -->
-
+				</div>
+			<!-- ENDIF -->
+			<div class="list-group">
 				<!-- BEGIN t_block2 -->
 					<!-- IF (S_PRIVMSGS and t_block2.S_LAST_ROW) or not S_PRIVMSGS -->
 						<!-- IF t_block2.S_SELECTED -->
@@ -50,7 +47,6 @@
 						<!-- ENDIF -->
 					<!-- ENDIF -->
 				<!-- END t_block2 -->
-
 				<!-- IF .friends_online or .friends_offline -->
 					<div class="cp-mini">
 						<div class="inner">
@@ -66,7 +62,6 @@
 						</div>
 					</div>
 				<!-- ENDIF -->
-
 				<!-- IF S_SHOW_COLOUR_LEGEND -->
 					<div class="cp-mini">
 						<div class="inner">
@@ -81,5 +76,4 @@
 				<!-- ENDIF -->
 			</div>
 		</div>
-		
 		<div id="cp-main" class="ucp-main col-md-10" style="min-height: 300px; padding-right: 0px;">
