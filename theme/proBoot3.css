@@ -11,3 +11,11 @@
 	padding:0px;
 	display:inline
 }
+
+.forum-selector {
+	float:right;
+}
+
+#ucp-nav, #mcp-nav {
+	border-radius: 0px 0px 4px 4px !important;
+}
