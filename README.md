@@ -20,6 +20,7 @@ Status
 =
 > Added
 - Bootstrap top and footer navbar with login panel
+- [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/3/)
 - Page header
 - Breadchrumbs
 - Rewrite registration and login page
