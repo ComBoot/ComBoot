@@ -3,7 +3,7 @@
 <div id="page-footer">
 	<div class="container">
 		<div class="row">
-			<div class="<!-- IF U_MCP -->col-md-5 col-md-offset-3<!-- ELSE -->col-md-3 col-md-offset-5<!-- ENDIF -->">
+			<div class="<!-- IF U_MCP -->col-md-6 col-md-offset-3<!-- ELSE -->col-md-3 col-md-offset-5<!-- ENDIF --> text-center">
 				<div class="btn-group">
 					<!-- IF U_MCP -->
 						<a class="btn btn-primary" href="{U_MCP}" style=" display: block; ">{L_MCP}</a>
@@ -13,7 +13,7 @@
 					<!-- ENDIF -->
 					</div>
 				</div>
-			<div class="col-md-2 col-md-offset-2">
+			<div class="col-md-2 col-md-offset-1">
 				<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 				<div class="btn-group dropup pull-right">
 					<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#" style=" display: block; ">
@@ -41,7 +41,7 @@
 						<!-- ENDIF -->
 					</ul>
 				</div>
-				<br>
+				<br />
 			</div>
 			<!-- ENDIF -->
 		</div>
@@ -79,6 +79,7 @@
 	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
 </div>
 
+</div>
 
 <!-- Dev mode -->
 </body>
