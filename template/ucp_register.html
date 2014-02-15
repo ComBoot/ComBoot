@@ -24,102 +24,107 @@
 			<h3 class="panel-title">{SITENAME} - {L_REGISTRATION}</h3>
 		</div>
 		<div class="panel-body">
-			<fieldset class="fields2">
-				<!-- IF ERROR --><div class="alert alert-danger">{ERROR}</div><!-- ENDIF -->
-				<!-- IF L_REG_COND -->
-					<strong>{L_REG_COND}</strong>
-				<!-- ENDIF -->
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-user"></i></span>
-							<input type="text" placeholder="{USERNAME}" name="username" id="username" value="{USERNAME}" title="{USERNAME}" size="10" class="form-control" title="{L_USERNAME}" value="{USERNAME}" required="required" autofocus/>
-						</div>
-					</div>
-				</div>
-				<br/>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-							<input type="email" placeholder="{EMAIL}" name="email" id="email" value="{EMAIL}" size="10" class="form-control" title="{L_EMAIL_ADDRESS}" required="required"/>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-							<input type="email" placeholder="{CONFIRM_EMAIL}" name="email_confirm" id="email_confirm" value="{CONFIRM_EMAIL}" size="10" class="form-control" title="{L_CONFIRM_EMAIL}" required="required"/>
-						</div>
-					</div>
-				</div>
-				<br/>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-key"></i></span>
-							<input type="password" placeholder="{L_PASSWORD}" name="new_password" id="new_password" value="{PASSWORD}" size="10" class="form-control" title="{L_NEW_PASSWORD}" required="required"/>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-key"></i></span>
-							<input type="password" placeholder="{PASSWORD_CONFIRM}" name="password_confirm" id="password_confirm" value="{PASSWORD_CONFIRM}" size="10" class="form-control" title="{L_CONFIRM_PASSWORD}" required="required"/>
-						</div>
-					</div>
-				</div>
-				<span class="help-block">{L_PASSWORD_EXPLAIN}</span>
-
-				<hr />
-
-				<dl>
-					<dt><label for="lang">{L_LANGUAGE}:</label></dt>
-					<dd><select name="lang" id="lang" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select></dd>
-				</dl>
-				<dl>
-					<dt><label for="tz">{L_TIMEZONE}:</label></dt>
-					<dd><select name="tz" id="tz" tabindex="7" class="autowidth">{S_TZ_OPTIONS}</select></dd>
-				</dl>
-
-				<!-- IF .profile_fields -->
-					<dl><dd><strong>{L_ITEMS_REQUIRED}</strong></dd></dl>
-
-				<!-- BEGIN profile_fields -->
-					<dl>
-						<dt><label<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
-						<!-- IF profile_fields.LANG_EXPLAIN --><br /><span>{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
-						<!-- IF profile_fields.ERROR --><br /><span class="error">{profile_fields.ERROR}</span><!-- ENDIF --></dt>
-						<dd>{profile_fields.FIELD}</dd>
-					</dl>
-				<!-- END profile_fields -->
-				<!-- ENDIF -->
-			</fieldset>
-			<!-- IF CAPTCHA_TEMPLATE -->
-				<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
-				<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+			<!-- IF ERROR --><div class="alert alert-danger">{ERROR}</div><!-- ENDIF -->
+			<!-- IF L_REG_COND -->
+				<strong>{L_REG_COND}</strong>
 			<!-- ENDIF -->
-			
-			<!-- IF S_COPPA -->
-				<div class="panel row">
-					<div class="inner well">
-
-					<h3 class="box-heading">{L_COPPA_COMPLIANCE}</h3>
-
-					<p>{L_COPPA_EXPLAIN}</p>
+		</div>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<fieldset>
+					<div class="row form-group">
+						<div class="col-lg-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="text" placeholder="{L_USERNAME}" name="username" id="username" value="{USERNAME}" title="{USERNAME}" size="10" class="form-control" title="{L_USERNAME}" value="{USERNAME}" autofocus/>
+							</div>
+						</div>
 					</div>
-				</div>
-			<!-- ENDIF -->
+					<br/>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input type="email" placeholder="{L_EMAIL_ADDRESS}" name="email" id="email" value="{EMAIL}" size="10" class="form-control" title="{L_EMAIL_ADDRESS}"/>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input type="email" placeholder="{L_CONFIRM_EMAIL}" name="email_confirm" id="email_confirm" value="{CONFIRM_EMAIL}" size="10" class="form-control" title="{L_CONFIRM_EMAIL}"/>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-key"></i></span>
+								<input type="password" placeholder="{L_PASSWORD}" name="new_password" id="new_password" value="{PASSWORD}" size="10" class="form-control" title="{L_PASSWORD}"/>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-key"></i></span>
+								<input type="password" placeholder="{L_CONFIRM_PASSWORD}" name="password_confirm" id="password_confirm" value="{PASSWORD_CONFIRM}" size="10" class="form-control" title="{L_CONFIRM_PASSWORD}"/>
+							</div>
+						</div>
+					</div>
+					<span class="help-block">{L_PASSWORD_EXPLAIN}</span>
 
-			<div class="panel">
-				<div class="inner">
+					<hr />
+
+					<div class="form-group">
+						<label for="lang" class="control-label col-md-3">{L_LANGUAGE}:</label>
+						<div class="col-md-9">
+							<select name="lang" id="lang" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="tz" class="control-label col-md-3">{L_TIMEZONE}:</label></dt>
+						<div class="col-md-9">
+							<select name="tz" id="tz" tabindex="7" class="autowidth">{S_TZ_OPTIONS}</select>
+						</div>
+					</div>
+
+					<!-- IF .profile_fields -->
+						<dl><dd><strong>{L_ITEMS_REQUIRED}</strong></dd></dl>
+
+					<!-- BEGIN profile_fields -->
+						<dl>
+							<dt><label<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
+							<!-- IF profile_fields.LANG_EXPLAIN --><br /><span>{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
+							<!-- IF profile_fields.ERROR --><br /><span class="error">{profile_fields.ERROR}</span><!-- ENDIF --></dt>
+							<dd>{profile_fields.FIELD}</dd>
+						</dl>
+					<!-- END profile_fields -->
+					<!-- ENDIF -->
+				</fieldset>
+				<!-- IF CAPTCHA_TEMPLATE -->
+					<hr />
+					<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
+					<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+				<!-- ENDIF -->
+				
+				<!-- IF S_COPPA -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{L_COPPA_COMPLIANCE}</h3>
+						</div>
+						<div class="panel-body">
+							<p>{L_COPPA_EXPLAIN}</p>
+						</div>
+					</div>
+				<!-- ENDIF -->
+
 				<fieldset class="submit-buttons">
 					{S_HIDDEN_FIELDS}
 					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
 					<input type="submit" tabindex="9" name="submit" id="submit" value="{L_SUBMIT}" class="btn btn-success default-submit-action" />
 					{S_FORM_TOKEN}
 				</fieldset>
-				</div>
-			</div>
-		</div>
+			</li>
+		</ul>
 	</div>
 </form>
 
