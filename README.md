@@ -51,7 +51,8 @@ Features
 =
 * Based on the most awesome framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
 * Integration of [Font Awesome 4](http://fontawesome.io/)
-* Beautiful light desing (like git)
+* Using [Bootstrap-Select](http://silviomoreto.github.io/bootstrap-select/)
+* Beautiful light design (like git)
 * Full HTML5 registration and login form 
 * Awesome login dropdown panel (see demo)
 * Simple theme change (see wiki)
