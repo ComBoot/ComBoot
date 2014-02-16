@@ -99,6 +99,9 @@ Themes
 ###Cosmo
 [![Cosmo] (http://bootswatch.com/cosmo/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cosmo)
 
+###Cupid
+[![Cupid] (http://bootswatch.com/cupid/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cupid)
+
 ###Cyborg
 [![Cyborg] (http://bootswatch.com/cyborg/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cyborg)
 
@@ -107,6 +110,9 @@ Themes
 
 ###Journal
 [![Journal] (http://bootswatch.com/journal/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=journal)
+
+###Lumen
+[![Lumen] (http://bootswatch.com/lumen/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=lumen)
 
 ###Readable
 [![Readable] (http://bootswatch.com/readable/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=readable)
@@ -120,5 +126,11 @@ Themes
 ###Spacelab
 [![Spacelab] (http://bootswatch.com/spacelab/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=spacelab)
 
+###Superhero
+[![Superhero] (http://bootswatch.com/superhero/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=superhero)
+
 ###United
-[![united] (http://bootswatch.com/united/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=united)
+[![United] (http://bootswatch.com/united/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=united)
+
+###Yeti
+[![Yeti] (http://bootswatch.com/yeti/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=yeti)
