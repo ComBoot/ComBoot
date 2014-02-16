@@ -5,7 +5,7 @@
 </p>
 
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
-The color scheme is the simple bootstrap color, also used here @github.
+The color scheme is the simple bootstrap color, simliar to the design here @github.
 
 - [Status] (#status)
 - [Features] (#features)
@@ -72,7 +72,7 @@ About
 
 **Base style:** proSilver
 
-**Style Version:** 1.0 BETA
+**Style Version:** 0.7 BETA
 
 **phpBB version:** phpBB 3.0.12
 
