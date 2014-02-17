@@ -15,7 +15,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-3" <!-- IF S_CHANGE_USERNAME -->for="username"<!-- ENDIF -->>{L_USERNAME}:</label>
 						<div class="col-md-9">
-							<!-- IF S_CHANGE_USERNAME --><input type="text" name="username" id="username" value="{USERNAME}" class="form-control" title="{L_USERNAME}" /><!-- ELSE --><strong>{USERNAME}</strong><!-- ENDIF -->
+							<!-- IF S_CHANGE_USERNAME --><input type="text" name="username" id="username" value="{USERNAME}" class="form-control" title="{L_USERNAME}" /><!-- ELSE --><div class="form-control-static"><strong>{USERNAME}</strong></div><!-- ENDIF -->
 							<span class="help-block">{L_USERNAME_EXPLAIN}</span>
 						</div>
 					</div>
