@@ -4,6 +4,9 @@
  <a href="http://zoker.me/demo/proBoot3/"><img src="http://zoker.me/images/proBoot3/logo.png" alt="proBoot3 Logo"/></a>
 </p>
 
+<p color="red"><b>Note!</b> Because bootstrap needs so much customization, this theme will not work with any style change done by the automod
+So you have to do any change manually!</p>
+
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
 The color scheme is the simple bootstrap color, also used here @github.
 
