@@ -49,7 +49,7 @@ Status
 - Update breadchrumbs to be shown on every site
 - much more!
 
-All changes: https://github.com/TheZoker/proBoot3/compare/master%40%7B1384113359%7D...master#files_bucket
+All changes: https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master
 
 Features
 =
