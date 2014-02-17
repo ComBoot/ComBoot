@@ -8,7 +8,7 @@
 So you have to do any change manually!</p>
 
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
-The color scheme is the simple bootstrap color, also used here @github.
+The color scheme is the simple bootstrap color, simliar to the design here @github.
 
 - [Status] (#status)
 - [Features] (#features)
@@ -55,7 +55,8 @@ Features
 =
 * Based on the most awesome framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
 * Integration of [Font Awesome 4](http://fontawesome.io/)
-* Beautiful light desing (like git)
+* Using [Bootstrap-Select](http://silviomoreto.github.io/bootstrap-select/)
+* Beautiful light design (like git)
 * Full HTML5 registration and login form 
 * Awesome login dropdown panel (see demo)
 * Simple theme change (see wiki)
@@ -75,7 +76,7 @@ About
 
 **Base style:** proSilver
 
-**Style Version:** 1.0 BETA
+**Style Version:** 0.7 BETA
 
 **phpBB version:** phpBB 3.0.12
 
@@ -102,6 +103,9 @@ Themes
 ###Cosmo
 [![Cosmo] (http://bootswatch.com/cosmo/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cosmo)
 
+###Cupid
+[![Cupid] (http://bootswatch.com/cupid/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cupid)
+
 ###Cyborg
 [![Cyborg] (http://bootswatch.com/cyborg/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cyborg)
 
@@ -110,6 +114,9 @@ Themes
 
 ###Journal
 [![Journal] (http://bootswatch.com/journal/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=journal)
+
+###Lumen
+[![Lumen] (http://bootswatch.com/lumen/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=lumen)
 
 ###Readable
 [![Readable] (http://bootswatch.com/readable/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=readable)
@@ -123,5 +130,11 @@ Themes
 ###Spacelab
 [![Spacelab] (http://bootswatch.com/spacelab/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=spacelab)
 
+###Superhero
+[![Superhero] (http://bootswatch.com/superhero/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=superhero)
+
 ###United
-[![united] (http://bootswatch.com/united/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=united)
+[![United] (http://bootswatch.com/united/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=united)
+
+###Yeti
+[![Yeti] (http://bootswatch.com/yeti/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=yeti)
