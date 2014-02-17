@@ -6,6 +6,7 @@
 
 <p color="red"><b>Note!</b> Because bootstrap needs so much customization, this theme will not work with any style change done by the automod
 So you have to do any change manually!</p>
+==
 
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
 The color scheme is the simple bootstrap color, simliar to the design here @github.
