@@ -16,6 +16,30 @@
 	float:right;
 }
 
-#ucp-nav, #mcp-nav {
+#ucp-nav, #mcp-nav, .post-tabs {
 	border-radius: 0px 0px 4px 4px !important;
+}
+
+.clearfix {
+	clear:both;
+}
+
+.no-margin{
+	margin: 0px !important;
+}
+
+.no-padding {
+	padding: 0px !important;
+}
+
+.post-tabs {
+	border-top: 0px !important;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	background-color: #f5f5f5 !important;
+}
+
+#ucp-nav {
+	border-top: 0px !important;
 }

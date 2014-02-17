@@ -1,21 +1,23 @@
-<div class="row no-margin" id="attach-panel">
-	<div class="well">
-
+<div class="tab-pane" id="attach-tab">
 	<p>{L_ADD_ATTACHMENT_EXPLAIN}</p>
-	
-	<fieldset class="fields2">
-	<dl>
-		<dt><label for="fileupload">{L_FILENAME}:</label></dt>
-		<dd>
-			<input type="file" name="fileupload" id="fileupload" maxlength="{FILESIZE}" value="" class="inputbox autowidth" /> 
-			<input type="submit" name="add_file" value="{L_ADD_FILE}" class="btn btn-default" onclick="upload = true;" />
-		</dd>
-	</dl>
-	<dl>
-		<dt><label for="filecomment">{L_FILE_COMMENT}:</label></dt>
-		<dd><textarea name="filecomment" id="filecomment" rows="1" cols="40" class="inputbox autowidth">{FILE_COMMENT}</textarea></dd>
-	</dl>
+	<fieldset class="form-horizontal">
+		<div class="form-group">
+			<label for="fileupload" class="col-md-2 control-label">{L_FILENAME}:</label>
+			<div class="col-md-5">
+				<div class="input-group">
+					<input type="file" name="fileupload" id="fileupload" maxlength="{FILESIZE}" value="" class="form-control" /> 
+					<span class="input-group-btn">
+						<input type="submit" name="add_file" value="{L_ADD_FILE}" class="btn btn-default" onclick="upload = true;" />
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="form-group">
+			<label for="filecomment" class="col-md-2 control-label">{L_FILE_COMMENT}:</label>
+			<div class="col-md-5">
+				<textarea name="filecomment" id="filecomment" rows="1" cols="40" class="form-control">{FILE_COMMENT}</textarea></dd>
+			</div>
+		</div>
 	</fieldset>
-
-	</div>
 </div>

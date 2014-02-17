@@ -257,7 +257,6 @@ fieldset.submit-buttons input {
 
 /* Main message box */
 #message-box {
-	width: 80%;
 }
 
 #message-box textarea {
@@ -271,8 +270,6 @@ fieldset.submit-buttons input {
 
 /* Emoticons panel */
 #smiley-box {
-	width: 18%;
-	float: right;
 }
 
 #smiley-box img {

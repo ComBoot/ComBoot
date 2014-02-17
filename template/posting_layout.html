@@ -65,21 +65,17 @@
 
 <!-- IF S_DISPLAY_PREVIEW --><!-- INCLUDE posting_preview.html --><!-- ENDIF -->
 
-<div class="panel row" id="postingbox">
-	<div class="well no-margin">
-	
-	
-	<!-- DEFINE $EXTRA_POSTING_OPTIONS = 1 -->
-	<!-- INCLUDE posting_editor.html -->
-	{S_FORM_TOKEN}
+<div class="panel panel-default" id="postingbox">
+	<div class="panel-body no-margin">	
+		<!-- DEFINE $EXTRA_POSTING_OPTIONS = 1 -->
+		<!-- INCLUDE posting_editor.html -->
+			<!-- IF S_SHOW_ATTACH_BOX --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->
+			<!-- IF S_SHOW_POLL_BOX or S_POLL_DELETE --><!-- INCLUDE posting_poll_body.html --><!-- ENDIF -->
+			<!-- IF S_DISPLAY_REVIEW --><!-- INCLUDE posting_topic_review.html --><!-- ENDIF -->
+		</div>
+		{S_FORM_TOKEN}
 	</div>
 </div>
-
-<!-- IF S_SHOW_ATTACH_BOX --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->
-
-<!-- IF S_SHOW_POLL_BOX or S_POLL_DELETE --><!-- INCLUDE posting_poll_body.html --><!-- ENDIF -->
-
-<!-- IF S_DISPLAY_REVIEW --><!-- INCLUDE posting_topic_review.html --><!-- ENDIF -->
 
 </form>
 <!-- IF not S_PRIVMSGS -->
