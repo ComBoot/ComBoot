@@ -41,9 +41,9 @@
 			<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
 				<div class="col-md-3">
 					<!-- IF S_IS_LOCKED -->
-						<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+						<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}" disabled="disabled"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_FORUM_LOCKED}</a>
 					<!-- ELSE -->
-						<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
+						<a class="btn btn-primary btn-labeled" href="{U_POST_NEW_TOPIC}"><span class="btn-label"><i class="fa fa-pencil-square-o"></i></span> {L_POST_TOPIC}</a>
 					<!-- ENDIF -->
 				</div>
 			<!-- ENDIF -->
@@ -162,9 +162,9 @@
 		<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
 			<div class="col-md-3">
 				<!-- IF S_IS_LOCKED -->
-					<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+					<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}" disabled="disabled"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_FORUM_LOCKED}</a>
 				<!-- ELSE -->
-					<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
+					<a class="btn btn-primary btn-labeled" href="{U_POST_NEW_TOPIC}"><span class="btn-label"><i class="fa fa-pencil-square-o"></i></span> {L_POST_TOPIC}</a>
 				<!-- ENDIF -->
 			</div>
         <!-- ENDIF -->

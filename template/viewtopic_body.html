@@ -19,7 +19,11 @@
 <div class="row">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 		<div class="col-md-3">
-			<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
+			<!-- IF S_IS_LOCKED -->
+				<a class="btn btn-danger btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_TOPIC_LOCKED}" disabled="disabled"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_TOPIC_LOCKED_SHORT}</a>
+			<!-- ELSE -->
+				<a class="btn btn-primary btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_POST_REPLY}"><span class="btn-label"><i class="fa fa-pencil-square-o"></i></span> {L_POST_REPLY}</a>
+			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
 	
@@ -228,7 +232,11 @@
 <div class="row">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 		<div class="col-md-3">
-			<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
+			<!-- IF S_IS_LOCKED -->
+				<a class="btn btn-danger btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_TOPIC_LOCKED}" disabled="disabled"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_TOPIC_LOCKED_SHORT}</a>
+			<!-- ELSE -->
+				<a class="btn btn-primary btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_POST_REPLY}"><span class="btn-label"><i class="fa fa-pencil-square-o"></i></span> {L_POST_REPLY}</a>
+			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
 		
