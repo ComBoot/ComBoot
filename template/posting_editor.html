@@ -111,13 +111,17 @@
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 		<div class="form-group">
-			<div class="col-md-10">
-				<!-- INCLUDE posting_buttons.html -->
-			</div>
-		</div>
-		<div class="form-group">
-			<div id="message-box" class="col-md-9">
-				<textarea <!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->name="signature" id="signature" style="height: 9em;"<!-- ELSE -->name="message" id="message"<!-- ENDIF --> rows="15" cols="76" tabindex="4" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="form-control">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
+			<div class="col-md-9">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<!-- INCLUDE posting_buttons.html -->
+					</div>
+					<div class="panel-body no-padding">
+						<div id="message-box">
+							<textarea <!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->name="signature" id="signature" style="height: 9em;"<!-- ELSE -->name="message" id="message"<!-- ENDIF --> rows="15" cols="76" tabindex="4" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="form-control">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="smiley-box" class="col-md-3">
 				<div class="col-sm-6 col-md-12">
@@ -288,5 +292,6 @@
 		<!-- ENDIF -->
 	<!-- ENDIF -->
 
-	<!-- IF not S_SHOW_DRAFTS -->
+	<!-- IF S_PRIVMSGS and not S_SHOW_DRAFTS -->
+		</div>
 	<!-- ENDIF -->
