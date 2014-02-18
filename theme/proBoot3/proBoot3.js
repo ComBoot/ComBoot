@@ -63,3 +63,13 @@ $(function () {
         init();
     });
 });
+
+$(document).ready(function() {
+  $('.btn').tooltip({container: 'body'});
+});
+
+$(document).ready(function() {
+	$("select").addClass("selectpicker");
+	$(".selectpicker").attr({"data-width": "auto"});
+	$(".selectpicker").selectpicker();
+});

@@ -29,8 +29,28 @@
 	margin: 0px !important;
 }
 
+.no-margin-bottom{
+	margin-bottom: 0px !important;
+}
+
 .no-padding {
 	padding: 0px !important;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.topic-buttons {
+	float:right;
+}
+
+#format-buttons .btn {
+	margin-bottom: 0px !important;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
