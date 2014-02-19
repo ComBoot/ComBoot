@@ -43,8 +43,10 @@ Status
 - Complete UCP Panel
 
 > To do
-- Changing MCP and UCP site (changing <'dd'> and <'dt'> to col-md-x)
+- Changing MCP and UCP site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x
 - Fixing form for Bootstrap 3
+- Changing memberlist view
+- Redesign profil view
 - Mobile device optimisation
 - Update breadchrumbs to be shown on every site
 - much more!
