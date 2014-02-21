@@ -88,6 +88,18 @@ About
 
 **Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
 
+Credits
+=
+* [Support glyph and fa icon inside input] (http://bootsnipp.com/snippets/featured/support-glyph-and-fa-icon-inside-input)
+* [Mix & Match Login] (http://bootsnipp.com/snippets/featured/mix-amp-match-login)
+* [Mix & Match Register] (http://bootsnipp.com/snippets/featured/mix-amp-match-register)
+* [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/)#
+* [User Detail Panel] (http://bootsnipp.com/snippets/featured/user-detail-panel)
+* [Bootstrap Badger] (http://bootsnipp.com/snippets/featured/bootstrap-badger)
+* [jQuery Checkbox Buttons] (http://bootsnipp.com/snippets/featured/jquery-checkbox-buttons)
+* [HTML Editor WYSIWYG Interface] (http://bootsnipp.com/snippets/featured/html-editor-wysiwyg-interface)
+* [Button with labels] (http://bootsnipp.com/snippets/featured/buttons-with-labels)
+
 Screenshots
 =
 <a href="http://zoker.me/images/proBoot3/Screenshot-1.png"><img src="http://zoker.me/images/proBoot3/Screenshot-1.png" alt="proBoot3 Screenshot 1" width="400px"/></a><a href="http://zoker.me/images/proBoot3/Screenshot-3.png"><img src="http://zoker.me/images/proBoot3/Screenshot-3.png" alt="proBoot3 Screenshot 3" width="400px"/></a>
