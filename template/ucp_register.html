@@ -18,95 +18,89 @@
 // ]]>
 </script>
 
-<form method="post" action="{S_UCP_ACTION}" id="register">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">{SITENAME} - {L_REGISTRATION}</h3>
-		</div>
-		<div class="panel-body">
-			<!-- IF ERROR --><div class="alert alert-danger">{ERROR}</div><!-- ENDIF -->
-			<!-- IF L_REG_COND -->
-				<strong>{L_REG_COND}</strong>
-			<!-- ENDIF -->
-		</div>
-		<ul class="list-group">
-			<li class="list-group-item">
-				<div class="col-md-6 col-md-offset-3">
-				<fieldset>
-						<div class="form-horizontal">
-							<div class="row form-group">
-								<div class="col-md-12">
-									<div class="icon-addon addon-md">
-										<input type="text" placeholder="{L_USERNAME}" name="username" id="username" value="{USERNAME}" title="{USERNAME}" size="10" class="form-control" title="{L_USERNAME}" value="{USERNAME}" autofocus/>
-										<label for="username" class="fa fa-user" rel="tooltip" title="username"></label>
-									</div>
-								</div>
-							</div>
-							<div class="row form-group">
-								<div class="col-md-6">
-									<div class="icon-addon addon-md">
-										<input type="email" placeholder="{L_EMAIL_ADDRESS}" name="email" id="email" value="{EMAIL}" size="10" class="form-control" title="{L_EMAIL_ADDRESS}"/>
-										<label for="email" class="fa fa-envelope" rel="tooltip" title="email"></label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="icon-addon addon-md">
-										<input type="email" placeholder="{L_CONFIRM_EMAIL}" name="email_confirm" id="email_confirm" value="{CONFIRM_EMAIL}" size="10" class="form-control" title="{L_CONFIRM_EMAIL}"/>
-										<label for="email_confirm" class="fa fa-envelope" rel="tooltip" title="email_confirm"></label>
-									</div>
-								</div>
-							</div>
-							<div class="row form-group">
-								<div class="col-md-6">
-									<div class="icon-addon addon-md">
-										<input type="password" placeholder="{L_PASSWORD}" name="new_password" id="new_password" value="{PASSWORD}" size="10" class="form-control" title="{L_PASSWORD}"/>
-										<label for="new_password" class="fa fa-lock" rel="tooltip" title="new_password"></label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="icon-addon addon-md">
-										<input type="password" placeholder="{L_CONFIRM_PASSWORD}" name="password_confirm" id="password_confirm" value="{PASSWORD_CONFIRM}" size="10" class="form-control" title="{L_CONFIRM_PASSWORD}"/>
-										<label for="password_confirm" class="fa fa-lock" rel="tooltip" title="password_confirm"></label>
-									</div>
-								</div>
-							</div>
-							<span class="help-block">{L_PASSWORD_EXPLAIN}</span>
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form method="post" action="{S_UCP_ACTION}" id="register">
+					<h3>{SITENAME} - {L_REGISTRATION}</h3>
+					<!-- IF ERROR --><div class="alert alert-danger">{ERROR}</div><!-- ENDIF -->
+					<!-- IF L_REG_COND -->
+						<strong>{L_REG_COND}</strong>
+					<!-- ENDIF -->
+					<hr class="colorgraph"/>
+					<div class="form-group">
+						<div class="icon-addon addon-lg">
+							<input type="text" placeholder="{L_USERNAME}" name="username" id="username" value="{USERNAME}" size="10" class="form-control" title="{L_USERNAME}" value="{USERNAME}" tabindex="1" autofocus/>
+							<label for="username" class="fa fa-user" rel="tooltip" title="username"></label>
 						</div>
-						<hr />
-						<div class="form-horizontal">
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
 							<div class="form-group">
-								<label for="lang" class="control-label col-md-3">{L_LANGUAGE}:</label>
-								<div class="col-md-9">
-									<select name="lang" id="lang" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="tz" class="control-label col-md-3">{L_TIMEZONE}:</label></dt>
-								<div class="col-md-9">
-									<select name="tz" id="tz" tabindex="7" class="autowidth">{S_TZ_OPTIONS}</select>
+								<div class="icon-addon addon-lg">
+									<input type="email" placeholder="{L_EMAIL_ADDRESS}" name="email" id="email" value="{EMAIL}" size="10" class="form-control" title="{L_EMAIL_ADDRESS}" tabindex="2"/>
+									<label for="email" class="fa fa-envelope" rel="tooltip" title="email"></label>
 								</div>
 							</div>
 						</div>
-
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<div class="icon-addon addon-lg">
+									<input type="email" placeholder="{L_CONFIRM_EMAIL}" name="email_confirm" id="email_confirm" value="{CONFIRM_EMAIL}" size="10" class="form-control" title="{L_CONFIRM_EMAIL}" tabindex="3"/>
+									<label for="email_confirm" class="fa fa-envelope" rel="tooltip" title="email_confirm"></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="icon-addon addon-lg">
+								<input type="password" placeholder="{L_PASSWORD}" name="new_password" id="new_password" value="{PASSWORD}" size="10" class="form-control" title="{L_PASSWORD}" tabindex="4"/>
+								<label for="new_password" class="fa fa-lock" rel="tooltip" title="new_password"></label>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="icon-addon addon-lg">
+								<input type="password" placeholder="{L_CONFIRM_PASSWORD}" name="password_confirm" id="password_confirm" value="{PASSWORD_CONFIRM}" size="10" class="form-control" title="{L_CONFIRM_PASSWORD}" tabindex="5"/>
+								<label for="password_confirm" class="fa fa-lock" rel="tooltip" title="password_confirm"></label>
+							</div>
+						</div>
+					</div>
+					<span class="help-block">{L_PASSWORD_EXPLAIN}</span>
+					<hr/>
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label for="lang" class="control-label col-md-3">{L_LANGUAGE}:</label>
+							<div class="col-md-9">
+								<select name="lang" id="lang" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="tz" class="control-label col-md-3">{L_TIMEZONE}:</label>
+							<div class="col-md-9">
+								<select name="tz" id="tz" tabindex="7" class="autowidth">{S_TZ_OPTIONS}</select>
+							</div>
+						</div>
 						<!-- IF .profile_fields -->
 							<dl><dd><strong>{L_ITEMS_REQUIRED}</strong></dd></dl>
-
-						<!-- BEGIN profile_fields -->
-							<dl>
-								<dt><label<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
-								<!-- IF profile_fields.LANG_EXPLAIN --><br /><span>{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
-								<!-- IF profile_fields.ERROR --><br /><span class="error">{profile_fields.ERROR}</span><!-- ENDIF --></dt>
-								<dd>{profile_fields.FIELD}</dd>
-							</dl>
-						<!-- END profile_fields -->
+							<!-- BEGIN profile_fields -->
+								<div class="form-group">
+									<label<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF --> class="control-label col-md-3">{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
+									<div class="col-md-9">
+										{profile_fields.FIELD}
+									</div>
+									<!-- IF profile_fields.LANG_EXPLAIN --><span class="help-block">{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
+									<!-- IF profile_fields.ERROR --><span class="help-block">{profile_fields.ERROR}</span><!-- ENDIF -->
+								</div>
+							<!-- END profile_fields -->
 						<!-- ENDIF -->
-					</fieldset>
+					</div>
 					<!-- IF CAPTCHA_TEMPLATE -->
 						<hr />
 						<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
 						<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 					<!-- ENDIF -->
-					
 					<!-- IF S_COPPA -->
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -117,18 +111,23 @@
 							</div>
 						</div>
 					<!-- ENDIF -->
-
+					<hr class="colorgraph"/>
 					<fieldset class="submit-buttons">
 						{S_HIDDEN_FIELDS}
-						<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
-						<input type="submit" tabindex="9" name="submit" id="submit" value="{L_SUBMIT}" class="btn btn-success default-submit-action" />
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger btn-block btn-lg" />
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<input type="submit" tabindex="9" name="submit" id="submit" value="{L_SUBMIT}" class="btn btn-success default-submit-action btn-block btn-lg" />
+							</div>
+						</div>
 						{S_FORM_TOKEN}
 					</fieldset>
-				</div>
-				<div class="clearfix"></div>
-			</li>
-		</ul>
+				</form>
+			</div>
+		</div>
 	</div>
-</form>
+</div>
 
 <!-- INCLUDE overall_footer.html -->

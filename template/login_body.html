@@ -5,79 +5,78 @@
 	onload_functions.push('document.getElementById("<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->").focus();');
 // ]]>
 </script>
-
-<form action="{S_LOGIN_ACTION}" method="post" id="login">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title"><!-- IF LOGIN_EXPLAIN -->{LOGIN_EXPLAIN}<!-- ELSE -->{L_LOGIN}<!-- ENDIF --></h3>
-				</div>
-				<div class="panel-body">
-					<fieldset class="form-horizontal">
+<div class="row" style="margin-top:20px" id="loginpanel">
+	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form action="{S_LOGIN_ACTION}" method="post" id="login">
+					<fieldset>
+						<h3><!-- IF LOGIN_EXPLAIN -->{LOGIN_EXPLAIN}<!-- ELSE -->{L_LOGIN}<!-- ENDIF --></h3>
+						<hr class="colorgraph">
 						<!-- IF LOGIN_ERROR --><div class="alert alert-danger">{LOGIN_ERROR}</div><!-- ENDIF -->
-						<div class="form-group col-md-12">
-							<div class="icon-addon addon-md">
+						<div class="form-group col-md-12 no-padding">
+							<div class="icon-addon addon-lg">
 								<input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" class="form-control" placeholder="{L_USERNAME}" required="required" autofocus/>
 								<label for="{USERNAME_CREDENTIAL}" class="fa fa-user" rel="tooltip" title="{USERNAME_CREDENTIAL}"></label>
 							</div>
 						</div>
-						<div class="form-group col-md-12">
-							<div class="icon-addon addon-md">
+						<div class="form-group col-md-12 no-padding">
+							<div class="icon-addon addon-lg">
 								<input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" class="form-control" placeholder="{L_PASSWORD}" required="required"/>
 								<label for="{PASSWORD_CREDENTIAL}" class="fa fa-lock" rel="tooltip" title="{PASSWORD_CREDENTIAL}"></label>
 							</div>
 						</div>
-						<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
-							<div class="form-group col-md-12">
-								<div class="btn-group">
-									<!-- IF U_SEND_PASSWORD --><a href="{U_SEND_PASSWORD}" class="btn btn-danger">{L_FORGOT_PASS}</a><!-- ENDIF -->
-									<!-- IF U_RESEND_ACTIVATION --><a href="{U_RESEND_ACTIVATION}" class="btn btn-warning">{L_RESEND_ACTIVATION}</a><!-- ENDIF -->
-								</div>
-							</div>
-						<!-- ENDIF -->
-						<div class="clearfix"></div>
 						<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
 							<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
 							<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 						<!-- ENDIF -->
 						<!-- IF S_DISPLAY_FULL_LOGIN -->
-							<!-- IF S_AUTOLOGIN_ENABLED -->
-								<span class="button-checkbox">
-									<button type="button" class="btn" data-color="primary">{L_LOG_ME_IN}</button>
-									<input type="checkbox" class="hidden" name="autologin" id="autologin" tabindex="4" />
-								</span>
-							<!-- ENDIF -->
-							<span class="button-checkbox">
-								<button type="button" class="btn" data-color="primary">{L_HIDE_ME}</button>
-								<input type="checkbox" class="hidden" name="viewonline" id="viewonline" tabindex="5" /> </label>
-							</span>
+							<div class="row">
+								<!-- IF S_AUTOLOGIN_ENABLED -->
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<span class="button-checkbox">
+											<button type="button" class="btn btn-block" data-color="primary">{L_LOG_ME_IN}</button>
+											<input type="checkbox" class="hidden" name="autologin" id="autologin" tabindex="4" />
+										</span>
+									</div>
+								<!-- ENDIF -->
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<span class="button-checkbox">
+										<button type="button" class="btn btn-block" data-color="primary">{L_HIDE_ME}</button>
+										<input type="checkbox" class="hidden" name="viewonline" id="viewonline" tabindex="5" /> </label>
+									</span>
+								</div>
+							</div>
+						<!-- ENDIF -->
+						<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+							<div class="row">
+								<!-- IF U_SEND_PASSWORD -->
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<a href="{U_SEND_PASSWORD}" class="btn btn-danger btn-block">{L_FORGOT_PASS}</a>
+									</div>
+								<!-- ENDIF -->
+								<!-- IF U_RESEND_ACTIVATION -->
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<a href="{U_RESEND_ACTIVATION}" class="btn btn-warning btn-block">{L_RESEND_ACTIVATION}</a>
+									</div>
+								<!-- ENDIF -->
+							</div>
 						<!-- ENDIF -->
 
 						{S_LOGIN_REDIRECT}
-						<dl>
-							<dt>&nbsp;</dt>
-							<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-primary" /></dd>
-						</dl>
+						<hr class="colorgraph">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-success btn-block btn-lg" />
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<a href="{U_REGISTER}" class="btn btn-primary btn-block btn-lg">{L_REGISTER}</a>
+							</div>
+						</div>
 					</fieldset>
-				</div>
+				</form>
 			</div>
 		</div>
-		<!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">{L_REGISTER}</h3>
-					</div>
-					<div class="panel-body">
-						<p>{L_LOGIN_INFO}</p>
-						<p><strong><a href="{U_TERMS_USE}">{L_TERMS_USE}</a> | <a href="{U_PRIVACY}">{L_PRIVACY}</a></strong></p>
-						<p class="text-center"><a href="{U_REGISTER}" class="btn btn-success">{L_REGISTER}</a></p>
-					</div>
-				</div>
-			</div>
-		<!-- ENDIF -->
 	</div>
-</form>
-
+</div>
 <!-- INCLUDE overall_footer.html -->
