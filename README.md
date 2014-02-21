@@ -4,12 +4,14 @@
  <a href="http://demo.zoker.me/proBoot3/"><img src="http://zoker.me/images/proBoot3/logo.png" alt="proBoot3 Logo"/></a>
 </p>
 
-##Note!##
+Note!
+=
 > - **Because bootstrap needs so much customization, this theme will not work with any style change done by the automod
 So you have to do any change manually!**
 - **This theme is also meant to work with bootstrap, it therfor cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
 
-==
+Overview
+=
 
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
 The color scheme is the simple bootstrap color, simliar to the design here @github.
