@@ -49,6 +49,7 @@ Status
 - Redesign profil view
 - Mobile device optimisation
 - Update breadchrumbs to be shown on every site
+- New logo for theme
 - much more!
 
 All changes: https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master
@@ -93,7 +94,7 @@ Credits
 * [Support glyph and fa icon inside input] (http://bootsnipp.com/snippets/featured/support-glyph-and-fa-icon-inside-input)
 * [Mix & Match Login] (http://bootsnipp.com/snippets/featured/mix-amp-match-login)
 * [Mix & Match Register] (http://bootsnipp.com/snippets/featured/mix-amp-match-register)
-* [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/)#
+* [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/)
 * [User Detail Panel] (http://bootsnipp.com/snippets/featured/user-detail-panel)
 * [Bootstrap Badger] (http://bootsnipp.com/snippets/featured/bootstrap-badger)
 * [jQuery Checkbox Buttons] (http://bootsnipp.com/snippets/featured/jquery-checkbox-buttons)
