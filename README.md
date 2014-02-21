@@ -101,6 +101,7 @@ Credits
 * [HTML Editor WYSIWYG Interface] (http://bootsnipp.com/snippets/featured/html-editor-wysiwyg-interface)
 * [Button with labels] (http://bootsnipp.com/snippets/featured/buttons-with-labels)
 * [Triangle Breadcrumbs Arrows] (http://bootsnipp.com/snippets/featured/triangle-breadcrumbs-arrows)
+* [Alert Messages like the docs] (http://bootsnipp.com/snippets/featured/alert-messages-like-the-docs)
 
 Screenshots
 =
