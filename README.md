@@ -100,6 +100,7 @@ Credits
 * [jQuery Checkbox Buttons] (http://bootsnipp.com/snippets/featured/jquery-checkbox-buttons)
 * [HTML Editor WYSIWYG Interface] (http://bootsnipp.com/snippets/featured/html-editor-wysiwyg-interface)
 * [Button with labels] (http://bootsnipp.com/snippets/featured/buttons-with-labels)
+* [Triangle Breadcrumbs Arrows] (http://bootsnipp.com/snippets/featured/triangle-breadcrumbs-arrows)
 
 Screenshots
 =
