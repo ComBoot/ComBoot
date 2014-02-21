@@ -19,20 +19,32 @@
 </script>
 
 <div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<form method="post" action="{S_UCP_ACTION}" id="register">
 					<h3>{SITENAME} - {L_REGISTRATION}</h3>
-					<!-- IF ERROR --><div class="alert alert-danger">{ERROR}</div><!-- ENDIF -->
-					<!-- IF L_REG_COND -->
-						<strong>{L_REG_COND}</strong>
-					<!-- ENDIF -->
 					<hr class="colorgraph"/>
-					<div class="form-group">
-						<div class="icon-addon addon-lg">
-							<input type="text" placeholder="{L_USERNAME}" name="username" id="username" value="{USERNAME}" size="10" class="form-control" title="{L_USERNAME}" value="{USERNAME}" tabindex="1" autofocus/>
-							<label for="username" class="fa fa-user" rel="tooltip" title="username"></label>
+					<!-- IF ERROR -->
+						<div class="alert-message alert-message-danger">{ERROR}</div>
+					<!-- ENDIF -->
+					<!-- IF L_REG_COND -->
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<strong>{L_REG_COND}</strong>
+								</div>
+							</div>
+						</div>		
+					<!-- ENDIF -->
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<div class="icon-addon addon-lg">
+									<input type="text" placeholder="{L_USERNAME}" name="username" id="username" value="{USERNAME}" size="10" class="form-control" title="{L_USERNAME}" value="{USERNAME}" tabindex="1" autofocus/>
+									<label for="username" class="fa fa-user" rel="tooltip" title="username"></label>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -55,19 +67,23 @@
 					</div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-md-6">
-							<div class="icon-addon addon-lg">
-								<input type="password" placeholder="{L_PASSWORD}" name="new_password" id="new_password" value="{PASSWORD}" size="10" class="form-control" title="{L_PASSWORD}" tabindex="4"/>
-								<label for="new_password" class="fa fa-lock" rel="tooltip" title="new_password"></label>
+							<div class="form-group">
+								<div class="icon-addon addon-lg">
+									<input type="password" placeholder="{L_PASSWORD}" name="new_password" id="new_password" value="{PASSWORD}" size="10" class="form-control" title="{L_PASSWORD}" tabindex="4"/>
+									<label for="new_password" class="fa fa-lock" rel="tooltip" title="new_password"></label>
+									<span class="help-block">{L_PASSWORD_EXPLAIN}</span>
+								</div>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-6">
-							<div class="icon-addon addon-lg">
-								<input type="password" placeholder="{L_CONFIRM_PASSWORD}" name="password_confirm" id="password_confirm" value="{PASSWORD_CONFIRM}" size="10" class="form-control" title="{L_CONFIRM_PASSWORD}" tabindex="5"/>
-								<label for="password_confirm" class="fa fa-lock" rel="tooltip" title="password_confirm"></label>
+							<div class="form-group">
+								<div class="icon-addon addon-lg">
+									<input type="password" placeholder="{L_CONFIRM_PASSWORD}" name="password_confirm" id="password_confirm" value="{PASSWORD_CONFIRM}" size="10" class="form-control" title="{L_CONFIRM_PASSWORD}" tabindex="5"/>
+									<label for="password_confirm" class="fa fa-lock" rel="tooltip" title="password_confirm"></label>
+								</div>
 							</div>
 						</div>
 					</div>
-					<span class="help-block">{L_PASSWORD_EXPLAIN}</span>
 					<hr/>
 					<div class="form-horizontal">
 						<div class="form-group">
@@ -116,10 +132,14 @@
 						{S_HIDDEN_FIELDS}
 						<div class="row">
 							<div class="col-xs-12 col-md-6">
-								<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger btn-block btn-lg" />
+								<div class="form-group">
+									<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger btn-block btn-lg" />
+								</div>
 							</div>
 							<div class="col-xs-12 col-md-6">
-								<input type="submit" tabindex="9" name="submit" id="submit" value="{L_SUBMIT}" class="btn btn-success default-submit-action btn-block btn-lg" />
+								<div class="form-group">
+									<input type="submit" tabindex="9" name="submit" id="submit" value="{L_SUBMIT}" class="btn btn-success default-submit-action btn-block btn-lg" />
+								</div>
 							</div>
 						</div>
 						{S_FORM_TOKEN}
