@@ -1,7 +1,7 @@
 [BETA] proBoot3 (Based on Bootstrap 3)
 =======
 <p align="center">
- <a href="http://zoker.me/demo/proBoot3/"><img src="http://zoker.me/images/proBoot3/logo.png" alt="proBoot3 Logo"/></a>
+ <a href="http://demo.zoker.me/proBoot3/"><img src="http://zoker.me/images/proBoot3/logo.png" alt="proBoot3 Logo"/></a>
 </p>
 
 <p color="red"><b>Note!</b> Because bootstrap needs so much customization, this theme will not work with any style change done by the automod
@@ -85,7 +85,7 @@ About
 
 **Bootstrap version:** 3.1.1
 
-**Demo:** http://zoker.me/demo/proBoot3/
+**Demo:** http://demo.zoker.me/proBoot3/
 
 **Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
 
@@ -110,46 +110,46 @@ Themes
 =
 
 ###Amelia
-[![Amelia] (http://bootswatch.com/amelia/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=amelia)
+[![Amelia] (http://bootswatch.com/amelia/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=amelia)
 
 ###Cerulean
-[![Cerulean] (http://bootswatch.com/cerulean/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cerulean)
+[![Cerulean] (http://bootswatch.com/cerulean/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cerulean)
 
 ###Cosmo
-[![Cosmo] (http://bootswatch.com/cosmo/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cosmo)
+[![Cosmo] (http://bootswatch.com/cosmo/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cosmo)
 
 ###Cupid
-[![Cupid] (http://bootswatch.com/cupid/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cupid)
+[![Cupid] (http://bootswatch.com/cupid/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cupid)
 
 ###Cyborg
-[![Cyborg] (http://bootswatch.com/cyborg/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=cyborg)
+[![Cyborg] (http://bootswatch.com/cyborg/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cyborg)
 
 ###Flatly
-[![Flatly] (http://bootswatch.com/flatly/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=flatly)
+[![Flatly] (http://bootswatch.com/flatly/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=flatly)
 
 ###Journal
-[![Journal] (http://bootswatch.com/journal/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=journal)
+[![Journal] (http://bootswatch.com/journal/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=journal)
 
 ###Lumen
-[![Lumen] (http://bootswatch.com/lumen/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=lumen)
+[![Lumen] (http://bootswatch.com/lumen/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=lumen)
 
 ###Readable
-[![Readable] (http://bootswatch.com/readable/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=readable)
+[![Readable] (http://bootswatch.com/readable/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=readable)
 
 ###Simplex
-[![Simplex] (http://bootswatch.com/simplex/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=simplex)
+[![Simplex] (http://bootswatch.com/simplex/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=simplex)
 
 ###Slate
-[![Slate] (http://bootswatch.com/slate/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=slate)
+[![Slate] (http://bootswatch.com/slate/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=slate)
 
 ###Spacelab
-[![Spacelab] (http://bootswatch.com/spacelab/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=spacelab)
+[![Spacelab] (http://bootswatch.com/spacelab/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=spacelab)
 
 ###Superhero
-[![Superhero] (http://bootswatch.com/superhero/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=superhero)
+[![Superhero] (http://bootswatch.com/superhero/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=superhero)
 
 ###United
-[![United] (http://bootswatch.com/united/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=united)
+[![United] (http://bootswatch.com/united/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=united)
 
 ###Yeti
-[![Yeti] (http://bootswatch.com/yeti/thumbnail.png)] (http://zoker.me/demo/proBoot3/?theme=yeti)
+[![Yeti] (http://bootswatch.com/yeti/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=yeti)
