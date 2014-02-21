@@ -3,6 +3,10 @@
 	margin-top: 20px;
 }
 
+.navbar-fix {
+	z-index: 10000;
+}
+
 .navbar-nav.navbar-right:last-child {
 	margin-right: 5px !important;
 }
