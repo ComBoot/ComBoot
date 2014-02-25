@@ -122,7 +122,7 @@
 							<dt class="text-center">
 								<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong> <!-- ELSE -->{postrow.POST_AUTHOR_FULL}<!-- ENDIF -->
 							</dt>
-							<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd class="text-center">{postrow.RANK_TITLE}<!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</dd><!-- ENDIF -->
+							<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd class="text-center"><span class="badge">{postrow.RANK_TITLE}</span><!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</dd><!-- ENDIF -->
 							<hr/>
 							<!-- IF postrow.POSTER_POSTS != '' --><dd><strong>{L_POSTS}:</strong> {postrow.POSTER_POSTS}</dd><!-- ENDIF -->
 							<!-- IF postrow.POSTER_JOINED --><dd><strong>{L_JOINED}:</strong> {postrow.POSTER_JOINED}</dd><!-- ENDIF -->
