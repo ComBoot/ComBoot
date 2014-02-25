@@ -7,6 +7,18 @@
 	z-index: 10000;
 }
 
+.post-icon {
+	padding: 0px 10px 0px 0px;
+}
+
+#message-box #message {
+	border-radius: 0px !important;
+}
+
+.btn-group:only-child {
+	border-radius: 0px !important;
+}
+
 .navbar-nav.navbar-right:last-child {
 	margin-right: 5px !important;
 }
@@ -261,7 +273,6 @@
 [class*="badger"] {
     position: relative;
     background: #fff;
-    border: 1px solid #ddd;
 }
 
 [class*="badger"]:after {
