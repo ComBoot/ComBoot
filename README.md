@@ -82,8 +82,6 @@ About
 =
 **Author:** [Florian Gareis] (http://www.florian-gareis.de)
 
-**Original Auhtor:** [Shibu Lijack] (https://github.com/shibulijack)
-
 **Base style:** proSilver
 
 **Style Version:** 0.7 BETA
@@ -92,7 +90,7 @@ About
 
 **Bootstrap version:** 3.1.1
 
-**Demo:** http://demo.zoker.me/proBoot3/
+**Demo:** http://demo.zoker.me/?product=proboot3
 
 **Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
 
