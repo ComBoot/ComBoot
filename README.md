@@ -1,7 +1,7 @@
 [BETA] proBoot3 (Based on Bootstrap 3)
 =======
 <p align="center">
- <a href="http://demo.zoker.me/proBoot3/"><img src="http://zoker.me/images/proBoot3/logo.png" alt="proBoot3 Logo"/></a>
+ <a href="http://demo.zoker.me/#proboot3"><img src="http://zoker.me/images/proBoot3/logo.png" alt="proBoot3 Logo"/></a>
 </p>
 
 Note!
