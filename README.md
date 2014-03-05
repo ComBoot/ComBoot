@@ -90,7 +90,7 @@ About
 
 **Bootstrap version:** 3.1.1
 
-**Demo:** http://demo.zoker.me/?product=proboot3
+**Demo:** http://demo.zoker.me/#proboot3
 
 **Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
 
