@@ -13,7 +13,7 @@
 					<!-- ENDIF -->
 					</div>
 				</div>
-			<div class="col-md-2 col-md-offset-1">
+			<div class="col-md-1 col-md-offset-2">
 				<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 				<div class="btn-group dropup pull-right">
 					<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#" style=" display: block; ">
@@ -74,10 +74,8 @@
 	</div>
 </nav>
 
-<div>
-	<a id="bottom" accesskey="z"></a>
-	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
-</div>
+<a id="bottom" accesskey="z"></a>
+<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
 
 </div>
 
