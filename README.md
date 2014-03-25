@@ -33,6 +33,7 @@ Status
 > Added
 - Bootstrap top and footer navbar with login panel
 - [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/3/)
+- Smooth scroll to top on post page
 - Page header
 - Breadcrumbs
 - Rewrite registration and login page
@@ -103,7 +104,6 @@ About
 
 Credits
 =
-* [Smooth Scroll] (https://github.com/cferdinandi/smooth-scroll)
 * [Support glyph and fa icon inside input] (http://bootsnipp.com/snippets/featured/support-glyph-and-fa-icon-inside-input)
 * [Mix & Match Login] (http://bootsnipp.com/snippets/featured/mix-amp-match-login)
 * [Mix & Match Register] (http://bootsnipp.com/snippets/featured/mix-amp-match-register)
