@@ -1,3 +1,7 @@
+body {
+	padding-top: 0px !important;
+}
+
 #logo-fix {
 	margin-bottom: 20px; 
 	margin-top: 20px;
@@ -210,8 +214,23 @@
     color: #2580db;
 }
 
-.btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
-.btn-labeled {padding-top: 0;padding-bottom: 0;}
+.btn-label {
+	position: relative;
+	left: -12px;
+	display: inline-block;
+	padding: 6px 12px;
+	background: rgba(0,0,0,0.15);
+	border-radius: 3px 0 0 3px;
+}
+
+#page-footer {
+	padding-bottom: 60px;
+}
+
+.btn-labeled {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
 
 .nav-sidebar { 
     width: 100%;
