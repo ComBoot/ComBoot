@@ -1,20 +1,22 @@
 [BETA] proBoot3 (Based on Bootstrap 3)
 =======
 <p align="center">
- <a href="http://demo.zoker.me/#proboot3"><img src="http://zoker.me/images/proBoot3/logo.png" alt="proBoot3 Logo"/></a>
+ New logo is in work!
 </p>
+
+Very soon, there will be a huge update, which fixes the hole ucp and mcp and also adds a new logo to proBoot3.
+Additionally the theme will be renamed!
 
 Note!
 =
-> - **Because bootstrap needs so much customization, this theme will not work with any style change done by the automod
-So you have to do any change manually!**
-- **This theme is also meant to work with bootstrap, it therfor cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
+> - **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually!**
+- **This theme is also meant to work with core bootstrap, it therefor cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
 
 Overview
 =
 
 A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
-The color scheme is the simple bootstrap color, simliar to the design here @github.
+The color scheme is the simple bootstrap color, similar to the design here @github.
 
 - [Status] (#status)
 - [Features] (#features)
@@ -31,7 +33,7 @@ Status
 - Bootstrap top and footer navbar with login panel
 - [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/3/)
 - Page header
-- Breadchrumbs
+- Breadcrumbs
 - Rewrite registration and login page
 - Font Awesome
 - Button checkboxes
@@ -48,25 +50,29 @@ Status
 - Search forms
 - Complete UCP Panel
 
-> To do
+> In progress and included in next huge update
 - Changing MCP and UCP site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x
-- Fixing form for Bootstrap 3
-- Changing memberlist view
 - Redesign search result page
 - Redesign profil view
+- New logo for theme 
+- New name for the theme
+
+> To do
+- Fixing form for Bootstrap 3
+- Delete unnecessary files
+- Changing memberlist view
 - Mobile device optimisation
 - Update breadchrumbs to be shown on every site
-- New logo for theme
 - much more!
 
 All changes: https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master
 
 Features
 =
-* Based on the most awesome framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
+* Based on the most awesome html framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
 * Integration of [Font Awesome 4](http://fontawesome.io/)
 * Using [Bootstrap-Select](http://silviomoreto.github.io/bootstrap-select/)
-* Beautiful light design (like git)
+* Beautiful light design (like github)
 * Full HTML5 registration and login form 
 * Awesome login dropdown panel (see demo)
 * Simple theme change (see wiki)
