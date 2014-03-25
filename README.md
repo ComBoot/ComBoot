@@ -103,6 +103,7 @@ About
 
 Credits
 =
+* [Smooth Scroll] (https://github.com/cferdinandi/smooth-scroll)
 * [Support glyph and fa icon inside input] (http://bootsnipp.com/snippets/featured/support-glyph-and-fa-icon-inside-input)
 * [Mix & Match Login] (http://bootsnipp.com/snippets/featured/mix-amp-match-login)
 * [Mix & Match Register] (http://bootsnipp.com/snippets/featured/mix-amp-match-register)
