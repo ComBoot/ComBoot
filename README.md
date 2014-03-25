@@ -1,4 +1,4 @@
-[BETA] proBoot3 (Based on Bootstrap 3)
+proBoot3 (Based on Bootstrap 3)
 =======
 <p align="center">
  New logo is in work!
