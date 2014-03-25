@@ -28,9 +28,11 @@
 <!-- IF S_HAS_SUBFORUM -->
 	<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
 		<div class="row">
-			<ul class="linklist">
-				<li class="rightside"><a href="{U_MARK_FORUMS}" class="btn btn-default btn-sm">{L_MARK_SUBFORUMS_READ}</a></li>
-			</ul>
+			<div class="col-md-12">
+				<ul class="linklist">
+					<li class="rightside"><a href="{U_MARK_FORUMS}" class="btn btn-default btn-sm">{L_MARK_SUBFORUMS_READ}</a></li>
+				</ul>
+			</div>
 		</div>
 	<!-- ENDIF -->
     <!-- INCLUDE forumlist_body.html -->
@@ -82,7 +84,7 @@
         <form action="{S_LOGIN_ACTION}" method="post">
             <div class="row">
                 <div class="well well-sm">
-                    <h3 class="box-heading"><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
+                    <h3 class="box-heading"><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
                     <div class="content">
                         <fieldset class="fields1">
                             <dl>
