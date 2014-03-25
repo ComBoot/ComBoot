@@ -1,11 +1,12 @@
 proBoot3 (Based on Bootstrap 3)
 =======
 <p align="center">
- New logo is in work!
+ New logo is in progress!
 </p>
 
 Very soon, there will be a huge update, which fixes the hole ucp and mcp and also adds a new logo to proBoot3.
 Additionally the theme will be renamed!
+For more information, see [status] (#status)
 
 Note!
 =
