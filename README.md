@@ -82,7 +82,7 @@ Quick Start
 =
 **Wiki:** [https://github.com/TheZoker/proBoot3/wiki/] (https://github.com/TheZoker/proBoot3/wiki/)
 
-**Install:** [Intstalling theme on phpBB] (https://www.phpbb.com/kb/article/how-to-install-styles-on-phpbb3/)
+**Install:** [Installing theme on phpBB] (https://www.phpbb.com/kb/article/how-to-install-styles-on-phpbb3/)
 
 About
 =
