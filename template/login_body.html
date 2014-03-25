@@ -5,7 +5,7 @@
 	onload_functions.push('document.getElementById("<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->").focus();');
 // ]]>
 </script>
-<div class="row" style="margin-top:20px" id="loginpanel">
+<div class="row" id="loginpanel">
 	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<div class="panel panel-default">
 			<div class="panel-body">
@@ -62,17 +62,22 @@
 								<!-- ENDIF -->
 							</div>
 						<!-- ENDIF -->
-
-						{S_LOGIN_REDIRECT}
-						<hr class="colorgraph">
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-success btn-block btn-lg" />
+						<!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
+							{S_LOGIN_REDIRECT}
+							<hr class="colorgraph">
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-success btn-block btn-lg" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<a href="{U_REGISTER}" class="btn btn-primary btn-block btn-lg">{L_REGISTER}</a>
+								</div>
 							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<a href="{U_REGISTER}" class="btn btn-primary btn-block btn-lg">{L_REGISTER}</a>
-							</div>
-						</div>
+						<!-- ELSE -->
+							{S_LOGIN_REDIRECT}
+							<hr class="colorgraph">
+							{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-success btn-block btn-lg" />
+						<!-- ENDIF -->
 					</fieldset>
 				</form>
 			</div>

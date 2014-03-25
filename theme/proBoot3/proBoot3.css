@@ -45,6 +45,10 @@
 	margin: 0px !important;
 }
 
+.no-margin-left{
+	margin-left: 0px !important;
+}
+
 .no-margin-bottom{
 	margin-bottom: 0px !important;
 }
@@ -63,6 +67,10 @@
 
 .topic-buttons {
 	float:right;
+}
+
+#loginpanel {
+	margin-top:20px
 }
 
 #format-buttons .btn {
