@@ -219,13 +219,22 @@
 	</div>	
 	<div class="panel-body">
 		<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
-			<div class="input-group">
-				<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}" style="width: 117px;"/>	
-				<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}" style="width: 117px;"/>
-				<span class="input-group-btn" style="width: 0px;">
-					{S_LOGIN_REDIRECT}
-					<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
-				</span>	
+			<div class="row">
+				<div class="col-md-4">
+					<div class="input-group">
+						<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}" style="width: 117px;"/>	
+						<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}" style="width: 117px;"/>
+						<span class="input-group-btn" style="width: 0px;">
+							{S_LOGIN_REDIRECT}
+							<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
+						</span>	
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<a href="{U_REGISTER}" class="btn btn-primary btn-labeled "><span class="btn-label"><i class="glyphicon glyphicon glyphicon-user"></i></span>{L_REGISTER}</a>
+					</div>
+				</div>
 			</div>
 		</form>
 	</div>
