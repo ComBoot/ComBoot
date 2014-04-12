@@ -63,7 +63,7 @@
 				<div class="col-md-3">        
 					<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">
 						<div class="input-group">
-							<input class="input-medium search form-control" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+							<input class="input-medium search form-control" type="text" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}"/>
 							<span class="input-group-btn">
 								{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 								<button type="submit" class="btn btn-default">{L_SEARCH}</button>
@@ -184,7 +184,7 @@
 			<div class="col-md-3">        
                 <form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">
 					<div class="input-group">
-						<input class="input-medium search form-control" type="text" name="keywords" id="search_keywords" size="20" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+						<input class="input-medium search form-control" type="text" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}"/>
 						<span class="input-group-btn">
 							{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 							<button type="submit" class="btn btn-default">{L_SEARCH}</button>
@@ -240,6 +240,8 @@
 	</div>
 </div>
 <!-- ENDIF -->
+
+<!-- INCLUDE jumpbox.html -->
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
 	<div class="panel panel-info">

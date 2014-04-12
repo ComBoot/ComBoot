@@ -137,11 +137,12 @@
 
 <div class="text-center" style="margin-bottom: 15px;">
 	<span class="badge">{TOTAL_USERS}</span>  
-	<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> &bull; <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
+	<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
 </div>
 
 <!-- IF S_IN_SEARCH_POPUP -->
 	<!-- INCLUDE simple_footer.html -->
 <!-- ELSE -->
+	<!-- INCLUDE jumpbox.html -->
 	<!-- INCLUDE overall_footer.html -->
 <!-- ENDIF -->
