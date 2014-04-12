@@ -53,8 +53,7 @@ Status
 - Complete UCP Panel
 
 > In progress and included in next huge update
-- Changing MCP and UCP site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x
-- Redesign search result page
+- Changing MCP, UCP and search site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x (partly done)
 - Redesign profil view
 - New logo for theme 
 - New name for the theme
@@ -62,6 +61,7 @@ Status
 > To do
 - Fixing form for Bootstrap 3
 - Delete unnecessary files
+- Improving search pages
 - Changing memberlist view
 - Mobile device optimisation
 - Update breadchrumbs to be shown on every site
