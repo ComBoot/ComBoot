@@ -15,6 +15,10 @@ body {
 	padding: 0px 10px 0px 0px;
 }
 
+.jumpbox {
+  display: none;
+}
+
 #message-box #message {
 	border-radius: 0px !important;
 }
