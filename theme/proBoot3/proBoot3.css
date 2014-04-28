@@ -307,7 +307,7 @@ body {
 }
 
 [class*="badger"]:after {
-    content: attr(data-badger);
+    content: attr(data-badger) !important;
     position: absolute;
     top: 0;
     padding: 3px 7px;
