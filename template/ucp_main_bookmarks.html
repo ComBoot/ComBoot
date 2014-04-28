@@ -11,12 +11,19 @@
 				<p class="error">{L_BOOKMARKS_DISABLED}</p>
 			<!-- ELSE -->
 				<!-- IF .topicrow -->
-					<ul class="linklist">
-						<li class="rightside p-pagination">
-							<!-- IF TOTAL_TOPICS --> <span class="label">{TOTAL_TOPICS}</span> <!-- ENDIF -->
-							<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="label">{PAGE_NUMBER}</span></a> &bull; <span class="label">{PAGINATION}</span><!-- ELSE --> &bull; <span class="label">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
-						</li>
-					</ul>
+					<div class="text-center">
+						<div class="btn-group">
+							<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_TOPICS}</span> <!-- ENDIF -->
+							<!-- IF PAGE_NUMBER -->
+								<!-- IF PAGINATION -->
+									<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
+									<span class="btn btn-default btn-sm">{PAGINATION}</span>
+								<!-- ELSE -->
+									<span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span>
+								<!-- ENDIF -->
+							<!-- ENDIF -->
+						</div>
+					</div>
 					<table class="table table-striped">
 						<thead style="background:none;">
 							<tr>
@@ -54,16 +61,20 @@
 					<p><strong>{L_NO_BOOKMARKS}</strong></p>
 				<!-- ENDIF -->
 			<!-- ENDIF -->
+			<!-- IF .topicrow and not S_NO_DISPLAY_BOOKMARKS -->
+				<div class="text-right">
+					<fieldset>
+						<div class="btn-group">
+							<a class="btn btn-success btn-sm" href="#" onclick="marklist('ucp', '', true); return false;">{L_MARK_ALL}</a>
+							<a class="btn btn-warning btn-sm" href="#" onclick="marklist('ucp', '', false); return false;">{L_UNMARK_ALL}</a>
+						</div>
+						<input type="submit" name="unbookmark" value="{L_REMOVE_BOOKMARK_MARKED}" class="btn btn-danger btn-sm" />
+						{S_FORM_TOKEN}
+					</fieldset>
+				</div>
+			<!-- ENDIF -->
 		</div>
 	</div>
-
-	<!-- IF .topicrow and not S_NO_DISPLAY_BOOKMARKS -->
-		<fieldset class="display-actions row">
-			<input type="submit" name="unbookmark" value="{L_REMOVE_BOOKMARK_MARKED}" class="btn btn-primary" /> &bull;
-			<a class="btn btn-default btn-sm" href="#" onclick="marklist('ucp', '', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-default btn-sm" href="#" onclick="marklist('ucp', '', false); return false;">{L_UNMARK_ALL}</a>
-			{S_FORM_TOKEN}
-		</fieldset>
-	<!-- ENDIF -->
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

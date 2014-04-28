@@ -7,84 +7,86 @@
 		</div>
 		<div class="panel-body">
 			<fieldset>
-				<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
-				<dl>
-					<dt><label for="images1">{L_VIEW_IMAGES}:</label></dt>
-					<dd>
-						<label for="images1"><input type="radio" name="images" id="images1" value="1"<!-- IF S_IMAGES --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-						<label for="images0"><input type="radio" name="images" id="images0" value="0"<!-- IF not S_IMAGES --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-					</dd>
-				</dl>
-				<dl>
-					<dt><label for="flash0">{L_VIEW_FLASH}:</label></dt>
-					<dd>
-						<label for="flash1"><input type="radio" name="flash" id="flash1" value="1"<!-- IF S_FLASH --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-						<label for="flash0"><input type="radio" name="flash" id="flash0" value="0"<!-- IF not S_FLASH --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-					</dd>
-				</dl>
-				<dl>
-					<dt><label for="smilies1">{L_VIEW_SMILIES}:</label></dt>
-					<dd>
-						<label for="smilies1"><input type="radio" name="smilies" id="smilies1" value="1"<!-- IF S_SMILIES --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-						<label for="smilies0"><input type="radio" name="smilies" id="smilies0" value="0"<!-- IF not S_SMILIES --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-					</dd>
-				</dl>
-				<dl>
-					<dt><label for="sigs1">{L_VIEW_SIGS}:</label></dt>
-					<dd>
-						<label for="sigs1"><input type="radio" name="sigs" id="sigs1" value="1"<!-- IF S_SIGS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-						<label for="sigs0"><input type="radio" name="sigs" id="sigs0" value="0"<!-- IF not S_SIGS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-					</dd>
-				</dl>
-				<dl>
-					<dt><label for="avatars1">{L_VIEW_AVATARS}:</label></dt>
-					<dd>
-						<label for="avatars1"><input type="radio" name="avatars" id="avatars1" value="1"<!-- IF S_AVATARS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-						<label for="avatars0"><input type="radio" name="avatars" id="avatars0" value="0"<!-- IF not S_AVATARS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-					</dd>
-				</dl>
-				<!-- IF S_CHANGE_CENSORS -->
-					<dl>
-						<dt><label for="wordcensor1">{L_DISABLE_CENSORS}:</label></dt>
-						<dd>
-							<label for="wordcensor1"><input type="radio" name="wordcensor" id="wordcensor1" value="1"<!-- IF S_DISABLE_CENSORS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-							<label for="wordcensor0"><input type="radio" name="wordcensor" id="wordcensor0" value="0"<!-- IF not S_DISABLE_CENSORS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-						</dd>
-					</dl>
-				<!-- ENDIF -->
-				<hr class="dashed" />
-				<dl>
-					<dt><label>{L_VIEW_TOPICS_DAYS}:</label></dt>
-					<dd>{S_TOPIC_SORT_DAYS}</dd>
-				</dl>
-				<dl>
-					<dt><label>{L_VIEW_TOPICS_KEY}:</label></dt>
-					<dd>{S_TOPIC_SORT_KEY}</dd>
-				</dl>
-				<dl>
-					<dt><label>{L_VIEW_TOPICS_DIR}:</label></dt>
-					<dd>{S_TOPIC_SORT_DIR}</dd>
-				</dl>
-				<hr class="dashed"/>
-				<dl>
-					<dt><label>{L_VIEW_POSTS_DAYS}:</label></dt>
-					<dd>{S_POST_SORT_DAYS}</dd>
-				</dl>
-				<dl>
-					<dt><label>{L_VIEW_POSTS_KEY}:</label></dt>
-					<dd>{S_POST_SORT_KEY}</dd>
-				</dl>
-				<dl>
-					<dt><label>{L_VIEW_POSTS_DIR}:</label></dt>
-					<dd>{S_POST_SORT_DIR}</dd>
-				</dl>
+				<div class="form-horizontal">
+					<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
+					<div class="form-group">
+						<label class="control-label col-md-4" for="images1">{L_VIEW_IMAGES}:</label>
+						<div class="col-md-8">
+							<label for="images1" class="radio-inline"><input type="radio" name="images" id="images1" value="1"<!-- IF S_IMAGES --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+							<label for="images0" class="radio-inline"><input type="radio" name="images" id="images0" value="0"<!-- IF not S_IMAGES --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="flash0">{L_VIEW_FLASH}:</label>
+						<div class="col-md-8">
+							<label for="flash1" class="radio-inline"><input type="radio" name="flash" id="flash1" value="1"<!-- IF S_FLASH --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+							<label for="flash0" class="radio-inline"><input type="radio" name="flash" id="flash0" value="0"<!-- IF not S_FLASH --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="smilies1">{L_VIEW_SMILIES}:</label>
+						<div class="col-md-8">
+							<label for="smilies1" class="radio-inline"><input type="radio" name="smilies" id="smilies1" value="1"<!-- IF S_SMILIES --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+							<label for="smilies0" class="radio-inline"><input type="radio" name="smilies" id="smilies0" value="0"<!-- IF not S_SMILIES --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="sigs1">{L_VIEW_SIGS}:</label>
+						<div class="col-md-8">
+							<label for="sigs1" class="radio-inline"><input type="radio" name="sigs" id="sigs1" value="1"<!-- IF S_SIGS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+							<label for="sigs0" class="radio-inline"><input type="radio" name="sigs" id="sigs0" value="0"<!-- IF not S_SIGS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="avatars1">{L_VIEW_AVATARS}:</label>
+						<div class="col-md-8">
+							<label for="avatars1" class="radio-inline"><input type="radio" name="avatars" id="avatars1" value="1"<!-- IF S_AVATARS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+							<label for="avatars0" class="radio-inline"><input type="radio" name="avatars" id="avatars0" value="0"<!-- IF not S_AVATARS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+						</div>
+					</div>
+					<!-- IF S_CHANGE_CENSORS -->
+						<div class="form-group">
+							<label class="control-label col-md-4" for="wordcensor1">{L_DISABLE_CENSORS}:</label>
+							<div class="col-md-8">
+								<label for="wordcensor1" class="radio-inline"><input type="radio" name="wordcensor" id="wordcensor1" value="1"<!-- IF S_DISABLE_CENSORS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+								<label for="wordcensor0" class="radio-inline"><input type="radio" name="wordcensor" id="wordcensor0" value="0"<!-- IF not S_DISABLE_CENSORS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+							</div>
+						</div>
+					<!-- ENDIF -->
+					<hr class="dashed" />
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_VIEW_TOPICS_DAYS}:</label>
+						<div class="col-md-8">{S_TOPIC_SORT_DAYS}</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_VIEW_TOPICS_KEY}:</label>
+						<div class="col-md-8">{S_TOPIC_SORT_KEY}</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_VIEW_TOPICS_DIR}:</label>
+						<div class="col-md-8">{S_TOPIC_SORT_DIR}</div>
+					</div>
+					<hr class="dashed"/>
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_VIEW_POSTS_DAYS}:</label>
+						<div class="col-md-8">{S_POST_SORT_DAYS}</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_VIEW_POSTS_KEY}:</label>
+						<div class="col-md-8">{S_POST_SORT_KEY}</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_VIEW_POSTS_DIR}:</label>
+						<div class="col-md-8">{S_POST_SORT_DIR}</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="submit-buttons">
+				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />&nbsp; 
+				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+				{S_FORM_TOKEN}
 			</fieldset>
 		</div>
-		<fieldset class="submit-buttons">
-			{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />&nbsp; 
-			<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
-			{S_FORM_TOKEN}
-		</fieldset>
 	</div>
 </form>
 

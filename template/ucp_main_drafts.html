@@ -11,9 +11,8 @@
 				<!-- INCLUDE posting_editor.html -->
 		</div>
 	</div>
-
 	<fieldset class="submit-buttons">
-		{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />&nbsp;
+		{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
 		<input type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary" />
 		{S_FORM_TOKEN}
 	</fieldset>
@@ -24,8 +23,8 @@
 						<thead style="background:none;">
 							<tr>
 								<th>{L_DRAFT_TITLE}</th>
-								<th class="info"><span>{L_SAVE_DATE}</span></th>
-								<th class="mark">{L_MARK}</th>
+								<th><span>{L_SAVE_DATE}</span></th>
+								<th>{L_MARK}</th>
 							</tr>
 						</thead>
 						<tbody class="topiclist cplist">
@@ -38,7 +37,7 @@
 										<!-- ELSEIF S_PRIVMSGS -->
 										<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF -->
 									</td>
-									<td class="info"><span>{draftrow.DATE}<br /><!-- IF draftrow.U_INSERT --><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> &bull; <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></span></td>
+									<td><span>{draftrow.DATE}<br /><!-- IF draftrow.U_INSERT --><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></span></td>
 									<td class="mark"><center><input type="checkbox" name="d[{draftrow.DRAFT_ID}]" id="d{draftrow.DRAFT_ID}" /></center></td>
 								</tr>
 							<!-- END draftrow -->
@@ -47,17 +46,21 @@
 				<!-- ELSE -->
 					<p><strong>{L_NO_SAVED_DRAFTS}</strong></p>
 				<!-- ENDIF -->
+				<!-- IF .draftrow -->
+					<div class="text-right">
+						<fieldset>
+							<div class="btn-group">
+								<a class="btn btn-success btn-sm" href="#" onclick="marklist('postform', '', true); return false;">{L_MARK_ALL}</a>
+								<a class="btn btn-warning btn-sm" href="#" onclick="marklist('postform', '', false); return false;">{L_UNMARK_ALL}</a>
+							</div>
+							<input class="btn btn-danger btn-sm" type="submit" name="delete" value="{L_DELETE_MARKED}" />
+							{S_FORM_TOKEN}
+						</fieldset>
+					</div>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
 		</div>
 	</div>
-
-		<!-- IF .draftrow -->
-			<fieldset class="display-actions row">
-				<input class="btn btn-danger" type="submit" name="delete" value="{L_DELETE_MARKED}" /> &bull;
-				<a class="btn btn-default btn-sm" href="#" onclick="marklist('postform', '', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-default btn-sm" href="#" onclick="marklist('postform', '', false); return false;">{L_UNMARK_ALL}</a>
-				{S_FORM_TOKEN}
-			</fieldset>
-		<!-- ENDIF -->
-	<!-- ENDIF -->
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

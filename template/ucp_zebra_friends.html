@@ -7,27 +7,33 @@
 		</div>
 		<div class="panel-body">
 			<p>{L_FRIENDS_EXPLAIN}</p>
-			<fieldset class="fields2">
-				<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
-				<dl>
-					<dt><label <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FRIENDS}:</label><br /><span>{L_YOUR_FRIENDS_EXPLAIN}</span></dt>
-					<dd>
-						<!-- IF S_USERNAME_OPTIONS -->
-							<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
-						<!-- ELSE -->
-							<strong>{L_NO_FRIENDS}</strong>
-						<!-- ENDIF -->
-					</dd>
-				</dl>
-				<dl>
-					<dt><label for="add">{L_ADD_FRIENDS}:</label><br /><span>{L_ADD_FRIENDS_EXPLAIN}</span></dt>
-					<dd><textarea name="add" id="add" rows="3" cols="30" class="form-control">{USERNAMES}</textarea></dd>
-					<dd><strong><a class="btn btn-default btn-sm btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
-				</dl>
+			<fieldset>
+				<div class="form-horizontal">
+					<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
+					<div class="form-group">
+						<label class="control-label col-md-3" <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FRIENDS}:</label>
+						<div class="col-md-9">
+							<!-- IF S_USERNAME_OPTIONS -->
+								<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
+							<!-- ELSE -->
+								<p class="form-control-static">{L_NO_FRIENDS}</p>
+							<!-- ENDIF -->
+							<span class="help-block">{L_YOUR_FRIENDS_EXPLAIN}</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3" for="add">{L_ADD_FRIENDS}:</label>
+						<div class="col-md-9">
+							<textarea name="add" id="add" rows="3" cols="30" class="form-control">{USERNAMES}</textarea>
+							<div class="spacer"></div>
+							<a class="btn btn-default btn-sm btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
+							<span class="help-block">{L_ADD_FRIENDS_EXPLAIN}</span>
+						</div>
+					</div>
+				</div>
 			</fieldset>
-			
 			<fieldset class="submit-buttons">
-				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />&nbsp; 
+				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
 				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
 				{S_FORM_TOKEN}
 			</fieldset>

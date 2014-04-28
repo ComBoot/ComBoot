@@ -23,9 +23,11 @@
 							<!-- ENDIF -->
 							<tr>
 								<td>
-									<input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /> <a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
-									<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
-									<!-- IF not leader.GROUP_SPECIAL --><br /><i>{leader.GROUP_STATUS}</i><!-- ENDIF -->
+									<div class="radio">
+										<input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /> <a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
+										<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
+										<!-- IF not leader.GROUP_SPECIAL --><br /><i>{leader.GROUP_STATUS}</i><!-- ENDIF -->
+									</div>
 								</td>
 								<td class="mark"><!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF leader.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{leader.GROUP_ID}" /> <!-- ENDIF --></td>
 							</tr>
@@ -48,10 +50,13 @@
 								<!-- DEFINE $SHOW_BUTTONS = 1 -->
 							<!-- ENDIF -->		
 							<tr>
-								<td><input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> />
-									<a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->>{member.GROUP_NAME}</a>
-									<!-- IF member.GROUP_DESC --><br />{member.GROUP_DESC}<!-- ENDIF -->
-									<!-- IF not member.GROUP_SPECIAL --><br /><i>{member.GROUP_STATUS}</i><!-- ENDIF -->
+								<td>
+									<div class="radio">
+										<input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> />
+										<a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->>{member.GROUP_NAME}</a>
+										<!-- IF member.GROUP_DESC --><br />{member.GROUP_DESC}<!-- ENDIF -->
+										<!-- IF not member.GROUP_SPECIAL --><br /><i>{member.GROUP_STATUS}</i><!-- ENDIF -->
+									</div>
 								</td>
 								<td class="mark"><!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF member.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{member.GROUP_ID}" /> <!-- ENDIF --></td>
 							</tr>
@@ -118,16 +123,16 @@
 			<!-- ENDIF -->
 			
 			<!-- IF S_CHANGE_DEFAULT or $SHOW_BUTTONS eq 1 -->
-				<fieldset class="row">
+				<fieldset>
 					<!-- IF S_CHANGE_DEFAULT -->
-						<div class="left-box">
+						<div class="pull-left">
 							<input class="btn btn-primary" type="submit" name="change_default" value="{L_CHANGE_DEFAULT_GROUP}" />
 							{S_FORM_TOKEN}
 						</div>
 					<!-- ENDIF -->
 					
 					<!-- IF $SHOW_BUTTONS eq 1 -->
-						<div class="right-box">
+						<div class="pull-right">
 							<label for="action">{L_SELECT}:</label> 
 							<select name="action" id="action">
 								<option value="join">{L_JOIN_SELECTED}</option>

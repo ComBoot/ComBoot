@@ -82,17 +82,16 @@
 							
 							<!-- IF profile_fields.ERROR --><dd class="error">{profile_fields.ERROR}<!-- ENDIF -->
 							{profile_fields.FIELD}
-						</div>
 					<!-- END profile_fields -->
 				</div>
 			</fieldset>
+			<fieldset class="submit-buttons">
+				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
+				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+				{S_FORM_TOKEN}
+			</fieldset>
 		</div>
 	</div>
-	<fieldset class="submit-buttons">
-		{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />&nbsp; 
-		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
-		{S_FORM_TOKEN}
-	</fieldset>
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

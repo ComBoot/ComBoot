@@ -26,14 +26,38 @@
 			</table>
 		<!-- ENDIF -->
 		<h3>{L_YOUR_DETAILS}</h3>
-		<dl class="details">
-			<dt>{L_JOINED}:</dt> <dd>{JOINED}</dd>
-			<dt>{L_VISITED}:</dt> <dd>{LAST_VISIT_YOU}</dd>
-			<dt>{L_TOTAL_POSTS}:</dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>
-			<!-- IF ACTIVE_FORUM != '' --><dt>{L_ACTIVE_IN_FORUM}:</dt> <dd><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</dd><!-- ENDIF -->
-			<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
-			<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
-		</dl>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-md-3">{L_JOINED}:</label>
+				<div class="col-md-9"><div class="form-control-static">{JOINED}</div></div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3">{L_VISITED}:</label>
+				<div class="col-md-9"><div class="form-control-static">{LAST_VISIT_YOU}</div></div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3">{L_TOTAL_POSTS}:</label>
+				<div class="col-md-9"><div class="form-control-static"><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></div></div>
+			</div>
+			<!-- IF ACTIVE_FORUM != '' -->
+				<div class="form-group">
+					<label class="control-label col-md-3">{L_ACTIVE_IN_FORUM}:</label>
+					<div class="col-md-9"><div class="form-control-static"><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</div></div>
+				</div>
+			<!-- ENDIF -->
+			<!-- IF ACTIVE_TOPIC != '' -->
+				<div class="form-group">
+					<label class="control-label col-md-3">{L_ACTIVE_IN_TOPIC}:</label>
+					<div class="col-md-9"><div class="form-control-static"><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</div></div>
+				</div>
+			<!-- ENDIF -->
+			<!-- IF WARNINGS -->
+				<div class="form-group">
+					<label class="control-label col-md-3">{L_YOUR_WARNINGS}:</label>
+					<div class="col-md-9"><div class="form-control-static">{WARNING_IMG} [{WARNINGS}]</div></div>
+				</div>
+			<!-- ENDIF -->
+		</div>
 	</div>
 </div>
 
