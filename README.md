@@ -1,4 +1,4 @@
-proBoot3 (Based on Bootstrap 3)
+proBoot3 0.8 (Based on Bootstrap 3)
 =======
 <p align="center">
  New logo is in progress!
@@ -51,10 +51,10 @@ Status
 - Nice code (well tabbed)
 - Search forms
 - Complete UCP Panel
+- Redesign profil view
 
 > In progress and included in next huge update
-- Changing MCP, UCP and search site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x (partly done)
-- Redesign profil view
+- Changing MCP and search site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x (partly done)
 - New logo for theme 
 - New name for the theme
 
@@ -92,7 +92,7 @@ About
 
 **Base style:** proSilver
 
-**Style Version:** 0.7 BETA
+**Style Version:** 0.8 BETA
 
 **phpBB version:** phpBB 3.0.12
 
