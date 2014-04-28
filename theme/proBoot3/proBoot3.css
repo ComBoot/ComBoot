@@ -28,6 +28,20 @@ body {
   display: none;
 }
 
+.attach-image {
+  margin: 3px 0;
+  width: 100%;
+  max-width: 100%;
+  max-height: 350px;
+  overflow: auto;
+}
+
+.attach-image img {
+  border: 1px solid #999999;
+  cursor: default;
+  max-width: 100%;
+}
+
 #message-box #message {
 	border-radius: 0px !important;
 }
