@@ -20,7 +20,7 @@
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 		<div class="col-md-3">
 			<!-- IF S_IS_LOCKED -->
-				<a class="btn btn-danger btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_TOPIC_LOCKED}" disabled="disabled"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_TOPIC_LOCKED_SHORT}</a>
+				<a class="btn btn-danger btn-labeled disabled" href="{U_POST_REPLY_TOPIC}" title="{L_TOPIC_LOCKED}"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_TOPIC_LOCKED_SHORT}</a>
 			<!-- ELSE -->
 				<a class="btn btn-primary btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_POST_REPLY}"><span class="btn-label"><i class="fa fa-pencil-square-o"></i></span> {L_POST_REPLY}</a>
 			<!-- ENDIF -->
@@ -30,8 +30,8 @@
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 		<div class="col-md-6 text-center">
 			<div class="btn-group">
-				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_POSTS}</span>
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm disabled">{TOTAL_POSTS}</span>
+				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
 			</div>
 		</div>
 	<!-- ENDIF -->
@@ -239,7 +239,7 @@
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 		<div class="col-md-3">
 			<!-- IF S_IS_LOCKED -->
-				<a class="btn btn-danger btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_TOPIC_LOCKED}" disabled="disabled"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_TOPIC_LOCKED_SHORT}</a>
+				<a class="btn btn-danger btn-labeled disabled" href="{U_POST_REPLY_TOPIC}" title="{L_TOPIC_LOCKED}"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span> {L_TOPIC_LOCKED_SHORT}</a>
 			<!-- ELSE -->
 				<a class="btn btn-primary btn-labeled" href="{U_POST_REPLY_TOPIC}" title="{L_POST_REPLY}"><span class="btn-label"><i class="fa fa-pencil-square-o"></i></span> {L_POST_REPLY}</a>
 			<!-- ENDIF -->
@@ -249,8 +249,8 @@
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 		<div class="col-md-6 text-center">
 			<div class="btn-group">
-				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_POSTS}</span>
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm" disabled="disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm disabled">{TOTAL_POSTS}</span>
+				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
 			</div>
 		</div>
 	<!-- ENDIF -->

@@ -18,7 +18,7 @@ ul.profile-links li {
   margin: 0 6px 3px 0;
 }
 
-th.forum-name, td.forum-name {
+th.forum-name, td.forum-name, th.topic-name, td.topic-name {
   width: 50%;
 }
 

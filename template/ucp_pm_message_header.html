@@ -18,13 +18,13 @@
 					<div class="btn-group">
 						<!-- IF S_VIEW_MESSAGE --><a class="btn btn-primary" href="{U_CURRENT_FOLDER}">{L_RETURN_TO} {CUR_FOLDER_NAME}</a><!-- ENDIF -->
 						<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-							<!-- IF TOTAL_MESSAGES --><span class="btn btn-default btn-sm" disabled="disabled">{TOTAL_MESSAGES}</span><!-- ENDIF -->
+							<!-- IF TOTAL_MESSAGES --><span class="btn btn-default btn-sm disabled">{TOTAL_MESSAGES}</span><!-- ENDIF -->
 							<!-- IF PAGE_NUMBER -->
 								<!-- IF PAGINATION -->
 									<a class="btn bn-default" href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
 									<span class="btn btn-default btn-sm">{PAGINATION}</span>
 								<!-- ELSE -->
-									<span class="btn btn-default btn-sm" disabled="disabled">{PAGE_NUMBER}</span>
+									<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
 								<!-- ENDIF -->
 							<!-- ENDIF -->
 						<!-- ENDIF -->

@@ -24,7 +24,7 @@
 							<tr>
 								<td>
 									<div class="radio">
-										<input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /> <a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
+										<input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->class="disabled"<!-- ENDIF --> /> <a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
 										<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
 										<!-- IF not leader.GROUP_SPECIAL --><br /><i>{leader.GROUP_STATUS}</i><!-- ENDIF -->
 									</div>
@@ -52,7 +52,7 @@
 							<tr>
 								<td>
 									<div class="radio">
-										<input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> />
+										<input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->class="disabled"<!-- ENDIF --> />
 										<a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->>{member.GROUP_NAME}</a>
 										<!-- IF member.GROUP_DESC --><br />{member.GROUP_DESC}<!-- ENDIF -->
 										<!-- IF not member.GROUP_SPECIAL --><br /><i>{member.GROUP_STATUS}</i><!-- ENDIF -->
@@ -86,7 +86,7 @@
 									<!-- IF pending.GROUP_DESC --><br />{pending.GROUP_DESC}<!-- ENDIF -->
 									<!-- IF not pending.GROUP_SPECIAL --><br /><i>{pending.GROUP_STATUS}</i><!-- ENDIF -->
 								</dt>
-								<dd class="mark"><input type="radio" name="selected" value="{pending.GROUP_ID}" <!-- IF pending.GROUP_SPECIAL -->disabled="diabled"<!-- ENDIF --> /></dd>
+								<dd class="mark"><input type="radio" name="selected" value="{pending.GROUP_ID}" <!-- IF pending.GROUP_SPECIAL -->class="disabled"<!-- ENDIF --> /></dd>
 							</dl>
 						</li>
 					<!-- END pending -->
@@ -115,7 +115,7 @@
 									<!-- IF nonmember.GROUP_DESC --><br />{nonmember.GROUP_DESC}<!-- ENDIF -->
 									<!-- IF not nonmember.GROUP_SPECIAL --><br /><i>{nonmember.GROUP_STATUS}</i><!-- ENDIF -->
 								</dt>
-								<dd class="mark"><input type="radio" name="selected" value="{nonmember.GROUP_ID}" <!-- IF not nonmember.S_CAN_JOIN -->disabled="disabled"<!-- ENDIF --> /></dd>
+								<dd class="mark"><input type="radio" name="selected" value="{nonmember.GROUP_ID}" <!-- IF not nonmember.S_CAN_JOIN -->class="disabled"<!-- ENDIF --> /></dd>
 							</dl>
 						</li>
 					<!-- END nonmember -->
