@@ -26,7 +26,19 @@
 	<!-- IF not forumrow.S_IS_CAT -->
 					<tr>
 						<td class="forum-name" title="{forumrow.FORUM_FOLDER_IMG_ALT}" >
-							<i class="pcon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i>
+							<span class="pull-left forum-button">
+								<a href="{forumrow.U_VIEWFORUM}" class="btn btn-lg <!-- IF forumrow.S_UNREAD_FORUM -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> tooltip-link" title="{forumrow.FORUM_FOLDER_IMG_ALT}">
+									<!-- IF forumrow.S_IS_LINK -->
+										<i class="fa fa-globe fa-lg"></i>
+									<!-- ELSEIF forumrow.S_LOCKED_FORUM -->
+										<i class="fa fa-lock fa-lg"></i>
+									<!-- ELSEIF forumrow.FORUM_ICON -->
+										<i class="{forumrow.FORUM_ICON} fa-lg"></i>
+									<!-- ELSE -->
+										<i class="fa fa-file-text-o fa-lg"></i>
+									<!-- ENDIF -->
+								</a>
+							</span>
 							<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><!-- <a class="feed-icon-forum" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><img src="{T_THEME_PATH}/images/feed.gif" alt="{L_FEED} - {forumrow.FORUM_NAME}" /></a> --><!-- ENDIF -->
 							<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
 							<a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />

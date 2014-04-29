@@ -22,6 +22,19 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
   width: 50%;
 }
 
+.vote-progress {
+  padding-top: 10px;
+}
+
+.forum-button, .forum-topic-icon {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.forum-button .fa, .forum-topic-icon .fa {
+  width: 14px !important;
+}
+
 .navbar-fix {
 	z-index: 10000;
 }
