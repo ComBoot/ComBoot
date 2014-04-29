@@ -18,6 +18,10 @@ ul.profile-links li {
   margin: 0 6px 3px 0;
 }
 
+th.forum-name, td.forum-name {
+  width: 50%;
+}
+
 .navbar-fix {
 	z-index: 10000;
 }

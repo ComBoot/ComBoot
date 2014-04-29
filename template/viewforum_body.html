@@ -138,8 +138,12 @@
 							<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
 							<!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
 						</td>
-						<td class="posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><center><span class="badge">{topicrow.REPLIES}</span></center></td>
-						<td class="views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><center><span class="badge">{topicrow.VIEWS}</span></center></td>
+						<td class="posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
+							<div class="text-center"><span class="badge">{topicrow.REPLIES}</span></div>
+						</td>
+						<td class="views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
+							<div class="text-center"><span class="badge">{topicrow.VIEWS}</span></div>
+						</td>
 						<td class="lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
 							<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{topicrow.LAST_POST_TIME}</span>
 						</td>
