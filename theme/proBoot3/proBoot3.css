@@ -7,6 +7,17 @@ body {
 	margin-top: 20px;
 }
 
+ul.profile-links {
+  list-style: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ul.profile-links li {
+  float: left;
+  margin: 0 6px 3px 0;
+}
+
 .navbar-fix {
 	z-index: 10000;
 }

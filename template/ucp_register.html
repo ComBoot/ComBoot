@@ -99,15 +99,19 @@
 							</div>
 						</div>
 						<!-- IF .profile_fields -->
-							<dl><dd><strong>{L_ITEMS_REQUIRED}</strong></dd></dl>
+							<div class="form-group">
+								<div class="col-md-12">
+									<div class="alert alert-warning text-center"><strong>{L_ITEMS_REQUIRED}</strong></div>
+								</div>
+							</div>
 							<!-- BEGIN profile_fields -->
 								<div class="form-group">
+									<!-- IF profile_fields.ERROR --><div class="col-md-12"><div class="alert alert-warning">{profile_fields.ERROR}</div></div><!-- ENDIF -->
 									<label<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF --> class="control-label col-md-3">{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
 									<div class="col-md-9">
 										{profile_fields.FIELD}
+										<!-- IF profile_fields.LANG_EXPLAIN --><span class="help-block">{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
 									</div>
-									<!-- IF profile_fields.LANG_EXPLAIN --><span class="help-block">{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
-									<!-- IF profile_fields.ERROR --><span class="help-block">{profile_fields.ERROR}</span><!-- ENDIF -->
 								</div>
 							<!-- END profile_fields -->
 						<!-- ENDIF -->

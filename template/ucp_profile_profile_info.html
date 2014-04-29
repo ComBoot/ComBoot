@@ -71,18 +71,21 @@
 								<label for="bday_day">{L_DAY}: <select name="bday_day" id="bday_day" style="width: 4em;">{S_BIRTHDAY_DAY_OPTIONS}</select></label> 
 								<label for="bday_month">{L_MONTH}: <select name="bday_month" id="bday_month" style="width: 4em;">{S_BIRTHDAY_MONTH_OPTIONS}</select></label> 
 								<label for="bday_year">{L_YEAR}: <select name="bday_year" id="bday_year" style="width: 6em;">{S_BIRTHDAY_YEAR_OPTIONS}</select></label>
+								<span class="help-block">{L_BIRTHDAY_EXPLAIN}</span>
 							</div>
-							<div class="col-md-9 col-md-offset-3">{L_BIRTHDAY_EXPLAIN}</div>
 						</div>
 					<!-- ENDIF -->
 					<!-- BEGIN profile_fields -->
-						<dl>
-							<dt><label class="control-label col-md-3"<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
-								<!-- IF profile_fields.LANG_EXPLAIN --><br /><span>{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
-							
-							<!-- IF profile_fields.ERROR --><dd class="error">{profile_fields.ERROR}<!-- ENDIF -->
-							{profile_fields.FIELD}
+						<div class="form-group">
+							<!-- IF profile_fields.ERROR --><div class="col-md-12"><div class="alert alert-warning">{profile_fields.ERROR}</div></div><!-- ENDIF -->
+							<label class="control-label col-md-3"<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
+							<div class="col-md-9">
+								{profile_fields.FIELD}
+								<!-- IF profile_fields.LANG_EXPLAIN --><span class="help-block">{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
+							</div>
+						</div>
 					<!-- END profile_fields -->
+
 				</div>
 			</fieldset>
 			<fieldset class="submit-buttons">

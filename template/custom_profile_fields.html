@@ -5,23 +5,23 @@
 <!-- END dropdown -->
 
 <!-- BEGIN text -->
-<textarea name="{text.FIELD_IDENT}" id="{text.FIELD_IDENT}" rows="{text.FIELD_ROWS}" cols="{text.FIELD_COLS}" class="inputbox autowidth">{text.FIELD_VALUE}</textarea>
+<textarea name="{text.FIELD_IDENT}" id="{text.FIELD_IDENT}" rows="{text.FIELD_ROWS}" cols="{text.FIELD_COLS}" class="form-control">{text.FIELD_VALUE}</textarea>
 <!-- END text -->
 
 <!-- BEGIN string -->
-<input type="text" class="inputbox autowidth" name="{string.FIELD_IDENT}" id="{string.FIELD_IDENT}" size="{string.FIELD_LENGTH}" maxlength="{string.FIELD_MAXLEN}" value="{string.FIELD_VALUE}" />
+<input type="text" class="form-control" name="{string.FIELD_IDENT}" id="{string.FIELD_IDENT}" size="{string.FIELD_LENGTH}" maxlength="{string.FIELD_MAXLEN}" value="{string.FIELD_VALUE}" />
 <!-- END string -->
 
 <!-- BEGIN bool -->
 <!-- IF bool.FIELD_LENGTH eq 1 -->
-	<!-- BEGIN options --><label for="{bool.FIELD_IDENT}_{bool.options.OPTION_ID}"><input type="radio" class="radio" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}_{bool.options.OPTION_ID}" value="{bool.options.OPTION_ID}"{bool.options.CHECKED} /> {bool.options.VALUE}</label> <!-- END options -->
+	<!-- BEGIN options --><div class="radio-inline"><label for="{bool.FIELD_IDENT}_{bool.options.OPTION_ID}"><input type="radio" class="radio" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}_{bool.options.OPTION_ID}" value="{bool.options.OPTION_ID}"{bool.options.CHECKED} /> {bool.options.VALUE}</label></div><!-- END options -->
 <!-- ELSE -->
-	<input type="checkbox" class="radio" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}"<!-- IF bool.FIELD_VALUE --> checked="checked"<!-- ENDIF --> />
+	<div class="checkbox"><input type="checkbox" class="radio" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}"<!-- IF bool.FIELD_VALUE --> checked="checked"<!-- ENDIF --> /></div>
 <!-- ENDIF -->
 <!-- END bool -->
 
 <!-- BEGIN int -->
-<input type="text" class="inputbox autowidth" name="{int.FIELD_IDENT}" id="{int.FIELD_IDENT}" size="{int.FIELD_LENGTH}" value="{int.FIELD_VALUE}" />
+<input type="text" class="form-control" name="{int.FIELD_IDENT}" id="{int.FIELD_IDENT}" size="{int.FIELD_LENGTH}" value="{int.FIELD_VALUE}" />
 <!-- END int -->
 
 <!-- BEGIN date -->
