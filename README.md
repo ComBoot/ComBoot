@@ -63,6 +63,7 @@ Status
 
 > To do
 - Delete unnecessary files
+- Fix topic review
 - Mobile device optimisation
 - Update breadchrumbs to be shown on every site
 - much more!
