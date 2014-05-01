@@ -127,16 +127,18 @@
 				<!-- IF not postrow.S_IGNORE_POST -->
 					<div class="col-md-3 post-info">
 						<dl id="profile{postrow.POST_ID}">
-							<dd class="avatar text-center">
+							<dt class="avatar text-center">
 								<!-- IF postrow.POSTER_AVATAR -->
 									<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF --><br />
 								<!-- ENDIF -->
-							</dd>
-							<dt class="text-center">
-								<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong> <!-- ELSE -->{postrow.POST_AUTHOR_FULL}<!-- ENDIF -->
 							</dt>
+							<dd class="text-center">
+								<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong> <!-- ELSE -->{postrow.POST_AUTHOR_FULL}<!-- ENDIF -->
+							</dd>
 							<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd class="text-center"><span class="badge">{postrow.RANK_TITLE}</span><!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</dd><!-- ENDIF -->
-							<hr/>
+							<dd>
+								<hr/>
+							</dd>
 							<!-- IF postrow.POSTER_POSTS != '' --><dd><strong>{L_POSTS}:</strong> {postrow.POSTER_POSTS}</dd><!-- ENDIF -->
 							<!-- IF postrow.POSTER_JOINED --><dd><strong>{L_JOINED}:</strong> {postrow.POSTER_JOINED}</dd><!-- ENDIF -->
 							<!-- IF postrow.POSTER_FROM --><dd><strong>{L_LOCATION}:</strong> {postrow.POSTER_FROM}</dd><!-- ENDIF -->
