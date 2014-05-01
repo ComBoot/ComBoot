@@ -1,10 +1,11 @@
 0.9 (01.05.2014)
+=
 
-NEW:
+> NEW:
 - logo responsive
 - New topic poll layout
 
-FIX:
+> FIX:
 - MCP fix
 - Search page fix
 - UCP fix 2
@@ -13,10 +14,11 @@ FIX:
 
 
 0.8 (28.04.2014)
+=
 
-NEW:
+> NEW:
 - New user profile
 
-FIX:
+> FIX:
 - Huge UCP fix
 - HTML5 fix
