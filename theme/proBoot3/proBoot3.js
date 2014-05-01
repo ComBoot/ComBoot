@@ -190,3 +190,7 @@ $(document).ready(function() {
         format: 'hex'
     });
 });
+
+$(document).ready(function() {
+    $('#site-logo img').attr('class','img-responsive center-block');
+});
