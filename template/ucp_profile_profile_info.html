@@ -11,63 +11,63 @@
 				<div class="form-horizontal">
 					<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
 					<div class="form-group">
-						<label class="control-label col-md-3" for="icq">{L_UCP_ICQ}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="icq">{L_UCP_ICQ}:</label>
+						<div class="col-md-8">
 							<input type="text" name="icq" id="icq" maxlength="15" value="{ICQ}" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="aim">{L_UCP_AIM}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="aim">{L_UCP_AIM}:</label>
+						<div class="col-md-8">
 							<input type="text" name="aim" id="aim" maxlength="255" value="{AIM}" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="msn">{L_UCP_MSNM}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="msn">{L_UCP_MSNM}:</label>
+						<div class="col-md-8">
 							<input type="text" name="msn" id="msn" maxlength="255" value="{MSN}" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="yim">{L_UCP_YIM}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="yim">{L_UCP_YIM}:</label>
+						<div class="col-md-8">
 							<input type="text" name="yim" id="yim" maxlength="255" value="{YIM}" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="jabber">{L_UCP_JABBER}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="jabber">{L_UCP_JABBER}:</label>
+						<div class="col-md-8">
 							<input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="website">{L_WEBSITE}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="website">{L_WEBSITE}:</label>
+						<div class="col-md-8">
 							<input type="text" name="website" id="website" maxlength="255" value="{WEBSITE}" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="location">{L_LOCATION}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="location">{L_LOCATION}:</label>
+						<div class="col-md-8">
 							<input type="text" name="location" id="location" maxlength="255" value="{LOCATION}" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="occupation">{L_OCCUPATION}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="occupation">{L_OCCUPATION}:</label>
+						<div class="col-md-8">
 							<textarea name="occupation" id="occupation" class="form-control" rows="3" cols="30">{OCCUPATION}</textarea>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="interests">{L_INTERESTS}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="interests">{L_INTERESTS}:</label>
+						<div class="col-md-8">
 							<textarea name="interests" id="interests" class="form-control" rows="3" cols="30">{INTERESTS}</textarea>
 						</div>
 					</div>
 					<!-- IF S_BIRTHDAYS_ENABLED -->
 						<div class="form-group">
-							<label class="control-label col-md-3" for="bday_day">{L_BIRTHDAY}:</label>
-							<div class="col-md-9">
+							<label class="control-label col-md-4" for="bday_day">{L_BIRTHDAY}:</label>
+							<div class="col-md-8">
 								<label for="bday_day">{L_DAY}: <select name="bday_day" id="bday_day" style="width: 4em;">{S_BIRTHDAY_DAY_OPTIONS}</select></label> 
 								<label for="bday_month">{L_MONTH}: <select name="bday_month" id="bday_month" style="width: 4em;">{S_BIRTHDAY_MONTH_OPTIONS}</select></label> 
 								<label for="bday_year">{L_YEAR}: <select name="bday_year" id="bday_year" style="width: 6em;">{S_BIRTHDAY_YEAR_OPTIONS}</select></label>
@@ -78,8 +78,8 @@
 					<!-- BEGIN profile_fields -->
 						<div class="form-group">
 							<!-- IF profile_fields.ERROR --><div class="col-md-12"><div class="alert alert-warning">{profile_fields.ERROR}</div></div><!-- ENDIF -->
-							<label class="control-label col-md-3"<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
-							<div class="col-md-9">
+							<label class="control-label col-md-4"<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
+							<div class="col-md-8">
 								{profile_fields.FIELD}
 								<!-- IF profile_fields.LANG_EXPLAIN --><span class="help-block">{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
 							</div>
@@ -89,8 +89,9 @@
 				</div>
 			</fieldset>
 			<fieldset class="submit-buttons">
-				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
-				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+				{S_HIDDEN_FIELDS}
+				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
+				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-success" />
 				{S_FORM_TOKEN}
 			</fieldset>
 		</div>

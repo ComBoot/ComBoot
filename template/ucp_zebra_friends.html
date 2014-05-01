@@ -11,8 +11,8 @@
 				<div class="form-horizontal">
 					<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
 					<div class="form-group">
-						<label class="control-label col-md-3" <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FRIENDS}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FRIENDS}:</label>
+						<div class="col-md-8">
 							<!-- IF S_USERNAME_OPTIONS -->
 								<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
 							<!-- ELSE -->
@@ -22,8 +22,8 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="add">{L_ADD_FRIENDS}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="add">{L_ADD_FRIENDS}:</label>
+						<div class="col-md-8">
 							<textarea name="add" id="add" rows="3" cols="30" class="form-control">{USERNAMES}</textarea>
 							<div class="spacer"></div>
 							<a class="btn btn-default btn-sm btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
@@ -33,8 +33,9 @@
 				</div>
 			</fieldset>
 			<fieldset class="submit-buttons">
-				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
-				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+				{S_HIDDEN_FIELDS}
+				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
+				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-success" />
 				{S_FORM_TOKEN}
 			</fieldset>
 		</div>

@@ -13,22 +13,22 @@
 				<div class="form-horizontal">
 					<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
 					<div class="form-group">
-						<label class="control-label col-md-3" <!-- IF S_CHANGE_USERNAME -->for="username"<!-- ENDIF -->>{L_USERNAME}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" <!-- IF S_CHANGE_USERNAME -->for="username"<!-- ENDIF -->>{L_USERNAME}:</label>
+						<div class="col-md-8">
 							<!-- IF S_CHANGE_USERNAME --><input type="text" name="username" id="username" value="{USERNAME}" class="form-control" title="{L_USERNAME}" /><!-- ELSE --><div class="form-control-static"><strong>{USERNAME}</strong></div><!-- ENDIF -->
 							<span class="help-block">{L_USERNAME_EXPLAIN}</span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" for="email">{L_EMAIL_ADDRESS}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="email">{L_EMAIL_ADDRESS}:</label>
+						<div class="col-md-8">
 							<!-- IF S_CHANGE_EMAIL --><input type="text" name="email" id="email" maxlength="100" value="{EMAIL}" class="form-control" title="{L_EMAIL_ADDRESS}" /><!-- ELSE --><strong>{EMAIL}</strong><!-- ENDIF -->
 						</div>
 					</div>
 					<!-- IF S_CHANGE_EMAIL -->
 						<div class="form-group">
-							<label class="control-label col-md-3" for="email_confirm">{L_CONFIRM_EMAIL}:</label>
-							<div class="col-md-9">
+							<label class="control-label col-md-4" for="email_confirm">{L_CONFIRM_EMAIL}:</label>
+							<div class="col-md-8">
 								<input type="text" name="email_confirm" id="email_confirm" maxlength="100" value="{CONFIRM_EMAIL}" class="form-control" title="{L_CONFIRM_EMAIL}" />
 								<span class="help-block">{L_CONFIRM_EMAIL_EXPLAIN}</span>
 							</div>
@@ -36,23 +36,23 @@
 					<!-- ENDIF -->
 					<!-- IF S_CHANGE_PASSWORD -->
 						<div class="form-group">
-							<label class="control-label col-md-3" for="new_password">{L_NEW_PASSWORD}:</label>
-							<div class="col-md-9">
+							<label class="control-label col-md-4" for="new_password">{L_NEW_PASSWORD}:</label>
+							<div class="col-md-8">
 								<input type="password" name="new_password" id="new_password" maxlength="255" value="{NEW_PASSWORD}" class="form-control" title="{L_CHANGE_PASSWORD}" />
 								<span class="help-block">{L_CHANGE_PASSWORD_EXPLAIN}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-md-3" for="password_confirm">{L_CONFIRM_PASSWORD}:</label>
-							<div class="col-md-9">
+							<label class="control-label col-md-4" for="password_confirm">{L_CONFIRM_PASSWORD}:</label>
+							<div class="col-md-8">
 								<input type="password" name="password_confirm" id="password_confirm" maxlength="255" value="{PASSWORD_CONFIRM}" class="form-control" title="{L_CONFIRM_PASSWORD}" />
 								<span class="help-block">{L_CONFIRM_PASSWORD_EXPLAIN}</span>
 							</div>
 						</div>
 					<!-- ENDIF -->
 					<div class="form-group">
-						<label class="control-label col-md-3" for="cur_password">{L_CURRENT_PASSWORD}:</label>
-						<div class="col-md-9">
+						<label class="control-label col-md-4" for="cur_password">{L_CURRENT_PASSWORD}:</label>
+						<div class="col-md-8">
 							<input type="password" name="cur_password" id="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="form-control" title="{L_CURRENT_PASSWORD}" />
 							<span class="help-block"><!-- IF S_CHANGE_PASSWORD -->{L_CURRENT_CHANGE_PASSWORD_EXPLAIN}<!-- ELSE -->{L_CURRENT_PASSWORD_EXPLAIN}<!-- ENDIF --></span>
 						</div>
@@ -60,8 +60,9 @@
 			</fieldset>
 		</div>
 		<fieldset class="submit-buttons">
-			{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
-			<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+			{S_HIDDEN_FIELDS}
+			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
+			<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-success" />
 			{S_FORM_TOKEN}
 		</fieldset>
 	</div>

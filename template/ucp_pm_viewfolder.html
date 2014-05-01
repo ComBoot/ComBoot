@@ -13,14 +13,20 @@
 			<div class="panel-body">
 				<h3>{L_OPTIONS}</h3>
 				<fieldset>
-					<dl>
-						<dt><label for="delimiter">{L_DELIMITER}:</label></dt>
-						<dd><input class="inputbox" type="text" id="delimiter" name="delimiter" value="," /></dd>
-					</dl>
-					<dl>
-						<dt><label for="enclosure">{L_ENCLOSURE}:</label></dt>
-						<dd><input class="inputbox" type="text" id="enclosure" name="enclosure" value="&#034;" /></dd>
-					</dl>
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label class="control-label col-md-4" for="delimiter">{L_DELIMITER}:</label>
+							<div class="col-md-8">
+								<input class="form-control" type="text" id="delimiter" name="delimiter" value="," />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-4" for="enclosure">{L_ENCLOSURE}:</label></dt>
+							<div class="col-md-8">
+								<input class="form-control" type="text" id="enclosure" name="enclosure" value="&#034;" />
+							</div>
+						</div>
+					</div>
 				</fieldset>
 				<fieldset class="submit-buttons">
 					<input type="hidden" name="export_option" value="CSV" />
