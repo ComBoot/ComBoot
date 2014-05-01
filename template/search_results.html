@@ -8,37 +8,35 @@
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
 	<form method="post" action="{S_SEARCH_ACTION}">
 		<div class="row">
-			<div class="col-md-6">
+			<!-- IF SEARCH_MATCHES -->
+				<div class="col-md-3">
+					<!-- IF SEARCH_TOPIC -->
+						<a class="btn btn-warning btn-labeled" href="{U_SEARCH_TOPIC}"><span class="btn-label"><i class="fa fa-arrow-left"></i></span>{L_RETURN_TO}: {SEARCH_TOPIC}</a>
+					<!-- ELSE -->
+						<a class="btn btn-warning btn-labeled" href="{U_SEARCH}" title="{L_SEARCH_ADV}"><span class="btn-label"><i class="fa fa-arrow-left"></i></span>{L_RETURN_TO_SEARCH_ADV}</a>
+					<!-- ENDIF -->
+				</div>
+			<!-- ENDIF -->
+			<!-- IF SEARCH_MATCHES --><div class="col-md-6 text-center"><!-- ELSE --><div class="col-md-12 text-center"><!-- ENDIF -->
 				<div class="btn-group">
-					<span class="btn btn-default disabled">{SEARCH_MATCHES}</span>
+					<span class="btn btn-default btn-sm disabled">{SEARCH_MATCHES}</span>
 					<!-- IF PAGINATION -->
-						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default disabled">{PAGE_NUMBER}</span></a><span class="btn btn-default disabled">{PAGINATION}</span>
+						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm">{PAGE_NUMBER}</span></a><span class="btn btn-default btn-sm disabled">{PAGINATION}</span>
 					<!-- ELSE --> 
-						<span class="btn btn-default disabled">{PAGE_NUMBER}</span>
+						<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
 					<!-- ENDIF -->
 				</div>
 			</div>
 			<!-- IF SEARCH_MATCHES -->
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-md-6">
-							<!-- IF SEARCH_IN_RESULTS -->
-								<div class="input-group">
-									<input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" placeholder="{L_SEARCH_IN_RESULTS}"/>
-									<span class="input-group-btn">
-										<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}" />
-									</span>
-								</div>
-							<!-- ENDIF -->
+				<div class="col-md-3">
+					<!-- IF SEARCH_IN_RESULTS -->
+						<div class="input-group">
+							<input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" placeholder="{L_SEARCH_IN_RESULTS}"/>
+							<span class="input-group-btn">
+								<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}" />
+							</span>
 						</div>
-						<div class="col-md-6">
-							<!-- IF SEARCH_TOPIC -->
-								<a class="btn btn-default" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
-							<!-- ELSE -->
-								<a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a>
-							<!-- ENDIF -->
-						</div>
-					</div>
+					<!-- ENDIF -->
 				</div>
 			<!-- ENDIF -->
 		</div>
@@ -49,26 +47,46 @@
 	<!-- IF .searchresults -->
 		<table class="table table-bordered table-striped">
 			<thead class="topiclist">
-				
-					<tr class="icon">
-						<th>{L_TOPICS}</th>
-						<th class="posts">{L_REPLIES}</th>
-						<th class="views">{L_VIEWS}</th>
-						<th class="lastpost"><span>{L_LAST_POST}</span></th>
-					</tr>
-				
+				<tr class="icon">
+					<th>{L_TOPICS}</th>
+					<th class="posts">{L_REPLIES}</th>
+					<th class="views">{L_VIEWS}</th>
+					<th class="lastpost"><span>{L_LAST_POST}</span></th>
+				</tr>			
 			</thead>
 			<tbody class="topiclist topics">
 				<!-- BEGIN searchresults -->				
 					<tr>
-						<td <!-- IF searchresults.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
-						<i class="pcon {searchresults.TOPIC_IMG_STYLE}"></i>
-							<!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
-							<a href="{searchresults.U_VIEW_TOPIC}" class="topictitle">{searchresults.TOPIC_TITLE}</a> {searchresults.ATTACH_ICON_IMG}
-							<!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
-							<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF --><br />
-							<!-- IF searchresults.PAGINATION --><strong class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></strong><!-- ENDIF -->
-							{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL} &raquo; {searchresults.FIRST_POST_TIME} &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a>
+						<td>
+							<div class="pull-left forum-topic-icon">
+								<span><a href="{searchresults.U_VIEW_TOPIC}" class="btn <!-- IF searchresults.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> btn-lg tooltip-link" title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
+									<i class="fa fa-file-text-o"></i>
+								</a></span>
+							</div>
+							<div class="pull-right">
+								<div class="btn-group pagination-line">
+									<!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED -->
+										<a href="{searchresults.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
+									<!-- ENDIF -->
+									<!-- IF searchresults.S_TOPIC_REPORTED -->
+										<a href="{searchresults.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
+									<!-- ENDIF -->
+									<!-- IF searchresults.ATTACH_ICON_IMG -->
+										<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-paperclip"></i></a>
+									<!-- ENDIF -->
+									<!-- IF searchresults.PAGINATION -->
+										<div class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></div>
+									<!-- ENDIF -->
+									<!-- IF searchresults.S_UNREAD_TOPIC -->
+										<a class="btn btn-xs btn-info" href="{searchresults.U_NEWEST_POST}"><i class="fa fa-angle-right"></i></a>
+									<!-- ENDIF -->
+									<!-- IF not S_IS_BOT -->
+										<a class="btn btn-default btn-xs tooltip-link" href="{searchresults.U_LAST_POST}"  title="{L_LAST_POST}"><i class="fa fa-angle-double-right"></i></a>
+									<!-- ENDIF -->		
+								</div>
+							</div>
+							<a href="{searchresults.U_VIEW_TOPIC}" class="topictitle"><strong>{searchresults.TOPIC_TITLE}</strong></a><br/>
+							<small>{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL} &raquo; {searchresults.FIRST_POST_TIME} &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></small>
 						</td>
 						<td class="posts">{searchresults.TOPIC_REPLIES}</td>
 						<td class="views">{searchresults.TOPIC_VIEWS}</td>
@@ -154,37 +172,35 @@
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
 	<form method="post" action="{S_SEARCH_ACTION}">
 		<div class="row">
-			<div class="col-md-6">
+			<!-- IF SEARCH_MATCHES -->
+				<div class="col-md-3">
+					<!-- IF SEARCH_TOPIC -->
+						<a class="btn btn-warning btn-labeled" href="{U_SEARCH_TOPIC}"><span class="btn-label"><i class="fa fa-arrow-left"></i></span>{L_RETURN_TO}: {SEARCH_TOPIC}</a>
+					<!-- ELSE -->
+						<a class="btn btn-warning btn-labeled" href="{U_SEARCH}" title="{L_SEARCH_ADV}"><span class="btn-label"><i class="fa fa-arrow-left"></i></span>{L_RETURN_TO_SEARCH_ADV}</a>
+					<!-- ENDIF -->
+				</div>
+			<!-- ENDIF -->
+			<!-- IF SEARCH_MATCHES --><div class="col-md-6 text-center"><!-- ELSE --><div class="col-md-12 text-center"><!-- ENDIF -->
 				<div class="btn-group">
-					<span class="btn btn-default disabled">{SEARCH_MATCHES}</span>
+					<span class="btn btn-default btn-sm disabled">{SEARCH_MATCHES}</span>
 					<!-- IF PAGINATION -->
-						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default disabled">{PAGE_NUMBER}</span></a><span class="btn btn-default disabled">{PAGINATION}</span>
+						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm">{PAGE_NUMBER}</span></a><span class="btn btn-default btn-sm disabled">{PAGINATION}</span>
 					<!-- ELSE --> 
-						<span class="btn btn-default disabled">{PAGE_NUMBER}</span>
+						<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
 					<!-- ENDIF -->
 				</div>
 			</div>
 			<!-- IF SEARCH_MATCHES -->
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-md-6">
-							<!-- IF SEARCH_IN_RESULTS -->
-								<div class="input-group">
-									<input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" placeholder="{L_SEARCH_IN_RESULTS}"/>
-									<span class="input-group-btn">
-										<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}" />
-									</span>
-								</div>
-							<!-- ENDIF -->
+				<div class="col-md-3">
+					<!-- IF SEARCH_IN_RESULTS -->
+						<div class="input-group">
+							<input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" placeholder="{L_SEARCH_IN_RESULTS}"/>
+							<span class="input-group-btn">
+								<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}" />
+							</span>
 						</div>
-						<div class="col-md-6">
-							<!-- IF SEARCH_TOPIC -->
-								<a class="btn btn-default" href="{U_SEARCH_TOPIC}">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
-							<!-- ELSE -->
-								<a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a>
-							<!-- ENDIF -->
-						</div>
-					</div>
+					<!-- ENDIF -->
 				</div>
 			<!-- ENDIF -->
 		</div>
