@@ -6,8 +6,8 @@
 	<div class="form-horizontal">
 		<!-- IF ERROR --><p class="alert alert-danger">{ERROR}</p><!-- ENDIF -->
 		<div class="form-group">
-			<label class="control-label col-md-3">{L_CURRENT_IMAGE}:</label>
-			<div class="col-md-9">
+			<label class="control-label col-md-4">{L_CURRENT_IMAGE}:</label>
+			<div class="col-md-8">
 				<!-- IF AVATAR -->{AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF -->
 				<div class="checkbox"><label for="delete"><input type="checkbox" name="delete" id="delete" /> {L_DELETE_AVATAR}</label></div>
 				<span class="help-block">{L_AVATAR_EXPLAIN}</span>
@@ -16,8 +16,8 @@
 
 		<!-- IF S_UPLOAD_AVATAR_FILE -->
 			<div class="form-group">
-				<label class="control-label col-md-3" for="uploadfile">{L_UPLOAD_AVATAR_FILE}:</label>
-				<div class="col-md-9">
+				<label class="control-label col-md-4" for="uploadfile">{L_UPLOAD_AVATAR_FILE}:</label>
+				<div class="col-md-8">
 					<input type="file" name="uploadfile" id="uploadfile" class="autowidth" />
 					<input type="hidden" name="MAX_FILE_SIZE" value="{AVATAR_SIZE}" />
 				</div>
@@ -26,9 +26,9 @@
 
 		<!-- IF S_UPLOAD_AVATAR_URL -->
 			<div class="form-group">
-				<label class="control-label col-md-3" for="uploadurl">{L_UPLOAD_AVATAR_URL}:</label>
-				<div class="col-md-9">
-					<input type="text" name="uploadurl" id="uploadurl" value="{AVATAR_URL}" class="inputbox" />
+				<label class="control-label col-md-4" for="uploadurl">{L_UPLOAD_AVATAR_URL}:</label>
+				<div class="col-md-8">
+					<input type="text" name="uploadurl" id="uploadurl" value="{AVATAR_URL}" class="form-control" />
 					<span class="help-block">{L_UPLOAD_AVATAR_URL_EXPLAIN}</span>
 				</div>
 			</div>
@@ -36,15 +36,15 @@
 
 		<!-- IF S_LINK_AVATAR -->
 			<div class="form-group">
-				<label class="control-label col-md-3" for="remotelink">{L_LINK_REMOTE_AVATAR}:</label>
-				<div class="col-md-9">
-					<input type="text" name="remotelink" id="remotelink" value="{AVATAR_REMOTE}" class="inputbox" />
+				<label class="control-label col-md-4" for="remotelink">{L_LINK_REMOTE_AVATAR}:</label>
+				<div class="col-md-8">
+					<input type="text" name="remotelink" id="remotelink" value="{AVATAR_REMOTE}" class="form-control" />
 					<span class="help-block">{L_LINK_REMOTE_AVATAR_EXPLAIN}</span>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-md-3" for="width">{L_LINK_REMOTE_SIZE}:</label>
-				<div class="col-md-9">
+				<label class="control-label col-md-4" for="width">{L_LINK_REMOTE_SIZE}:</label>
+				<div class="col-md-8">
 					<label for="width"><div class="input-prepend input-append"><span class="add-on">Width</span><input type="text" name="width" id="width" size="3" value="{AVATAR_WIDTH}" class="input-small autowidth" /><span class="add-on">{L_PIXEL}</span></label>
 					<label for="height"><div class="input-prepend input-append "><span class="add-on">Height</span><input type="text" name="height" id="height" size="3" value="{AVATAR_HEIGHT}" class="input-small autowidth" /><span class="add-on">{L_PIXEL}</span></label>
 					<span class="help-block">{L_LINK_REMOTE_SIZE_EXPLAIN}</span>
