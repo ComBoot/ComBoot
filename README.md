@@ -1,4 +1,4 @@
-proBoot3 0.8 (Based on Bootstrap 3)
+proBoot3 0.9 (Based on Bootstrap 3)
 =======
 <p align="center">
  New logo is in progress!
@@ -52,22 +52,22 @@ Status
 - Search forms
 - Complete UCP Panel
 - Redesign profil view
+- Changing MCP and search site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x
+- Fixing form for Bootstrap 3
+- Improving search pages
+- Changing memberlist view
 
 > In progress and included in next huge update
-- Changing MCP and search site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x (partly done)
 - New logo for theme 
 - New name for the theme
 
 > To do
-- Fixing form for Bootstrap 3
 - Delete unnecessary files
-- Improving search pages
-- Changing memberlist view
 - Mobile device optimisation
 - Update breadchrumbs to be shown on every site
 - much more!
 
-All changes: https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master
+All changes: https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master or https://github.com/TheZoker/proBoot3/blob/master/changelog.html
 
 Features
 =
