@@ -2,7 +2,7 @@ body {
 	padding-top: 0px !important;
 }
 
-#logo-fix {
+#site-logo {
 	margin-bottom: 20px; 
 	margin-top: 20px;
 }
@@ -336,7 +336,7 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
 /* User Profile
 ------------------------- */
 .user-details {padding: 0;}
-.user-details .user-image {position: relative;  z-index: 1; margin: auto; text-align: center; top: 45px; height: 90px; width: 90px}
+.user-details .user-image {position: relative;  z-index: 1; margin: auto; text-align: center; width: 90px !important; height: 90px !important; top: 45px !important;}
 .user-image img { clear: both; margin: auto; position: relative;border-radius: 50%;}
 
 .user-details .user-info-block {width: 100%; background: rgb(255, 255, 255); z-index: 0; padding-top: 35px; }
