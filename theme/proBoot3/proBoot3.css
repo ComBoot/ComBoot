@@ -39,6 +39,11 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
 	z-index: 10000;
 }
 
+#cp-main {
+  min-height: 300px;
+  padding-right: 0px;
+}
+
 .post-icon {
 	padding: 0px 10px 0px 0px;
 }
@@ -158,6 +163,11 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
 
 .post-footer {
 	min-height: 40px;
+}
+
+.signature-preview {
+  border-top:none;
+  margin-top: 0; 
 }
 
 .2top {
