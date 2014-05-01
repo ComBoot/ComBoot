@@ -65,6 +65,7 @@ Status
 - Delete unnecessary files
 - Fix topic review
 - Fix PM preview
+- Improve PM inbox view
 - Mobile device optimisation
 - Update breadchrumbs to be shown on every site
 - much more!
