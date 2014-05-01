@@ -16,12 +16,19 @@
 		<div class="panel-body">
 			<p>{L_EXPLAIN}</p>
 			<!-- IF .postrow -->
-				<ul class="linklist">
-					<li class="rightside pagination">
-						<!-- IF TOTAL --> {TOTAL}<!-- ENDIF -->
-						<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
-					</li>
-				</ul>
+				<div class="text-center">
+					<div class="btn-group">
+						<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-sm disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+						<!-- IF PAGE_NUMBER -->
+							<!-- IF PAGINATION -->
+								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
+								<span class="btn btn-default btn-sm">{PAGINATION}</span>
+							<!-- ELSE -->
+								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+							<!-- ENDIF -->
+						<!-- ENDIF -->
+					</div>
+				</div>
 				<ul class="topiclist">
 					<li class="header">
 						<dl>
@@ -63,24 +70,34 @@
 					<input type="submit" name="sort" value="{L_GO}" class="button2" />
 				</fieldset>
 				<hr />
-				<ul class="linklist">
-					<li class="rightside pagination">
-						<!-- IF TOTAL -->{TOTAL}<!-- ENDIF -->
-						<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
-					</li>
-				</ul>
+				<div class="text-center">
+					<div class="btn-group">
+						<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-sm disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+						<!-- IF PAGE_NUMBER -->
+							<!-- IF PAGINATION -->
+								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
+								<span class="btn btn-default btn-sm">{PAGINATION}</span>
+							<!-- ELSE -->
+								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+							<!-- ENDIF -->
+						<!-- ENDIF -->
+					</div>
+				</div>
 			<!-- ELSE -->
 				<p class="notopics"><strong><!-- IF S_TOPICS -->{L_NO_TOPICS_QUEUE}<!-- ELSE -->{L_UNAPPROVED_POSTS_ZERO_TOTAL}<!-- ENDIF --></strong></p>
 			<!-- ENDIF -->
 		</div>
+		<!-- IF .postrow -->
+			<fieldset class="display-actions">
+				<div class="btn-group">
+					<a href="#" class="btn btn-success" onclick="marklist('mcp', 'post_id_list', true); return false;">{L_MARK_ALL}</a>
+					<a href="#" class="btn btn-warning" onclick="marklist('mcp', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a>
+					<input class="btn btn-danger" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />
+					<input class="btn btn-success" type="submit" name="action[approve]" value="{L_APPROVE}" />
+				</div>
+			</fieldset>
+		<!-- ENDIF -->
 	</div>
-	<!-- IF .postrow -->
-		<fieldset class="display-actions">
-			<input class="button2" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
-			<input class="btn btn-default" type="submit" name="action[approve]" value="{L_APPROVE}" />
-			<div><a href="#" onclick="marklist('mcp', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
-		</fieldset>
-	<!-- ENDIF -->
 </form>
 
 <!-- INCLUDE mcp_footer.html -->
