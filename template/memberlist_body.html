@@ -130,9 +130,15 @@
 
 </form>
 
-<div class="text-center" style="margin-bottom: 15px;">
-	<span class="badge">{TOTAL_USERS}</span>  
-	<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> <span class="badge">{PAGINATION}</span><!-- ELSE --><span class="badge">{PAGE_NUMBER}</span><!-- ENDIF -->
+<div class="text-center">
+	<div class="btn-group">
+		<span class="btn btn-default btn-sm disabled">{TOTAL_USERS}</span>
+		<!-- IF PAGINATION -->
+			<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> <span class="badge">{PAGINATION}</span>
+		<!-- ELSE -->
+			<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+		<!-- ENDIF -->
+	</div>
 </div>
 
 <!-- IF S_IN_SEARCH_POPUP -->
