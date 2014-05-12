@@ -9,6 +9,7 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="SHORTCUT ICON" href="/favicon.ico" />
 <meta name="author" content="Florian Gareis" />
 {META}
 <title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
@@ -88,15 +89,13 @@
 
 <link href="{T_THEME_PATH}/proBoot3/proBoot3.css" rel="stylesheet" />
 <link href="{T_THEME_PATH}/proBoot3/font-awesome.min.css" rel="stylesheet" />
-<!--><link href="{T_THEME_PATH}/proBoot3/bootstrap.min.css" rel="stylesheet"/>-->
 <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/cerulean/bootstrap.min.css" rel="stylesheet">
 <link href="{T_THEME_PATH}/proBoot3/bootstrap-select.css" rel="stylesheet"/>
-<link href="{T_THEME_PATH}/proBoot3/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet"/>
+
 <script src="{T_THEME_PATH}/proBoot3/jquery.min.js" type="text/javascript"></script>
 <script src="{T_THEME_PATH}/proBoot3/bootstrap.min.js" type="text/javascript"></script>
 <script src="{T_THEME_PATH}/proBoot3/bootstrap-select.js" type="text/javascript"></script>
 <script src="{T_THEME_PATH}/proBoot3/proBoot3.js" type="text/javascript"></script>
-<script src="{T_THEME_PATH}/proBoot3/colorpicker/bootstrap-colorpicker.min.js" type="text/javascript"></script>
 
 <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
 	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
@@ -140,10 +139,10 @@
 				<li class="dropdown">
 					<button type="button" class="btn btn-primary btn-labeled navbar-btn dropdown-toggle" data-toggle="dropdown" ><span class="btn-label"><i class="glyphicon glyphicon-user"></i></span> <!-- IF not S_IS_BOT and S_USER_LOGGED_IN --> {S_USERNAME} <!-- ENDIF --><span class="caret"></span></button>
 					<ul class="dropdown-menu">
-						<!-- IF not S_USER_LOGGED_IN -->							
+						<!-- IF not S_USER_LOGGED_IN -->
 							<li>
 								<form action="{S_LOGIN_ACTION}" method="post" id="navloginform" name="loginform">
-									<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}"/>	
+									<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}"/>
 									<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}"/>
 									<!-- IF S_DISPLAY_FULL_LOGIN -->
 										<div class="checkbox">
@@ -153,7 +152,7 @@
 									<!-- ENDIF -->
 									{S_LOGIN_REDIRECT}
 									<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
-								</form>       
+								</form>
 							</li>
 							<!-- IF S_REGISTER_ENABLED -->
 								<li class="divider"></li>
@@ -165,7 +164,7 @@
 						<!-- ENDIF -->
 						<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
 							<!-- IF S_DISPLAY_PM -->
-								<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i> 
+								<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i>
 									<span class="label label-primary">
 										{PRIVATE_MESSAGE_INFO}
 										<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
@@ -187,13 +186,12 @@
 			</ul>
 		</div>
 	</nav>
-	<div class="jumbotron">
+
+	<div class="well">
 		<div class="container text-center">
-			<div id="site-logo"><a href="{U_INDEX}" title="{L_INDEX}">{SITE_LOGO_IMG}</a><!--<h1>{SITENAME}</h1>--></div>
-			<p>{SITE_DESCRIPTION}</p>
 			<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 		</div>
-	</div>	
+	</div>
 	<a id="start_here"></a>
 	<div class="container" id="content-wrapper">
 		<div class="row">
