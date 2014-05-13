@@ -8,6 +8,14 @@
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
 	<form method="post" action="{S_SEARCH_ACTION}">
 		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="btn-group">
+					<span class="btn btn-default btn-sm disabled">{SEARCH_MATCHES}</span>
+					<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm no-btn">{PAGE_NUMBER}</a><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<!-- IF SEARCH_MATCHES -->
 				<div class="col-md-3">
 					<!-- IF SEARCH_TOPIC -->
@@ -18,13 +26,10 @@
 				</div>
 			<!-- ENDIF -->
 			<!-- IF SEARCH_MATCHES --><div class="col-md-6 text-center"><!-- ELSE --><div class="col-md-12 text-center"><!-- ENDIF -->
-				<div class="btn-group">
-					<span class="btn btn-default btn-sm disabled">{SEARCH_MATCHES}</span>
-					<!-- IF PAGINATION -->
-						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm">{PAGE_NUMBER}</span></a><span class="btn btn-default btn-sm disabled">{PAGINATION}</span>
-					<!-- ELSE --> 
-						<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
-					<!-- ENDIF -->
+				<div class="btn-group topic-pagination">
+					<a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm<!-- IF not PREVIOUS_PAGE --> disabled<!-- ENDIF -->"><i class="fa fa-chevron-left"></i> {L_PREVIOUS}</a>
+					<!-- IF PAGINATION -->{PAGINATION}<!-- ENDIF -->
+					<a href="{NEXT_PAGE}" class="btn btn-default btn-sm<!-- IF not NEXT_PAGE --> disabled<!-- ENDIF -->">{L_NEXT} <i class="fa fa-chevron-right"></i></a>
 				</div>
 			</div>
 			<!-- IF SEARCH_MATCHES -->
@@ -75,7 +80,7 @@
 										<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-paperclip"></i></a>
 									<!-- ENDIF -->
 									<!-- IF searchresults.PAGINATION -->
-										<div class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></div>
+										{searchresults.PAGINATION}
 									<!-- ENDIF -->
 									<!-- IF searchresults.S_UNREAD_TOPIC -->
 										<a class="btn btn-xs btn-info" href="{searchresults.U_NEWEST_POST}"><i class="fa fa-angle-right"></i></a>
@@ -182,13 +187,10 @@
 				</div>
 			<!-- ENDIF -->
 			<!-- IF SEARCH_MATCHES --><div class="col-md-6 text-center"><!-- ELSE --><div class="col-md-12 text-center"><!-- ENDIF -->
-				<div class="btn-group">
-					<span class="btn btn-default btn-sm disabled">{SEARCH_MATCHES}</span>
-					<!-- IF PAGINATION -->
-						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="btn btn-default btn-sm">{PAGE_NUMBER}</span></a><span class="btn btn-default btn-sm disabled">{PAGINATION}</span>
-					<!-- ELSE --> 
-						<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
-					<!-- ENDIF -->
+				<div class="btn-group topic-pagination">
+					<a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm<!-- IF not PREVIOUS_PAGE --> disabled<!-- ENDIF -->"><i class="fa fa-chevron-left"></i> {L_PREVIOUS}</a>
+					<!-- IF PAGINATION -->{PAGINATION}<!-- ENDIF -->
+					<a href="{NEXT_PAGE}" class="btn btn-default btn-sm<!-- IF not NEXT_PAGE --> disabled<!-- ENDIF -->">{L_NEXT} <i class="fa fa-chevron-right"></i></a>
 				</div>
 			</div>
 			<!-- IF SEARCH_MATCHES -->
@@ -203,6 +205,14 @@
 					<!-- ENDIF -->
 				</div>
 			<!-- ENDIF -->
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="btn-group">
+					<span class="btn btn-default btn-sm disabled">{SEARCH_MATCHES}</span>
+					<!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm no-btn">{PAGE_NUMBER}</a><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF -->
+				</div>
+			</div>
 		</div>
 	</form>
 <!-- ENDIF -->
