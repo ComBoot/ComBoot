@@ -1,18 +1,24 @@
-Version 0.9 (01.05.2014)
-============================
+0.9 (01.05.2014)
+=
 
-	- New feature: Topic poll layout
-	- New feature: Logo responsive
-	- Fixed Bug: Huge MCP fix
-	- Fixed Bug: Search page fix
-	- Fixed Bug: UCP fix 2
-	- Fixed Bug: New user profile fix
-	- Fixed Bug: Pagination fix
+> NEW:
+- logo responsive
+- New topic poll layout
+
+> FIX:
+- MCP fix
+- Search page fix
+- UCP fix 2
+- New user profile fix
+- Pagination fix
 
 
-Version 0.8 (28.04.2014)
-============================
+0.8 (28.04.2014)
+=
 
-	- New feature: New user profile layout
-	- Fixed Bug: Huge UCP fix
-	- Fixed Bug: HTML5 fix
+> NEW:
+- New user profile
+
+> FIX:
+- Huge UCP fix
+- HTML5 fix
