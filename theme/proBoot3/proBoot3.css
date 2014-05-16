@@ -22,6 +22,18 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
   width: 50%;
 }
 
+.modal-dialog {
+  padding-top: 40px;
+}
+
+.back-to-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 60px;
+  right:30px;
+  display:none;
+}
+
 .vote-progress {
   padding-top: 10px;
 }
@@ -908,4 +920,31 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
 }
 .ladda-button[data-style=contract-overlay][data-loading] .ladda-spinner {
   opacity: 1
+}
+
+/* Mega Menu
+------------------------- */
+
+.mega .nav,
+.mega .collapse,
+.mega .dropup,
+.mega .dropdown {
+  position: static;
+}
+.mega .container {
+  position: relative;
+}
+.mega .dropdown-menu {
+  left: auto;
+}
+.mega .nav.navbar-right .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+.mega .mega-content {
+  padding: 20px 30px;
+}
+.mega .dropdown.mega-fw .dropdown-menu {
+  left: 0;
+  right: 0;
 }

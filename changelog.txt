@@ -3,6 +3,7 @@ Version 0.9 (01.05.2014)
 
 	- New feature: Topic poll layout
 	- New feature: Logo responsive
+	- New feature: Scroll2Top button
 	- Update: Font-Awesome 4.1
 	- Fixed Bug: Huge MCP fix
 	- Fixed Bug: Search page fix
