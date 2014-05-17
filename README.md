@@ -95,7 +95,7 @@ About
 
 **Base style:** proSilver
 
-**Style Version:** 0.8 BETA
+**Style Version:** 0.9 BETA
 
 **phpBB version:** phpBB 3.0.12
 
