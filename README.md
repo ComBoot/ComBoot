@@ -101,9 +101,9 @@ About
 
 **Bootstrap version:** 3.1.1
 
-**Demo:** http://demo.zoker.me/#proboot3
+**Demo:** http://zoker.me/go/proboot-demo
 
-**Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
+**Download:** http://zoker.me/go/proboot-download
 
 Credits
 =
