@@ -1,22 +1,30 @@
-	<form method="post" action="{U_QR_ACTION}">
-		<div class="row panel" id="qr_ns_editor_div">
-			<div class="well">
-					<h3 class="box-heading">{L_QUICKREPLY}</h3>
-					<fieldset class="fields1">
-						<dl style="clear: left;">
-							<dt><label for="subject">{L_SUBJECT}:</label></dt>
-							<dd><input type="text" name="subject" id="subject-ns" size="45" maxlength="64" tabindex="2" value="{SUBJECT}" class="form-control" /></dd>
-						</dl>
-					<div id="message-box-ns">
-						<textarea style="height: 9em;" name="message" rows="7" cols="76" tabindex="3" class="form-control"></textarea>
+<form method="post" action="{U_QR_ACTION}">
+	<div class="panel panel-default" id="qr_ns_editor_div">
+		<div class="panel-heading">
+    		<h3 class="panel-title">{L_QUICKREPLY}</h3>
+    	</div>
+    	<div class="panel-body">
+			<fieldset>
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-md-2" for="subject">{L_SUBJECT}:</label>
+						<div class="col-md-10">
+							<input type="text" name="subject" id="subject-ns" size="45" maxlength="64" tabindex="2" value="{SUBJECT}" class="form-control" />
+						</div>
 					</div>
-					</fieldset>
-					<fieldset class="submit-buttons">
-						{S_FORM_TOKEN}
-						{QR_HIDDEN_FIELDS}
-						<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-primary" />&nbsp;
-						<input type="submit" accesskey="f" tabindex="7" name="full_editor" value="{L_FULL_EDITOR}" class="btn btn-default" />&nbsp;
-					</fieldset>
-			</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<textarea style="height: 9em;" name="message" rows="7" cols="76" tabindex="3" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="submit-buttons">
+				{S_FORM_TOKEN}
+				{QR_HIDDEN_FIELDS}
+				<input type="submit" accesskey="f" tabindex="7" name="full_editor" value="{L_FULL_EDITOR}" class="btn btn-default" />
+				<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-success" />
+			</fieldset>
 		</div>
-	</form>
+	</div>
+</form>

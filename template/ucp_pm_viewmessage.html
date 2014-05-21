@@ -127,8 +127,8 @@
 <!-- IF S_VIEW_MESSAGE -->
 	<fieldset class="display-options">
 		<ul class="pager">
-			<!-- IF U_PREVIOUS_PM --><li class="previous"><a href="{U_PREVIOUS_PM}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_VIEW_PREVIOUS_PM}</a></li><!-- ENDIF -->
-			<!-- IF U_NEXT_PM --><li class="next"><a href="{U_NEXT_PM}" class="right-box {S_CONTENT_FLOW_END}">{L_VIEW_NEXT_PM}</a></li><!-- ENDIF -->
+			<!-- IF U_PREVIOUS_PM --><li class="previous"><a href="{U_PREVIOUS_PM}"><i class="fa fa-chevron-left"></i> {L_VIEW_PREVIOUS_PM}</a></li><!-- ENDIF -->
+			<!-- IF U_NEXT_PM --><li class="next"><a href="{U_NEXT_PM}">{L_VIEW_NEXT_PM} <i class="fa fa-chevron-right"></i></a></li><!-- ENDIF -->
 		</ul>
 		<!-- IF S_MARK_OPTIONS --><label for="mark_option"><select name="mark_option" id="mark_option">{S_MARK_OPTIONS}</select></label>&nbsp;<input class="btn btn-default" type="submit" name="submit_mark" value="{L_GO}" /><!-- ENDIF -->
 		<!-- IF not S_UNREAD and not S_SPECIAL_FOLDER --><label for="dest_folder"><!-- IF S_VIEW_MESSAGE -->{L_MOVE_TO_FOLDER}: <!-- ELSE -->{L_MOVE_MARKED_TO_FOLDER}<!-- ENDIF --> <select name="dest_folder" id="dest_folder">{S_TO_FOLDER_OPTIONS}</select></label> <input class="btn btn-default" type="submit" name="move_pm" value="{L_GO}" /><!-- ENDIF -->

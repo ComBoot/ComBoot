@@ -161,7 +161,7 @@
 										<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-paperclip"></i></a>
 									<!-- ENDIF -->
 									<!-- IF topicrow.PAGINATION -->
-										<div class="p-pagination pull-right"><span>{topicrow.PAGINATION}</span></div>
+										{topicrow.PAGINATION}
 									<!-- ENDIF -->
 									<!-- IF topicrow.S_UNREAD_TOPIC -->
 										<a class="btn btn-xs btn-info" href="{topicrow.U_NEWEST_POST}"><i class="fa fa-angle-right"></i></a>
@@ -222,7 +222,7 @@
         <!-- ENDIF -->
 		<!-- IF S_DISPLAY_SEARCHBOX -->
 			<div class="col-md-3">        
-                <form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right" style="margin:0;">
+                <form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-search pull-right">
 					<div class="input-group">
 						<input class="input-medium search form-control" type="text" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}"/>
 						<span class="input-group-btn">
@@ -253,32 +253,32 @@
 <!-- ENDIF -->
 
 <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-<div class="panel panel-info">
-	<div class="panel-heading">
-		<h3 class="panel-title">{L_LOGIN_LOGOUT}</h3>
-	</div>	
-	<div class="panel-body">
-		<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="input-group">
-						<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}" style="width: 117px;"/>	
-						<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}" style="width: 117px;"/>
-						<span class="input-group-btn" style="width: 0px;">
-							{S_LOGIN_REDIRECT}
-							<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
-						</span>	
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">{L_LOGIN_LOGOUT}</h3>
+		</div>	
+		<div class="panel-body">
+			<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="input-group">
+							<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}" style="width: 117px;"/>	
+							<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}" style="width: 117px;"/>
+							<span class="input-group-btn" style="width: 0px;">
+								{S_LOGIN_REDIRECT}
+								<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary" />
+							</span>	
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<a href="{U_REGISTER}" class="btn btn-primary btn-labeled "><span class="btn-label"><i class="glyphicon glyphicon glyphicon-user"></i></span>{L_REGISTER}</a>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
-					<div class="form-group">
-						<a href="{U_REGISTER}" class="btn btn-primary btn-labeled "><span class="btn-label"><i class="glyphicon glyphicon glyphicon-user"></i></span>{L_REGISTER}</a>
-					</div>
-				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
-</div>
 <!-- ENDIF -->
 
 <!-- INCLUDE jumpbox.html -->

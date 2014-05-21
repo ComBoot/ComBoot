@@ -95,15 +95,15 @@ About
 
 **Base style:** proSilver
 
-**Style Version:** 0.8 BETA
+**Style Version:** 0.9 BETA
 
 **phpBB version:** phpBB 3.0.12
 
 **Bootstrap version:** 3.1.1
 
-**Demo:** http://demo.zoker.me/#proboot3
+**Demo:** http://zoker.me/go/proboot-demo
 
-**Download:** [http://thezoker.github.io/proBoot](http://thezoker.github.io/proBoot3)
+**Download:** http://zoker.me/go/proboot-download
 
 Credits
 =
@@ -118,6 +118,11 @@ Credits
 * [Button with labels] (http://bootsnipp.com/snippets/featured/buttons-with-labels)
 * [Triangle Breadcrumbs Arrows] (http://bootsnipp.com/snippets/featured/triangle-breadcrumbs-arrows)
 * [Alert Messages like the docs] (http://bootsnipp.com/snippets/featured/alert-messages-like-the-docs)
+* [Collapsible Panel] (http://bootsnipp.com/snippets/featured/collapsible-panel)
+* [Link to top page] (http://bootsnipp.com/snippets/featured/link-to-top-page)
+* [WYSIWYG Editor] (http://www.wysibb.com/)
+* [Code Syntax Highlighter] (http://prismjs.com/)
+* [Lightbox] (http://www.jasonbutz.info/bootstrap-lightbox/)
 
 Screenshots
 =

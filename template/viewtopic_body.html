@@ -17,6 +17,15 @@
 <!-- ENDIF -->
 
 <div class="row">
+	<div class="col-md-12 text-center">
+		<div class="btn-group">
+			<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm disabled">{TOTAL_POSTS}</span>
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm no-btn">{PAGE_NUMBER}</a><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+		</div>
+	</div>
+</div>
+
+<div class="row">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 		<div class="col-md-3">
 			<!-- IF S_IS_LOCKED -->
@@ -29,11 +38,10 @@
 	
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 		<div class="col-md-6 text-center">
-			<div class="btn-group">
-				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i> {L_PREVIOUS}</a><!-- ENDIF -->
-				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm disabled">{TOTAL_POSTS}</span>
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
-				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-sm">{L_NEXT} <i class="fa fa-chevron-right"></i></a><!-- ENDIF -->
+			<div class="btn-group topic-pagination">
+				<a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm<!-- IF not PREVIOUS_PAGE --> disabled<!-- ENDIF -->"><i class="fa fa-chevron-left"></i> {L_PREVIOUS}</a>
+				<!-- IF PAGINATION -->{PAGINATION}<!-- ENDIF -->
+				<a href="{NEXT_PAGE}" class="btn btn-default btn-sm<!-- IF not NEXT_PAGE --> disabled<!-- ENDIF -->">{L_NEXT} <i class="fa fa-chevron-right"></i></a>
 			</div>
 		</div>
 	<!-- ENDIF -->
@@ -266,11 +274,10 @@
 		
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 		<div class="col-md-6 text-center">
-			<div class="btn-group">
-				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i> {L_PREVIOUS}</a><!-- ENDIF -->
-				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm disabled">{TOTAL_POSTS}</span>
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm">{PAGE_NUMBER}</a> <span class="btn btn-default btn-sm disabled">{PAGINATION}</span><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
-				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-sm">{L_NEXT} <i class="fa fa-chevron-right"></i></a><!-- ENDIF -->
+			<div class="btn-group topic-pagination">
+				<a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm<!-- IF not PREVIOUS_PAGE --> disabled<!-- ENDIF -->"><i class="fa fa-chevron-left"></i> {L_PREVIOUS}</a>
+				<!-- IF PAGINATION -->{PAGINATION}<!-- ENDIF -->
+				<a href="{NEXT_PAGE}" class="btn btn-default btn-sm<!-- IF not NEXT_PAGE --> disabled<!-- ENDIF -->">{L_NEXT} <i class="fa fa-chevron-right"></i></a>
 			</div>
 		</div>
 	<!-- ENDIF -->
@@ -288,6 +295,15 @@
 			</form>
 		</div>
 	<!-- ENDIF -->
+</div>
+
+<div class="row">
+	<div class="col-md-12 text-center">
+		<div class="btn-group">
+			<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-sm">{L_VIEW_UNREAD_POST}</a><!-- ENDIF --><span class="btn btn-default btn-sm disabled">{TOTAL_POSTS}</span>
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-sm no-btn">{PAGE_NUMBER}</a><!-- ELSE --> <span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+		</div>
+	</div>
 </div>
 
 <!-- INCLUDE jumpbox.html -->
