@@ -1,4 +1,4 @@
-proBoot3 Version 0.9
+proBoot3 (Version 0.9)
 =======
 <p align="center">The Professional phpBB Bootstrap 3 Theme</p>
 <p align="center"><img src="http://zoker.me/dev/themes/proBoot3/demo/styles/proBoot3/imageset/site_logo.png" alt="proBoot3 Logo" width="400px"/></p>
