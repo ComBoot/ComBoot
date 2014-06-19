@@ -1,9 +1,9 @@
 <p align="center"><img src="http://zoker.me/images/uploads/big/0d1bab2b61aef92008d75d99042ea254.png" alt="proBoot3 Logo" width="400px"/></p>
 
-<b>proBoot3 1.0 will be avaible very soon, there are only a few bugs left. I hope I can publish it within the next two weeks. There will also be a new support and product page.</b>
+:exclamation: <b>proBoot3 1.0 will be avaible very soon, there are only a few bugs left. I hope I can publish it within the next two weeks. There will also be a new support and product page.</b>
 For more information, see [status] (#status)
 
-Note!
+Note !
 =
 > - **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually!**
 - **This theme is also meant to work with core bootstrap, it therefor cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
@@ -86,7 +86,7 @@ Quick Start
 
 About
 =
-**Author:** [Florian Gareis] (http://www.florian-gareis.de)
+**Author:** [Florian Gareis] (http://www.florian-gareis.de) ® 2014
 
 **Base style:** proSilver
 
