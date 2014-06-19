@@ -1,6 +1,6 @@
 <p align="center"><img src="http://zoker.me/dev/themes/proBoot3/demo/styles/proBoot3/imageset/site_logo.png" alt="proBoot3 Logo" width="400px"/></p>
-=======
-#### proBoot3 - The Professional phpBB Bootstrap 3 Theme
+proBoot3 - The Professional phpBB Bootstrap 3 Theme
+---------
 
 <b>proBoot3 1.0 will be avaible very soon, there are only a few bugs left. I hope I can publish it within the next two weeks. There will also be a new support and product page.</b>
 For more information, see [status] (#status)
