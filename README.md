@@ -94,7 +94,7 @@ About
 
 **phpBB version:** phpBB 3.0.12
 
-**Bootstrap version:** 3.1.1
+**Bootstrap version:** 3.2.0
 
 **Demo:** http://zoker.me/go/proboot-demo
 
