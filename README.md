@@ -3,7 +3,6 @@
 ---
 :exclamation: <b>proBoot3 1.0 will be avaible very soon, there are only a few bugs left. I hope I can publish it within the next two weeks. There will also be a new support and product page.</b>
 For more information, see [status] (#status)
----
 
 Note !
 =
