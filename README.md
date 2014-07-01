@@ -66,7 +66,7 @@ Status
 - Update breadchrumbs to be shown on every site
 - much more!
 
-All changes: https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master or https://github.com/TheZoker/proBoot3/blob/master/changelog.txt
+All changes: https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master or http://zoker.me/go/proboot-changelog
 
 Features
 =
