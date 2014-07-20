@@ -1,4 +1,4 @@
-<p align="center"><a href="http://dev.zoker.me/themes/proBoot3" target="_blank"><img src="http://zoker.me/images/uploads/big/0d1bab2b61aef92008d75d99042ea254.png" alt="proBoot3 Logo" width="400px"/></a></p>
+<p align="center"><a href="http://zoker.me/go/proboot" target="_blank"><img src="http://zoker.me/images/uploads/big/0d1bab2b61aef92008d75d99042ea254.png" alt="proBoot3 Logo" width="400px"/></a></p>
 
 ---
 :exclamation: <b>proBoot3 1.0 will be available very soon, there are only a few bugs left. I hope I can publish it within the next two weeks. There will also be a new support and product page.</b>
