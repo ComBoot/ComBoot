@@ -9,20 +9,27 @@
 			<fieldset>
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<input class="form-control" placeholder="{L_USERNAME}" type="text" name="username" id="username" size="25" />
+						<div class="icon-addon">
+							<input class="form-control" placeholder="{L_USERNAME}" type="text" name="username" id="username" size="25" />
+							<label for="username" class="fa fa-user" rel="tooltip" title="username"></label>
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<input class="form-control" placeholder="{L_EMAIL_ADDRESS}" type="text" name="email" id="email" size="25" maxlength="100" />
+						<div class="icon-addon">
+							<input class="form-control" placeholder="{L_EMAIL_ADDRESS}" type="text" name="email" id="email" size="25" maxlength="100" />
+							<label for="email" class="fa fa-envelope" rel="tooltip" title="email"></label>
+						</div>
 						<span class="help-block">{L_EMAIL_REMIND}</span>
 					</div>
 				</div>
 				<div class="text-center">
 					{S_HIDDEN_FIELDS}
-					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" /></div>
+					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
 					<input type="submit" name="submit" id="submit" class="btn btn-success" value="{L_SUBMIT}" tabindex="2" />
 					{S_FORM_TOKEN}
+				</div>
 			</fieldset>
 		</div>
 	</div>

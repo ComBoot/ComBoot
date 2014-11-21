@@ -1,20 +1,9 @@
 /*  phpBB3 Style Sheet
     --------------------------------------------------------------
-	Style name:			proBoot3 by Zoker
+	Style name:			ComBoot Free
 	Based on style:		
 	Original author:	Tom Beddard ( http://www.subblue.com/ )
 	Modified by:		phpBB Group ( http://www.phpbb.com/ )
 	Customised by:		Florian Gareis ( http://www.florian-gareis.de/ )
     --------------------------------------------------------------
 */
-
-@import url("common.css");
-@import url("links.css");
-@import url("content.css");
-@import url("buttons.css");
-@import url("cp.css");
-@import url("forms.css");
-@import url("tweaks.css");
-@import url("colours.css");
-@import url("imageset.css");
-@import url("proBoot3.css");

@@ -1,36 +1,34 @@
 <!-- INCLUDE overall_header.html -->
 
-
-
 <form id="login_forum" method="post" action="{S_LOGIN_ACTION}">
-{S_FORM_TOKEN}
-<div class="row panel">
-	<div class="well">
-		<h3 class="box-heading">{L_LOGIN} {FORUM_NAME}</h3>
-	<p>{L_LOGIN_FORUM}</p>
-
-	<fieldset class="fields2">
-	<!-- IF LOGIN_ERROR -->
-		<dl>
-			<dt>&nbsp;</dt>
-			<dd class="error">{LOGIN_ERROR}</dd>
-		</dl>
-	<!-- ENDIF -->
-	<dl>
-		<dt><label for="password">{L_PASSWORD}:</label></dt>
-		<dd><input class="form-control narrow" type="password" name="password" id="password" size="25" tabindex="1" /></dd>
-	</dl>
-	<dl class="fields2">
-		<dt>&nbsp;</dt>
-		<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" id="login" class="btn btn-default" value="{L_LOGIN}" tabindex="2" /></dd>
-	</dl>
-	{S_LOGIN_REDIRECT}
-	</fieldset>
-
+	<div class="panel">
+		<div class="panel-heading">
+			<h3>{L_LOGIN} {FORUM_NAME}</h3>
+		</div>
+		<div class="panel-body">
+			<p>{L_LOGIN_FORUM}</p>
+			<fieldset>
+				<!-- IF LOGIN_ERROR -->
+					<dl>
+						<dt>&nbsp;</dt>
+						<dd class="error">{LOGIN_ERROR}</dd>
+					</dl>
+				<!-- ENDIF -->
+				<dl>
+					<dt><label for="password">{L_PASSWORD}:</label></dt>
+					<dd><input class="form-control narrow" type="password" name="password" id="password" size="25" tabindex="1" /></dd>
+				</dl>
+				<dl>
+					<dt>&nbsp;</dt>
+					<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" id="login" class="btn btn-default" value="{L_LOGIN}" tabindex="2" /></dd>
+				</dl>
+				{S_LOGIN_REDIRECT}
+			</fieldset>
+		</div>
 	</div>
-</div>
-
+	{S_FORM_TOKEN}
 </form>
 
 <!-- INCLUDE jumpbox.html -->
+
 <!-- INCLUDE overall_footer.html -->

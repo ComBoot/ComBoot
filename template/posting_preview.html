@@ -1,49 +1,42 @@
-<div class="row" id="preview">
-	<div class="well">
+<div id="preview">
+	<!-- IF S_HAS_POLL_OPTIONS -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{L_PREVIEW}: {POLL_QUESTION}</h3>
+			</div>
+			<div class="panel-body">
+				<p class="author"><!-- IF L_POLL_LENGTH -->{L_POLL_LENGTH}<br /><!-- ENDIF -->{L_MAX_VOTES}</p>
+				<fieldset class="polls">
+				<!-- BEGIN poll_option -->
+					<dl>
+						<dt><label for="vote_{poll_option.POLL_OPTION_ID}">{poll_option.POLL_OPTION_CAPTION}</label></dt>
+						<dd style="width: auto;"><!-- IF S_IS_MULTI_CHOICE --><input type="checkbox" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> /><!-- ELSE --><input type="radio" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> /><!-- ENDIF --></dd>
+					</dl>
+				<!-- END poll_option -->
+				</fieldset>
+			</div>
+		</div>
+	<!-- ENDIF -->
 
-<!-- IF S_HAS_POLL_OPTIONS -->
-	<div class="content">
-		<h2>{L_PREVIEW}: {POLL_QUESTION}</h2>
-		<p class="author"><!-- IF L_POLL_LENGTH -->{L_POLL_LENGTH}<br /><!-- ENDIF -->{L_MAX_VOTES}</p>
-
-		<fieldset class="polls">
-		<!-- BEGIN poll_option -->
-			<dl>
-				<dt><label for="vote_{poll_option.POLL_OPTION_ID}">{poll_option.POLL_OPTION_CAPTION}</label></dt>
-				<dd style="width: auto;"><!-- IF S_IS_MULTI_CHOICE --><input type="checkbox" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> /><!-- ELSE --><input type="radio" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> /><!-- ENDIF --></dd>
-			</dl>
-		<!-- END poll_option -->
-		</fieldset>
-	</div>
-
-	</div>
-</div>
-
-<div class="row">
-	<div class="well">
-
-<!-- ENDIF -->
-
-	
-		<h3 class="box-heading">{L_PREVIEW}</h3>
-
-		<div class="content">
-		<h3>{PREVIEW_SUBJECT}</h3>
-		<p>{PREVIEW_MESSAGE}</p></div>
-
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{L_PREVIEW}</h3>
+		</div>
+		<div class="panel-body">
+			<h3 class="no-margin">{PREVIEW_SUBJECT}</h3>
+			<p>{PREVIEW_MESSAGE}</p>
+		</div>
 		<!-- IF .attachment -->
-		<dl class="attachbox">
-			<dt>{L_ATTACHMENTS}</dt>
-			<!-- BEGIN attachment -->
-			<dd>{attachment.DISPLAY_ATTACHMENT}</dd>
-			<!-- END attachment -->
-		</dl>
+			<dl class="attachbox">
+				<dt>{L_ATTACHMENTS}</dt>
+				<!-- BEGIN attachment -->
+				<dd>{attachment.DISPLAY_ATTACHMENT}</dd>
+				<!-- END attachment -->
+			</dl>
 		<!-- ENDIF -->
 
 		<!-- IF PREVIEW_SIGNATURE --><div class="signature">{PREVIEW_SIGNATURE}</div><!-- ENDIF -->
 	</div>
-
-	
 </div>
 
 <hr class="dashed" />

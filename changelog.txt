@@ -1,20 +1,100 @@
+## ComBoot - The Professional phpBB Bootstrap Theme
+## by http://www.florian-gareis.de (http://zoker.me)
+
+Main: http://zoker.me/go/comboot
+Demo: http://zoker.me/go/comboot-demo
+Support: http://zoker.me/go/comboot-support
+Download: http://zoker.me/go/comboot-download
+
+
+Known Issues (in Version 1.0)
+============================
+
+	- Wrong table column size
+	- Breadcrumb are not bootstrap color dynamic
+	- Quote on post reply does not work with WYSIWYG editor
+
+
+Version 1.0 (21.11.2014)
+============================
+	
+** Free and Premium Edition **
+
+	- New Name: We switched from proBoot3 to ComBoot
+	- Ready for Bootstrap 3.3.1
+	- New: Redesigned logo
+	- New: Colorpicker for group color (UCP)
+	- New: Lightbox for post images
+	- New: Default avatar
+	- New: Simple html syntax highlighter for post code
+	- New: Scroll2Top button
+	- New: Topic Title Preview like Xenforo
+	- New: Quickreply collapsible
+	- Updated: Bootstrap-Select
+	- Updated: Syntax Highlighting
+	- Updated: jQuery
+	- Fixed: Post review layout
+	- Fixed: Moved all external js and css file requests outsite the header file
+	- Fixed: A ton of mobile optimization
+	- Fixed: Responsive tables
+	- Fixed: Outsourced some boxes in own files
+	- Fixed: Drafts on pm pages
+	- Fixed: A lot off mobile stuff
+	- Fixed: UCP layout part 3
+	- Fixed: MCP layout
+	- Fixed: Select box length
+	- Fixed: Navbar login form
+	- Fixed: Footer container removed
+	- Fixed: New post/topic tab issue
+	- Fixed: Board disabled warning
+	- Fixed: Post preview layout
+	- Fixed: Navigation buttons (on index, topic, UCP and MCP pages)
+	- Fixed: Some little other bugs
+	- Remove: Not necessary css files
+	
+** Premium Edition only **
+	
+	- New: WYSIWYG editor on reply and quickreply
+	- New: Config file to customize theme (edit the /template/config.html file)
+		- Mobile responsible (on/off)
+		- Boxed layout (on/off)
+		- Position of header navbar (above/below logo)
+		- Logo in header (on/off)
+		- Additional user navbar (on/off)
+		- Force additional user button (on/off)
+		- Fixed header navbar (on/off)
+		- Inverted header navbar (on/off)
+		- Fixed footer navbar (on/off)
+		- Inverted footer navbar (on/off)
+		- WYSIWYG editor on reply (on/off)
+		- WYSIWYG editor on quickreply (on/off)
+		- Profile information align on posts page (right/left)
+		- Show user online/offline badge (on/off)
+		- Rounded Avatars (on/off)
+		- Show login panel (on/off)
+		- Show jumpbox (on/off)
+		- Inverted footer navbar (on/off)
+		- Turn off phpBB copyright
+	- Fixed: Insert image in WYSIWYG
+
+
 Version 0.9 (01.05.2014)
 ============================
 
-	- New feature: Topic poll layout
-	- New feature: Logo responsive
-	- New feature: Scroll2Top button
+	- New: Topic poll layout
+	- New: Responsive logo
+	- New: Scroll2Top button on every page
 	- Update: Font-Awesome 4.1
-	- Fixed Bug: Huge MCP fix
-	- Fixed Bug: Search page fix
-	- Fixed Bug: UCP fix 2
-	- Fixed Bug: New user profile fix
-	- Fixed Bug: Pagination fix
+	- Fixed: Huge MCP layout fix
+	- Fixed: Search page fix
+	- Fixed: UCP layout part 2
+	- Fixed: New user profile fix
+	- Fixed: Pagination fix
 
 
 Version 0.8 (28.04.2014)
 ============================
 
-	- New feature: New user profile layout
-	- Fixed Bug: Huge UCP fix
-	- Fixed Bug: HTML5 fix
+	- New: New user profile layout
+	- Fixed: Huge UCP layout fix
+	- Fixed: HTML5 fix

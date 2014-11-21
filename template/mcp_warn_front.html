@@ -27,12 +27,14 @@
 						</div>
 					</fieldset>
 				</div>
+				<div class="panel-footer">
+					<fieldset class="submit-buttons">
+						<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" /> 
+						<input type="submit" name="submituser" value="{L_SUBMIT}" class="btn btn-success" />
+						{S_FORM_TOKEN}
+					</fieldset>
+				</div>
 			</div>
-			<fieldset class="submit-buttons">
-				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" /> 
-				<input type="submit" name="submituser" value="{L_SUBMIT}" class="btn btn-success" />
-				{S_FORM_TOKEN}
-			</fieldset>
 		</form>
 
 		<div class="panel panel-default">
@@ -41,27 +43,28 @@
 			</div>
 			<div class="panel-body">
 				<!-- IF .highest -->
-					<table class="table table-striped table-bordered" cellspacing="0">
-					<thead>
-						<tr>
-							<th class="name">{L_USERNAME}</th>
-							<th class="name">{L_WARNINGS}</th>
-							<th class="name">{L_LATEST_WARNING_TIME}</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-
-					<!-- BEGIN highest -->
-						<tr class="<!-- IF highest.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-							<td>{highest.USERNAME_FULL}</td>
-							<td>{highest.WARNINGS}</td>
-							<td>{highest.WARNING_TIME}</td>
-							<td><a href="{highest.U_NOTES}">{L_VIEW_NOTES}</a></td>
-						</tr>
-					<!-- END latest -->
-					</tbody>
-					</table>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th class="name">{L_USERNAME}</th>
+									<th class="name">{L_WARNINGS}</th>
+									<th class="name">{L_LATEST_WARNING_TIME}</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+							<!-- BEGIN highest -->
+								<tr>
+									<td>{highest.USERNAME_FULL}</td>
+									<td>{highest.WARNINGS}</td>
+									<td>{highest.WARNING_TIME}</td>
+									<td><a href="{highest.U_NOTES}">{L_VIEW_NOTES}</a></td>
+								</tr>
+							<!-- END latest -->
+							</tbody>
+						</table>
+					</div>
 				<!-- ELSE -->
 					<p><strong>{L_WARNINGS_ZERO_TOTAL}</strong></p>
 				<!-- ENDIF -->
@@ -74,26 +77,28 @@
 			</div>
 			<div class="panel-body">
 				<!-- IF .latest -->
-					<table class="table table-striped table-bordered" cellspacing="0">
-					<thead>
-						<tr>
-							<th class="name">{L_USERNAME}</th>
-							<th class="name">{L_TIME}</th>
-							<th class="name">{L_TOTAL_WARNINGS}</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-					<!-- BEGIN latest -->
-						<tr class="<!-- IF latest.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-							<td>{latest.USERNAME_FULL}</td>
-							<td>{latest.WARNING_TIME}</td>
-							<td>{latest.WARNINGS}</td>
-							<td><a href="{latest.U_NOTES}">{L_VIEW_NOTES}</a></td>
-						</tr>
-					<!-- END latest -->
-					</tbody>
-					</table>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th class="name">{L_USERNAME}</th>
+									<th class="name">{L_TIME}</th>
+									<th class="name">{L_TOTAL_WARNINGS}</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+							<!-- BEGIN latest -->
+								<tr class="<!-- IF latest.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+									<td>{latest.USERNAME_FULL}</td>
+									<td>{latest.WARNING_TIME}</td>
+									<td>{latest.WARNINGS}</td>
+									<td><a href="{latest.U_NOTES}">{L_VIEW_NOTES}</a></td>
+								</tr>
+							<!-- END latest -->
+							</tbody>
+						</table>
+					</div>
 				<!-- ELSE -->
 					<p><strong>{L_WARNINGS_ZERO_TOTAL}</strong></p>
 				<!-- ENDIF -->

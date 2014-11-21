@@ -52,40 +52,48 @@
 	<!-- ENDIF -->
 
 	<!-- IF .messagerow -->
-		<ul class="topiclist">
-			<li class="header">
-				<dl>
-					<dt>{L_MESSAGE}</dt>
-					<dd class="mark">{L_MARK}</dd>
-				</dl>
-			</li>
-		</ul>
-		<ul class="topiclist cplist pmlist">
-			<!-- BEGIN messagerow -->
-				<li class="row<!-- IF messagerow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF messagerow.PM_CLASS --> {messagerow.PM_CLASS}<!-- ENDIF -->">
-					<dl class="icon" style="background-image: url({messagerow.FOLDER_IMG_SRC}); background-repeat: no-repeat;">
-						<dt<!-- IF messagerow.PM_ICON_URL and S_PM_ICONS --> style="background-image: url({messagerow.PM_ICON_URL}); background-repeat: no-repeat;"<!-- ENDIF -->>
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>{L_MESSAGE}</th>
+						<th><span>{L_MARK}</span></th>
+					</tr>
+				</thead>
+				<tbody class="topiclist cplist pmlist">
+					<!-- BEGIN messagerow -->
+						<tr <!-- IF messagerow.PM_CLASS -->class="{messagerow.PM_CLASS}"<!-- ENDIF -->>
+							<td>
+								<div class="pull-left pm-topic-icon">
+									<a href="<!-- IF messagerow.S_PM_DELETED -->{messagerow.U_REMOVE_PM}<!-- ELSE -->{messagerow.U_VIEW_PM}<!-- ENDIF -->" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> btn-lg tooltip-link" title="{topicrow.PM_FOLDER_IMG_ALT}">
+										<i class="fa fa-file-text-o"></i>
+									</a>
+									<!-- IF messagerow.PM_ICON_URL and S_PM_ICONS -->
+										<img scr="{messagerow.PM_ICON_URL}" style="background-repeat: no-repeat;">
+									<!-- ENDIF -->
+								</div>
+								<!-- IF messagerow.S_PM_DELETED -->
+									<a href="{messagerow.U_REMOVE_PM}" class="topictitle">{L_DELETE_MESSAGE}</a><br />
+									<span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span>
+								<!-- ELSE -->
+									<a href="{messagerow.U_VIEW_PM}" class="topictitle">{messagerow.SUBJECT}</a>
+								<!-- ENDIF -->
+								<!-- IF messagerow.S_AUTHOR_DELETED -->
+									<br /><em class="small">{L_PM_FROM_REMOVED_AUTHOR}</em>
+								<!-- ENDIF -->
 
-							<!-- IF messagerow.S_PM_DELETED -->
-								<a href="{messagerow.U_REMOVE_PM}" class="topictitle">{L_DELETE_MESSAGE}</a><br />
-								<span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span>
-							<!-- ELSE -->
-								<a href="{messagerow.U_VIEW_PM}" class="topictitle">{messagerow.SUBJECT}</a>
-							<!-- ENDIF -->
-							<!-- IF messagerow.S_AUTHOR_DELETED -->
-								<br /><em class="small">{L_PM_FROM_REMOVED_AUTHOR}</em>
-							<!-- ENDIF -->
-
-							<!-- IF messagerow.S_PM_REPORTED --><a href="{messagerow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --> {messagerow.ATTACH_ICON_IMG}<br />
-							<!-- IF S_SHOW_RECIPIENTS -->{L_MESSAGE_TO} {messagerow.RECIPIENTS}<!-- ELSE -->{L_MESSAGE_BY_AUTHOR} {messagerow.MESSAGE_AUTHOR_FULL} &raquo; {messagerow.SENT_TIME}<!-- ENDIF -->
-						</dt>
-						<!-- IF S_SHOW_RECIPIENTS --><dd class="info"><span>{L_SENT_AT}: {messagerow.SENT_TIME}</span></dd><!-- ENDIF -->
-						<!-- IF S_UNREAD --><dd class="info"><!-- IF messagerow.FOLDER --><a href="{messagerow.U_FOLDER}">{messagerow.FOLDER}</a><!-- ELSE -->{L_UNKNOWN_FOLDER}<!-- ENDIF --></dd><!-- ENDIF -->
-						<dd class="mark"><input type="checkbox" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></dd>
-					</dl>
-				</li>
-			<!-- END messagerow -->
-		</ul>
+								<!-- IF messagerow.S_PM_REPORTED --><a href="{messagerow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF -->
+								{messagerow.ATTACH_ICON_IMG}<br />
+								<small><!-- IF S_SHOW_RECIPIENTS -->{L_MESSAGE_TO} {messagerow.RECIPIENTS}<!-- ELSE -->{L_MESSAGE_BY_AUTHOR} {messagerow.MESSAGE_AUTHOR_FULL} &raquo; {messagerow.SENT_TIME}<!-- ENDIF --></small>
+								<!-- IF S_SHOW_RECIPIENTS -->&raquo; <small><span>{L_SENT_AT}: {messagerow.SENT_TIME}</span></small><!-- ENDIF -->
+								<!-- IF S_UNREAD -->&raquo; <small><!-- IF messagerow.FOLDER --><a href="{messagerow.U_FOLDER}">{messagerow.FOLDER}</a><!-- ELSE -->{L_UNKNOWN_FOLDER}<!-- ENDIF --></small><!-- ENDIF -->
+							</td>
+							<td class="mark"><input type="checkbox" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></td>
+						</tr>
+					<!-- END messagerow -->
+				</tbody>
+			</table>
+		</div>
 	<!-- ELSE -->
 		<p><strong>
 			<!-- IF S_COMPOSE_PM_VIEW and S_NO_AUTH_SEND_MESSAGE -->
@@ -117,23 +125,23 @@
 		</fieldset>
 		<hr />
 		<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->
-			<div class="text-center">
-				<div class="btn-group">
-					<!-- IF TOTAL_MESSAGES --><span class="btn btn-default btn-sm disabled">{TOTAL_MESSAGES}</span><!-- ENDIF -->
-					<!-- IF PAGE_NUMBER -->
-						<!-- IF PAGINATION -->
-							<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
-							<span class="btn btn-default btn-sm">{PAGINATION}</span>
-						<!-- ELSE -->
-							<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+			<div class="text-center row">
+				<div class="col-md-12">
+					<div class="btn-group">
+						<!-- IF TOTAL_MESSAGES --><span class="btn btn-default btn-sm disabled">{TOTAL_MESSAGES}</span><!-- ENDIF -->
+						<!-- IF PAGE_NUMBER -->
+							<!-- IF PAGINATION -->
+								<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+								<span class="btn btn-default btn-sm">{PAGINATION}</span>
+							<!-- ELSE -->
+								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+							<!-- ENDIF -->
 						<!-- ENDIF -->
-					<!-- ENDIF -->
+					</div>
 				</div>
 			</div>
 		<!-- ENDIF -->
 	<!-- ENDIF -->
-		</div>
-	</div>
 	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
 		<fieldset class="display-options">
 			<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
@@ -144,7 +152,10 @@
 			<input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
 		</fieldset>
 	<!-- ENDIF -->
+<!-- ENDIF -->
 
+<!-- IF not PROMPT -->
 	<!-- INCLUDE ucp_pm_message_footer.html -->
 <!-- ENDIF -->
+
 <!-- INCLUDE ucp_footer.html -->

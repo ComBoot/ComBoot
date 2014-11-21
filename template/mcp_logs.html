@@ -19,55 +19,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="text-center row">
-				<div class="btn-group">
-					<!-- IF TOTAL --><span class="btn btn-default btn-sm disabled">{TOTAL}</span><!-- ENDIF -->
-					<!-- IF PAGE_NUMBER -->
-						<!-- IF PAGINATION -->
-							<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
-							<span class="btn btn-default btn-sm">{PAGINATION}</span>
-						<!-- ELSE -->
-							<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
-						<!-- ENDIF -->
-					<!-- ENDIF -->
-				</div>
-			</div>
-			<table cellspacing="1" class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th>{L_USERNAME}</th>
-						<th style="text-align: center">{L_IP}</th>
-						<th style="text-align: center">{L_TIME}</th>
-						<th>{L_ACTION}</th>
-						<!-- IF S_CLEAR_ALLOWED --><th>{L_MARK}</th><!-- ENDIF -->
-					</tr>
-				</thead>
-				<tbody>
-					<!-- IF S_LOGS -->
-						<!-- BEGIN log -->
-						<!-- IF log.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
-							<td>{log.USERNAME}</td>
-							<td style="text-align: center">{log.IP}</td>
-							<td style="text-align: center">{log.DATE}</td>
-							<td>{log.ACTION}<br />
-							{log.DATA}
-						</td>
-							<!-- IF S_CLEAR_ALLOWED --><td style="width: 5%" align="center"><input type="checkbox" name="mark[]" value="{log.ID}" /></td><!-- ENDIF -->
-						</tr>
-						<!-- END log -->
-					<!-- ELSE -->
-						<tr>
-							<td class="bg1" colspan="<!-- IF S_CLEAR_ALLOWED -->5<!-- ELSE -->4<!-- ENDIF -->" align="center"><span class="gen">{L_NO_ENTRIES}</span></td>
-						</tr>
-					<!-- ENDIF -->
-				</tbody>
-			</table>
 			<div class="text-center">
 				<div class="btn-group">
 					<!-- IF TOTAL --><span class="btn btn-default btn-sm disabled">{TOTAL}</span><!-- ENDIF -->
 					<!-- IF PAGE_NUMBER -->
 						<!-- IF PAGINATION -->
-							<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
+							<a href="#" class="btn btn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
 							<span class="btn btn-default btn-sm">{PAGINATION}</span>
 						<!-- ELSE -->
 							<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
@@ -75,33 +32,63 @@
 					<!-- ENDIF -->
 				</div>
 			</div>
+			<div class="spacer"></div>
+			<fieldset class="display-options well well-sm text-center">
+				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
+				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
+				<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
+				<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
+				<label>{S_SELECT_SORT_DIR}</label>
+				<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
+			</fieldset>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>{L_USERNAME}</th>
+							<th class="text-center">{L_IP}</th>
+							<th class="text-center">{L_TIME}</th>
+							<th>{L_ACTION}</th>
+							<!-- IF S_CLEAR_ALLOWED --><th>{L_MARK}</th><!-- ENDIF -->
+						</tr>
+					</thead>
+					<tbody>
+						<!-- IF S_LOGS -->
+							<!-- BEGIN log -->
+							<!-- IF log.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
+								<td>{log.USERNAME}</td>
+								<td class="text-center">{log.IP}</td>
+								<td class="text-center">{log.DATE}</td>
+								<td>{log.ACTION}<br />
+								{log.DATA}
+							</td>
+								<!-- IF S_CLEAR_ALLOWED --><td style="width: 5%" align="center"><input type="checkbox" name="mark[]" value="{log.ID}" /></td><!-- ENDIF -->
+							</tr>
+							<!-- END log -->
+						<!-- ELSE -->
+							<tr>
+								<td class="bg1" colspan="<!-- IF S_CLEAR_ALLOWED -->5<!-- ELSE -->4<!-- ENDIF -->" align="center"><span class="gen">{L_NO_ENTRIES}</span></td>
+							</tr>
+						<!-- ENDIF -->
+					</tbody>
+				</table>
+			</div>
 			<!-- IF .log -->
-				<hr/>
-				<fieldset class="display-options">
-					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
-					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
-					<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
-					<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-					<label>{S_SELECT_SORT_DIR}</label>
-					<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
-				</fieldset>
 				<hr />
-				{S_FORM_TOKEN}
 				<!-- IF S_CLEAR_ALLOWED -->
-					<fieldset class="display-actions">
+					<fieldset class="submit-buttons">
 						<div class="btn-group">
-							<a href="#" class="btn btn-success" onclick="marklist('mcp', 'mark', true); return false;">{L_MARK_ALL}</a>
-							<a href="#" class="btn btn-danger" onclick="marklist('mcp', 'mark', false); return false;">{L_UNMARK_ALL}</a>
+							<a href="#" class="btn btn-success btn-sm" onclick="marklist('mcp', 'mark', true); return false;">{L_MARK_ALL}</a>
+							<a href="#" class="btn btn-warning btn-sm" onclick="marklist('mcp', 'mark', false); return false;">{L_UNMARK_ALL}</a>
 						</div>
 						<div class="btn-group">
-							<input class="btn btn-danger" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" />
-							<input class="btn btn-danger" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+							<input class="btn btn-danger btn-sm" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" />
+							<input class="btn btn-danger btn-sm" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
 						</div>
 					</fieldset>
 				<!-- ENDIF -->
-			<!-- ELSE -->
-				{S_FORM_TOKEN}
 			<!-- ENDIF -->
+			{S_FORM_TOKEN}
 		</form>
 	</div>
 </div>

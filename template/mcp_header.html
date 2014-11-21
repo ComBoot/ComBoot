@@ -21,49 +21,50 @@
 </ul>
 
 <div class="well" id="mcp-nav">
-	<div class="col-md-2">
-		<div class="list-group">
-			<!-- BEGIN l_block1 -->
-				<!-- IF l_block1.S_SELECTED -->
-					<!-- BEGIN l_block2 -->
-						<!-- IF l_block1.l_block2.S_SELECTED -->
-							<a href="{l_block1.l_block2.U_TITLE}" class="list-group-item active"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a>
-						<!-- ELSE -->
-							<a href="{l_block1.l_block2.U_TITLE}" class="list-group-item"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a>
-						<!-- ENDIF -->
-					<!-- END l_block2 -->
-				<!-- ENDIF -->
-			<!-- END l_block1 -->
-		</div>
-	</div>
-
-	<div class="col-md-10" style="min-height: 300px;">
-		<!-- IF MESSAGE -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">{L_MESSAGE}</h3>
-				</div>
-				<div class="panel-body">
-					<p class="alert alert-danger">{MESSAGE}</p>
-					<p><!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links --></p>
-				</div>
+	<div class="row">
+		<div class="col-md-2">
+			<div class="list-group">
+				<!-- BEGIN l_block1 -->
+					<!-- IF l_block1.S_SELECTED -->
+						<!-- BEGIN l_block2 -->
+							<!-- IF l_block1.l_block2.S_SELECTED -->
+								<a href="{l_block1.l_block2.U_TITLE}" class="list-group-item active"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a>
+							<!-- ELSE -->
+								<a href="{l_block1.l_block2.U_TITLE}" class="list-group-item"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a>
+							<!-- ENDIF -->
+						<!-- END l_block2 -->
+					<!-- ENDIF -->
+				<!-- END l_block1 -->
 			</div>
-		<!-- ENDIF -->
+		</div>
 
-		<!-- IF CONFIRM_MESSAGE -->
-			<form id="confirm" method="post" action="{S_CONFIRM_ACTION}"{S_FORM_ENCTYPE}>
+		<div class="col-md-10" style="min-height: 300px;">
+			<!-- IF MESSAGE -->
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">{L_PLEASE_CONFIRM}</h3>
+						<h3 class="panel-title">{L_MESSAGE}</h3>
 					</div>
 					<div class="panel-body">
-						<p>{CONFIRM_MESSAGE}</p>
-						<fieldset class="submit-buttons">
-							{S_HIDDEN_FIELDS}
-							<input class="btn btn-danger" type="cancel" value="{L_NO}" />
-							<input class="btn btn-default" type="submit" name="submit" value="{L_YES}" />
-						</fieldset>
+						<p class="alert alert-danger">{MESSAGE}</p>
+						<p><!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links --></p>
 					</div>
 				</div>
-			</form>
-		<!-- ENDIF -->
+			<!-- ENDIF -->
+
+			<!-- IF CONFIRM_MESSAGE -->
+				<form id="confirm" method="post" action="{S_CONFIRM_ACTION}"{S_FORM_ENCTYPE}>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{L_PLEASE_CONFIRM}</h3>
+						</div>
+						<div class="panel-body">
+							<p>{CONFIRM_MESSAGE}</p>
+							<fieldset class="submit-buttons">
+								{S_HIDDEN_FIELDS}
+								<input class="btn btn-danger" type="cancel" value="{L_NO}" />
+								<input class="btn btn-default" type="submit" name="submit" value="{L_YES}" />
+							</fieldset>
+						</div>
+					</div>
+				</form>
+			<!-- ENDIF -->

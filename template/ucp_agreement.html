@@ -1,33 +1,29 @@
 <!-- INCLUDE overall_header.html -->
 
 <!-- IF S_SHOW_COPPA or S_REGISTRATION -->
+	<!-- IF S_LANG_OPTIONS -->
+		<script type="text/javascript">
+		// <![CDATA[
+			/**
+			* Change language
+			*/
+			function change_language(lang_iso)
+			{
+				document.forms['register'].change_lang.value = lang_iso;
+				document.forms['register'].submit();
+			}
 
-<!-- IF S_LANG_OPTIONS -->
-<script type="text/javascript">
-// <![CDATA[
-	/**
-	* Change language
-	*/
-	function change_language(lang_iso)
-	{
-		document.forms['register'].change_lang.value = lang_iso;
-		document.forms['register'].submit();
-	}
-
-// ]]>
-</script>
-
-	<form method="post" action="{S_UCP_ACTION}" id="register">
-		<p class="rightside">
-			<label for="lang">{L_LANGUAGE}:</label><select name="lang" id="lang" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
-			{S_HIDDEN_FIELDS}
-		</p>
-	</form>
-
-	<div class="clear"></div>
-
-<!-- ENDIF -->
-
+		// ]]>
+		</script>
+		<form method="post" action="{S_UCP_ACTION}" id="register">
+			<p class="rightside">
+				<label for="lang">{L_LANGUAGE}:</label><select name="lang" id="lang" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+				{S_HIDDEN_FIELDS}
+			</p>
+			{S_FORM_TOKEN}
+		</form>
+		<div class="clearfix"></div>
+	<!-- ENDIF -->
 	<form method="post" action="{S_UCP_ACTION}" id="agreement">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -39,18 +35,15 @@
 					<!-- IF S_SHOW_COPPA -->
 						<strong><a href="{U_COPPA_NO}" class="btn btn-primary">{L_COPPA_NO}</a></strong>&nbsp; <a href="{U_COPPA_YES}" class="btn btn-danger">{L_COPPA_YES}</a>
 					<!-- ELSE -->
-						<div class="btn-group">
-							<input type="submit" name="not_agreed" value="{L_NOT_AGREE}" class="btn btn-danger" />
-							<input type="submit" name="agreed" id="agreed" value="{L_AGREE}" class="btn btn-success" />
-						</div>
+						<input type="submit" name="not_agreed" value="{L_NOT_AGREE}" class="btn btn-danger btn-sm" />
+						<input type="submit" name="agreed" id="agreed" value="{L_AGREE}" class="btn btn-success btn-sm" />
 					<!-- ENDIF -->
 					{S_HIDDEN_FIELDS}
-					{S_FORM_TOKEN}
 				</fieldset>
 			</div>
 		</div>
+		{S_FORM_TOKEN}
 	</form>
-
 <!-- ELSEIF S_AGREEMENT -->
 	<div class="panel panel-default">
 		<div class="panel-heading">

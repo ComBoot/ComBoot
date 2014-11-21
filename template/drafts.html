@@ -1,44 +1,33 @@
-
-
 <!-- IF .draftrow -->
-<div class="panel row">
-	<div class="well">
-
-	<h3 class="box-heading">{L_LOAD_DRAFT}</h3>
-	<p>{L_LOAD_DRAFT_EXPLAIN}</p>
-
+	<div class="panel panel-default">
+		<div class="panel-heading">
+    		<h3 class="panel-title">{L_LOAD_DRAFT}</h3>
+		</div>
+		<div class="panel-body <!-- IF not S_PRIVMSGS -->forumbg<!-- ENDIF -->">
+			<p class="help-block">{L_LOAD_DRAFT_EXPLAIN}</p>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>{L_LOAD_DRAFT}</th>
+							<th class="posted">{L_SAVE_DATE}</th>
+						</tr>
+					</thead>
+					<tbody class="topiclist<!-- IF not S_PRIVMSGS --> topics<!-- ELSE --> cplist<!-- ENDIF -->">
+						<!-- BEGIN draftrow -->
+							<tr>
+								<td>
+									<a href="{draftrow.U_INSERT}" title="{L_LOAD_DRAFT}" class="topictitle">{draftrow.DRAFT_SUBJECT}</a><br />
+									<!-- IF not S_PRIVMSGS --><!-- IF draftrow.S_LINK_TOPIC -->{L_TOPIC}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+									<!-- ELSEIF draftrow.S_LINK_FORUM -->{L_FORUM}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+									<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF --><!-- ENDIF -->
+								</td>
+								<td class="posted">{draftrow.DATE}</td>
+							</tr>
+						<!-- END draftrow -->
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
-</div>
-
-<div class="row <!-- IF not S_PRIVMSGS -->forumbg<!-- ELSE -->panel<!-- ENDIF -->">
-	<div class="well">
-
-	<ul class="topiclist">
-		<li class="header">
-			<dl>
-				<dt>{L_LOAD_DRAFT}</dt>
-				<dd class="posted">{L_SAVE_DATE}</dd>
-			</dl>
-		</li>
-	</ul>
-	<ul class="topiclist<!-- IF not S_PRIVMSGS --> topics<!-- ELSE --> cplist<!-- ENDIF -->">
-
-	<!-- BEGIN draftrow -->
-	<li class="row<!-- IF draftrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-		<dl>
-			<dt>
-				<a href="{draftrow.U_INSERT}" title="{L_LOAD_DRAFT}" class="topictitle">{draftrow.DRAFT_SUBJECT}</a><br />
-				<!-- IF not S_PRIVMSGS --><!-- IF draftrow.S_LINK_TOPIC -->{L_TOPIC}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
-				<!-- ELSEIF draftrow.S_LINK_FORUM -->{L_FORUM}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
-				<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF --><!-- ENDIF -->
-			</dt>
-			<dd class="posted">{draftrow.DATE}</dd>
-		</dl>
-	</li>
-	<!-- END draftrow -->
-
-	</ul>
-
-	</div>
-</div>
 <!-- ENDIF -->

@@ -3,7 +3,6 @@
 <fieldset class="forum-selector">
 	<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
 	<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
-	{S_FORM_TOKEN}
 </fieldset>
 
 <br style="clear:both;">
@@ -21,7 +20,7 @@
 						<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-sm disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
 						<!-- IF PAGE_NUMBER -->
 							<!-- IF PAGINATION -->
-								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
+								<a href="#" class="btn btn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
 								<span class="btn btn-default btn-sm">{PAGINATION}</span>
 							<!-- ELSE -->
 								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
@@ -75,7 +74,7 @@
 						<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-sm disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
 						<!-- IF PAGE_NUMBER -->
 							<!-- IF PAGINATION -->
-								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
+								<a href="#" class="btn btn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
 								<span class="btn btn-default btn-sm">{PAGINATION}</span>
 							<!-- ELSE -->
 								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
@@ -98,6 +97,7 @@
 			</fieldset>
 		<!-- ENDIF -->
 	</div>
+	{S_FORM_TOKEN}
 </form>
 
 <!-- INCLUDE mcp_footer.html -->

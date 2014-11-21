@@ -1,89 +1,84 @@
-<!-- INCLUDE overall_header.html -->
+<!-- INCLUDE overall_header.html --> 
 
 <!-- IF TOPIC_TITLE -->
 	<div class="page-header">
-		<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a> <span class="label">{L_POST_A}</span></h2>
+		<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a> &mdash; {L_POST_A}<div ng-show="subject" class="subject">{{": " + subject}}</div></h2>
 	</div>
 <!-- ELSE -->
 	<div class="page-header">
-		<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a> <span class="label">{L_POST_A}</span></h2>
+		<h2>{L_POST_A}<div ng-show="subject" class="subject">{{": " + subject}}</div></h2>
 	</div>
 <!-- ENDIF -->
 
-<!-- IF S_FORUM_RULES -->
+<!-- IF S_FORUM_RULES --> 
 	<div class="rules">
-		<div class="well">
-		
-		<!-- IF U_FORUM_RULES -->
-			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
-		<!-- ELSE -->
-			<strong>{L_FORUM_RULES}</strong><br />
-			{FORUM_RULES}
-		<!-- ENDIF -->
-		
-		</div>
-	</div>
+        <div class="alert alert-warning">
+            <!-- IF U_FORUM_RULES -->
+                <a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
+            <!-- ELSE -->
+                <i class="fa fa-exclamation-triangle"></i> <strong>{L_FORUM_RULES}</strong>
+                <hr class="message-inner-separator">
+            	<p>{FORUM_RULES}</p>
+            <!-- ENDIF -->
+        </div>
+    </div>
 <!-- ENDIF -->
 
 <form id="postform" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
-
-<!-- IF S_DRAFT_LOADED -->
-	<div class="panel row">
-		<div class="well">
-		
-		<h3>{L_INFORMATION}</h3>
-		<p>{L_DRAFT_LOADED}</p>
-		
+	<!-- IF S_DRAFT_LOADED -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{L_INFORMATION}</h3>
+			</div>
+			<div class="panel-body">
+				<p>{L_DRAFT_LOADED}</p>
+			</div>
 		</div>
-	</div>
-<!-- ENDIF -->
+	<!-- ENDIF -->
 
-<!-- IF S_SHOW_DRAFTS --><!-- INCLUDE drafts.html --><!-- ENDIF -->
+	<!-- IF S_SHOW_DRAFTS --><!-- INCLUDE drafts.html --><!-- ENDIF -->
 
-<!-- IF S_POST_REVIEW --><!-- INCLUDE posting_review.html --><!-- ENDIF -->
+	<!-- IF S_POST_REVIEW --><!-- INCLUDE posting_review.html --><!-- ENDIF -->
 
-<!-- IF S_UNGLOBALISE -->
-	<div class="panel row bg3">
-		<div class="well">
-		<fieldset class="fields1">
-			<h2>{L_SELECT_DESTINATION_FORUM}</h2>
-			<p>{L_UNGLOBALISE_EXPLAIN}</p>
-			<dl>
-				<dt><label for="to_forum_id">{L_MOVE}:</label></dt>
-				<dd><select id="to_forum_id" name="to_forum_id">{S_FORUM_SELECT}</select></dd>
-			</dl>
-			
-			<dl>
-				<dt>&nbsp;</dt>
-				<dd><input class="btn btn-default" type="submit" name="post" value="{L_CONFIRM}" /> <input class="btn btn-danger" type="submit" name="cancel_unglobalise" value="{L_CANCEL}" /></dd>
-			</dl>
-		</fieldset>
-
+	<!-- IF S_UNGLOBALISE -->
+		<div class="panel row bg3">
+			<div class="well">
+				<fieldset class="fields1">
+					<h2>{L_SELECT_DESTINATION_FORUM}</h2>
+					<p>{L_UNGLOBALISE_EXPLAIN}</p>
+					<dl>
+						<dt><label for="to_forum_id">{L_MOVE}:</label></dt>
+						<dd><select id="to_forum_id" name="to_forum_id">{S_FORUM_SELECT}</select></dd>
+					</dl>
+					
+					<dl>
+						<dt>&nbsp;</dt>
+						<dd><input class="btn btn-default" type="submit" name="post" value="{L_CONFIRM}" />
+						<input class="btn btn-danger" type="submit" name="cancel_unglobalise" value="{L_CANCEL}" /></dd>
+					</dl>
+				</fieldset>
+			</div>
 		</div>
-	</div>
-<!-- ENDIF -->
+	<!-- ENDIF -->
 
-<!-- IF S_DISPLAY_PREVIEW --><!-- INCLUDE posting_preview.html --><!-- ENDIF -->
+	<!-- IF S_DISPLAY_PREVIEW --><!-- INCLUDE posting_preview.html --><!-- ENDIF -->
 
-<div class="panel panel-default" id="postingbox">
-	<div class="panel-body no-margin">	
-		<!-- DEFINE $EXTRA_POSTING_OPTIONS = 1 -->
-		<!-- INCLUDE posting_editor.html -->
-			<!-- IF S_SHOW_ATTACH_BOX --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->
-			<!-- IF S_SHOW_POLL_BOX or S_POLL_DELETE --><!-- INCLUDE posting_poll_body.html --><!-- ENDIF -->
+	<div class="panel panel-default" id="postingbox">
+		<div class="panel-body no-margin">	
+			<!-- DEFINE $EXTRA_POSTING_OPTIONS = 1 -->
+			<!-- INCLUDE posting_editor.html -->
 			<!-- IF S_DISPLAY_REVIEW --><!-- INCLUDE posting_topic_review.html --><!-- ENDIF -->
 		</div>
 		{S_FORM_TOKEN}
 	</div>
-</div>
-
 </form>
+
 <!-- IF not S_PRIVMSGS -->
-<script type="text/javascript">
-// <![CDATA[
-	subPanels(show_panel);
-// ]]>
-</script>
+	<script type="text/javascript">
+	// <![CDATA[
+		subPanels(show_panel);
+	// ]]>
+	</script>
 <!-- ENDIF -->
 
 <!-- INCLUDE overall_footer.html -->

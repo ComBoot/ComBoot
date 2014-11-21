@@ -1,57 +1,44 @@
 <div class="jumpbox">
-<!-- IF S_VIEWTOPIC -->
-	<div class="row">
-		<div class="col-md-6">
-			<div class="col-md-6"><a href="{U_VIEW_FORUM}" class="btn btn-default" accesskey="r">{L_RETURN_TO} {FORUM_NAME}</a></div>
+	<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row no-margin-bottom">
+				<div class="col-md-6">
+					<!-- IF S_VIEWTOPIC -->
+						<a href="{U_VIEW_FORUM}" class="btn btn-default" accesskey="r">{L_RETURN_TO} {FORUM_NAME}</a>
+					<!-- ELSEIF S_VIEWFORUM -->
+						<a href="{U_INDEX}" class="btn btn-default" accesskey="r">{L_RETURN_TO} {L_INDEX}</a>
+					<!-- ELSEIF SEARCH_TOPIC -->
+						<a class="btn btn-default" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
+					<!-- ELSEIF S_SEARCH_ACTION -->
+						<a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a>
+					<!-- ELSE -->
+						<span class="btn btn-default disabled">{LAST_VISIT_DATE}</span>
+					<!-- ENDIF -->
+				</div>
+				<!-- IF S_DISPLAY_JUMPBOX -->
+					<div class="col-md-6">
+						<form method="post" id="jumpbox" action="{S_JUMPBOX_ACTION}" onsubmit="if(this.f.value == -1){return false;}" class="pull-right">
+							<!-- IF $CUSTOM_FIELDSET_CLASS -->
+								<fieldset class="{$CUSTOM_FIELDSET_CLASS}">
+							<!-- ELSE -->
+								<fieldset class="jumpbox">
+							<!-- ENDIF -->
+							<label for="f" accesskey="j"><!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->:</label>
+							<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+								<!-- BEGIN jumpbox_forums -->
+									<!-- IF jumpbox_forums.S_FORUM_COUNT == 1 --><option value="-1">------------------</option><!-- ENDIF -->
+									<option value="{jumpbox_forums.FORUM_ID}"{jumpbox_forums.SELECTED}><!-- BEGIN level -->&nbsp; &nbsp;<!-- END level -->{jumpbox_forums.FORUM_NAME}</option>
+								<!-- END jumpbox_forums -->
+							</select>
+							<input class="btn btn-default" type="submit" value="{L_GO}" />
+							</fieldset>
+							{S_FORM_TOKEN}
+						</form>
+					</div>
+				<!-- ELSE -->
+					<div class="col-md-6"><span class="label pull-right">{CURRENT_TIME}</span></div>
+				<!-- ENDIF -->
+			</div>
 		</div>
-<!-- ELSEIF S_VIEWFORUM -->
-	<div class="row">
-		<div class="col-md-6">
-			<div class="col-md-6"><a href="{U_INDEX}" class="btn btn-default" accesskey="r">{L_RETURN_TO} {L_INDEX}</a></div>
-		</div>
-<!-- ELSEIF SEARCH_TOPIC -->
-	<div class="row">
-		<div class="col-md-6">
-			<div class="col-md-6"><a class="btn btn-default" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a></div>
-		</div>
-<!-- ELSEIF S_SEARCH_ACTION -->
-	<div class="row">
-		<div class="col-md-6">
-			<div class="col-md-6"><a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a></div>
-		</div>
-<!-- ELSE -->
-	<div class="row">
-		<div class="col-md-6">
-			<div class="col-md-6"><span class="btn btn-default disabled">{LAST_VISIT_DATE}</span></div>
-		</div>
-<!-- ENDIF -->
-
-
-
-<!-- IF S_DISPLAY_JUMPBOX -->
-<div class="col-md-6">
-	<form method="post" id="jumpbox" action="{S_JUMPBOX_ACTION}" onsubmit="if(this.f.value == -1){return false;}" style="margin:0;">
-
-	<!-- IF $CUSTOM_FIELDSET_CLASS -->
-		<fieldset class="{$CUSTOM_FIELDSET_CLASS}">
-	<!-- ELSE -->
-		<fieldset class="jumpbox">
-	<!-- ENDIF -->
-			<label for="f" accesskey="j"><!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->:</label>
-			<select style="margin:0;" name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
-			<!-- BEGIN jumpbox_forums -->
-				<!-- IF jumpbox_forums.S_FORUM_COUNT == 1 --><option value="-1">------------------</option><!-- ENDIF -->
-				<option value="{jumpbox_forums.FORUM_ID}"{jumpbox_forums.SELECTED}><!-- BEGIN level -->&nbsp; &nbsp;<!-- END level -->{jumpbox_forums.FORUM_NAME}</option>
-			<!-- END jumpbox_forums -->
-			</select>
-			<input class="btn btn-default" type="submit" value="{L_GO}" />
-		</fieldset>
-	</form>
-</div>
-<!-- ELSE -->
-	<div class="col-md-6"><span class="label pull-right">{CURRENT_TIME}</span></div>
-<!-- ENDIF -->
-
-</div>
-
+	</div>
 </div>

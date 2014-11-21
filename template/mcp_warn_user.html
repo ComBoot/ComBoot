@@ -42,12 +42,14 @@
 						<!-- ENDIF -->
 					</fieldset>
 				</div>
+				<div class="panel-footer">
+					<fieldset class="submit-buttons">
+						<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
+						<input type="submit" name="action[add_warning]" value="{L_SUBMIT}" class="btn btn-success" />
+						{S_FORM_TOKEN}
+					</fieldset>
+				</div>
 			</div>
-			<fieldset class="submit-buttons">
-				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
-				<input type="submit" name="action[add_warning]" value="{L_SUBMIT}" class="btn btn-success" />
-				{S_FORM_TOKEN}
-			</fieldset>
 		</div>
 	</div>
 </form>

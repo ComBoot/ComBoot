@@ -1,11 +1,8 @@
 <!-- IF S_TYPE == 1 -->
 <div class="panel">
-	<div class="inner">
-
 	<h3>{L_CONFIRMATION}</h3>
 	<p>{L_CONFIRM_EXPLAIN}</p>
-
-	<fieldset class="fields2">
+	<fieldset>
 <!-- ENDIF -->
 
 <div class="panel panel-default">
@@ -14,12 +11,12 @@
 	</div>
 	<ul class="list-group">
 		<li class="list-group-item">
-			<img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}" style="display: block; margin: auto;"/>
+			<img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}" class="default-captcha-image"/>
 		</li>
 		<li class="list-group-item">
 			<div class="input-group">
 				<input type="text" name="confirm_code" id="confirm_code" maxlength="8" tabindex="{$CAPTCHA_TAB_INDEX}" class="form-control" title="{L_CONFIRM_CODE}" placeholder="{L_CONFIRM_CODE_EXPLAIN}"/>
-				<!-- IF S_CONFIRM_REFRESH --><span class="input-group-btn"><input type="submit" name="refresh_vc" id="refresh_vc" class="btn btn-default" value="{L_VC_REFRESH}" /></span><!-- ENDIF -->
+				<!-- IF S_CONFIRM_REFRESH --><span class="input-group-btn"><button type="submit" name="refresh_vc" id="refresh_vc" class="btn btn-default"><i class="fa fa-refresh"></i></button></span><!-- ENDIF -->
 			</div>
 			<input type="hidden" name="confirm_id" id="confirm_id" value="{CONFIRM_ID}" />
 		</li>
@@ -28,6 +25,5 @@
 
 <!-- IF S_TYPE == 1 -->
 	</fieldset>
-	</div>
 </div>
 <!-- ENDIF -->

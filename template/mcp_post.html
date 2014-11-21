@@ -29,19 +29,25 @@
 					<!-- ENDIF -->
 					<input class="btn btn-danger" type="submit" value="{L_DELETE_REPORT}" name="action[delete]" />
 					<input type="hidden" name="report_id_list[]" value="{REPORT_ID}" />
-					{S_FORM_TOKEN}
 				</fieldset>
+				{S_FORM_TOKEN}
 			</form>
 		<!-- ENDIF -->
 		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title clearfix">
+					<!-- IF U_EDIT -->
+						<div class="pull-left">
+							<i class="fa fa-pencil"></i> <a href="{U_EDIT}" title="{L_EDIT_POST}">{L_EDIT_POST}</a>
+						</div>
+					<!-- ENDIF -->
+					<div class="pull-right">
+						<span class="right-box" id="expand"><a href="#post_details" onclick="viewableArea(getElementById('post_details'), true); var rev_text = getElementById('expand').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'}; return false;">{L_EXPAND_VIEW}</a></span>
+					</div>
+				</h3>
+			</div>
 			<div class="panel-body">
 				<div class="postbody">
-					<!-- IF U_EDIT -->
-						<ul class="profile-icons">
-							<li class="edit-icon"><a href="{U_EDIT}" title="{L_EDIT_POST}"><span>{L_EDIT_POST}</span></a></li>
-						</ul>
-					<!-- ENDIF -->
-					<span class="right-box" id="expand"><a href="#post_details" onclick="viewableArea(getElementById('post_details'), true); var rev_text = getElementById('expand').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'}; return false;">{L_EXPAND_VIEW}</a></span>
 					<h3><a href="{U_VIEW_POST}">{POST_SUBJECT}</a></h3>
 					<!-- IF S_PM -->
 						<p class="author">
@@ -55,14 +61,13 @@
 					<!-- ENDIF -->
 					<!-- IF S_POST_UNAPPROVED -->
 						<form method="post" id="mcp_approve" action="{U_APPROVE_ACTION}">
-
-						<p class="rules">
-							<input class="btn btn-danger" type="submit" value="{L_DISAPPROVE}" name="action[disapprove]" /> &nbsp;
-							<input class="btn btn-success" type="submit" value="{L_APPROVE}" name="action[approve]" />
-							<!-- IF not S_FIRST_POST --><input type="hidden" name="mode" value="unapproved_posts" /><!-- ENDIF -->
-							<input type="hidden" name="post_id_list[]" value="{POST_ID}" />
+							<p class="rules">
+								<input class="btn btn-danger" type="submit" value="{L_DISAPPROVE}" name="action[disapprove]" />
+								<input class="btn btn-success" type="submit" value="{L_APPROVE}" name="action[approve]" />
+								<!-- IF not S_FIRST_POST --><input type="hidden" name="mode" value="unapproved_posts" /><!-- ENDIF -->
+								<input type="hidden" name="post_id_list[]" value="{POST_ID}" />
+							</p>
 							{S_FORM_TOKEN}
-						</p>
 						</form>
 					<!-- ENDIF -->
 					<!-- IF S_MESSAGE_REPORTED -->
@@ -70,6 +75,7 @@
 							{REPORTED_IMG} <a href="{U_MCP_REPORT}"><strong>{L_MESSAGE_REPORTED}</strong></a>
 						</p>
 					<!-- ENDIF -->
+					<hr/>
 					<div class="content" id="post_details">
 						{POST_PREVIEW}
 					</div>
@@ -104,42 +110,51 @@
 					<!-- IF S_CAN_CHGPOSTER -->
 						<form method="post" id="mcp_chgposter" action="{U_POST_ACTION}">
 							<fieldset>
-								<dl>
-									<dt><label>{L_CHANGE_POSTER}:</label></dt>
-									<!-- IF S_USER_SELECT --><dd><select name="u">{S_USER_SELECT}</select> <input type="submit" class="btn btn-default" name="action[chgposter_ip]" value="{L_CONFIRM}" /></dd><!-- ENDIF -->
-									<dd style="margin-top:3px;">
-										<input class="form-control" type="text" name="username" value="" />
-										<input type="submit" class="btn btn-default" name="action[chgposter]" value="{L_CONFIRM}" />
-										<br />
-										<span>[ <a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a> ]</span>
-									</dd>
-								</dl>
-								{S_FORM_TOKEN}
+								<div class="form-horizontal">
+									<div class="form-group">
+										<label class="control-label col-md-4">{L_CHANGE_POSTER}:</label>
+										<div class="col-md-8">
+											<!-- IF S_USER_SELECT --><dd><select name="u">{S_USER_SELECT}</select> <input type="submit" class="btn btn-default" name="action[chgposter_ip]" value="{L_CONFIRM}" /></dd><!-- ENDIF -->
+											<div class="input-group">
+												<input class="form-control" type="text" name="username" value="" />
+												<span class="input-group-btn">
+													<a href="{U_FIND_USERNAME}" class="btn btn-warning" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
+													<input type="submit" class="btn btn-success" name="action[chgposter]" value="{L_CONFIRM}" />
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
 							</fieldset>
+							{S_FORM_TOKEN}
 						</form>
 					<!-- ENDIF -->
 					<!-- IF S_CAN_LOCK_POST or S_CAN_DELETE_POST -->
 						<form method="post" id="mcp" action="{U_MCP_ACTION}">
 							<fieldset>
-								<dl>
-									<dt><label>{L_MOD_OPTIONS}:</label></dt>
-									<dd><select name="action">
+								<div class="form-horizontal">
+									<label class="control-label col-md-4">{L_MOD_OPTIONS}:</label>
+									<div class="col-md-8">
+										<select name="action">
 										<!-- IF S_CAN_LOCK_POST --><!-- IF S_POST_LOCKED --><option value="unlock_post">{L_UNLOCK_POST} [{L_UNLOCK_POST_EXPLAIN}]</option><!-- ELSE --><option value="lock_post">{L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</option><!-- ENDIF --><!-- ENDIF -->
 										<!-- IF S_CAN_DELETE_POST --><option value="delete_post">{L_DELETE_POST}</option><!-- ENDIF -->
-										</select> <input class="btn btn-default" type="submit" value="{L_SUBMIT}" />
-									</dd>
-								</dl>
-								{S_FORM_TOKEN}
+										</select>
+										<input class="btn btn-success" type="submit" value="{L_SUBMIT}" />
+									</div>
+								</div>
 							</fieldset>
+							{S_FORM_TOKEN}
 						</form>
 					<!-- ENDIF -->
 				</div>
 			</div>
 		<!-- ENDIF -->
 		<!-- IF S_MCP_QUEUE or S_MCP_REPORT or RETURN_TOPIC -->
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<p><!-- IF S_MCP_QUEUE -->{RETURN_QUEUE} | {RETURN_TOPIC_SIMPLE} | {RETURN_POST}<!-- ELSEIF S_MCP_REPORT -->{RETURN_REPORTS}<!-- IF not S_PM --> | <a href="{U_VIEW_POST}">{L_VIEW_POST}</a> | <a href="{U_VIEW_TOPIC}">{L_VIEW_TOPIC}</a> | <a href="{U_VIEW_FORUM}">{L_VIEW_FORUM}</a><!-- ENDIF --><!-- ELSE -->{RETURN_TOPIC}<!-- ENDIF --></p>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-center btn-fix">
+						<!-- IF S_MCP_QUEUE -->{RETURN_QUEUE} | {RETURN_TOPIC_SIMPLE} | {RETURN_POST}<!-- ELSEIF S_MCP_REPORT -->{RETURN_REPORTS}<!-- IF not S_PM --> | <a href="{U_VIEW_POST}">{L_VIEW_POST}</a> | <a href="{U_VIEW_TOPIC}">{L_VIEW_TOPIC}</a> | <a href="{U_VIEW_FORUM}">{L_VIEW_FORUM}</a><!-- ENDIF --><!-- ELSE -->{RETURN_TOPIC}<!-- ENDIF -->
+					</div>
 				</div>
 			</div>
 		<!-- ENDIF -->
@@ -170,10 +185,11 @@
 								<textarea name="usernote" rows="4" cols="76" class="form-control"></textarea>
 							</fieldset>
 							<fieldset class="submit-buttons">
+								{S_HIDDEN_FIELDS}
 								<input class="btn btn-danger" type="reset" value="{L_RESET}" />
 								<input class="btn btn-success" type="submit" name="action[add_feedback]" value="{L_SUBMIT}" />
-								{S_FORM_TOKEN}
 							</fieldset>
+							{S_FORM_TOKEN}
 						</form>
 					</div>
 				</div>
@@ -193,12 +209,14 @@
 			<!-- ENDIF -->
 			<!-- IF S_CAN_VIEWIP and not S_MCP_REPORT -->
 				<div class="panel panel-default" id="ip">
-					<div class="panel-body">
-						<p>{L_THIS_POST_IP}: <!-- IF U_WHOIS -->
+					<div class="panel-heading">
+						<h3 class="panel-title">{L_THIS_POST_IP}: <!-- IF U_WHOIS -->
 							<a href="{U_WHOIS}"><!-- IF POST_IPADDR -->{POST_IPADDR}<!-- ELSE -->{POST_IP}<!-- ENDIF --></a> (<!-- IF POST_IPADDR -->{POST_IP}<!-- ELSE --><a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a><!-- ENDIF -->)
 						<!-- ELSE -->
 							<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> (<a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a>)<!-- ENDIF --><!-- ENDIF -->
-						<!-- ENDIF --></p>
+						<!-- ENDIF --></h3>
+					</div>
+					<div class="panel-body">
 						<table class="table table-striped table-bordered" cellspacing="1">
 							<thead>
 								<tr>
@@ -239,7 +257,7 @@
 								<!-- END iprow -->
 							</tbody>
 						</table>
-						<p><a href="{U_LOOKUP_ALL}#ip">{L_LOOKUP_ALL}</a></p>
+						<p><a href="{U_LOOKUP_ALL}#ip" class="btn btn-primary">{L_LOOKUP_ALL}</a></p>
 					</div>
 				</div>
 			<!-- ENDIF -->

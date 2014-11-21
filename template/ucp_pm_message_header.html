@@ -5,29 +5,35 @@
 		</div>
 		<div class="panel-body">
 			<!-- IF FOLDER_STATUS and FOLDER_MAX_MESSAGES neq 0 --><p>{FOLDER_STATUS}</p><!-- ENDIF -->
-			<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
-				<div class="btn-group">
-					<!-- IF U_POST_REPLY_PM --><a class="btn btn-default" title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><span></span>{L_POST_REPLY_PM}</a>
-					<!-- ELSEIF U_POST_NEW_TOPIC --><a class="btn btn-success" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}">{L_UCP_PM_COMPOSE}</a><!-- ENDIF -->
-					<!-- IF U_FORWARD_PM --><a class="btn btn-default" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a><!-- ENDIF -->
-					<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><a class="btn btn-default" class="left" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a><!-- ENDIF -->			
-				</div>
-			<!-- ENDIF -->
 			<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->
-				<div class="text-center">
-					<div class="btn-group">
-						<!-- IF S_VIEW_MESSAGE --><a class="btn btn-primary" href="{U_CURRENT_FOLDER}">{L_RETURN_TO} {CUR_FOLDER_NAME}</a><!-- ENDIF -->
-						<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-							<!-- IF TOTAL_MESSAGES --><span class="btn btn-default btn-sm disabled">{TOTAL_MESSAGES}</span><!-- ENDIF -->
-							<!-- IF PAGE_NUMBER -->
-								<!-- IF PAGINATION -->
-									<a class="btn bn-default" href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
-									<span class="btn btn-default btn-sm">{PAGINATION}</span>
-								<!-- ELSE -->
-									<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+				<div class="text-center row">
+					<div class="col-md-12">
+						<div class="btn-group">
+							<!-- IF S_VIEW_MESSAGE --><a class="btn btn-primary" href="{U_CURRENT_FOLDER}">{L_RETURN_TO} {CUR_FOLDER_NAME}</a><!-- ENDIF -->
+							<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
+								<!-- IF TOTAL_MESSAGES --><span class="btn btn-default btn-sm disabled">{TOTAL_MESSAGES}</span><!-- ENDIF -->
+								<!-- IF PAGE_NUMBER -->
+									<!-- IF PAGINATION -->
+										<a class="btn btn-default" href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+										<span class="btn btn-default btn-sm">{PAGINATION}</span>
+									<!-- ELSE -->
+										<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+									<!-- ENDIF -->
 								<!-- ENDIF -->
 							<!-- ENDIF -->
-						<!-- ENDIF -->
+						</div>
+					</div>
+				</div>
+			<!-- ENDIF -->
+			<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="btn-group">
+							<!-- IF U_POST_REPLY_PM --><a class="btn btn-success" title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><span></span>{L_POST_REPLY_PM}</a>
+							<!-- ELSEIF U_POST_NEW_TOPIC --><a class="btn btn-success" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}">{L_UCP_PM_COMPOSE}</a><!-- ENDIF -->
+							<!-- IF U_FORWARD_PM --><a class="btn btn-info" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a><!-- ENDIF -->
+							<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><a class="btn btn-default" class="left" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a><!-- ENDIF -->			
+						</div>
 					</div>
 				</div>
 			<!-- ENDIF -->

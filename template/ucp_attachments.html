@@ -1,7 +1,7 @@
 <!-- INCLUDE ucp_header.html -->
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
-<div class="panel panel-default">
+	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">{L_TITLE}</h3>
 		</div>
@@ -13,51 +13,7 @@
 						<!-- IF TOTAL_ATTACHMENTS --><span class="btn btn-default btn-sm disabled">{TOTAL_ATTACHMENTS} {L_TITLE}</span><!-- ENDIF -->
 						<!-- IF PAGE_NUMBER -->
 							<!-- IF PAGINATION -->
-								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
-								<span class="btn btn-default btn-sm">{PAGINATION}</span>
-							<!-- ELSE -->
-								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
-							<!-- ENDIF -->
-						<!-- ENDIF -->
-					</div>
-				</div>	
-				<table class="table table-striped">
-					<thead style="background:none;">
-						<tr class="header">
-							<th style="width: 40%"><a href="{U_SORT_FILENAME}">{L_FILENAME}</a></th>
-							<th class="extra"><a href="{U_SORT_DOWNLOADS}">{L_DOWNLOADS}</a></th>
-							<th class="time"><span><a href="{U_SORT_POST_TIME}">{L_POST_TIME}</a></span></th>
-							<th class="mark">{L_MARK}</th>
-						</tr>
-					</thead>
-					<tbody class="topiclist cplist">
-						<!-- BEGIN attachrow -->
-							<tr>
-								<td style="width: 40%"><a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle">{attachrow.FILENAME}</a> ({attachrow.SIZE})<br />
-									<!-- IF attachrow.S_IN_MESSAGE -->{L_PM}: <!-- ELSE -->{L_TOPIC}: <!-- ENDIF --><a href="{attachrow.U_VIEW_TOPIC}">{attachrow.TOPIC_TITLE}</a>
-								</td>
-								<td class="extra">{attachrow.DOWNLOAD_COUNT}</td>
-								<td class="time"><span>{attachrow.POST_TIME}</span></td>
-								<td class="mark"><input type="checkbox" name="attachment[{attachrow.ATTACH_ID}]" value="1" /></td>
-							</tr>
-						<!-- END attachrow -->
-					</tbody>
-				</table>
-				<fieldset class="display-options">
-					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
-					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
-					<label for="sk">{L_SORT_BY}: <select name="sk" id="sk">{S_SORT_OPTIONS}</select></label> 
-					<label><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
-					<input class="btn btn-default" type="submit" name="sort" value="{L_SORT}" />
-					{S_FORM_TOKEN}
-				</fieldset>
-				<hr />
-				<div class="text-center">
-					<div class="btn-group">
-						<!-- IF TOTAL_ATTACHMENTS --><span class="btn btn-default btn-sm disabled">{TOTAL_ATTACHMENTS} {L_TITLE}</span><!-- ENDIF -->
-						<!-- IF PAGE_NUMBER -->
-							<!-- IF PAGINATION -->
-								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+								<a href="#" class="btn btn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
 								<span class="btn btn-default btn-sm">{PAGINATION}</span>
 							<!-- ELSE -->
 								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
@@ -65,18 +21,51 @@
 						<!-- ENDIF -->
 					</div>
 				</div>
-			<!-- ELSE -->
-				<p><strong>{L_UCP_NO_ATTACHMENTS}</strong></p>
-			<!-- ENDIF -->
-			<!-- IF S_ATTACHMENT_ROWS -->
-				<fieldset class="display-actions">
-					<div class="btn-group">	
-						<a class="btn btn-success btn-sm" href="#" onclick="marklist('ucp', 'attachment', true); return false;">{L_MARK_ALL}</a>
-						<a class="btn btn-warning btn-sm" href="#" onclick="marklist('ucp', 'attachment', false); return false;">{L_UNMARK_ALL}</a>
-					</div>
-					<input class="btn btn-danger btn-sm" type="submit" name="delete" value="{L_DELETE_MARKED}" />
+				<div class="spacer"></div>
+				<fieldset class="display-options well well-sm text-center">
+					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
+					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
+					<label for="sk">{L_SORT_BY}: <select name="sk" id="sk">{S_SORT_OPTIONS}</select></label> 
+					<label><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
+					<input class="btn btn-default" type="submit" name="sort" value="{L_SORT}" />
 					{S_FORM_TOKEN}
 				</fieldset>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr class="header">
+								<th style="width: 40%"><a href="{U_SORT_FILENAME}">{L_FILENAME}</a></th>
+								<th class="extra"><a href="{U_SORT_DOWNLOADS}">{L_DOWNLOADS}</a></th>
+								<th class="time"><span><a href="{U_SORT_POST_TIME}">{L_POST_TIME}</a></span></th>
+								<th class="mark">{L_MARK}</th>
+							</tr>
+						</thead>
+						<tbody class="topiclist cplist">
+							<!-- BEGIN attachrow -->
+								<tr>
+									<td style="width: 40%"><a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle">{attachrow.FILENAME}</a> ({attachrow.SIZE})<br />
+										<!-- IF attachrow.S_IN_MESSAGE -->{L_PM}: <!-- ELSE -->{L_TOPIC}: <!-- ENDIF --><a href="{attachrow.U_VIEW_TOPIC}">{attachrow.TOPIC_TITLE}</a>
+									</td>
+									<td class="extra">{attachrow.DOWNLOAD_COUNT}</td>
+									<td class="time"><span>{attachrow.POST_TIME}</span></td>
+									<td class="mark"><input type="checkbox" name="attachment[{attachrow.ATTACH_ID}]" value="1" /></td>
+								</tr>
+							<!-- END attachrow -->
+						</tbody>
+					</table>
+				</div>
+				<!-- IF S_ATTACHMENT_ROWS -->
+					<fieldset class="text-right">
+						<div class="btn-group">	
+							<a class="btn btn-success btn-sm" href="#" onclick="marklist('ucp', 'attachment', true); return false;">{L_MARK_ALL}</a>
+							<a class="btn btn-warning btn-sm" href="#" onclick="marklist('ucp', 'attachment', false); return false;">{L_UNMARK_ALL}</a>
+						</div>
+						<input class="btn btn-danger btn-sm" type="submit" name="delete" value="{L_DELETE_MARKED}" />
+						{S_FORM_TOKEN}
+					</fieldset>
+				<!-- ENDIF -->
+			<!-- ELSE -->
+				<p><strong>{L_UCP_NO_ATTACHMENTS}</strong></p>
 			<!-- ENDIF -->
 		</div>
 	</div>

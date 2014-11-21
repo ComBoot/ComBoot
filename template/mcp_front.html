@@ -14,41 +14,43 @@
 					<div class="panel-body">						
 						<p>{L_UNAPPROVED_TOTAL}</p>
 							<!-- IF .unapproved -->
-								<table class="table table-striped table-bordered">
-									<thead style="background:none;">	
-										<tr>
-											<th>{L_VIEW_DETAILS}</th>
-											<th class="moderation"><span>{L_TOPIC} &amp; {L_FORUM}</span></th>
-										</tr>
-									</thead>
-									<tbody class="topiclist cplist">
-										<!-- BEGIN unapproved -->
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered">
+										<thead>	
 											<tr>
-												<td>
-													<a href="{unapproved.U_POST_DETAILS}" class="topictitle">{unapproved.SUBJECT}</a> {unapproved.ATTACH_ICON_IMG}<br />
-													{L_POSTED} {L_POST_BY_AUTHOR} {unapproved.AUTHOR_FULL} &raquo; {unapproved.POST_TIME}
-												</td>
-												<td class="moderation"><span>
-													{L_TOPIC}: <a href="{unapproved.U_TOPIC}">{unapproved.TOPIC_TITLE}</a> [<a href="{unapproved.U_MCP_TOPIC}">{L_MODERATE}</a>]<br />
-													{L_FORUM}: <!-- IF unapproved.U_FORUM --><a href="{unapproved.U_FORUM}">{unapproved.FORUM_NAME}</a><!-- ELSE -->{unapproved.FORUM_NAME}<!-- ENDIF --><!-- IF unapproved.U_MCP_FORUM --> [<a href="{unapproved.U_MCP_FORUM}">{L_MODERATE}</a>]<!-- ENDIF --></span>
-												</td>
-												<td class="mark"><input type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}" /></td>
+												<th>{L_VIEW_DETAILS}</th>
+												<th class="moderation"><span>{L_TOPIC} &amp; {L_FORUM}</span></th>
 											</tr>
-										<!-- END unapproved -->
-									</tbody>
-								</table>
+										</thead>
+										<tbody class="topiclist cplist">
+											<!-- BEGIN unapproved -->
+												<tr>
+													<td>
+														<a href="{unapproved.U_POST_DETAILS}" class="topictitle">{unapproved.SUBJECT}</a> {unapproved.ATTACH_ICON_IMG}<br />
+														{L_POSTED} {L_POST_BY_AUTHOR} {unapproved.AUTHOR_FULL} &raquo; {unapproved.POST_TIME}
+													</td>
+													<td class="moderation"><span>
+														{L_TOPIC}: <a href="{unapproved.U_TOPIC}">{unapproved.TOPIC_TITLE}</a> [<a href="{unapproved.U_MCP_TOPIC}">{L_MODERATE}</a>]<br />
+														{L_FORUM}: <!-- IF unapproved.U_FORUM --><a href="{unapproved.U_FORUM}">{unapproved.FORUM_NAME}</a><!-- ELSE -->{unapproved.FORUM_NAME}<!-- ENDIF --><!-- IF unapproved.U_MCP_FORUM --> [<a href="{unapproved.U_MCP_FORUM}">{L_MODERATE}</a>]<!-- ENDIF --></span>
+													</td>
+													<td class="mark"><input type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}" /></td>
+												</tr>
+											<!-- END unapproved -->
+										</tbody>
+									</table>
+								</div>
 							<!-- ENDIF -->
 						</div>
-					{S_FORM_TOKEN}
 				</div>
 				<!-- IF .unapproved -->
 					<fieldset class="display-actions">
 						{S_HIDDEN_FIELDS}
-						<input class="btn btn-danger" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
+						<input class="btn btn-danger" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />
 						<input class="btn btn-primary" type="submit" name="action[approve]" value="{L_APPROVE}" />
 						<div><a href="#" onclick="marklist('mcp_queue', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp_queue', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
 					</fieldset>
 				<!-- ENDIF -->
+				{S_FORM_TOKEN}
 			</form>
 		<!-- ENDIF -->
 		<!-- IF S_SHOW_REPORTS -->
@@ -59,28 +61,30 @@
 				<div class="panel-body">	
 					<p>{L_REPORTS_TOTAL}</p>
 					<!-- IF .report -->
-						<table class="table table-striped table-bordered">
-							<thead style="background:none;">
-								<tr>
-									<th>{L_VIEW_DETAILS}</th>
-									<th class="moderation"><span>{L_REPORTER} &amp; {L_FORUM}</span></th>
-								</tr>
-							</thead>
-							<tbody class="topiclist cplist">
-								<!-- BEGIN report -->
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered">
+								<thead>
 									<tr>
-										<td>
-											<a href="{report.U_POST_DETAILS}#reports" class="topictitle">{report.SUBJECT}</a> {report.ATTACH_ICON_IMG}<br />
-											<span>{L_POSTED} {L_POST_BY_AUTHOR} {report.AUTHOR_FULL} &raquo; {report.POST_TIME}</span>
-										</td>
-										<td class="moderation">
-											<span>{L_REPORTED} {L_POST_BY_AUTHOR} {report.REPORTER_FULL} {L_REPORTED_ON_DATE} {report.REPORT_TIME}<br />
-											{L_FORUM}: <a href="{report.U_FORUM}">{report.FORUM_NAME}</a></span>
-										</td>
+										<th>{L_VIEW_DETAILS}</th>
+										<th class="moderation"><span>{L_REPORTER} &amp; {L_FORUM}</span></th>
 									</tr>
-								<!-- END report -->
-							</tbody>
-						</table>
+								</thead>
+								<tbody class="topiclist cplist">
+									<!-- BEGIN report -->
+										<tr>
+											<td>
+												<a href="{report.U_POST_DETAILS}#reports" class="topictitle">{report.SUBJECT}</a> {report.ATTACH_ICON_IMG}<br />
+												<span>{L_POSTED} {L_POST_BY_AUTHOR} {report.AUTHOR_FULL} &raquo; {report.POST_TIME}</span>
+											</td>
+											<td class="moderation">
+												<span>{L_REPORTED} {L_POST_BY_AUTHOR} {report.REPORTER_FULL} {L_REPORTED_ON_DATE} {report.REPORT_TIME}<br />
+												{L_FORUM}: <a href="{report.U_FORUM}">{report.FORUM_NAME}</a></span>
+											</td>
+										</tr>
+									<!-- END report -->
+								</tbody>
+							</table>
+						</div>
 					<!-- ENDIF -->
 				</div>
 			</div>
@@ -93,28 +97,30 @@
 				<div class="panel-body">
 					<p>{L_PM_REPORTS_TOTAL}</p>
 					<!-- IF .pm_report -->
-						<table class="table table-striped">
-							<thead style="background:none;">
-								<dl>
-									<dt>{L_VIEW_DETAILS}</dt>
-									<dd class="moderation"><span>{L_REPORTER}</span></dd>
-								</dl>
-							</thead>
-							<tbody class="topiclist cplist">
-								<!-- BEGIN pm_report -->
-									<tr>
-										<td>
-											<a href="{pm_report.U_PM_DETAILS}" class="topictitle">{pm_report.PM_SUBJECT}</a> {pm_report.ATTACH_ICON_IMG}<br />
-											<span>{L_MESSAGE_BY_AUTHOR} {pm_report.PM_AUTHOR_FULL} &raquo; {pm_report.PM_TIME}</span><br />
-											<span>{L_MESSAGE_TO} {pm_report.RECIPIENTS}</span>
-										</td>
-										<td class="moderation">
-											<span>{L_REPORTED} {L_POST_BY_AUTHOR} {pm_report.REPORTER_FULL} {L_REPORTED_ON_DATE} {pm_report.REPORT_TIME}</span>
-										</td>
-									</tr>
-								<!-- END pm_report -->
-							</tbody>
-						</table>
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered">
+								<thead>
+									<dl>
+										<dt>{L_VIEW_DETAILS}</dt>
+										<dd class="moderation"><span>{L_REPORTER}</span></dd>
+									</dl>
+								</thead>
+								<tbody class="topiclist cplist">
+									<!-- BEGIN pm_report -->
+										<tr>
+											<td>
+												<a href="{pm_report.U_PM_DETAILS}" class="topictitle">{pm_report.PM_SUBJECT}</a> {pm_report.ATTACH_ICON_IMG}<br />
+												<span>{L_MESSAGE_BY_AUTHOR} {pm_report.PM_AUTHOR_FULL} &raquo; {pm_report.PM_TIME}</span><br />
+												<span>{L_MESSAGE_TO} {pm_report.RECIPIENTS}</span>
+											</td>
+											<td class="moderation">
+												<span>{L_REPORTED} {L_POST_BY_AUTHOR} {pm_report.REPORTER_FULL} {L_REPORTED_ON_DATE} {pm_report.REPORT_TIME}</span>
+											</td>
+										</tr>
+									<!-- END pm_report -->
+								</tbody>
+							</table>
+						</div>
 					<!-- ENDIF -->
 				</div>
 			</div>
@@ -125,34 +131,36 @@
 					<h3 class="panel-title">{L_LATEST_LOGS}</h3>
 				</div>
 				<div class="panel-body">
-					<table class="table table-striped table-bordered">
-						<thead style="background:none;">
-							<tr>
-								<th class="name">{L_ACTION}</th>
-								<th class="name">{L_USERNAME}</th>
-								<th class="name">{L_IP}</th>
-								<th class="name">{L_VIEW_TOPIC}</th>
-								<th class="name">{L_VIEW_TOPIC_LOGS}</th>
-								<th class="name">{L_TIME}</th>
-							</tr>
-						</thead>
-						<tbody>
-							<!-- BEGIN log -->
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered">
+							<thead>
 								<tr>
-									<td>{log.ACTION}</td>
-									<td><span>{log.USERNAME}</span></td>
-									<td><span>{log.IP}</span></td>
-									<td><span><!-- IF log.U_VIEW_TOPIC --><a href="{log.U_VIEW_TOPIC}" title="{L_VIEW_TOPIC}">{L_VIEW_TOPIC}</a><!-- ENDIF -->&nbsp;</span></td>
-									<td><span><!-- IF log.U_VIEWLOGS --><a href="{log.U_VIEWLOGS}">{L_VIEW_TOPIC_LOGS}</a><!-- ENDIF -->&nbsp;</span></td>
-									<td><span>{log.TIME}</span></td>
+									<th class="name">{L_ACTION}</th>
+									<th class="name">{L_USERNAME}</th>
+									<th class="name">{L_IP}</th>
+									<th class="name">{L_VIEW_TOPIC}</th>
+									<th class="name">{L_VIEW_TOPIC_LOGS}</th>
+									<th class="name">{L_TIME}</th>
 								</tr>
-							<!-- BEGINELSE -->
-								<tr>
-									<td colspan="6">{L_NO_ENTRIES}</td>
-								</tr>
-							<!-- END log -->
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+								<!-- BEGIN log -->
+									<tr>
+										<td>{log.ACTION}</td>
+										<td><span>{log.USERNAME}</span></td>
+										<td><span>{log.IP}</span></td>
+										<td><span><!-- IF log.U_VIEW_TOPIC --><a href="{log.U_VIEW_TOPIC}" title="{L_VIEW_TOPIC}">{L_VIEW_TOPIC}</a><!-- ENDIF -->&nbsp;</span></td>
+										<td><span><!-- IF log.U_VIEWLOGS --><a href="{log.U_VIEWLOGS}">{L_VIEW_TOPIC_LOGS}</a><!-- ENDIF -->&nbsp;</span></td>
+										<td><span>{log.TIME}</span></td>
+									</tr>
+								<!-- BEGINELSE -->
+									<tr>
+										<td colspan="6">{L_NO_ENTRIES}</td>
+									</tr>
+								<!-- END log -->
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		<!-- ENDIF -->

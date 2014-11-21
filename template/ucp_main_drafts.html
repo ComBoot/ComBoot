@@ -9,40 +9,42 @@
 			<p>{L_DRAFTS_EXPLAIN}</p>
 			<!-- IF S_EDIT_DRAFT -->
 				<!-- INCLUDE posting_editor.html -->
-		</div>
-	</div>
-	<fieldset class="submit-buttons">
-		{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
-		<input type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary" />
-		{S_FORM_TOKEN}
-	</fieldset>
-
+					</div>
+					<div class="panel-footer">
+						<fieldset class="submit-buttons">
+							{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
+							<input type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary" />
+							{S_FORM_TOKEN}
+						</fieldset>
+					</div>
 			<!-- ELSE -->
 				<!-- IF .draftrow -->
-					<table class="table table-striped table-bordered">
-						<thead style="background:none;">
-							<tr>
-								<th>{L_DRAFT_TITLE}</th>
-								<th><span>{L_SAVE_DATE}</span></th>
-								<th>{L_MARK}</th>
-							</tr>
-						</thead>
-						<tbody class="topiclist cplist">
-							<!-- BEGIN draftrow -->
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered">
+							<thead>
 								<tr>
-									<td>
-										<a class="topictitle" href="{draftrow.U_VIEW_EDIT}">{draftrow.DRAFT_SUBJECT}</a><br />
-										<!-- IF draftrow.S_LINK_TOPIC -->{L_TOPIC}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
-										<!-- ELSEIF draftrow.S_LINK_FORUM -->{L_FORUM}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
-										<!-- ELSEIF S_PRIVMSGS -->
-										<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF -->
-									</td>
-									<td><span>{draftrow.DATE}<br /><!-- IF draftrow.U_INSERT --><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></span></td>
-									<td class="mark"><center><input type="checkbox" name="d[{draftrow.DRAFT_ID}]" id="d{draftrow.DRAFT_ID}" /></center></td>
+									<th>{L_DRAFT_TITLE}</th>
+									<th><span>{L_SAVE_DATE}</span></th>
+									<th>{L_MARK}</th>
 								</tr>
-							<!-- END draftrow -->
-						</tbody>
-					</table>
+							</thead>
+							<tbody class="topiclist cplist">
+								<!-- BEGIN draftrow -->
+									<tr>
+										<td>
+											<a class="topictitle" href="{draftrow.U_VIEW_EDIT}">{draftrow.DRAFT_SUBJECT}</a><br />
+											<!-- IF draftrow.S_LINK_TOPIC -->{L_TOPIC}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+											<!-- ELSEIF draftrow.S_LINK_FORUM -->{L_FORUM}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+											<!-- ELSEIF S_PRIVMSGS -->
+											<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF -->
+										</td>
+										<td><span>{draftrow.DATE}<br /><!-- IF draftrow.U_INSERT --><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></span></td>
+										<td class="mark"><center><input type="checkbox" name="d[{draftrow.DRAFT_ID}]" id="d{draftrow.DRAFT_ID}" /></center></td>
+									</tr>
+								<!-- END draftrow -->
+							</tbody>
+						</table>
+					</div>
 				<!-- ELSE -->
 					<p><strong>{L_NO_SAVED_DRAFTS}</strong></p>
 				<!-- ENDIF -->
@@ -58,8 +60,8 @@
 						</fieldset>
 					</div>
 				<!-- ENDIF -->
-			<!-- ENDIF -->
-		</div>
+			</div>
+		<!-- ENDIF -->
 	</div>
 </form>
 

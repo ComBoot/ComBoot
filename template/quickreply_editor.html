@@ -1,9 +1,10 @@
 <form method="post" action="{U_QR_ACTION}">
-	<div class="panel panel-default" id="qr_ns_editor_div">
+	<div class="panel panel-default panel-collapsible" id="qr_ns_editor_div">
 		<div class="panel-heading">
     		<h3 class="panel-title">{L_QUICKREPLY}</h3>
+    		<span class="pull-right panel-right clickable panel-collapsed"><i class="fa fa-chevron-down"></i></span>
     	</div>
-    	<div class="panel-body">
+    	<div class="panel-body" style="display:none">
 			<fieldset>
 				<div class="form-horizontal">
 					<div class="form-group">
@@ -13,16 +14,18 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="col-md-12">
-							<textarea style="height: 9em;" name="message" rows="7" cols="76" tabindex="3" class="form-control"></textarea>
+						<div class="col-md-10 col-md-offset-2">
+							<textarea name="message" id="message" rows="7" cols="76" tabindex="3" class="form-control"></textarea>
 						</div>
 					</div>
 				</div>
 			</fieldset>
+		</div>
+		<div class="panel-footer" style="display:none">
 			<fieldset class="submit-buttons">
 				{S_FORM_TOKEN}
 				{QR_HIDDEN_FIELDS}
-				<input type="submit" accesskey="f" tabindex="7" name="full_editor" value="{L_FULL_EDITOR}" class="btn btn-default" />
+				<input type="submit" accesskey="f" tabindex="7" name="full_editor" value="{L_FULL_EDITOR}" class="btn btn-primary" />
 				<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-success" />
 			</fieldset>
 		</div>

@@ -9,11 +9,8 @@
 	<li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
 	<!-- END t_block1 -->
 </ul>
-
-	<!-- IF S_COMPOSE_PM -->
-		<form id="postform" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
-	<!-- ENDIF -->
-	<div class="well" id="ucp-nav">
+<div class="well" id="ucp-nav">
+	<div class="row">
 		<div class="col-md-2">
 			<!-- IF S_PRIVMSGS -->
 				<div class="list-group">
@@ -47,33 +44,34 @@
 						<!-- ENDIF -->
 					<!-- ENDIF -->
 				<!-- END t_block2 -->
-				<!-- IF .friends_online or .friends_offline -->
-					<div class="cp-mini">
-						<div class="inner">
-							<dl class="mini">
-								<dt>{L_FRIENDS}</dt>
-								<!-- BEGIN friends_online -->
-									<dd class="friend-online" title="{L_FRIENDS_ONLINE}">{friends_online.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --> <input type="submit" name="add_to[{friends_online.USER_ID}]" value="{L_ADD}" class="btn btn-sm btn-success" /><!-- ENDIF --><!-- IF friends_online.S_LAST_ROW and .friends_offline --><hr /><!-- ENDIF --></dd>
-								<!-- END friends_online -->
-								<!-- BEGIN friends_offline -->
-									<dd class="friend-offline" title="{L_FRIENDS_OFFLINE}">{friends_offline.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="btn btn-sm btn-danger" /><!-- ENDIF --></dd>
-								<!-- END friends_offline -->
-							</dl>
-						</div>
-					</div>
-				<!-- ENDIF -->
-				<!-- IF S_SHOW_COLOUR_LEGEND -->
-					<div class="cp-mini">
-						<div class="inner">
-							<dl class="mini">
-								<dt>{L_MESSAGE_COLOURS}</dt>
-								<!-- BEGIN pm_colour_info -->
-									<dd class="pm-legend<!-- IF pm_colour_info.CLASS --> {pm_colour_info.CLASS}<!-- ENDIF -->"><!-- IF pm_colour_info.IMG -->{pm_colour_info.IMG} <!-- ENDIF -->{pm_colour_info.LANG}</dd>
-								<!-- END pm_colour_info -->
-							</dl>
-						</div>
-					</div>
-				<!-- ENDIF -->
 			</div>
+			<!-- IF .friends_online or .friends_offline -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">{L_FRIENDS}</h3>
+						<!-- BEGIN friends_online -->
+							<div class="friend-online" title="{L_FRIENDS_ONLINE}">{friends_online.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --> <input type="submit" name="add_to[{friends_online.USER_ID}]" value="{L_ADD}" class="btn btn-sm btn-success" /><!-- ENDIF --><!-- IF friends_online.S_LAST_ROW and .friends_offline --><hr /><!-- ENDIF --></div>
+						<!-- END friends_online -->
+						<!-- BEGIN friends_offline -->
+							<div class="friend-offline" title="{L_FRIENDS_OFFLINE}">{friends_offline.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="btn btn-sm btn-danger" /><!-- ENDIF --></div>
+						<!-- END friends_offline -->
+					</div>
+				</div>
+			<!-- ENDIF -->
+			<!-- IF S_SHOW_COLOUR_LEGEND -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">{L_MESSAGE_COLOURS}</h3>
+					</div>
+					<div class="panel-body">
+						<!-- BEGIN pm_colour_info -->
+							<div class="pm-legend<!-- IF pm_colour_info.CLASS --> {pm_colour_info.CLASS}<!-- ENDIF -->"><!-- IF pm_colour_info.IMG -->{pm_colour_info.IMG} <!-- ENDIF -->{pm_colour_info.LANG}</div>
+						<!-- END pm_colour_info -->
+					</div>
+				</div>
+			<!-- ENDIF -->
 		</div>
 		<div id="cp-main" class="ucp-main col-md-10">
+			<!-- IF S_COMPOSE_PM -->
+				<form id="postform" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
+			<!-- ENDIF -->

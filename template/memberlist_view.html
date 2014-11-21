@@ -2,12 +2,14 @@
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile">
 	<div class="user-details">
-		<!-- IF AVATAR_IMG -->
-			<div class="user-image">
+		<div class="user-image rounded">
+			<!-- IF AVATAR_IMG -->
 				{AVATAR_IMG}
-			</div>
-		<!-- ENDIF -->
-		<div class="user-info-block<!-- IF not AVATAR_IMG --> no-padding<!-- ENDIF --> panel panel-default <!-- IF S_ONLINE -->badger-left-radius badger-success" data-badger="ONLINE<!-- ENDIF -->">
+			<!-- ELSE -->
+				<img src="{T_THEME_PATH}/images/default_avatar.jpg">
+			<!-- ENDIF -->
+		</div>
+		<div class="user-info-block panel panel-default badger-left-radius <!-- IF S_ONLINE -->badger-success" data-badger="ONLINE<!-- ELSE -->badger-danger" data-badger="OFFLINE<!-- ENDIF -->">
 			<div class="user-heading">
 				<!-- IF USER_COLOR --><h3 style="color: {USER_COLOR}; font-weight: bold;"><!-- ELSE --><h3><!-- ENDIF -->{USERNAME}</h3>
 				<!-- IF RANK_TITLE --><span class="help-block">{RANK_TITLE}</span><!-- ENDIF -->
@@ -22,13 +24,15 @@
 				<div class=" row">
 					<div class=" col-md-12">
 						<div class="panel panel-default">
-							<div class="panel-heading">
+							<div class="panel-heading btn-panel">
 								<h3 class="panel-title">
 									{L_USERNAME}: <!-- IF USER_COLOR --><span style="color: {USER_COLOR}; font-weight: bold;"><!-- ELSE --><span><!-- ENDIF -->{USERNAME}</span>
-									<!-- IF U_USER_ADMIN --> [ <a href="{U_USER_ADMIN}">{L_USER_ADMIN}</a> ]<!-- ENDIF -->
-									<!-- IF U_USER_BAN --> [ <a href="{U_USER_BAN}">{L_USER_BAN}</a> ]<!-- ENDIF -->
-									<!-- IF U_SWITCH_PERMISSIONS --> [ <a href="{U_SWITCH_PERMISSIONS}">{L_USE_PERMISSIONS}</a> ]<!-- ENDIF -->
 								</h3>
+								<span class="pull-right btn-group panel-right">
+									<!-- IF U_USER_ADMIN --><a href="{U_USER_ADMIN}" class="btn btn-default">{L_USER_ADMIN}</a><!-- ENDIF -->
+									<!-- IF U_USER_BAN --><a href="{U_USER_BAN}" class="btn btn-default">{L_USER_BAN}</a><!-- ENDIF -->
+									<!-- IF U_SWITCH_PERMISSIONS --><a href="{U_SWITCH_PERMISSIONS}" class="btn btn-default">{L_USE_PERMISSIONS}</a><!-- ENDIF -->
+								</span>
 							</div>
 							<div class="panel-body">
 								<div class="form-horizontal">
@@ -92,12 +96,8 @@
 										<div class="form-group">
 											<label class="control-label col-md-3">{L_USERGROUPS}:</label>
 											<div class="col-md-9">
-												<div class="input-group">
-													<div class="input-group-btn">
-														<select name="g">{S_GROUP_OPTIONS}</select>
-														<input type="submit" name="submit" value="{L_GO}" class="btn btn-default" />
-													</div>
-												</div>
+												<select name="g">{S_GROUP_OPTIONS}</select>
+												<input type="submit" name="submit" value="{L_GO}" class="btn btn-default" />
 											</div>
 										</div>
 									<!-- ENDIF -->

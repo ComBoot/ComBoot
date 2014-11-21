@@ -1,12 +1,12 @@
 <!-- INCLUDE mcp_header.html -->
 
 <!-- IF not S_PM -->
-	<fieldset class="forum-selection">
+	<fieldset class="forum-selector">
 		<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
 		<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
 		{S_FORM_TOKEN}
 	</fieldset>
-	<br style="clear:both;">
+	<br class="clearfix">
 <!-- ENDIF -->
 
 <form id="mcp" method="post" action="{S_MCP_ACTION}">
@@ -22,7 +22,7 @@
 						<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-sm disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
 						<!-- IF PAGE_NUMBER -->
 							<!-- IF PAGINATION -->
-								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
+								<a href="#" class="btn btn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
 								<span class="btn btn-default btn-sm">{PAGINATION}</span>
 							<!-- ELSE -->
 								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
@@ -30,82 +30,68 @@
 						<!-- ENDIF -->
 					</div>
 				</div>
-				<ul class="topiclist">
-					<li class="header">
-						<dl>
-							<dt>{L_VIEW_DETAILS}</dt>
-							<dd class="moderation"><span>{L_REPORTER}<!-- IF not S_PM --> &amp; {L_FORUM}<!-- ENDIF --></span></dd>
-							<dd class="mark">{L_MARK}</dd>
-						</dl>
-					</li>
-				</ul>
-				<ul class="topiclist cplist">
-
-				<!-- BEGIN postrow -->
-					<li class="row<!-- IF postrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-						<dl>
-							<!-- IF S_PM -->
-							<dt>
-								<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.PM_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
-								<span>{L_MESSAGE_BY_AUTHOR} {postrow.PM_AUTHOR_FULL} &raquo; {postrow.PM_TIME}</span><br />
-								<span>{L_MESSAGE_TO} {postrow.RECIPIENTS}</span>
-							</dt>
-							<dd class="moderation">
-								<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</span>
-							</dd>
-							<!-- ELSE -->
-							<dt>
-								<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
-								<span>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</span>
-							</dt>
-							<dd class="moderation">
-								<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}<br />
-								<!-- IF postrow.U_VIEWFORUM -->{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a><!-- ELSE -->{postrow.FORUM_NAME}<!-- ENDIF --></span>
-							</dd>
-							<!-- ENDIF -->
-							<dd class="mark"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></dd>
-						</dl>
-					</li>
-				<!-- END postrow -->
-				</ul>
-
-				<fieldset class="display-options">
+				<div class="spacer"></div>
+				<fieldset class="display-options well well-sm text-center">
 					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 					<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
 					<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>
-					<!-- IF TOPIC_ID --><label><input type="checkbox" class="radio" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; <strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
+					<!-- IF TOPIC_ID --><label><input type="checkbox" name="t" value="{TOPIC_ID}" checked="checked" /><strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
 					<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
 				</fieldset>
-				<hr />
-				<div class="text-center">
-					<div class="btn-group">
-						<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-sm disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
-						<!-- IF PAGE_NUMBER -->
-							<!-- IF PAGINATION -->
-								<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span>{PAGE_NUMBER}</span></a>
-								<span class="btn btn-default btn-sm">{PAGINATION}</span>
-							<!-- ELSE -->
-								<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
-							<!-- ENDIF -->
-						<!-- ENDIF -->
-					</div>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>{L_VIEW_DETAILS}</th>
+								<th>{L_REPORTER}<!-- IF not S_PM --> &amp; {L_FORUM}<!-- ENDIF --></th>
+								<th>{L_MARK}</th>
+							</tr>
+						</thead>
+						<tbody class="topiclist cplist">
+							<!-- BEGIN postrow -->
+								<tr>
+									<!-- IF S_PM -->
+										<td>
+											<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.PM_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
+											<span>{L_MESSAGE_BY_AUTHOR} {postrow.PM_AUTHOR_FULL} &raquo; {postrow.PM_TIME}</span><br />
+											<span>{L_MESSAGE_TO} {postrow.RECIPIENTS}</span>
+										</td>
+										<td class="moderation">
+											<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</span>
+										</td>
+									<!-- ELSE -->
+										<td>
+											<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
+											<span>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</span>
+										</td>
+										<td class="moderation">
+											<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}<br />
+											<!-- IF postrow.U_VIEWFORUM -->{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a><!-- ELSE -->{postrow.FORUM_NAME}<!-- ENDIF --></span>
+										</td>
+									<!-- ENDIF -->
+									<td class="mark"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></td>
+								</tr>
+							<!-- END postrow -->
+						</tbody>
+					</table>
 				</div>
-
+				<!-- IF .postrow -->
+					<fieldset class="display-actions pull-right">
+						<div class="btn-group">
+							<a href="#" class="btn btn-success btn-sm" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a>
+							<a href="#" class="btn btn-warning btn-sm" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a>
+						</div>
+						<div class="btn-group">
+							<input class="btn btn-danger btn-sm" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
+							<!-- IF not S_CLOSED --><input class="btn btn-warning btn-sm" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
+						</div>
+					</fieldset>
+				<!-- ENDIF -->
 			<!-- ELSE -->
 				<p><strong>{L_NO_REPORTS}</strong></p>
 			<!-- ENDIF -->
 		</div>
-		<!-- IF .postrow -->
-			<fieldset class="display-actions">
-				<div class="btn-group">
-					<a href="#" class="btn btn-success" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a>
-					<a href="#" class="btn btn-warning" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a>
-					<input class="btn btn-danger" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
-					<!-- IF not S_CLOSED --><input class="btn btn-success" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
-				</div>
-			</fieldset>
-		<!-- ENDIF -->
 	</div>
 </form>
 

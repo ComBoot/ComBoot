@@ -1,105 +1,73 @@
-<p align="center"><a href="http://zoker.me/go/proboot" target="_blank"><img src="http://zoker.me/images/uploads/big/0d1bab2b61aef92008d75d99042ea254.png" alt="proBoot3 Logo" width="400px"/></a></p>
+<p align="center"><a href="http://zoker.me/go/comboot" target="_blank"><img src="https://github.com/TheZoker/ComBoot-Free/blob/master/imageset/site_logo.png" alt="ComBoot Logo" width="500px" style="max-width:300px"/></a></p>
 
 ---
-:exclamation: <b>proBoot3 1.0 will be available very soon, there are only a few bugs left. I hope I can publish it within the next two weeks. There will also be a new support and product page.</b>
-For more information, see [status] (#status)
+<p align="center">The Professional phpBB Bootstrap Theme</p>
 
 Note !
-=
-> - **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually!**
-- **This theme is also meant to work with core bootstrap, it therefor cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
+==
+> - **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually! You can wait for phpBB 3.1, which will include a plugin system.**
+- **This theme is also meant to work with core bootstrap, it therefore cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
+
+A beautiful phpBB3 theme based on the beautiful [Bootstrap](http://getbootstrap.com/) framework.
 
 Overview
 =
-
-A simple phpBB3 theme based on the beautiful [Bootstrap](http://twitter.github.com/bootstrap/) framework.
-The color scheme is the simple bootstrap color, similar to the design here @github.
-
-- [Status] (#status)
+- [Links] (#links)
 - [Features] (#features)
-- [Quick Start] (#quick-start)
-- [About] (#about)
 - [Screenshots] (#screenshots)
+- [Premium] (#premium)
+- [About] (#about)
 - [Themes] (#themes)
 
-If you found any bug or have a feature request, just create a ticket: https://github.com/TheZoker/proBoot3/issues/new
-
-Status
+Links
 =
-> Added
-- New logo for theme 
-- Bootstrap top and footer navbar with login panel
-- [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/3/)
-- Smooth scroll to top on post page
-- Page header
-- Breadcrumbs
-- Rewrite registration and login page
-- Font Awesome
-- Button checkboxes
-- Labeled Buttons
-
-> Fixed
-- Buttons for Bootstrap 3
-- Panels to Bootstrap 3 panels
-- Row class padding
-- FAQ site
-- Membersite search
-- Fix for post page
-- Nice code (well tabbed)
-- Search forms
-- Complete UCP Panel
-- Redesign profil view
-- Changing MCP and search site (changing <'dd'>, <'dl'> and <'dt'> to col-md-x
-- Fixing form for Bootstrap 3
-- Improving search pages
-- Changing memberlist view
-
-> In progress and included in next huge update
-- New name for the theme
-
-> To do
-- Delete unnecessary files
-- Fix topic review
-- Fix PM preview
-- Improve PM inbox view
-- Mobile device optimisation
-- Update breadchrumbs to be shown on every site
-- much more!
-
-All changes: http://zoker.me/go/proboot-changelog or https://github.com/TheZoker/proBoot3/compare/shibulijack:master...master
+- [Overview Page] (http://zoker.me/go/comboot)
+- [Demo] (http://zoker.me/go/comboot-demo)
+- [Support] (http://zoker.me/go/comboot-support) (Knowledge Base, Community and Ticket support)
+- [Changelog] (http://zoker.me/go/comboot-changelog)
 
 Features
 =
 * Based on the most awesome html framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
+* Every page is completely designed for bootstrap
 * Integration of [Font Awesome 4](http://fontawesome.io/)
+* Completle responsive
 * Using [Bootstrap-Select](http://silviomoreto.github.io/bootstrap-select/)
-* Beautiful light design (like github)
+* Beautiful light design
 * Full HTML5 registration and login form 
-* Awesome login dropdown panel (see demo)
-* Simple theme change (see wiki)
+* Awesome login dropdown panel
 
-
-Quick Start
+Screenshots
 =
-**Wiki:** [https://github.com/TheZoker/proBoot3/wiki/] (https://github.com/TheZoker/proBoot3/wiki/)
+<a href="http://zoker.me/images/#4/14128869733844" target="_blank"><img src="http://zoker.me/images/uploads/big/844b5982b0561dafcded503aeac75b24.png" alt="ComBoot Index" width="300px" style="max-width:300px" style="/></a><a href="http://zoker.me/images/#4/14128869728118" target="_blank"><img src="http://zoker.me/images/uploads/big/96bbd5fb9d32f6923670faf0848e013a.png" alt="ComBoot Forum" width="300px" style="max-width:300px"/></a>
+<a href="http://zoker.me/images/#4/14128869716676" target="_blank"><img src="http://zoker.me/images/uploads/big/d2da42f45b1add9e41d1660b609f037c.png" alt="ComBoot Topic" width="300px" style="max-width:300px"/></a><a href="http://zoker.me/images/#4/14128869720209" target="_blank"><img src="http://zoker.me/images/uploads/big/804be621ecefcfd10a89b298a41e5d1d.png" alt="ComBoot MCP" width="300px" style="max-width:300px"/></a>
 
-**Install:** [Installing theme on phpBB] (https://www.phpbb.com/kb/article/how-to-install-styles-on-phpbb3/)
+Premium
+=
+Note! The premium edition is not yet available due to payment issues
+Additional to the free edition published here @github, there will be a premium version, which includes extra features:
+* Easy customize the theme without any coding (e.g. profile on topic page left or right)
+* WYSIWYG Editor for easy use bbcodes
+* Ticket and live chat support
+* Own copyright
 
 About
 =
 **Author:** [Florian Gareis] (http://www.florian-gareis.de) ® 2014
 
-**Base style:** proSilver
+**Base style:** none
 
-**Style Version:** 0.9 BETA
+**Style Version:** 1.0
 
-**phpBB version:** phpBB 3.0.12
+**phpBB version:** phpBB 3.0.12 (3.1 later this year)
 
-**Bootstrap version:** 3.2.0
+**Bootstrap version:** 3.3.1
 
-**Demo:** http://zoker.me/go/proboot-demo
+**Font Awesome:** 4.2.0
 
-**Download:** http://zoker.me/go/proboot-download
+**Demo:** http://zoker.me/go/comboot-demo
+
+**Download:** http://zoker.me/go/comboot-download
 
 Credits
 =
@@ -119,56 +87,8 @@ Credits
 * [WYSIWYG Editor] (http://www.wysibb.com/)
 * [Code Syntax Highlighter] (http://prismjs.com/)
 * [Lightbox] (http://www.jasonbutz.info/bootstrap-lightbox/)
+* [Angular.js] (angularjs.org)
 
-Screenshots
+Licence
 =
-<a href="http://zoker.me/images/proBoot3/Screenshot-1.png"><img src="http://zoker.me/images/proBoot3/Screenshot-1.png" alt="proBoot3 Screenshot 1" width="400px"/></a><a href="http://zoker.me/images/proBoot3/Screenshot-3.png"><img src="http://zoker.me/images/proBoot3/Screenshot-3.png" alt="proBoot3 Screenshot 3" width="400px"/></a>
-<a href="http://zoker.me/images/proBoot3/Screenshot-2.png"><img src="http://zoker.me/images/proBoot3/Screenshot-2.png" alt="proBoot3 Screenshot 2" width="400px"/></a><a href="http://zoker.me/images/proBoot3/Screenshot-4.png"><img src="http://zoker.me/images/proBoot3/Screenshot-4.png" alt="proBoot3 Screenshot 4" width="400px"/></a>
-
-Themes
-=
-
-###Amelia
-[![Amelia] (http://bootswatch.com/amelia/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=amelia)
-
-###Cerulean
-[![Cerulean] (http://bootswatch.com/cerulean/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cerulean)
-
-###Cosmo
-[![Cosmo] (http://bootswatch.com/cosmo/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cosmo)
-
-###Cupid
-[![Cupid] (http://bootswatch.com/cupid/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cupid)
-
-###Cyborg
-[![Cyborg] (http://bootswatch.com/cyborg/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=cyborg)
-
-###Flatly
-[![Flatly] (http://bootswatch.com/flatly/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=flatly)
-
-###Journal
-[![Journal] (http://bootswatch.com/journal/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=journal)
-
-###Lumen
-[![Lumen] (http://bootswatch.com/lumen/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=lumen)
-
-###Readable
-[![Readable] (http://bootswatch.com/readable/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=readable)
-
-###Simplex
-[![Simplex] (http://bootswatch.com/simplex/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=simplex)
-
-###Slate
-[![Slate] (http://bootswatch.com/slate/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=slate)
-
-###Spacelab
-[![Spacelab] (http://bootswatch.com/spacelab/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=spacelab)
-
-###Superhero
-[![Superhero] (http://bootswatch.com/superhero/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=superhero)
-
-###United
-[![United] (http://bootswatch.com/united/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=united)
-
-###Yeti
-[![Yeti] (http://bootswatch.com/yeti/thumbnail.png)] (http://demo.zoker.me/proBoot3/?theme=yeti)
+This project is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (http://creativecommons.org/licenses/by-sa/4.0/)

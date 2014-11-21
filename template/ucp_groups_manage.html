@@ -33,17 +33,18 @@
 								<label class="checkbox-inline" for="desc_parse_smilies"><input type="checkbox" class="radio" name="desc_parse_smilies" id="desc_parse_smilies"<!-- IF S_DESC_SMILIES_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_SMILIES}</label>
 								<label class="checkbox-inline" for="desc_parse_urls"><input type="checkbox" class="radio" name="desc_parse_urls" id="desc_parse_urls"<!-- IF S_DESC_URLS_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_URLS}</label>
 							</div>
-						</dl>
+						</div>
 						<!-- IF not S_SPECIAL_GROUP -->
 							<div class="form-group">
-								<dt><label for="group_type1">{L_GROUP_TYPE}:</label><br /><span>{L_GROUP_TYPE_EXPLAIN}</span></dt>
-								<dd>
-									<label for="group_type1"><input type="radio" class="radio" name="group_type" id="group_type1" value="{GROUP_TYPE_FREE}"{GROUP_FREE} /> {L_GROUP_OPEN}</label> 
-									<label for="group_type2"><input type="radio" class="radio" name="group_type" id="group_type2" value="{GROUP_TYPE_OPEN}"{GROUP_OPEN} /> {L_GROUP_REQUEST}</label> 
-									<label for="group_type3"><input type="radio" class="radio" name="group_type" id="group_type3" value="{GROUP_TYPE_CLOSED}"{GROUP_CLOSED} /> {L_GROUP_CLOSED}</label> 
-									<label for="group_type4"><input type="radio" class="radio" name="group_type" id="group_type4" value="{GROUP_TYPE_HIDDEN}"{GROUP_HIDDEN} /> {L_GROUP_HIDDEN}</label>
-								</dd>
-							</dl>
+								<label class="control-label col-md-4" for="group_type1">{L_GROUP_TYPE}:</label>
+								<div class="col-md-8">
+									<label class="radio-inline" for="group_type1"><input type="radio" name="group_type" id="group_type1" value="{GROUP_TYPE_FREE}"{GROUP_FREE} /> {L_GROUP_OPEN}</label> 
+									<label class="radio-inline" for="group_type2"><input type="radio" name="group_type" id="group_type2" value="{GROUP_TYPE_OPEN}"{GROUP_OPEN} /> {L_GROUP_REQUEST}</label> 
+									<label class="radio-inline" for="group_type3"><input type="radio" name="group_type" id="group_type3" value="{GROUP_TYPE_CLOSED}"{GROUP_CLOSED} /> {L_GROUP_CLOSED}</label> 
+									<label class="radio-inline" for="group_type4"><input type="radio" name="group_type" id="group_type4" value="{GROUP_TYPE_HIDDEN}"{GROUP_HIDDEN} /> {L_GROUP_HIDDEN}</label>
+									<span class="help-block">{L_GROUP_TYPE_EXPLAIN}</span>
+								</div>
+							</div>
 						<!-- ELSE -->
 							<input name="group_type" type="hidden" value="{GROUP_TYPE_SPECIAL}" />
 						<!-- ENDIF -->
@@ -56,8 +57,9 @@
 						<div class="form-group">
 							<label class="control-label col-md-4" for="group_colour">{L_GROUP_COLOR}:</label>
 							<div class="col-md-8">
-								<div class="input-group colour-picker">
-									<input name="group_colour" type="text" id="group_colour" value="#{GROUP_COLOUR}" size="7" maxlength="7" class="form-control"/>
+								<input name="group_colour" type="hidden" id="group_colour" value="{GROUP_COLOUR}" />
+								<div class="input-group colour-picker" id="group_colour_component">
+									<input type="text" value="#{GROUP_COLOUR}" id="color-picker" size="7" maxlength="7" class="form-control"/>
 									<span class="input-group-addon"><i></i></span>
 								</div>
 								<span class="help-block">{L_GROUP_COLOR_EXPLAIN}</span>
@@ -73,97 +75,92 @@
 				</fieldset>
 
 				<!-- INCLUDE ucp_avatar_options.html -->
-				
-				<fieldset class="submit-buttons">
-					{S_HIDDEN_FIELDS}
-					<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn btn-success" /><!-- ENDIF -->
-					<!-- IF S_IN_AVATAR_GALLERY -->
-						<input type="submit" name="cancel" value="{L_CANCEL}" class="btn btn-default" />
-					<!-- ELSE -->
-						<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
-					<!-- ENDIF -->
-					<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-primary" />
-					{S_FORM_TOKEN}
-				</fieldset>
+
 			<!-- ELSEIF S_LIST -->
 				<!-- IF .leader -->
-					<table class="table table-striped">
-						<thead style="background: none;">
-							<tr>
-								<th>{L_GROUP_LEAD}</th>
-								<th>{L_GROUP_DEFAULT}</th>
-								<th>{L_POSTS}</th>
-								<th>{L_JOINED}</th>
-								<th>{L_MARK}</th>
-							</tr>
-						</thead>
-						<tbody>
-							<!-- BEGIN leader -->
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered">
+							<thead>
 								<tr>
-									<td>{leader.USERNAME_FULL}</td>
-									<td><!-- IF leader.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
-									<td>{leader.USER_POSTS}</td>
-									<td>{leader.JOINED}</td>
-									<td>&nbsp;</td>
+									<th>{L_GROUP_LEAD}</th>
+									<th>{L_GROUP_DEFAULT}</th>
+									<th>{L_POSTS}</th>
+									<th>{L_JOINED}</th>
+									<th>{L_MARK}</th>
 								</tr>
-							<!-- END leader -->
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+								<!-- BEGIN leader -->
+									<tr>
+										<td>{leader.USERNAME_FULL}</td>
+										<td><!-- IF leader.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
+										<td>{leader.USER_POSTS}</td>
+										<td>{leader.JOINED}</td>
+										<td>&nbsp;</td>
+									</tr>
+								<!-- END leader -->
+							</tbody>
+						</table>
+					</div>
 				<!-- ENDIF -->
 
 				<!-- BEGIN member -->
 					<!-- IF member.S_PENDING -->
-						<table class="table table-striped">
-							<thead style="background: none;">
-								<tr>
-									<th>{L_GROUP_PENDING}</th>
-									<th>{L_GROUP_DEFAULT}</th>
-									<th>{L_POSTS}</th>
-									<th>{L_JOINED}</th>
-									<th>{L_MARK}</th>
-								</tr>
-							</thead>
-							<tbody>
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>{L_GROUP_PENDING}</th>
+										<th>{L_GROUP_DEFAULT}</th>
+										<th>{L_POSTS}</th>
+										<th>{L_JOINED}</th>
+										<th>{L_MARK}</th>
+									</tr>
+								</thead>
+								<tbody>
 					<!-- ELSEIF member.S_APPROVED -->
 						<!-- IF S_PENDING_SET -->
-							</tbody>
-						</table>
+									</tbody>
+								</table>
+							</div>
 						<!-- ENDIF -->
-						<table class="table table-striped">
-							<thead style="background: none;">
-								<tr>
-									<th>{L_GROUP_APPROVED}</th>
-									<th>{L_GROUP_DEFAULT}</th>
-									<th>{L_POSTS}</th>
-									<th>{L_JOINED}</th>
-									<th>{L_MARK}</th>
-								</tr>
-							</thead>
-							<tbody>
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>{L_GROUP_APPROVED}</th>
+										<th>{L_GROUP_DEFAULT}</th>
+										<th>{L_POSTS}</th>
+										<th>{L_JOINED}</th>
+										<th>{L_MARK}</th>
+									</tr>
+								</thead>
+								<tbody>
 					<!-- ELSE -->
-								<tr>
-									<td>{member.USERNAME_FULL}</td>
-									<td><!-- IF member.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
-									<td>{member.USER_POSTS}</td>
-									<td>{member.JOINED}</td>
-									<td><input type="checkbox" name="mark[]" value="{member.USER_ID}" /></td>
-								</tr>
+						<tr>
+							<td>{member.USERNAME_FULL}</td>
+							<td><!-- IF member.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
+							<td>{member.USER_POSTS}</td>
+							<td>{member.JOINED}</td>
+							<td><input type="checkbox" name="mark[]" value="{member.USER_ID}" /></td>
+						</tr>
 					<!-- ENDIF -->
 					<!-- BEGINELSE -->
-						<table class="table table-striped">
-							<thead style="background: none;">
-								<tr>
-									<th>{L_MEMBERS}</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>{L_GROUPS_NO_MEMBERS}</td>
-								</tr>
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>{L_MEMBERS}</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>{L_GROUPS_NO_MEMBERS}</td>
+									</tr>
 				<!-- END member -->
-							</tbody>
-						</table>
-				
+						</tbody>
+					</table>
+				</div>
 				<ul class="linklist">
 					<li class="leftside pagination">
 						<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a> <span>{PAGINATION}</span><!-- ELSE -->{S_ON_PAGE}<!-- ENDIF -->
@@ -208,28 +205,43 @@
 				</fieldset>
 			<!-- ELSE -->
 				<!-- IF .leader -->
-					<table class="table table-striped">
-						<thead style="background: none;" class="topiclist">
-							<tr class="header">
-								<th>{L_GROUP_LEADER}</th>
-								<th><span>{L_OPTIONS}</span></th>
-							</tr>
-						</thead>
-						<tbody class="topiclist cplist">
-							<!-- BEGIN leader -->
-								<tr>
-									<td><a href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
-										<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
-									</td>
-									<td class="option"><span><a class="btn btn-default btn-sm" href="{leader.U_EDIT}" >{L_EDIT}</a></span> <span><a class="btn btn-default btn-sm" href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></td>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered">
+							<thead class="topiclist">
+								<tr class="header">
+									<th>{L_GROUP_LEADER}</th>
+									<th><span>{L_OPTIONS}</span></th>
 								</tr>
-							<!-- END leader -->
-						</tbody>
-					</table>
+							</thead>
+							<tbody class="topiclist cplist">
+								<!-- BEGIN leader -->
+									<tr>
+										<td><a href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
+											<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
+										</td>
+										<td class="option"><span><a class="btn btn-warning btn-sm" href="{leader.U_EDIT}" >{L_EDIT}</a></span> <span><a class="btn btn-default btn-sm" href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></td>
+									</tr>
+								<!-- END leader -->
+							</tbody>
+						</table>
+					</div>
 				<!-- ELSE -->
 					<p><strong>{L_NO_LEADERS}</strong></p>
 				<!-- ENDIF -->
 			<!-- ENDIF -->
+		</div>
+		<div class="panel-footer">
+			<fieldset class="submit-buttons">
+				{S_HIDDEN_FIELDS}
+				<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn btn-success" /><!-- ENDIF -->
+				<!-- IF S_IN_AVATAR_GALLERY -->
+					<input type="submit" name="cancel" value="{L_CANCEL}" class="btn btn-default" />
+				<!-- ELSE -->
+					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-danger" />
+				<!-- ENDIF -->
+				<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-success" />
+				{S_FORM_TOKEN}
+			</fieldset>
 		</div>
 	</div>
 </form>

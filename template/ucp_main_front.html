@@ -7,56 +7,69 @@
 	<div class="panel-body">
 		<p>{L_UCP_WELCOME}</p>
 		<!-- IF .topicrow -->
-			<h3>{L_IMPORTANT_NEWS}</h3>
-			<table class="topiclist cplist table table-hover">
-				<!-- BEGIN topicrow -->
-					<tbody>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
 						<tr>
-							<td <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
-								<!-- IF topicrow.S_UNREAD --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><i class="pcon {topicrow.TOPIC_IMG_STYLE}"></i><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
-								<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
-								<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
-							</td>
-							<td class="lastpost"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
-								<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
-							</td>
+							<th>{L_IMPORTANT_NEWS}</th>
+							<th class="lastpost">{L_LAST_POST}</th>
 						</tr>
-					</tbody>
-				<!-- END topicrow -->
-			</table>
+					</thead>
+					<!-- BEGIN topicrow -->
+						<tbody>
+							<tr>
+								<td <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
+									<!-- IF topicrow.S_UNREAD --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><i class="pcon {topicrow.TOPIC_IMG_STYLE}"></i><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
+									<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
+									<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
+								</td>
+								<td class="lastpost"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+									<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
+								</td>
+							</tr>
+						</tbody>
+					<!-- END topicrow -->
+				</table>
+			</div>
 		<!-- ENDIF -->
-		<h3>{L_YOUR_DETAILS}</h3>
-		<div class="form-horizontal">
-			<div class="form-group">
-				<label class="control-label col-md-4">{L_JOINED}:</label>
-				<div class="col-md-8"><div class="form-control-static">{JOINED}</div></div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{L_YOUR_DETAILS}</h3>
 			</div>
-			<div class="form-group">
-				<label class="control-label col-md-4">{L_VISITED}:</label>
-				<div class="col-md-8"><div class="form-control-static">{LAST_VISIT_YOU}</div></div>
+			<div class="panel-body">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_JOINED}:</label>
+						<div class="col-md-8"><div class="form-control-static">{JOINED}</div></div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_VISITED}:</label>
+						<div class="col-md-8"><div class="form-control-static">{LAST_VISIT_YOU}</div></div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4">{L_TOTAL_POSTS}:</label>
+						<div class="col-md-8"><div class="form-control-static"><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></div></div>
+					</div>
+					<!-- IF ACTIVE_FORUM != '' -->
+						<div class="form-group">
+							<label class="control-label col-md-4">{L_ACTIVE_IN_FORUM}:</label>
+							<div class="col-md-8"><div class="form-control-static"><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</div></div>
+						</div>
+					<!-- ENDIF -->
+					<!-- IF ACTIVE_TOPIC != '' -->
+						<div class="form-group">
+							<label class="control-label col-md-4">{L_ACTIVE_IN_TOPIC}:</label>
+							<div class="col-md-8"><div class="form-control-static"><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</div></div>
+						</div>
+					<!-- ENDIF -->
+					<!-- IF WARNINGS -->
+						<div class="form-group">
+							<label class="control-label col-md-4">{L_YOUR_WARNINGS}:</label>
+							<div class="col-md-8"><div class="form-control-static">{WARNING_IMG} [{WARNINGS}]</div></div>
+						</div>
+					<!-- ENDIF -->
+				</div>
 			</div>
-			<div class="form-group">
-				<label class="control-label col-md-4">{L_TOTAL_POSTS}:</label>
-				<div class="col-md-8"><div class="form-control-static"><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></div></div>
-			</div>
-			<!-- IF ACTIVE_FORUM != '' -->
-				<div class="form-group">
-					<label class="control-label col-md-4">{L_ACTIVE_IN_FORUM}:</label>
-					<div class="col-md-8"><div class="form-control-static"><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</div></div>
-				</div>
-			<!-- ENDIF -->
-			<!-- IF ACTIVE_TOPIC != '' -->
-				<div class="form-group">
-					<label class="control-label col-md-4">{L_ACTIVE_IN_TOPIC}:</label>
-					<div class="col-md-8"><div class="form-control-static"><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</div></div>
-				</div>
-			<!-- ENDIF -->
-			<!-- IF WARNINGS -->
-				<div class="form-group">
-					<label class="control-label col-md-4">{L_YOUR_WARNINGS}:</label>
-					<div class="col-md-8"><div class="form-control-static">{WARNING_IMG} [{WARNINGS}]</div></div>
-				</div>
-			<!-- ENDIF -->
 		</div>
 	</div>
 </div>

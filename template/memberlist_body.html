@@ -2,7 +2,6 @@
 	<!-- INCLUDE simple_header.html -->
 	<!-- INCLUDE memberlist_search.html -->
 	<form method="post" id="results" action="{S_MODE_ACTION}" onsubmit="insert_marked(this.user); return false">
-
 <!-- ELSEIF S_SEARCH_USER -->
 	<!-- INCLUDE overall_header.html -->	
 	<!-- INCLUDE memberlist_search.html -->
@@ -36,18 +35,19 @@
 
 <!-- IF S_LEADERS_SET or not S_SHOW_GROUP or not .memberrow -->
 	<div class="forumbg forumbg-table">
-		<table class="table table-bordered table-striped" id="memberlist">
-			<thead>
-				<tr>
-					<th><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP and .memberrow -->{L_GROUP_LEADER}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
-					<th><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
-					<th class="posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
-					<th><a href="{U_SORT_WEBSITE}#memberlist">{L_WEBSITE}</a>{L_COMMA_SEPARATOR}<a href="{U_SORT_LOCATION}">{L_LOCATION}</a></th>
-					<th><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
-					<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
-				</tr>
-			</thead>
-			<tbody>
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered" id="memberlist">
+				<thead>
+					<tr>
+						<th><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP and .memberrow -->{L_GROUP_LEADER}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
+						<th><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
+						<th class="posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
+						<th><a href="{U_SORT_WEBSITE}#memberlist">{L_WEBSITE}</a>{L_COMMA_SEPARATOR}<a href="{U_SORT_LOCATION}">{L_LOCATION}</a></th>
+						<th><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
+						<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
+					</tr>
+				</thead>
+				<tbody>
 <!-- ENDIF -->
 <!-- BEGIN memberrow -->
 	<!-- IF S_SHOW_GROUP -->
@@ -58,32 +58,34 @@
 				</tr>
 			<!-- ENDIF -->
 			<!-- IF S_LEADERS_SET -->
-			</tbody>
-		</table>	
+				</tbody>
+			</table>
+		</div>	
 	</div>
 			<!-- ENDIF -->
 
 <div class="forumbg forumbg-table">
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<!-- IF not S_LEADERS_SET -->
-					<th><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP -->{L_GROUP_MEMBERS}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
-					<th><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
-					<th><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
-					<th><a href="{U_SORT_WEBSITE}#memberlist">{L_WEBSITE}</a>{L_COMMA_SEPARATOR}<a href="{U_SORT_LOCATION}">{L_LOCATION}</a></th>
-					<th><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
-					<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
-				<!-- ELSEIF S_SHOW_GROUP -->
-					<th>{L_GROUP_MEMBERS}</th>
-					<th>&nbsp;</th>
-					<th>&nbsp;</th>
-					<th>&nbsp;</th>
-					<!-- IF U_SORT_ACTIVE --><th class="active">&nbsp;</th><!-- ENDIF -->
-				<!-- ENDIF -->
-			</tr>
-		</thead>
-		<tbody>
+	<div class="table-responsive">
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<!-- IF not S_LEADERS_SET -->
+						<th><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP -->{L_GROUP_MEMBERS}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
+						<th><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
+						<th><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
+						<th><a href="{U_SORT_WEBSITE}#memberlist">{L_WEBSITE}</a>{L_COMMA_SEPARATOR}<a href="{U_SORT_LOCATION}">{L_LOCATION}</a></th>
+						<th><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
+						<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
+					<!-- ELSEIF S_SHOW_GROUP -->
+						<th>{L_GROUP_MEMBERS}</th>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<!-- IF U_SORT_ACTIVE --><th class="active">&nbsp;</th><!-- ENDIF -->
+					<!-- ENDIF -->
+				</tr>
+			</thead>
+			<tbody>
 			<!-- DEFINE $S_MEMBER_HEADER = 1 -->
 		<!-- ENDIF -->
 	<!-- ENDIF -->
@@ -100,8 +102,9 @@
 				<td colspan="<!-- IF S_VIEWONLINE -->5<!-- ELSE -->4<!-- ENDIF -->">{L_NO_MEMBERS}</td>
 			</tr>
 				<!-- END memberrow -->
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <!-- IF S_IN_SEARCH_POPUP and not S_SELECT_SINGLE -->
@@ -130,16 +133,28 @@
 
 </form>
 
-<div class="text-center">
-	<div class="btn-group">
-		<span class="btn btn-default btn-sm disabled">{TOTAL_USERS}</span>
-		<!-- IF PAGINATION -->
-			<a href="#" class="btn bn-default" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><span class="badge">{PAGE_NUMBER}</span></a> <span class="badge">{PAGINATION}</span>
-		<!-- ELSE -->
-			<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
-		<!-- ENDIF -->
+<div class="row">
+	<div class="col-md-12 text-center">
+		<div class="btn-group">
+			<span class="btn btn-default btn-sm disabled">{TOTAL_USERS}</span>
+			<!-- IF PAGINATION -->
+				<a href="#" class="btn btn-default btn-sm" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+			<!-- ELSE -->
+				<span class="btn btn-default btn-sm disabled">{PAGE_NUMBER}</span>
+			<!-- ENDIF -->
+		</div>
 	</div>
 </div>
+
+<!-- IF PAGINATION -->
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<div class="btn-group topic-pagination">
+				{PAGINATION}
+			</div>
+		</div>
+	</div>
+<!-- ENDIF -->
 
 <!-- IF S_IN_SEARCH_POPUP -->
 	<!-- INCLUDE simple_footer.html -->
