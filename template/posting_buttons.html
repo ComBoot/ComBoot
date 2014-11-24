@@ -69,30 +69,52 @@
 		<div id="format-buttons" class="no-margin">
 			<div class="btn-toolbar" role="toolbar">
 				<div class="btn-group btn-group-sm">
-					<input type="button" class="btn btn-default" accesskey="b" name="addbbcode0" value=" B " style="font-weight:bold; " onclick="bbstyle(0)" title="{L_BBCODE_B_HELP}" />
-					<input type="button" class="btn btn-default" accesskey="i" name="addbbcode2" value=" i " style="font-style:italic; " onclick="bbstyle(2)" title="{L_BBCODE_I_HELP}" />
-					<input type="button" class="btn btn-default" accesskey="u" name="addbbcode4" value=" u " style="text-decoration: underline; " onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" />
+					<button onclick="bbstyle(0)" title="{L_BBCODE_B_HELP}" accesskey="b" name="addbbcode0" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-bold fa-lg"></i>
+					</button>
+					<button onclick="bbstyle(2)" title="{L_BBCODE_I_HELP}" accesskey="i" name="addbbcode2" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-italic fa-lg"></i>
+					</button>
+					<button onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" accesskey="u" name="addbbcode4" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-underline fa-lg"></i>
+					</button>
 				</div>
 				<!-- IF S_BBCODE_QUOTE -->
 					<div class="btn-group btn-group-sm">
-						<input type="button" class="btn btn-default btn-sm" accesskey="q" name="addbbcode6" value="Quote"  onclick="bbstyle(6)" title="{L_BBCODE_Q_HELP}" />
+						<button onclick="bbstyle(6)" title="{L_BBCODE_Q_HELP}" accesskey="q" name="addbbcode6" type="button" class="btn btn-default btn-xs" >
+							<i class="fa fa-quote-right fa-lg"></i>
+						</button>
 					</div>
 				<!-- ENDIF -->
 				<div class="btn-group btn-group-sm">
-					<input type="button" class="btn btn-default" accesskey="l" name="addbbcode10" value="List"  onclick="bbstyle(10)" title="{L_BBCODE_L_HELP}" />
-					<input type="button" class="btn btn-default" accesskey="o" name="addbbcode12" value="List=" onclick="bbstyle(12)" title="{L_BBCODE_O_HELP}" />
-					<input type="button" class="btn btn-default" accesskey="y" name="addlistitem" value="[*]" onclick="bbstyle(-1)" title="{L_BBCODE_LISTITEM_HELP}" />
+					<button onclick="bbstyle(10)" title="{L_BBCODE_L_HELP}" accesskey="l" name="addbbcode10" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-list-ul fa-lg"></i>
+					</button>
+					<button onclick="bbstyle(12)" title="{L_BBCODE_O_HELP}" accesskey="o" name="addbbcode12" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-list-ol fa-lg"></i>
+					</button>
+					<button onclick="bbstyle(-1)" title="{L_BBCODE_LISTITEM_HELP}" accesskey="y" name="addbblistitem" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-plus-circle fa-lg"></i>
+					</button>
 				</div>
 				<div class="btn-group btn-group-sm">
-					<input type="button" class="btn btn-default" accesskey="c" name="addbbcode8" value="Code"  onclick="bbstyle(8)" title="{L_BBCODE_C_HELP}" />
+					<button onclick="bbstyle(8)" title="{L_BBCODE_C_HELP}" accesskey="c" name="addbbcode8" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-code fa-lg"></i>
+					</button>
 					<!-- IF S_BBCODE_IMG -->
-						<input type="button" class="btn btn-default" accesskey="p" name="addbbcode14" value="Img"  onclick="bbstyle(14)" title="{L_BBCODE_P_HELP}" />
+						<button onclick="bbstyle(14)" title="{L_BBCODE_P_HELP}" accesskey="p" name="addbbcode14" type="button" class="btn btn-default btn-xs" >
+							<i class="fa fa-picture-o fa-lg"></i>
+						</button>
 					<!-- ENDIF -->
 					<!-- IF S_LINKS_ALLOWED -->
-						<input type="button" class="btn btn-default" accesskey="w" name="addbbcode16" value="URL" style="text-decoration: underline; " onclick="bbstyle(16)" title="{L_BBCODE_W_HELP}" />
+						<button onclick="bbstyle(16)" title="{L_BBCODE_W_HELP}" accesskey="w" name="addbbcode16" type="button" class="btn btn-default btn-xs" >
+							<i class="fa fa-link fa-lg"></i>
+						</button>
 					<!-- ENDIF -->
 					<!-- IF S_BBCODE_FLASH -->
-						<input type="button" class="btn btn-default" accesskey="d" name="addbbcode18" value="Flash" onclick="bbstyle(18)" title="{L_BBCODE_D_HELP}" />
+						<button onclick="bbstyle(18)" title="{L_BBCODE_D_HELP}" accesskey="d" name="addbbcode18" type="button" class="btn btn-default btn-xs" >
+							<i class="fa fa-flash"></i>
+						</button>
 					<!-- ENDIF -->
 				</div>
 				<div class="btn-group btn-group-sm">
@@ -109,7 +131,9 @@
 					</select>
 				</div>
 				<div class="btn-group btn-group-sm">
-					<input type="button" class="btn btn-default" name="bbpalette" id="bbpalette" value="{L_FONT_COLOR}" onclick="change_palette();" title="{L_BBCODE_S_HELP}" />
+					<button onclick="change_palette();" title="{L_BBCODE_S_HELP}" accesskey="s" name="bbpalette" type="button" class="btn btn-default btn-xs" >
+						<i class="fa fa-paint-brush fa-lg"></i>
+					</button>
 				</div>
 				<!-- BEGIN custom_tags -->
 					<input type="button" class="btn btn-default btn-sm" name="addbbcode{custom_tags.BBCODE_ID}" value="{custom_tags.BBCODE_TAG}" onclick="bbstyle({custom_tags.BBCODE_ID})" title="{custom_tags.BBCODE_HELPLINE}" />
