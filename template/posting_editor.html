@@ -48,7 +48,7 @@
 					<div class="form-group">
 						<div class="col-md-7 col-md-offset-2">
 							<div class="input-group">
-								<textarea id="username_list" name="username_list" class="form-control" cols="50" rows="1"></textarea>
+								<input id="username_list" name="username_list" class="form-control" cols="50" rows="1"></input>
 								<div class="input-group-btn">
 									<a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
 									<button type="submit" name="add_to" value="{L_ADD}" class="btn btn-default">{L_ADD}</button>
@@ -131,7 +131,7 @@
 			<div class="form-group">
 				<label for="subject" class="col-md-2 control-label">{L_SUBJECT}:</label>
 				<div class="col-md-7">
-					<input type="text" class="form-control" name="subject" id="subject" ng-model="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}"/>
+					<input type="text" class="form-control" name="subject" id="subject" ng-model="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" ng-init="subject = '{SUBJECT}{DRAFT_SUBJECT}'"/>
 				</div>
 			</div>
 			<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
