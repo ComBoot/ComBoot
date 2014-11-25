@@ -206,7 +206,9 @@ $(document).ready(function() {
     var src = $this.attr('src');
     $this.attr('data-lightbox', src);
 
-    $('#footer-nav ul.navbar-nav').after('<ul class="nav navbar-nav navbar-right fix-right-nav"><li><p class="navbar-text" id="corypright">Design: <a href="http://zoker.me/go/comboot" target="_blank">ComBoot</a> by <a href="http://www.florian-gareis.de" target="_blank" id="author-name">Florian Gareis</a></p></li></ul>');
+    if ($('#footer-nav .nav.fix-right-nav').length = 0){
+        $('#footer-nav ul.navbar-nav').after('<ul class="nav navbar-nav navbar-right fix-right-nav"><li><p class="navbar-text" id="corypright">Design: <a href="http://zoker.me/go/comboot" target="_blank">ComBoot</a> by <a href="http://www.florian-gareis.de" target="_blank" id="author-name">Florian Gareis</a></p></li></ul>');
+    }
 
     var dangercolor = $('.alert-danger').css('color');
     $('#alert-area').css('border-color', dangercolor);
