@@ -29,23 +29,19 @@
 		<div class="form-group">
 			<label for="poll_max_options" class="col-md-2 control-label">{L_POLL_MAX_OPTIONS}:</label>
 			<div class="col-md-5">
-				<div class="col-md-2">
-					<input type="text" name="poll_max_options" id="poll_max_options" size="3" maxlength="3" value="{POLL_MAX_OPTIONS}" class="form-control" />
-				</div>
-				<div class="clearfix"></div>
-				<span class="help-block">{L_POLL_MAX_OPTIONS_EXPLAIN}</span>
+				<input type="text" name="poll_max_options" id="poll_max_options" size="3" maxlength="3" value="{POLL_MAX_OPTIONS}" class="form-control" />
 			</div>
+			<div class="clearfix"></div>
+			<span class="help-block col-md-12">{L_POLL_MAX_OPTIONS_EXPLAIN}</span>
 		</div>
 		<div class="form-group">
 			<label for="poll_length" class="col-md-2 control-label">{L_POLL_FOR}:</label>
-			<div class="col-md-5">
-				<div class="col-md-2">
-					<input type="text" name="poll_length" id="poll_length" size="3" maxlength="3" value="{POLL_LENGTH}" class="form-control" />
-				</div>
-				<span class="help-block">{L_DAYS}</span>
-				<div class="clearfix"></div>
-				<span class="help-block">{L_POLL_FOR_EXPLAIN}</span>
+			<div class="col-md-1">
+				<input type="text" name="poll_length" id="poll_length" size="3" maxlength="3" value="{POLL_LENGTH}" class="form-control" />
 			</div>
+			<span class="help-block col-md-9">{L_DAYS}</span>
+			<div class="clearfix"></div>
+			<span class="help-block col-md-12">{L_POLL_FOR_EXPLAIN}</span>
 		</div>
 
 		<!-- IF S_POLL_VOTE_CHANGE -->

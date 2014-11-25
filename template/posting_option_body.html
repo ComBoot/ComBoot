@@ -1,8 +1,8 @@
 <div class="tab-pane active" id="options-tab">
-	<fieldset>
+	<fieldset class="form-horizontal">
 		<!-- IF S_BBCODE_ALLOWED -->
 			<div class="form-group">
-				<div class="checkbox">
+				<div class="checkbox"> 
 					<label for="disable_bbcode">
 						<input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}
 					</label>
@@ -81,15 +81,13 @@
 		<!-- ENDIF -->
 		<!-- IF S_TOPIC_TYPE_ANNOUNCE or S_TOPIC_TYPE_STICKY -->
 			<div class="form-group">
-				<label for="topic_time_limit" class="col-md-2">{L_STICK_TOPIC_FOR}:</label>
-				<div class="col-md-10">
-					<label for="topic_time_limit">
-						<div class="input-append">
-							<input type="text" name="topic_time_limit" id="topic_time_limit" size="3" maxlength="3" value="{TOPIC_TIME_LIMIT}" class="form-control col-md-1" /><span class="add-on">{L_DAYS}</span>
-						</div>
-					</label>
+				<label for="topic_time_limit" class="col-md-2 control-label">{L_STICK_TOPIC_FOR}:</label>
+				<div class="col-md-1">
+					<input type="text" name="topic_time_limit" id="topic_time_limit" size="3" maxlength="3" value="{TOPIC_TIME_LIMIT}" class="form-control" />
 				</div>
-				<p class="help-block">{L_STICK_TOPIC_FOR_EXPLAIN}</p>
+				<div class="col-md-9">{L_DAYS}</div>
+				<div class="clearfix"></div>
+				<p class="help-block col-md-12">{L_STICK_TOPIC_FOR_EXPLAIN}</p>
 			</div>
 		<!-- ENDIF -->
 		<!-- IF S_EDIT_REASON -->
