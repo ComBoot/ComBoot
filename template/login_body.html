@@ -31,18 +31,20 @@
 							<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 						<!-- ENDIF -->
 						<!-- IF S_DISPLAY_FULL_LOGIN -->
-							<div class="row">
-								<!-- IF S_AUTOLOGIN_ENABLED -->
-									<div class="col-md-6">
+							<!-- IF S_AUTOLOGIN_ENABLED -->
+								<div class="row">
+									<div class="col-md-12">
 										<span class="button-checkbox">
-											<button type="button" class="btn btn-block" data-color="primary">{L_LOG_ME_IN}</button>
+											<button type="button" class="btn" data-color="primary">{L_LOG_ME_IN}</button>
 											<input type="checkbox" class="hidden" name="autologin" id="autologin" tabindex="4" />
 										</span>
 									</div>
-								<!-- ENDIF -->
-								<div class="col-md-6">
+								</div>
+							<!-- ENDIF -->
+							<div class="row">
+								<div class="col-md-12">
 									<span class="button-checkbox">
-										<button type="button" class="btn btn-block" data-color="primary">{L_HIDE_ME}</button>
+										<button type="button" class="btn" data-color="primary">{L_HIDE_ME}</button>
 										<input type="checkbox" class="hidden" name="viewonline" id="viewonline" tabindex="5" /> </label>
 									</span>
 								</div>
