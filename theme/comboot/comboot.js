@@ -211,9 +211,6 @@ $(document).ready(function() {
     var dangercolor = $('.alert-danger').css('color');
     $('#alert-area').css('border-color', dangercolor);
 
-    $('input[type=submit], button[type=submit]').attr('data-style', 'zoom-in');
-    $('input[type=submit], button[type=submit]').ladda( 'bind' );
-
     $('.colour-picker').colorpicker({
         format: 'hex'
     });
