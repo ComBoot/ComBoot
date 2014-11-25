@@ -388,7 +388,7 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
   margin-top: 0; 
 }
 
-.2top {
+.to-top {
 	float: right;
 }
 
@@ -442,6 +442,10 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
 }
 
 .content ul, .content ol, ol.def-rules {
+  padding-left: 20px;
+}
+
+#options-tab .form-group .checkbox {
   padding-left: 20px;
 }
 

@@ -150,7 +150,7 @@ $(document).ready(function() {
     $(".selectpicker").attr({"data-width": "auto"});
     $(".selectpicker").selectpicker();
 
-    $('.top, .2top, .top2').click(function(event){        
+    $('.top, .to-top, .top2').click(function(event){        
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
     });
