@@ -7,7 +7,6 @@
 > - **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually! You can wait for phpBB 3.1, which will include a plugin system.**
 - **This theme is also meant to work with core bootstrap, it therefore cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
 
-A beautiful phpBB3 theme based on the beautiful [Bootstrap](http://getbootstrap.com/) framework.
 
 ## Overview
 - [Links](#links)
@@ -15,7 +14,8 @@ A beautiful phpBB3 theme based on the beautiful [Bootstrap](http://getbootstrap.
 - [Screenshots](#screenshots)
 - [Premium](#premium)
 - [About](#about)
-- [Themes](#themes)
+- [Theme examples](#theme-examples)
+- [Credits](#credits)
 
 ## Links
 - [Overview Page](http://zoker.me/go/comboot)
@@ -62,7 +62,7 @@ Additional to the free edition published here @github, there will be a premium v
 
 **Download:** http://zoker.me/go/comboot-download
 
-## Some examples
+## Theme examples
 <a href="http://comboot.de/demo/free?theme=default" target="_blank"><img title="Default" src="http://cdn.zoker.me/bootstrap/thumbnail.png" width="32%"></a>
 <a href="http://comboot.de/demo/free?theme=bootstrap" target="_blank"><img title="Bootstrap" src="http://cdn.zoker.me/bootswatch/bootstrap/thumbnail.png" width="32%"></a>
 <a href="http://comboot.de/demo/free?theme=cerulean" target="_blank"><img title="Cerulean" src="http://bootswatch.com/yeti/thumbnail.png" width="32%"></a>
