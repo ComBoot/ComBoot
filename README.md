@@ -3,31 +3,27 @@
 ---
 <p align="center">The Professional phpBB Bootstrap Theme</p>
 
-Note !
-==
+### Note!
 > - **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually! You can wait for phpBB 3.1, which will include a plugin system.**
 - **This theme is also meant to work with core bootstrap, it therefore cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
 
 A beautiful phpBB3 theme based on the beautiful [Bootstrap](http://getbootstrap.com/) framework.
 
-Overview
-=
-- [Links] (#links)
-- [Features] (#features)
-- [Screenshots] (#screenshots)
-- [Premium] (#premium)
-- [About] (#about)
-- [Themes] (#themes)
+## Overview
+- [Links](#links)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Premium](#premium)
+- [About](#about)
+- [Themes](#themes)
 
-Links
-=
-- [Overview Page] (http://zoker.me/go/comboot)
-- [Demo] (http://zoker.me/go/comboot-demo)
-- [Support] (http://zoker.me/go/comboot-support) (Knowledge Base, Community and Ticket support)
-- [Changelog] (http://zoker.me/go/comboot-changelog)
+## Links
+- [Overview Page](http://zoker.me/go/comboot)
+- [Demo](http://zoker.me/go/comboot-demo)
+- [Support](http://zoker.me/go/comboot-support) (Knowledge Base, Community and Ticket support)
+- [Changelog](http://zoker.me/go/comboot-changelog)
 
-Features
-=
+## Features
 * Based on the most awesome html framework: [Bootstrap 3](http://twitter.github.com/bootstrap/)
 * Every page is completely designed for bootstrap
 * Integration of [Font Awesome 4](http://fontawesome.io/)
@@ -37,13 +33,11 @@ Features
 * Full HTML5 registration and login form 
 * Awesome login dropdown panel
 
-Screenshots
-=
-<a href="http://zoker.me/images/#4/14128869733844" target="_blank"><img src="http://zoker.me/images/uploads/big/844b5982b0561dafcded503aeac75b24.png" alt="ComBoot Index" width="300px" style="max-width:300px" style="/></a><a href="http://zoker.me/images/#4/14128869728118" target="_blank"><img src="http://zoker.me/images/uploads/big/96bbd5fb9d32f6923670faf0848e013a.png" alt="ComBoot Forum" width="300px" style="max-width:300px"/></a>
+## Screenshots
+<a href="http://zoker.me/images/#4/14128869733844" target="_blank"><img src="http://zoker.me/images/uploads/big/844b5982b0561dafcded503aeac75b24.png" alt="ComBoot Index" width="300px" style="max-width:300px"/></a><a href="http://zoker.me/images/#4/14128869728118" target="_blank"><img src="http://zoker.me/images/uploads/big/96bbd5fb9d32f6923670faf0848e013a.png" alt="ComBoot Forum" width="300px" style="max-width:300px"/></a>
 <a href="http://zoker.me/images/#4/14128869716676" target="_blank"><img src="http://zoker.me/images/uploads/big/d2da42f45b1add9e41d1660b609f037c.png" alt="ComBoot Topic" width="300px" style="max-width:300px"/></a><a href="http://zoker.me/images/#4/14128869720209" target="_blank"><img src="http://zoker.me/images/uploads/big/804be621ecefcfd10a89b298a41e5d1d.png" alt="ComBoot MCP" width="300px" style="max-width:300px"/></a>
 
-Premium
-=
+## Premium
 Note! The premium edition is not yet available due to payment issues
 Additional to the free edition published here @github, there will be a premium version, which includes extra features:
 * Easy customize the theme without any coding (e.g. profile on topic page left or right)
@@ -51,9 +45,8 @@ Additional to the free edition published here @github, there will be a premium v
 * Ticket and live chat support
 * Own copyright
 
-About
-=
-**Author:** [Florian Gareis] (http://www.florian-gareis.de) ® 2014
+## About
+**Author:** [Florian Gareis](http://www.florian-gareis.de) ® 2014
 
 **Base style:** none
 
@@ -69,26 +62,50 @@ About
 
 **Download:** http://zoker.me/go/comboot-download
 
-Credits
-=
-* [Support glyph and fa icon inside input] (http://bootsnipp.com/snippets/featured/support-glyph-and-fa-icon-inside-input)
-* [Mix & Match Login] (http://bootsnipp.com/snippets/featured/mix-amp-match-login)
-* [Mix & Match Register] (http://bootsnipp.com/snippets/featured/mix-amp-match-register)
-* [Bootstrap-Select] (http://silviomoreto.github.io/bootstrap-select/)
-* [User Detail Panel] (http://bootsnipp.com/snippets/featured/user-detail-panel)
-* [Bootstrap Badger] (http://bootsnipp.com/snippets/featured/bootstrap-badger)
-* [jQuery Checkbox Buttons] (http://bootsnipp.com/snippets/featured/jquery-checkbox-buttons)
-* [HTML Editor WYSIWYG Interface] (http://bootsnipp.com/snippets/featured/html-editor-wysiwyg-interface)
-* [Button with labels] (http://bootsnipp.com/snippets/featured/buttons-with-labels)
-* [Triangle Breadcrumbs Arrows] (http://bootsnipp.com/snippets/featured/triangle-breadcrumbs-arrows)
-* [Alert Messages like the docs] (http://bootsnipp.com/snippets/featured/alert-messages-like-the-docs)
-* [Collapsible Panel] (http://bootsnipp.com/snippets/featured/collapsible-panel)
-* [Link to top page] (http://bootsnipp.com/snippets/featured/link-to-top-page)
-* [WYSIWYG Editor] (http://www.wysibb.com/)
-* [Code Syntax Highlighter] (http://prismjs.com/)
-* [Lightbox] (http://www.jasonbutz.info/bootstrap-lightbox/)
-* [Angular.js] (angularjs.org)
+## Some examples
+<a href="http://comboot.de/demo/free?theme=default" target="_blank"><img title="Default" src="http://cdn.zoker.me/bootstrap/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=bootstrap" target="_blank"><img title="Bootstrap" src="http://cdn.zoker.me/bootswatch/bootstrap/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=cerulean" target="_blank"><img title="Cerulean" src="http://bootswatch.com/yeti/thumbnail.png" width="32%"></a>
 
-Licence
-=
-This project is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (http://creativecommons.org/licenses/by-sa/4.0/)
+<a href="http://comboot.de/demo/free?theme=cosmo" target="_blank"><img title="Cosmo" src="http://bootswatch.com/cosmo/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=cyborg" target="_blank"><img title="Cyborg" src="http://bootswatch.com/cyborg/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=darkly" target="_blank"><img title="Darkly" src="http://bootswatch.com/darkly/thumbnail.png" width="32%"></a>
+
+<a href="http://comboot.de/demo/free?theme=flatly" target="_blank"><img title="Flatly" src="http://bootswatch.com/flatly/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=journal" target="_blank"><img title="Journal" src="http://bootswatch.com/journal/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=lumen" target="_blank"><img title="Lumen" src="http://bootswatch.com/lumen/thumbnail.png" width="32%"></a>
+
+<a href="http://comboot.de/demo/free?theme=paper" target="_blank"><img title="Paper" src="http://bootswatch.com/paper/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=readable" target="_blank"><img title="Readable" src="http://bootswatch.com/readable/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=sandstone" target="_blank"><img title="Sandstone" src="http://bootswatch.com/sandstone/thumbnail.png" width="32%"></a>
+
+<a href="http://comboot.de/demo/free?theme=simplex" target="_blank"><img title="Simplex" src="http://bootswatch.com/simplex/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=slate" target="_blank"><img title="Slate" src="http://bootswatch.com/slate/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=spacelab" target="_blank"><img title="Spacelab" src="http://bootswatch.com/spacelab/thumbnail.png" width="32%"></a>
+
+<a href="http://comboot.de/demo/free?theme=superhero" target="_blank"><img title="Superhero" src="http://bootswatch.com/superhero/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=united" target="_blank"><img title="United" src="http://bootswatch.com/united/thumbnail.png" width="32%"></a>
+<a href="http://comboot.de/demo/free?theme=yeti" target="_blank"><img title="Yeti" src="http://bootswatch.com/yeti/thumbnail.png" width="32%"></a>
+
+## Credits
+* [Support glyph and fa icon inside input](http://bootsnipp.com/snippets/featured/support-glyph-and-fa-icon-inside-input)
+* [Mix & Match Login](http://bootsnipp.com/snippets/featured/mix-amp-match-login)
+* [Mix & Match Register](http://bootsnipp.com/snippets/featured/mix-amp-match-register)
+* [Bootstrap-Select](http://silviomoreto.github.io/bootstrap-select/)
+* [User Detail Panel](http://bootsnipp.com/snippets/featured/user-detail-panel)
+* [Bootstrap Badger](http://bootsnipp.com/snippets/featured/bootstrap-badger)
+* [jQuery Checkbox Buttons](http://bootsnipp.com/snippets/featured/jquery-checkbox-buttons)
+* [HTML Editor WYSIWYG Interface](http://bootsnipp.com/snippets/featured/html-editor-wysiwyg-interface)
+* [Button with labels](http://bootsnipp.com/snippets/featured/buttons-with-labels)
+* [Triangle Breadcrumbs Arrows](http://bootsnipp.com/snippets/featured/triangle-breadcrumbs-arrows)
+* [Alert Messages like the docs](http://bootsnipp.com/snippets/featured/alert-messages-like-the-docs)
+* [Collapsible Panel](http://bootsnipp.com/snippets/featured/collapsible-panel)
+* [Link to top page](http://bootsnipp.com/snippets/featured/link-to-top-page)
+* [WYSIWYG Editor](http://www.wysibb.com/)
+* [Code Syntax Highlighter](http://prismjs.com/)
+* [Lightbox](http://www.jasonbutz.info/bootstrap-lightbox/)
+* [Angular.js](angularjs.org)
+
+---
+
+Copyright &copy; 2014 [Florian Gareis](http://www.florian-gareis.de). Licensed under the terms of the [MIT License](LICENSE.md)
