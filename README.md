@@ -108,4 +108,4 @@ Additional to the free edition published here @github, there will be a premium v
 
 ---
 
-<p align="center">Copyright &copy; 2014 [Florian Gareis](http://www.florian-gareis.de). Licensed under the terms of the [MIT License](LICENSE.md)</p>
+<p align="center">Copyright &copy; 2014 <a href="http://www.florian-gareis.de" target="_blank">Florian Gareis</a>. Licensed under the terms of the <a href="LICENSE.md" target="_blank">MIT License</a></p>
