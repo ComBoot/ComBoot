@@ -78,7 +78,7 @@
 				<p class="author">{L_POLL_LENGTH}<!-- IF S_CAN_VOTE and L_POLL_LENGTH --><br /><!-- ENDIF --><!-- IF S_CAN_VOTE -->{L_MAX_VOTES}<!-- ENDIF --></p>
 				<fieldset class="polls">
 				<!-- BEGIN poll_option -->
-					<div <!-- IF poll_option.POLL_OPTION_VOTED -->class="voted" title="{L_POLL_VOTED_OPTION}"<!-- ENDIF -->>
+					<div class="row <!-- IF poll_option.POLL_OPTION_VOTED -->voted" title="{L_POLL_VOTED_OPTION}<!-- ENDIF -->">
 						<!-- IF poll_option.POLL_OPTION_VOTED or S_DISPLAY_RESULTS --><div class="col-md-3"><!-- ELSE --><div class="col-md-12"><!-- ENDIF -->
 							<!-- IF S_CAN_VOTE -->
 								<!-- IF S_IS_MULTI_CHOICE --><div class="checkbox"><!-- ELSE --><div class="radio"><!-- ENDIF -->
