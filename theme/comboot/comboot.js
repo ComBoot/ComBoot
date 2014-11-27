@@ -170,7 +170,7 @@ $(document).ready(function() {
 
     $('.pm-to a:not(.btn)').attr('class','btn btn-default btn-sm');
     
-    $('.btn-fix a').attr('class','btn btn-primary btn-sm');
+    $('.btn-fix a').addClass('btn btn-primary btn-sm');
 
     $('.btn-radio-group .btn-radio').click(function() {
         $(this).parents('.btn-radio-group').find('.btn-radio.active').removeClass('active');
