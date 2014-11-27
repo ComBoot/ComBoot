@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright (c) 2014 Copyright
+Copyright (c) 2014 Copyright [Florian Gareis](http://www.florian-gareis.de)
 
 --
 
