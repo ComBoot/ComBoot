@@ -20,11 +20,10 @@
 
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="panel-title">{L_PREVIEW}</h3>
+			<h3 class="panel-title">{L_PREVIEW}<span ng-show="subject" class="subject">{{": " + subject}}</span></h3>
 		</div>
 		<div class="panel-body">
-			<h3 class="no-margin">{PREVIEW_SUBJECT}</h3>
-			<p>{PREVIEW_MESSAGE}</p>
+			{PREVIEW_MESSAGE}
 		</div>
 		<!-- IF .attachment -->
 			<dl class="attachbox">
