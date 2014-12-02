@@ -23,7 +23,7 @@
 							};
 							// ]]>
 						</script>
-						<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}"></script>
+						<script type="text/javascript" src="{RECAPTCHA_SERVER}/challenge?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}"></script>
 						<script type="text/javascript">
 							// <![CDATA[
 							<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
@@ -33,8 +33,8 @@
 						</script>
 						<noscript>
 							<div>
-								<object data="http://www.google.com/recaptcha/api/noscript?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}" type="text/html" height="300" width="500"></object><br />
-								<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+								<object data="{RECAPTCHA_SERVER}/noscript?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}" type="text/html" height="300" width="500"></object><br />
+								<textarea class="form-control" name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
 								<input type="hidden" class="form-control" name="recaptcha_response_field" value="manual_challenge" />
 							</div>
 						</noscript>
