@@ -176,10 +176,6 @@ th.forum-name, td.forum-name, th.topic-name, td.topic-name {
   white-space: normal;
 }
 
-.forum-icon .fa, .forum-topic-icon .fa {
-  width: 14px !important;
-}
-
 .navbar-fix {
 	z-index: 10000;
   border-radius: 0px !important;
