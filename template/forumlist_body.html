@@ -11,8 +11,8 @@
 				<thead class="topiclist">
 					<tr>
 						<th class="forum-name"><!-- IF forumrow.S_IS_CAT --><i class="fa fa-sitemap"></i> <a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE --><i class="fa fa-folder-open"></i> {L_FORUM}<!-- ENDIF --></th>
-						<th class="topics">{L_TOPICS}</th>
-						<th class="posts">{L_POSTS}</th>
+						<th class="topics"><i class="fa fa-comments-o"></i> {L_TOPICS}</th>
+						<th class="posts"><i class="fa fa-pencil-square-o"></i> {L_POSTS}</th>
 						<th class="lastpost"><i class="fa fa-history"></i> <span>{L_LAST_POST}</span></th>
 					</tr>
 				</thead>
@@ -31,7 +31,7 @@
 								<!-- ELSEIF forumrow.FORUM_ICON -->
 									<i class="{forumrow.FORUM_ICON}"></i>
 								<!-- ELSE -->
-									<i class="fa fa-lg fa-file-text-o"></i>
+									<i class="fa fa-lg fa-folder"></i>
 								<!-- ENDIF -->
 							</a>
 						</span>
@@ -45,7 +45,7 @@
 							<!-- ELSEIF forumrow.FORUM_ICON -->
 								<i class="{forumrow.FORUM_ICON}"></i>
 							<!-- ELSE -->
-								<i class="fa fa-file-text-o"></i>
+								<i class="fa fa-folder"></i>
 							<!-- ENDIF -->
 						</div>
 						<a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />
