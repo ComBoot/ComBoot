@@ -4,8 +4,8 @@
 <p align="center">The Professional phpBB Bootstrap Theme</p>
 
 ### Note!
-> - **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually! You can wait for phpBB 3.1, which will include a plugin system.**
-- **This theme is also meant to work with core bootstrap, it therefore cannot be 100% compatible to custom bootstrap styles (like bootswatch)!**
+> - **To get more information about the version for phpbb3.1, [read this post](http://comboot.de/blog/dev/phpbb-3-1/)**
+- **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually! You can wait for phpBB 3.1, which will include a plugin system.**
 
 
 ## Overview
