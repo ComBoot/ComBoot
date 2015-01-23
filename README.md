@@ -54,9 +54,9 @@ Additional to the free edition published here @github, there will be a premium v
 
 **phpBB version:** phpBB 3.0.12 (3.1 later this year)
 
-**Bootstrap version:** 3.3.1
+**Bootstrap version:** 3.3.2
 
-**Font Awesome:** 4.2.0
+**Font Awesome:** 4.3.0
 
 **Demo:** http://zoker.me/go/comboot-demo
 
