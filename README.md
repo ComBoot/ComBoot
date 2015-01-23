@@ -1,4 +1,4 @@
-<p align="center"><a href="http://zoker.me/go/comboot" target="_blank"><img src="https://github.com/TheZoker/ComBoot-Free/blob/master/imageset/site_logo.png" alt="ComBoot Logo" width="500px" style="max-width:300px"/></a></p>
+<p align="center"><a href="http://zoker.me/go/comboot" target="_blank"><img src="https://raw.githubusercontent.com/TheZoker/ComBoot/phpBB-3.0.12/imageset/site_logo.png" alt="ComBoot Logo" width="500px" style="max-width:300px"/></a></p>
 
 ---
 <p align="center">The Professional phpBB Bootstrap Theme</p>
@@ -46,7 +46,7 @@ Additional to the free edition published here @github, there will be a premium v
 * Own copyright
 
 ## About
-**Author:** [Florian Gareis](http://www.florian-gareis.de) ® 2014
+**Author:** [Florian Gareis](http://www.florian-gareis.de) ® 2015
 
 **Base style:** none
 
@@ -108,4 +108,4 @@ Additional to the free edition published here @github, there will be a premium v
 
 ---
 
-<p align="center">Copyright &copy; 2014 <a href="http://www.florian-gareis.de" target="_blank">Florian Gareis</a>. Licensed under the terms of the <a href="LICENSE.md" target="_blank">MIT License</a></p>
+<p align="center">Copyright &copy; 2015 <a href="http://www.florian-gareis.de" target="_blank">Florian Gareis</a>. Licensed under the terms of the <a href="LICENSE.md" target="_blank">MIT License</a></p>
