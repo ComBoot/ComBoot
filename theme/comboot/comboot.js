@@ -1,3 +1,7 @@
+/*
+ * Version: 1.0
+ */
+
 $(function () {
     $('.button-checkbox').each(function () {
 
@@ -215,6 +219,15 @@ $(document).ready(function() {
 
     $('.colour-picker').colorpicker({
         format: 'hex'
+    });
+
+    // Update notification function
+    $.ajax('http://comboot.de/version.php').success(function (data) {
+        $version = data.latestVersion;
+        if ($version > '1.0') {
+            $('.update').show();
+            $('.update .version').text($version);
+        }
     });
 });
 

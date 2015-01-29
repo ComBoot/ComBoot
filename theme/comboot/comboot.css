@@ -46,6 +46,10 @@ body {
   margin-bottom: 15px;
 }
 
+.update {
+	display: none;
+}
+
 .linklist {
   list-style-type: none;
 }
