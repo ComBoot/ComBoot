@@ -11,18 +11,18 @@
 			<i class="fa fa-user"></i>
 		</button>
 	</div>
-	<div class="collapse navbar-collapse pull-left-desktop" id="main-menu">
-		<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+		<div class="collapse navbar-collapse pull-left-desktop" id="main-menu">
 			<ul class="nav navbar-nav">
 				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-question"></i> {L_FAQ}</a></li>
 				<!-- IF S_DISPLAY_MEMBERLIST -->
 					<li class="bb-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-user"></i> {L_MEMBERLIST}</a></li>
 				<!-- ENDIF -->
 			</ul>
-		<!-- ENDIF -->
-	</div>
-	<div class="collapse navbar-collapse pull-left-desktop" id="search-menu"> 
-		<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+		</div>
+	<!-- ENDIF -->
+	<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+		<div class="collapse navbar-collapse pull-left-desktop" id="search-menu"> 
 			<form class="navbar-form navbar-left" method="get" id="search" action="{U_SEARCH}">
 				<div class="input-group">
 					<input class="input-medium search form-control" maxlength="128" type="text" name="keywords" id="search_keywords" size="20" placeholder="{LA_SEARCH_FORUM}" />
@@ -32,8 +32,8 @@
 					</div>
 				</div>
 			</form>
-		<!-- ENDIF -->
-	</div>
+		</div>
+	<!-- ENDIF -->
 	<div class="collapse navbar-collapse pull-right-desktop" id="user-menu">
 		<ul class="nav navbar-nav navbar-right hidden-xs fix-right-nav">
 			<li class="dropdown">
