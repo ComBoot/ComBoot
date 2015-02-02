@@ -222,7 +222,7 @@ $(document).ready(function() {
     });
 
     // Update notification function
-    $.ajax('http://comboot.de/version.php').success(function (data) {
+    $.ajax('http://comboot.io/version.php').success(function (data) {
         $version = data.latestVersion;
         if ($version > '1.0') {
             $('.update').show();
