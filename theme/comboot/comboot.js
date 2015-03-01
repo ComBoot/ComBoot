@@ -225,8 +225,8 @@ $(document).ready(function() {
     $.ajax('http://comboot.io/version.php').success(function (data) {
         $version = data.latestVersion;
         if ($version > '1.0') {
-            $('.update').show();
-            $('.update .version').text($version);
+            $('#update-notification').show();
+            $('#update-notification .version').text($version);
         }
     });
 });

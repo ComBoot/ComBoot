@@ -139,7 +139,7 @@ function subPanels(p)
 				e.style.display = 'block';
 				if (t)
 				{
-					t.className = 'btn btn-primary disabled';
+					t.className = 'activetab';
 				}
 			}
 			else
@@ -147,7 +147,7 @@ function subPanels(p)
 				e.style.display = 'none';
 				if (t)
 				{
-					t.className = 'btn btn-default';
+					t.className = '';
 				}
 			}
 		}
@@ -403,7 +403,7 @@ function apply_onkeypress_event()
 	// jQuery code in case jQuery is used
 	if (jquery_present)
 	{
-		jQuery('form input[type=text], form input[type=password]').live('keypress', function (e)
+		jQuery('form input[type=text], form input[type=password]').on('keypress', function (e)
 		{
 			var default_button = jQuery(this).parents('form').find('input[type=submit].default-submit-action');
 			
