@@ -54,7 +54,7 @@ Additional to the free edition published here @github, there will be a premium v
 
 **phpBB version:** phpBB 3.0.13 (3.1 later this year)
 
-**Bootstrap version:** 3.3.2
+**Bootstrap version:** 3.3.4
 
 **Font Awesome:** 4.3.0
 
