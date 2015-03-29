@@ -40,11 +40,13 @@
 
 ## Premium
 Note! The premium edition is not yet available due to payment issues
+
 Additional to the free edition published here @github, there will be a premium version, which includes extra features:
 * Easy customize the theme without any coding (e.g. profile on topic page left or right)
 * WYSIWYG Editor for easy use bbcodes
 * Ticket and live chat support
 * Own copyright
+* More informations [here](http://zoker.me/go/comboot-premium)
 
 ## About
 **Author:** [Florian Gareis](http://www.florian-gareis.de) ® 2015
