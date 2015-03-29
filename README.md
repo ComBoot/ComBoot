@@ -20,6 +20,7 @@
 ## Links
 - [Overview Page](http://zoker.me/go/comboot)
 - [Demo](http://zoker.me/go/comboot-demo)
+- [Official phpBB Thread](http://zoker.me/go/comboot-phpbb-3-0)
 - [Support](http://zoker.me/go/comboot-support) (Knowledge Base, Community and Ticket support)
 - [Changelog](http://zoker.me/go/comboot-changelog)
 
