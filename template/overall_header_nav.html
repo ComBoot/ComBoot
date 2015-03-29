@@ -1,133 +1,136 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-fix" id="header-nav" role="navigation">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle pull-left-mobile" id="main-menu-btn" data-toggle="collapse" data-target="#main-menu">
-			<i class="fa fa-bars"></i>
-		</button>
-		<a class="navbar-brand" href="{U_INDEX}">{SITENAME}</a>
-		<button type="button" class="navbar-toggle pull-right-mobile" id="search-menu-btn" data-toggle="collapse" data-target="#search-menu">
-			<i class="fa fa-search"></i>
-		</button>
-		<button type="button" class="navbar-toggle pull-right-mobile" id="user-menu-btn" data-toggle="collapse" data-target="#user-menu">
-			<i class="fa fa-user"></i>
-		</button>
-	</div>
-	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-		<div class="collapse navbar-collapse pull-left-desktop" id="main-menu">
-			<ul class="nav navbar-nav">
-				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-question"></i> {L_FAQ}</a></li>
-				<!-- IF S_DISPLAY_MEMBERLIST -->
-					<li class="bb-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-user"></i> {L_MEMBERLIST}</a></li>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle pull-left-mobile" id="main-menu-btn" data-toggle="collapse" data-target="#main-menu">
+				<i class="fa fa-bars"></i>
+			</button>
+			<a class="navbar-brand" href="{U_INDEX}">{SITENAME}</a>
+			<button type="button" class="navbar-toggle pull-right-mobile" id="search-menu-btn" data-toggle="collapse" data-target="#search-menu">
+				<i class="fa fa-search"></i>
+			</button>
+			<button type="button" class="navbar-toggle pull-right-mobile" id="user-menu-btn" data-toggle="collapse" data-target="#user-menu">
+				<i class="fa fa-user"></i>
+			</button>
+		</div>
+		<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+			<div class="collapse navbar-collapse pull-left-desktop" id="main-menu">
+				<ul class="nav navbar-nav">
+					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-question"></i> {L_FAQ}</a></li>
+					<!-- IF S_DISPLAY_MEMBERLIST -->
+						<li class="bb-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-user"></i> {L_MEMBERLIST}</a></li>
+					<!-- ENDIF -->
+				</ul>
+			</div>
+		<!-- ENDIF -->
+		<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+			<div class="collapse navbar-collapse pull-left-desktop" id="search-menu"> 
+				<form class="navbar-form navbar-left" method="get" id="search" action="{U_SEARCH}">
+					<div class="input-group">
+						<input class="input-medium search form-control" maxlength="128" type="text" name="keywords" id="search_keywords" size="20" placeholder="{LA_SEARCH_FORUM}" />
+						<div class="input-group-btn">
+							{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+							<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		<!-- ENDIF -->
+		<div class="collapse navbar-collapse pull-right-desktop" id="user-menu">
+			<ul class="nav navbar-nav navbar-right hidden-xs fix-right-nav">
+				<li class="dropdown">
+					<button type="button" class="btn btn-primary btn-labeled navbar-btn dropdown-toggle" data-toggle="dropdown" ><span class="btn-label"><i class="glyphicon glyphicon-user"></i></span> <!-- IF not S_IS_BOT and S_USER_LOGGED_IN --> {S_USERNAME} <!-- ENDIF --><span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<!-- IF not S_USER_LOGGED_IN -->
+							<li>
+								<form action="{S_LOGIN_ACTION}" method="post" id="navloginform" name="loginform">
+									<div class="form-group">
+										<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}"/>
+									</div>
+									<div class="form-group">
+										<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}"/>
+									</div>
+									<!-- IF S_DISPLAY_FULL_LOGIN -->
+										<div class="checkbox">
+											<!-- IF S_AUTOLOGIN_ENABLED --><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label><!-- ENDIF -->
+											<br><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label>
+										</div>
+									<!-- ENDIF -->
+									{S_LOGIN_REDIRECT}
+									<button type="submit" name="login" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-log-in"></i> {L_LOGIN}</button>
+								</form>
+							</li>
+							<!-- IF S_REGISTER_ENABLED -->
+								<li class="divider"></li>
+								<li><a href="{U_REGISTER}" class="btn-reg"><button class="btn btn-primary btn-block" type"button"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</button></a></li>
+							<!-- ELSE -->
+								<li class="divider"></li>
+								<li><a href="#" class="btn-reg"><button class="btn btn-primary btn-block disabled" type="button"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</button></a></li>
+							<!-- ENDIF -->
+						<!-- ENDIF -->
+						<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+							<!-- IF S_DISPLAY_PM -->
+								<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i>
+									<span class="label <!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->label-danger<!-- ELSE -->label-primary<!-- ENDIF -->">
+										{PRIVATE_MESSAGE_INFO}
+										<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
+											, {PRIVATE_MESSAGE_INFO_UNREAD}
+										<!-- ENDIF -->
+									</span>
+									</a>
+								</li>
+							<!-- ENDIF -->
+							<!-- IF S_DISPLAY_SEARCH -->
+								<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
+								<li class="divider"></li>
+							<!-- ENDIF -->
+							<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
+							<li class="divider"></li>
+							<li><a href="{U_LOGIN_LOGOUT}" class="btn-reg" title="{L_LOGIN_LOGOUT}" accesskey="x" ><button class="btn btn-danger btn-block" type="button"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</button></a></li>
+						<!-- ENDIF -->
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right visible-xs fix-right-nav">
+				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN --><li>{S_USERNAME}</li><!-- ENDIF -->
+				<!-- IF not S_USER_LOGGED_IN -->
+					<li>
+						<form action="{S_LOGIN_ACTION}" method="post" id="navloginform" name="loginform">
+							<div class="form-group">
+								<label for="username">{L_USERNAME}</label>
+								<input type="text" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}"/>
+							</div>
+							<div class="form-group">
+								<label for="password" class="display-block">{L_PASSWORD} <a href="{U_SEND_PASSWORD}" class="pull-right">{L_FORGOT_PASS}</a></label>
+								<input type="password" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}"/>
+							</div>
+							{S_LOGIN_REDIRECT}
+							<button type="submit" name="login" class="btn btn-primary btn-block">{L_LOGIN}</button>
+						</form>
+					</li>
+					<li class="divider"></li>
+					<li><a href="{U_REGISTER}" class="btn-reg"><button type="button" class="btn btn-primary btn-block">{L_REGISTER}</button></a></li>
+				<!-- ENDIF -->
+				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+					<!-- IF S_DISPLAY_PM -->
+						<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i>
+							<span class="label label-primary">
+								{PRIVATE_MESSAGE_INFO}
+								<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
+									, {PRIVATE_MESSAGE_INFO_UNREAD}
+								<!-- ENDIF -->
+							</span>
+							</a>
+						</li>
+					<!-- ENDIF -->
+					<!-- IF S_DISPLAY_SEARCH -->
+						<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
+						<li class="divider"></li>
+					<!-- ENDIF -->
+					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
+					<li class="divider"></li>
+					<li><a href="{U_LOGIN_LOGOUT}" class="btn-reg" title="{L_LOGIN_LOGOUT}" accesskey="x" ><button class="btn btn-danger btn-block" type="button"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</button></a></li>
 				<!-- ENDIF -->
 			</ul>
 		</div>
-	<!-- ENDIF -->
-	<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-		<div class="collapse navbar-collapse pull-left-desktop" id="search-menu"> 
-			<form class="navbar-form navbar-left" method="get" id="search" action="{U_SEARCH}">
-				<div class="input-group">
-					<input class="input-medium search form-control" maxlength="128" type="text" name="keywords" id="search_keywords" size="20" placeholder="{LA_SEARCH_FORUM}" />
-					<div class="input-group-btn">
-						{S_SEARCH_LOCAL_HIDDEN_FIELDS}
-						<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-					</div>
-				</div>
-			</form>
-		</div>
-	<!-- ENDIF -->
-	<div class="collapse navbar-collapse pull-right-desktop" id="user-menu">
-		<ul class="nav navbar-nav navbar-right hidden-xs fix-right-nav">
-			<li class="dropdown">
-				<button type="button" class="btn btn-primary btn-labeled navbar-btn dropdown-toggle" data-toggle="dropdown" ><span class="btn-label"><i class="glyphicon glyphicon-user"></i></span> <!-- IF not S_IS_BOT and S_USER_LOGGED_IN --> {S_USERNAME} <!-- ENDIF --><span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<!-- IF not S_USER_LOGGED_IN -->
-						<li>
-							<form action="{S_LOGIN_ACTION}" method="post" id="navloginform" name="loginform">
-								<div class="form-group">
-									<input type="text" placeholder="{L_USERNAME}" name="username" id="username" size="10" class="form-control" title="{L_USERNAME}"/>
-								</div>
-								<div class="form-group">
-									<input type="password" placeholder="{L_PASSWORD}" name="password" id="password" size="10" class="form-control" title="{L_PASSWORD}"/>
-								</div>
-								<!-- IF S_DISPLAY_FULL_LOGIN -->
-									<div class="checkbox">
-										<!-- IF S_AUTOLOGIN_ENABLED --><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label><!-- ENDIF -->
-										<br><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label>
-									</div>
-								<!-- ENDIF -->
-								{S_LOGIN_REDIRECT}
-								<button type="submit" name="login" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-log-in"></i> {L_LOGIN}</button>
-							</form>
-						</li>
-						<!-- IF S_REGISTER_ENABLED -->
-							<li class="divider"></li>
-							<li><a href="{U_REGISTER}" class="btn-reg"><button class="btn btn-primary btn-block" type"button"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</button></a></li>
-						<!-- ELSE -->
-							<li class="divider"></li>
-							<li><a href="#" class="btn-reg"><button class="btn btn-primary btn-block disabled" type="button"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</button></a></li>
-						<!-- ENDIF -->
-					<!-- ENDIF -->
-					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-						<!-- IF S_DISPLAY_PM -->
-							<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i>
-								<span class="label <!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->label-danger<!-- ELSE -->label-primary<!-- ENDIF -->">
-									{PRIVATE_MESSAGE_INFO}
-									<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
-										, {PRIVATE_MESSAGE_INFO_UNREAD}
-									<!-- ENDIF -->
-								</span>
-								</a>
-							</li>
-						<!-- ENDIF -->
-						<!-- IF S_DISPLAY_SEARCH -->
-							<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
-							<li class="divider"></li>
-						<!-- ENDIF -->
-						<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
-						<li class="divider"></li>
-						<li><a href="{U_LOGIN_LOGOUT}" class="btn-reg" title="{L_LOGIN_LOGOUT}" accesskey="x" ><button class="btn btn-danger btn-block" type="button"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</button></a></li>
-					<!-- ENDIF -->
-				</ul>
-			</li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right visible-xs fix-right-nav">
-			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN --><li>{S_USERNAME}</li><!-- ENDIF -->
-			<!-- IF not S_USER_LOGGED_IN -->
-				<li>
-					<div class="row">
-						<div class="col-md-6">
-							<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" class="btn-reg"><button class="btn btn-primary btn-block"><i class="glyphicon glyphicon-log-in"></i> {L_LOGIN_LOGOUT}</button></a>
-						</div>
-						<hr/>
-						<div class="col-md-6">
-							<!-- IF S_REGISTER_ENABLED -->
-								<a href="{U_REGISTER}" class="btn-reg"><button class="btn btn-primary btn-block"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</button></a>
-							<!-- ELSE -->
-								<a href="#" class="btn-reg"><button class="btn btn-primary btn-block disabled"><i class="glyphicon glyphicon-user"></i> {L_REGISTER}</button></a>
-							<!-- ENDIF -->
-						</div>
-					</div>
-				</li>
-			<!-- ENDIF -->
-			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-				<!-- IF S_DISPLAY_PM -->
-					<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i>
-						<span class="label label-primary">
-							{PRIVATE_MESSAGE_INFO}
-							<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->
-								, {PRIVATE_MESSAGE_INFO_UNREAD}
-							<!-- ENDIF -->
-						</span>
-						</a>
-					</li>
-				<!-- ENDIF -->
-				<!-- IF S_DISPLAY_SEARCH -->
-					<li><a href="{U_SEARCH_SELF}"><i class="fa fa-file"></i> {L_SEARCH_SELF}</a></li>
-					<li class="divider"></li>
-				<!-- ENDIF -->
-				<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-wrench"></i> {L_PROFILE}</a></li>
-				<li class="divider"></li>
-				<li><a href="{U_LOGIN_LOGOUT}" class="btn-reg" title="{L_LOGIN_LOGOUT}" accesskey="x" ><button class="btn btn-danger btn-block" type="button"><i class="fa fa-sign-out"></i> {L_LOGIN_LOGOUT}</button></a></li>
-			<!-- ENDIF -->
-		</ul>
 	</div>
 </nav>
