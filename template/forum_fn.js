@@ -139,7 +139,7 @@ function subPanels(p)
 				e.style.display = 'block';
 				if (t)
 				{
-					t.className = 'activetab';
+					t.className = 'btn btn-primary disabled';
 				}
 			}
 			else
@@ -147,7 +147,7 @@ function subPanels(p)
 				e.style.display = 'none';
 				if (t)
 				{
-					t.className = '';
+					t.className = 'btn btn-default';
 				}
 			}
 		}
