@@ -82,12 +82,13 @@
 						<!-- IF poll_option.POLL_OPTION_VOTED or S_DISPLAY_RESULTS --><div class="col-md-3"><!-- ELSE --><div class="col-md-12"><!-- ENDIF -->
 							<!-- IF S_CAN_VOTE -->
 								<!-- IF S_IS_MULTI_CHOICE --><div class="checkbox"><!-- ELSE --><div class="radio"><!-- ENDIF -->
-								<label for="vote_{poll_option.POLL_OPTION_ID}">{poll_option.POLL_OPTION_CAPTION}</label>
-								<!-- IF S_IS_MULTI_CHOICE -->
-									<input type="checkbox" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> />
-								<!-- ELSE -->
-									<input type="radio" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> />
-								<!-- ENDIF -->
+								<label for="vote_{poll_option.POLL_OPTION_ID}">
+									<!-- IF S_IS_MULTI_CHOICE -->
+										<input type="checkbox" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> />
+									<!-- ELSE -->
+										<input type="radio" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}"<!-- IF poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> />
+									<!-- ENDIF -->
+								{poll_option.POLL_OPTION_CAPTION}</label>
 								</div>
 							<!-- ELSE -->
 								{poll_option.POLL_OPTION_CAPTION}
