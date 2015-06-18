@@ -159,7 +159,7 @@ $(document).ready(function() {
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
     });
 
-    $('#site-logo img').attr('class','img-responsive center-block');
+    $('#site-logo img').addClass('img-responsive center-block');
 
     $('.progress .progress-bar').progressbar({
         percent_format: function(percent) { return percent; }
@@ -224,6 +224,7 @@ $(document).ready(function() {
     // Update notification function
     $.ajax('http://comboot.io/version.php').success(function (data) {
         $version = data.latestVersion;
+        $message = data.message;
         if ($version > '1.0') {
             $('#update-notification').show();
             $('#update-notification .version').text($version);
