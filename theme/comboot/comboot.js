@@ -217,8 +217,9 @@ $(document).ready(function() {
     var dangercolor = $('.alert-danger').css('color');
     $('#alert-area').css('border-color', dangercolor);
 
-    $('.colour-picker').colorpicker({
-        format: 'hex'
+    $('.color-picker').colorpicker({
+        format: 'hex',
+        align: 'left'
     });
 
     // Update notification function
