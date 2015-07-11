@@ -4,8 +4,7 @@
 <p align="center">The Professional phpBB Bootstrap Theme</p>
 
 ### Note!
-> - **To get more information about the version for phpbb3.1, [read this post](http://zoker.me/go/comboot-blog-dev-3-1)**
-- **Because bootstrap needs so much customization, this theme will not work with any style change done by the [phpBB Automod](https://www.phpbb.com/mods/automod/). So you have to do any change manually! You can wait for phpBB 3.1, which will include a plugin system.**
+> - Closed beta for phpBB 3.1 compatible version available! [Read more here](http://comboot.io/blog/beta/beta-3-1/)
 
 
 ## Overview
@@ -39,7 +38,7 @@
 <a href="http://zoker.me/images/#4/14128869716676" target="_blank"><img src="http://zoker.me/images/uploads/big/d2da42f45b1add9e41d1660b609f037c.png" alt="ComBoot Topic" width="300px" style="max-width:300px"/></a><a href="http://zoker.me/images/#4/14128869720209" target="_blank"><img src="http://zoker.me/images/uploads/big/804be621ecefcfd10a89b298a41e5d1d.png" alt="ComBoot MCP" width="300px" style="max-width:300px"/></a>
 
 ## Premium
-Note! The premium edition is not yet available due to payment issues
+Note! The premium edition is not yet available due to payment issues. Wirte me a pn!
 
 Additional to the free edition published here @github, there will be a premium version, which includes extra features:
 * Easy customize the theme without any coding (e.g. profile on topic page left or right)
@@ -55,9 +54,9 @@ Additional to the free edition published here @github, there will be a premium v
 
 **Style Version:** 1.0
 
-**phpBB version:** phpBB 3.0.14 (3.1 later this year)
+**phpBB version:** phpBB 3.0.14 ([3.1 in closed beta](http://comboot.io/blog/beta/beta-3-1/))
 
-**Bootstrap version:** 3.3.4
+**Bootstrap version:** 3.3.5
 
 **Font Awesome:** 4.3.0
 
@@ -107,7 +106,7 @@ Additional to the free edition published here @github, there will be a premium v
 * [WYSIWYG Editor](http://www.wysibb.com/)
 * [Code Syntax Highlighter](http://prismjs.com/)
 * [Lightbox](http://lokeshdhakar.com/projects/lightbox2/)
-* [Angular.js](angularjs.org)
+* [Angular.js](http://angularjs.org)
 
 ---
 
