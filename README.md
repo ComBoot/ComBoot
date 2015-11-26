@@ -38,7 +38,7 @@
 <a href="http://zoker.me/images/#4/14128869716676" target="_blank"><img src="http://zoker.me/images/uploads/big/d2da42f45b1add9e41d1660b609f037c.png" alt="ComBoot Topic" width="300px" style="max-width:300px"/></a><a href="http://zoker.me/images/#4/14128869720209" target="_blank"><img src="http://zoker.me/images/uploads/big/804be621ecefcfd10a89b298a41e5d1d.png" alt="ComBoot MCP" width="300px" style="max-width:300px"/></a>
 
 ## Premium
-Note! The premium edition is not yet available due to payment issues. Wirte me a pn!
+Note! The premium edition is not yet available due to payment issues. Write me a pn!
 
 Additional to the free edition published here @github, there will be a premium version, which includes extra features:
 * Easy customize the theme without any coding (e.g. profile on topic page left or right)
