@@ -48,7 +48,7 @@ Additional to the free edition published here @github, there will be a premium v
 * More informations [here](http://zoker.me/go/comboot-premium)
 
 ## About
-**Author:** [Florian Gareis](http://www.florian-gareis.de) ® 2015
+**Author:** [Florian Gareis](http://www.florian-gareis.de) &copy; 2016
 
 **Base style:** none
 
@@ -110,4 +110,4 @@ Additional to the free edition published here @github, there will be a premium v
 
 ---
 
-<p align="center">Copyright &copy; 2015 <a href="http://www.florian-gareis.de" target="_blank">Florian Gareis</a>. Licensed under the terms of the <a href="LICENSE.md" target="_blank">MIT License</a></p>
+<p align="center">Copyright &copy; 2016 <a href="http://www.florian-gareis.de" target="_blank">Florian Gareis</a>. Licensed under the terms of the <a href="LICENSE.md" target="_blank">MIT License</a></p>
