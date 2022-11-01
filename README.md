@@ -54,11 +54,11 @@ Additional to the free edition published here @github, there will be a premium v
 
 **Style Version:** 1.0
 
-**phpBB version:** phpBB 3.0.14 ([3.1 in closed beta](http://comboot.io/blog/beta/beta-3-1/))
+**phpBB version:** phpBB 3.2.x ([3.1 in closed beta](http://comboot.io/blog/beta/beta-3-1/))
 
-**Bootstrap version:** 3.3.5
+**Bootstrap version:** 5.1.x
 
-**Font Awesome:** 4.3.0
+**Font Awesome:** 5.15.4
 
 **Demo:** http://zoker.me/go/comboot-demo
 
@@ -110,4 +110,4 @@ Additional to the free edition published here @github, there will be a premium v
 
 ---
 
-<p align="center">Copyright &copy; 2016 <a href="http://www.florian-gareis.de" target="_blank">Florian Gareis</a>. Licensed under the terms of the <a href="LICENSE.md" target="_blank">MIT License</a></p>
+<p align="center">Copyright &copy; 2022 <a href="http://www.florian-gareis.de" target="_blank">Florian Gareis</a>. Licensed under the terms of the <a href="LICENSE.md" target="_blank">MIT License</a></p>
