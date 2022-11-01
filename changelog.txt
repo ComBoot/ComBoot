@@ -14,42 +14,20 @@ Known Issues (in Version 1.0)
 	- Breadcrumb are not bootstrap color dynamic
 	- Quote on post reply does not work with WYSIWYG editor
 
-Version 1.1 (21.11.2014)
+Version 1.1 (21.10.2022)
 ============================
 	
 ** Free and Premium Edition **
 
-	- New Name: We switched from proBoot3 to ComBoot
-	- Ready for Bootstrap 3.3.1
-	- New: Redesigned logo
-	- New: Colorpicker for group color (UCP)
-	- New: Lightbox for post images
-	- New: Default avatar
-	- New: Simple html syntax highlighter for post code
-	- New: Scroll2Top button
-	- New: Topic Title Preview like Xenforo
-	- New: Quickreply collapsible
-	- Updated: Bootstrap-Select
-	- Updated: Syntax Highlighting
-	- Updated: jQuery
-	- Fixed: Post review layout
-	- Fixed: Moved all external js and css file requests outsite the header file
-	- Fixed: A ton of mobile optimization
-	- Fixed: Responsive tables
-	- Fixed: Outsourced some boxes in own files
-	- Fixed: Drafts on pm pages
-	- Fixed: A lot off mobile stuff
-	- Fixed: UCP layout part 3
-	- Fixed: MCP layout
-	- Fixed: Select box length
-	- Fixed: Navbar login form
-	- Fixed: Footer container removed
-	- Fixed: New post/topic tab issue
-	- Fixed: Board disabled warning
-	- Fixed: Post preview layout
-	- Fixed: Navigation buttons (on index, topic, UCP and MCP pages)
-	- Fixed: Some little other bugs
-	- Remove: Not necessary css files
+	- New: Compatibility with 3.1
+	- New: Icons on panels (e.g. statistics, online member etc.)
+	- New: FontAwesome Icons on non WYSIWYG editor buttons
+	- New: Update notification for admins
+	- Fix: Broken image
+	- Fix: Layout bugs
+	- Fix: Icon sizes
+	- Fix: Wrong background on bootstrap themes
+	- Remove: Not needed files
 
 
 Version 1.0 (21.11.2014)
